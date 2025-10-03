@@ -284,6 +284,12 @@
   background-color: white; /* White background for logos */
 }
 
+/* ASQ book dark background for white logo */
+#books-component-container-full .books__item:last-child .books__image,
+#books-component-container-full [data-book-title="ASQ Certification"] .books__image {
+  background-color: #2c3e50 !important;
+}
+
 .books__effect {
   position: absolute;
   width: 24px;
