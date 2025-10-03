@@ -6,8 +6,8 @@
 import * as THREE from "https://esm.sh/three";
 import { OrbitControls } from "https://esm.sh/three/examples/jsm/controls/OrbitControls";
 
-let w = 150; // Fixed width for profile section (matches container)
-let h = 150; // Fixed height for profile section (matches container)
+let w = 300; // Fixed width for profile section (matches container - 100% larger)
+let h = 300; // Fixed height for profile section (matches container - 100% larger)
 
 const scene = new THREE.Scene();
 
@@ -97,7 +97,8 @@ let currentPattern = 1;
 const patterns = [
   "./pattern1.png",
   "./pattern2.png", 
-  "./pattern3.png"
+  "./pattern3.png",
+  "./pattern4.png"
 ];
 
 let texture = loader.load(patterns[currentPattern - 1]);
@@ -200,8 +201,8 @@ function render() {
 render();
 
 function resize() {
-  w = 150; // Keep fixed size for profile section (matches container)
-  h = 150;
+  w = 300; // Keep fixed size for profile section (matches container - 100% larger)
+  h = 300;
   renderer.setSize(w, h);
   camera.aspect = w / h;
   camera.updateProjectionMatrix();
@@ -211,7 +212,7 @@ window.addEventListener("resize", resize);
 
 // Pattern switching function
 function switchPattern(patternNumber) {
-  if (patternNumber >= 1 && patternNumber <= 3) {
+  if (patternNumber >= 1 && patternNumber <= 4) {
     currentPattern = patternNumber;
     
     // Load new texture
