@@ -184,7 +184,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 1.5rem; /* Reduced gap for testing area */
+  gap: 1rem; /* Reduced gap for 6 books */
   z-index: 10;
   /* Below the shelf */
 }
@@ -277,9 +277,11 @@
 .books__image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain; /* Changed from cover to contain for logos */
+     object-fit: contain; /* Changed from cover to contain for logos */
   border-radius: 2px 6px 6px 2px;
+  padding: 10px; /* Add padding for logos */
+  background-color: white; /* White background for logos */
 }
 
 .books__effect {
@@ -352,11 +354,11 @@
           text-orientation: mixed;
   transform: rotate(180deg);
   color: var(--side-book-text);
-  font-size: 12px;
-  padding: 5px 0;
+  font-size: 8px; /* Reduced from 12px */
+  padding: 3px 0; /* Reduced padding */
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px; /* Reduced letter spacing */
   transition: color 0.5s ease;
 }
 
@@ -385,7 +387,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 1.5rem; /* Reduced gap for testing area */
+  gap: 1rem; /* Reduced gap for 6 books */
   z-index: 15;
   /* Between books and shelf */
 }

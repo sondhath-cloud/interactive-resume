@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const overlayText = document.querySelector(".book-title-text");
 
   // Track the currently active book
-  let activeBookIndex = 2; // Start with the last book (index 2)
+  let activeBookIndex = 2; // Start with the University of Phoenix book (index 2)
   let activeBookTimeline = null;
 
   // Apply hover animations to each book item
@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateDescription("side");
   });
 
-  // Set the default open book (last book)
+  // Set the default open book (University of Phoenix)
   const defaultBook = books[2];
   const defaultBookTitle = defaultBook
     .querySelector(".books__hitbox")
