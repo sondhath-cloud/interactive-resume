@@ -2,43 +2,55 @@
 // This script handles only the education section books component to prevent interference with other instances
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Only target the education books component
+    // Target both education books components
     const educationContainer = document.getElementById('books-component-container-education');
-    if (!educationContainer) return;
+    const topEducationContainer = document.getElementById('books-component-container-top');
+    
+    // Initialize education section if it exists
+    if (educationContainer) {
+        initEducationSection(educationContainer, 'edu-', 'default-open-book-education');
+    }
+    
+    // Initialize top education section if it exists
+    if (topEducationContainer) {
+        initEducationSection(topEducationContainer, 'top-edu-', 'default-open-book-top');
+    }
+});
 
+function initEducationSection(container, prefix, defaultBookId) {
     // Education-specific selectors
-    const educationBooks = educationContainer.querySelectorAll('.books__hitbox');
-    const educationSideBook = educationContainer.querySelector('.side-book[data-book-index="edu-side"]');
-    const educationDescriptions = educationContainer.querySelectorAll('.book-description');
-    const educationThemeToggle = educationContainer.querySelector('.education-theme-toggle');
+    const educationBooks = container.querySelectorAll('.books__hitbox');
+    const educationSideBook = container.querySelector(`.side-book[data-book-index="${prefix}side"]`);
+    const educationDescriptions = container.querySelectorAll('.book-description');
+    const educationThemeToggle = container.querySelector('.education-theme-toggle');
     
     // Education-specific book titles and descriptions
     const educationBookData = {
-        'edu-0': {
+        [`${prefix}0`]: {
             title: 'Arizona State University',
             description: 'Bachelor of Science in Psychology'
         },
-        'edu-side': {
-            title: 'Cultural Affairs',
+        [`${prefix}side`]: {
+            title: prefix === 'edu-' ? 'Cultural Affairs' : 'Education',
             description: 'Master of Business Administration'
         },
-        'edu-1': {
+        [`${prefix}1`]: {
             title: 'Arizona State University',
-            description: 'Bachelor of Arts in Sociology'
-        },
-        'edu-2': {
-            title: 'Cultural Affairs',
             description: 'Master of Business Administration'
         },
-        'edu-3': {
+        [`${prefix}2`]: {
+            title: 'University of Phoenix',
+            description: 'Master of Business Administration'
+        },
+        [`${prefix}3`]: {
             title: 'Prosci Certification',
             description: 'Change Management Professional'
         },
-        'edu-4': {
+        [`${prefix}4`]: {
             title: 'ICA Certification',
-            description: 'Technology of Participation Facilitator'
+            description: 'International Coaching Academy'
         },
-        'edu-5': {
+        [`${prefix}5`]: {
             title: 'ASQ Certification',
             description: 'American Society for Quality'
         }
@@ -47,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize education books component
     function initEducationBooks() {
         // Set default open book for education
-        const defaultBook = educationContainer.querySelector('#default-open-book-education');
+        const defaultBook = container.querySelector(`#${defaultBookId}`);
         if (defaultBook) {
             const bookIndex = defaultBook.querySelector('.books__hitbox').getAttribute('data-book-index');
             showEducationBookDescription(bookIndex);
@@ -85,13 +97,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Show selected education description
-        const selectedDesc = educationContainer.querySelector(`.book-description[data-book-index="${bookIndex}"]`);
+        const selectedDesc = container.querySelector(`.book-description[data-book-index="${bookIndex}"]`);
         if (selectedDesc) {
             selectedDesc.classList.add('active');
         }
 
         // Update education title overlay
-        const titleOverlay = educationContainer.querySelector('.book-title-text');
+        const titleOverlay = container.querySelector('.book-title-text');
         if (titleOverlay && educationBookData[bookIndex]) {
             titleOverlay.textContent = educationBookData[bookIndex].title;
         }
@@ -99,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Toggle education theme
     function toggleEducationTheme() {
-        educationContainer.classList.toggle('dark-mode');
+        container.classList.toggle('dark-mode');
     }
 
     // Initialize the education books component
@@ -140,4 +152,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize education animations
     addEducationAnimations();
-});
+}
