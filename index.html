@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Resume</title>
+    <title>Sondra Hathaway Resume</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="books-component.css">
+    <link rel="stylesheet" href="education-books-isolated.css">
+    <link rel="stylesheet" href="blog-slider-resume.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -62,48 +65,7 @@
                 </div>
             </div>
 
-            <!-- Certifications Section -->
-            <div class="certifications-section">
-                <h3 class="section-title">CERTIFICATIONS</h3>
-                <div class="certifications-list">
-                    <a href="https://www.prosci.com/solutions/training-programs/change-management-certification-program" target="_blank" style="text-decoration: none;">
-                        <div class="certification-item" style="background-color: #f5f5f0; border-radius: 8px; padding: 15px; margin-bottom: 15px; cursor: pointer; transition: transform 0.2s ease;">
-                            <div class="cert-logo">
-                                <img src="prosci-logo.svg" alt="PROSCI Logo" class="logo-img" style="max-width: 60px; height: auto;">
-                            </div>
-                            <div class="cert-info">
-                                <h4 class="cert-name" style="color: #333; margin: 10px 0 5px 0;">PROSCI</h4>
-                                <p class="cert-title" style="color: #666; margin: 0; font-size: 14px;">Certified Change Practitioner</p>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://www.asq.org/cert/manager-of-quality" target="_blank" style="text-decoration: none;">
-                        <div class="certification-item" style="background-color: #1e3a8a; border-radius: 8px; padding: 15px; margin-bottom: 15px; cursor: pointer; transition: transform 0.2s ease;">
-                            <div class="cert-logo" style="display: flex; align-items: center; justify-content: center; background: transparent;">
-                                <img src="asq logo.png" alt="ASQ Logo" class="logo-img" style="max-width: 60px; height: auto; background: transparent; mix-blend-mode: normal; opacity: 1;">
-                            </div>
-                            <div class="cert-info">
-                                <h4 class="cert-name" style="color: white; margin: 10px 0 5px 0;">American Society for Quality</h4>
-                                <p class="cert-title" style="color: #e5e7eb; margin: 0; font-size: 14px;">Certified Manager of Quality and Organizational Excellence</p>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://www.ica-usa.org" target="_blank" style="text-decoration: none;">
-                        <div class="certification-item" style="background-color: white; border-radius: 8px; padding: 15px; margin-bottom: 15px; border: 1px solid #e5e7eb; cursor: pointer; transition: transform 0.2s ease;">
-                            <div class="cert-logo" style="display: flex; align-items: center; justify-content: center; background: transparent;">
-                                <img src="ica2.png" alt="ICA Logo" class="logo-img" style="max-width: 60px; height: auto; background: transparent; mix-blend-mode: normal; opacity: 1;">
-                            </div>
-                            <div class="cert-info">
-                                <h4 class="cert-name" style="color: #333; margin: 10px 0 5px 0;">Institute of Cultural Affairs</h4>
-                                <p class="cert-title" style="color: #666; margin: 0; font-size: 14px;">Technology of Participation Certified Facilitator</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
+   
             <!-- Bottom Bar -->
             <div class="bottom-bar">
                 <span>WWW.SONDRAHATHAWAY.COM</span>
@@ -238,21 +200,95 @@
                 </div>
             </div>
 
-            <!-- Education Section -->
+            <!-- Featured Projects Section -->
+            <div class="featured-projects-section">
+                <h3 class="section-title">FEATURED PROJECTS</h3>
+                <div class="resume-blog-slider swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- Project 1 -->
+                        <div class="resume-blog-slider__item swiper-slide">
+                            <div class="resume-blog-slider__img">
+                                <img src="./images/card1.jpeg" alt="Remote Work Technology Project">
+                            </div>
+                            <div class="resume-blog-slider__content">
+                                <span class="resume-blog-slider__code">2024</span>
+                                <div class="resume-blog-slider__title">Remote Work Technology Implementation</div>
+                                <div class="resume-blog-slider__text">Led digital transformation initiatives for seamless remote collaboration, implementing new technologies and change management strategies across multiple organizations.</div>
+                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="resume-blog-slider__item swiper-slide">
+                            <div class="resume-blog-slider__img">
+                                <img src="./images/card2.png" alt="Organizational Development Project">
+                            </div>
+                            <div class="resume-blog-slider__content">
+                                <span class="resume-blog-slider__code">2023</span>
+                                <div class="resume-blog-slider__title">Organizational Development Framework</div>
+                                <div class="resume-blog-slider__text">Designed and implemented comprehensive organizational development programs that improved employee engagement and reduced turnover by 25%.</div>
+                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="resume-blog-slider__item swiper-slide">
+                            <div class="resume-blog-slider__img">
+                                <img src="./images/card3.png" alt="Change Management Project">
+                            </div>
+                            <div class="resume-blog-slider__content">
+                                <span class="resume-blog-slider__code">2023</span>
+                                <div class="resume-blog-slider__title">Strategic Change Management Initiative</div>
+                                <div class="resume-blog-slider__text">Facilitated major organizational restructuring using Prosci ADKAR methodology, achieving 95% adoption rates and minimizing resistance.</div>
+                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="resume-blog-slider__item swiper-slide">
+                            <div class="resume-blog-slider__img">
+                                <img src="./images/card4.png" alt="Leadership Development Project">
+                            </div>
+                            <div class="resume-blog-slider__content">
+                                <span class="resume-blog-slider__code">2022</span>
+                                <div class="resume-blog-slider__title">Leadership Development Program</div>
+                                <div class="resume-blog-slider__text">Created and delivered leadership development workshops for 200+ executives, focusing on strategic planning and organizational transformation.</div>
+                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="resume-blog-slider__item swiper-slide">
+                            <div class="resume-blog-slider__img">
+                                <img src="./images/card5.png" alt="Quality Management Project">
+                            </div>
+                            <div class="resume-blog-slider__content">
+                                <span class="resume-blog-slider__code">2021</span>
+                                <div class="resume-blog-slider__title">Quality Management System</div>
+                                <div class="resume-blog-slider__text">Implemented ASQ-certified quality management frameworks that improved organizational performance and established continuous improvement processes.</div>
+                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resume-blog-slider__pagination"></div>
+                </div>
+            </div>
+
+            <!--  Education and Certification Section -->
             <div class="education-testing-area" style="margin: 30px 0; padding: 20px; background-color: #f8f9fa; border-radius: 8px; border: 1px solid #e9ecef;">
                 <h3 class="section-title" style="color: #495057; margin-bottom: 20px;">EDUCATION</h3>
-                <div id="books-component-container" style="width: 100%; height: 400px; position: relative; overflow: hidden; background-color: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <div id="books-component-container-education" class="education-books-isolated" style="width: 100%; height: 400px; position: relative; overflow: hidden; background-color: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
                     <!-- Theme toggle -->
-                    <div class="theme-toggle" id="theme-toggle"></div>
+                    <div class="theme-toggle education-theme-toggle" id="theme-toggle-education"></div>
 
                     <!-- SVG Background -->
                     <svg style="position: absolute; width: 100%; height: 100%; z-index: 0;" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <pattern id="dottedGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+                            <pattern id="dottedGridEducation" width="30" height="30" patternUnits="userSpaceOnUse">
                                 <circle cx="2" cy="2" r="1" fill="rgba(0,0,0,0.15)" />
                             </pattern>
                         </defs>
-                        <rect width="100%" height="100%" fill="url(#dottedGrid)" />
+                        <rect width="100%" height="100%" fill="url(#dottedGridEducation)" />
                     </svg>
 
                     <!-- Book title overlay -->
@@ -290,12 +326,12 @@
                                             <div class="books__effect"></div>
                                             <div class="books__light"></div>
                                         </div>
-                                        <div class="books__hitbox" data-book-index="0" data-book-title="Arizona State University"></div>
+                                        <div class="books__hitbox" data-book-index="edu-0" data-book-title="Arizona State University"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="side-book" data-book-index="side" data-book-title="Cultural Affairs">
+                            <div class="side-book" data-book-index="edu-side" data-book-title="Cultural Affairs">
                                 <div class="side-book__title">Cultural Affairs</div>
                                 <div class="side-book__decoration"></div>
                                 <div class="side-book__decoration"></div>
@@ -315,12 +351,12 @@
                                             <div class="books__effect"></div>
                                             <div class="books__light"></div>
                                         </div>
-                                        <div class="books__hitbox" data-book-index="1" data-book-title="Arizona State University"></div>
+                                        <div class="books__hitbox" data-book-index="edu-1" data-book-title="Arizona State University"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="books__item" id="default-open-book">
+                            <div class="books__item" id="default-open-book-education">
                                 <div class="books__container">
                                     <div class="books__cover">
                                         <div class="books__back-cover"></div>
@@ -334,7 +370,7 @@
                                             <div class="books__effect"></div>
                                             <div class="books__light"></div>
                                         </div>
-                                        <div class="books__hitbox" data-book-index="2" data-book-title="Cultural Affairs"></div>
+                                        <div class="books__hitbox" data-book-index="edu-2" data-book-title="Cultural Affairs"></div>
                                     </div>
                                 </div>
                             </div>
@@ -354,7 +390,7 @@
                                             <div class="books__effect"></div>
                                             <div class="books__light"></div>
                                         </div>
-                                        <div class="books__hitbox" data-book-index="3" data-book-title="Prosci Certification"></div>
+                                        <div class="books__hitbox" data-book-index="edu-3" data-book-title="Prosci Certification"></div>
                                     </div>
                                 </div>
                             </div>
@@ -373,7 +409,7 @@
                                             <div class="books__effect"></div>
                                             <div class="books__light"></div>
                                         </div>
-                                        <div class="books__hitbox" data-book-index="4" data-book-title="ICA Certification"></div>
+                                        <div class="books__hitbox" data-book-index="edu-4" data-book-title="ICA Certification"></div>
                                     </div>
                                 </div>
                             </div>
@@ -392,7 +428,7 @@
                                             <div class="books__effect"></div>
                                             <div class="books__light"></div>
                                         </div>
-                                        <div class="books__hitbox" data-book-index="5" data-book-title="ASQ Certification"></div>
+                                        <div class="books__hitbox" data-book-index="edu-5" data-book-title="ASQ Certification"></div>
                                     </div>
                                 </div>
                             </div>
@@ -400,7 +436,7 @@
 
                         <div class="book-descriptions">
                             <!-- University Descriptions -->
-                            <div class="book-description" data-book-index="0">
+                            <div class="book-description" data-book-index="edu-0">
                                 <h3>Arizona State University</h3>
                                 <div class="author">Bachelor of Science in Psychology</div>
                                 <div class="lines-animation">
@@ -408,7 +444,7 @@
                                 </div>
                             </div>
 
-                            <div class="book-description" data-book-index="side">
+                            <div class="book-description" data-book-index="edu-side">
                                 <h3>Cultural Affairs</h3>
                                 <div class="author">Master of Business Administration</div>
                                 <div class="lines-animation">
@@ -416,7 +452,7 @@
                                 </div>
                             </div>
 
-                            <div class="book-description" data-book-index="1">
+                            <div class="book-description" data-book-index="edu-1">
                                 <h3>Arizona State University</h3>
                                 <div class="author">Bachelor of Arts in Sociology</div>
                                 <div class="lines-animation">
@@ -424,7 +460,7 @@
                                 </div>
                             </div>
 
-                            <div class="book-description active" data-book-index="2">
+                            <div class="book-description active" data-book-index="edu-2">
                                 <h3>Cultural Affairs</h3>
                                 <div class="author">Master of Business Administration</div>
                                 <div class="lines-animation">
@@ -433,7 +469,7 @@
                             </div>
 
                             <!-- Certification Descriptions -->
-                            <div class="book-description" data-book-index="3">
+                            <div class="book-description" data-book-index="edu-3">
                                 <h3>Prosci Certification</h3>
                                 <div class="author">Change Management Professional</div>
                                 <div class="lines-animation">
@@ -441,7 +477,7 @@
                                 </div>
                             </div>
 
-                            <div class="book-description" data-book-index="4">
+                            <div class="book-description" data-book-index="edu-4">
                                 <h3>ICA Certification</h3>
                                 <div class="author">Technology of Participation Facilitator</div>
                                 <div class="lines-animation">
@@ -449,30 +485,8 @@
                                 </div>
                             </div>
 
-                            <div class="book-description" data-book-index="5">
-                                <h3>ASQ Certification</h3>
-                                <div class="author">American Society for Quality</div>
-                                <div class="lines-animation">
-                                    <p>Professional certification in quality management and continuous improvement methodologies.</p>
-                                </div>
-                            </div>
+                            
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Awards Section -->
-            <div class="awards-section">
-                <h3 class="section-title">AWARDS</h3>
-                <div class="awards-items">
-                    <div class="award-item">
-                        <h4 class="award-title">EXAMPLE AWARD</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    
-                    <div class="award-item">
-                        <h4 class="award-title">EXAMPLE AWARD</h4>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
             </div>
@@ -539,6 +553,24 @@
             </div>
         </div>
 
+        <style>
+            /* Miniature card hover effects */
+            .mini-card:hover h2 {
+                top: 20px !important;
+                left: 15px !important;
+                transform: none !important;
+                transition: all 0.3s ease-out !important;
+            }
+            .mini-card:hover p {
+                opacity: 1 !important;
+                transition: opacity 0.5s 0.1s ease-in !important;
+            }
+            .mini-card:hover img {
+                transition: opacity 0.3s ease-in !important;
+                opacity: 1 !important;
+            }
+
+
         <!-- Right Edge Strip -->
         <div class="right-strip">
             <div class="strip-content">
@@ -546,369 +578,11 @@
             </div>
             <div class="strip-accent"></div>
         </div>
-    </div>
-
-    <!-- Testing Section - No CSS Inheritance -->
-    <div style="all: initial; font-family: Arial, sans-serif; margin: 20px; padding: 20px; border: 2px dashed #ccc; background: #f9f9f9;">
-        <h2 style="color: #333; margin-bottom: 20px;">Component Testing Area</h2>
-        <p style="color: #666; margin-bottom: 15px;">This section has all CSS reset and doesn't inherit any styles from the main resume. Perfect for testing new components!</p>
-        
-        <!-- Add your test components here -->
-        <div style="margin: 10px 0; padding: 10px; border: 1px solid #ddd; background: white;">
-            <h3 style="color: #333; margin: 0 0 10px 0;">Test Component 1</h3>
-            <p style="color: #666; margin: 0;">This is a clean testing area with no inherited styles.</p>
-        </div>
-        
-        <div style="margin: 10px 0; padding: 10px; border: 1px solid #ddd; background: white;">
-            <h3 style="color: #333; margin: 0 0 10px 0;">Miniature Animated Cards</h3>
-            <p style="color: #666; margin: 0 0 15px 0;">Miniature versions of the simple-animated-card component displayed horizontally (150px wide each)</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: flex-start; align-items: flex-start;">
-            
-            <!-- Miniature Animated Card -->
-            <div class="mini-card" style="width: 150px; height: 225px; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; color: #f0f0f0; box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);">
-                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="Classical painting" style="position: absolute; object-fit: cover; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.9; transition: opacity 0.2s ease-out;">
-                <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; transition: all 0.3s 0.3s ease-out; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; font-size: 25px; text-align: center;">
-                    Art
-                </h2>
-                <p style="position: absolute; opacity: 0; max-width: 80%; transition: opacity 0.3s ease-out; inset: auto auto 20px 15px; font-size: 24px; line-height: 1.2; font-weight: bold;">
-                    Painting with oils
-                </p>
-            </div>
-            
-            <!-- Second Miniature Animated Card - Music -->
-            <div class="mini-card" style="width: 150px; height: 225px; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; color: #f0f0f0; box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);">
-                <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="Distant stage with lights" style="position: absolute; object-fit: cover; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.9; transition: opacity 0.2s ease-out;">
-                <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; transition: all 0.3s 0.3s ease-out; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; font-size: 25px; text-align: center;">
-                    Music
-                </h2>
-                <p style="position: absolute; opacity: 0; max-width: 80%; transition: opacity 0.3s ease-out; inset: auto auto 20px 15px; font-size: 24px; line-height: 1.2; font-weight: bold;">
-                    Playing the drums
-                </p>
-            </div>
-            
-            <!-- Third Miniature Animated Card - Garden -->
-            <div class="mini-card" style="width: 150px; height: 225px; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; color: #f0f0f0; box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);">
-                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="Green sunny vegetable garden" style="position: absolute; object-fit: cover; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.9; transition: opacity 0.2s ease-out;">
-                <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; transition: all 0.3s 0.3s ease-out; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; font-size: 25px; text-align: center;">
-                    Garden
-                </h2>
-                <p style="position: absolute; opacity: 0; max-width: 80%; transition: opacity 0.3s ease-out; inset: auto auto 20px 15px; font-size: 24px; line-height: 1.2; font-weight: bold;">
-                    Tomatoes and berries
-                </p>
-            </div>
-            
-            <!-- Fourth Miniature Animated Card - Design -->
-            <div class="mini-card" style="width: 150px; height: 225px; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; color: #f0f0f0; box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="Computer screen with ASCII" style="position: absolute; object-fit: cover; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.9; transition: opacity 0.2s ease-out;">
-                <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; transition: all 0.3s 0.3s ease-out; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; font-size: 25px; text-align: center;">
-                    Design
-                </h2>
-                <p style="position: absolute; opacity: 0; max-width: 80%; transition: opacity 0.3s ease-out; inset: auto auto 20px 15px; font-size: 24px; line-height: 1.2; font-weight: bold;">
-                    Software development
-                </p>
-            </div>
-            
-            <!-- Fifth Miniature Animated Card - Cooking -->
-            <div class="mini-card" style="width: 150px; height: 225px; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; color: #f0f0f0; box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);">
-                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="Cooking pot" style="position: absolute; object-fit: cover; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.9; transition: opacity 0.2s ease-out;">
-                <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; transition: all 0.3s 0.3s ease-out; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; font-size: 25px; text-align: center;">
-                    Cooking
-                </h2>
-                <p style="position: absolute; opacity: 0; max-width: 80%; transition: opacity 0.3s ease-out; inset: auto auto 20px 15px; font-size: 24px; line-height: 1.2; font-weight: bold;">
-                    And eating
-                </p>
-            </div>
-            
-            <!-- Sixth Miniature Animated Card - Dogs -->
-            <div class="mini-card" style="width: 150px; height: 225px; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; color: #f0f0f0; box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);">
-                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="Yorkshire terrier" style="position: absolute; object-fit: cover; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.9; transition: opacity 0.2s ease-out;">
-                <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; transition: all 0.3s 0.3s ease-out; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; font-size: 25px; text-align: center;">
-                    Dogs
-                </h2>
-                <p style="position: absolute; opacity: 0; max-width: 80%; transition: opacity 0.3s ease-out; inset: auto auto 20px 15px; font-size: 24px; line-height: 1.2; font-weight: bold;">
-                    Esp. Chewy
-                </p>
-            </div>
-            </div>
-            
-            <!-- Books Component Testing Area -->
-            <div style="margin: 10px 0; padding: 10px; border: 1px solid #ddd; background: white;">
-                <h3 style="color: #333; margin: 0 0 10px 0;">Books Component Testing</h3>
-                <p style="color: #666; margin: 0 0 15px 0;">Full-width 3D animated books component with interactive hover effects</p>
-                <div id="books-component-container-full" style="width: 100%; height: 500px; position: relative; overflow: hidden; background-color: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    </div>        
                     <!-- Theme toggle -->
                     <div class="theme-toggle" id="theme-toggle-full"></div>
 
-                    <!-- SVG Background -->
-                    <svg style="position: absolute; width: 100%; height: 100%; z-index: 0;" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <pattern id="dottedGridFull" width="30" height="30" patternUnits="userSpaceOnUse">
-                                <circle cx="2" cy="2" r="1" fill="rgba(0,0,0,0.15)" />
-                            </pattern>
-                        </defs>
-                        <rect width="100%" height="100%" fill="url(#dottedGridFull)" />
-                    </svg>
-
-                    <!-- Book title overlay -->
-                    <div class="book-title-overlay">
-                        <div class="book-title-text">Cultural Affairs</div>
-                    </div>
-
-                    <!-- Shelf container -->
-                    <div class="shelf-container">
-                        <div class="book-shadow">
-                            <div class="book-shadow__item"></div>
-                            <div class="book-shadow__item side"></div>
-                            <div class="book-shadow__item"></div>
-                            <div class="book-shadow__item"></div>
-                            <div class="book-shadow__item"></div>
-                            <div class="book-shadow__item"></div>
-                            <div class="book-shadow__item"></div>
-                        </div>
-
-                        <div class="shelf"></div>
-
-                        <div class="books-wrapper">
-                            <!-- University Books -->
-                            <div class="books__item">
-                                <div class="books__container">
-                                    <div class="books__cover">
-                                        <div class="books__back-cover"></div>
-                                        <div class="books__inside">
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                        </div>
-                                        <div class="books__image">
-                                            <img src="./asu1.png" alt="Arizona State University">
-                                            <div class="books__effect"></div>
-                                            <div class="books__light"></div>
-                                        </div>
-                                        <div class="books__hitbox" data-book-index="0" data-book-title="Arizona State University"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="side-book" data-book-index="side" data-book-title="Cultural Affairs">
-                                <div class="side-book__title">Cultural Affairs</div>
-                                <div class="side-book__decoration"></div>
-                                <div class="side-book__decoration"></div>
-                            </div>
-
-                            <div class="books__item">
-                                <div class="books__container">
-                                    <div class="books__cover">
-                                        <div class="books__back-cover"></div>
-                                        <div class="books__inside">
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                        </div>
-                                        <div class="books__image">
-                                            <img src="./asu2.png" alt="Arizona State University">
-                                            <div class="books__effect"></div>
-                                            <div class="books__light"></div>
-                                        </div>
-                                        <div class="books__hitbox" data-book-index="1" data-book-title="Arizona State University"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="books__item" id="default-open-book-full">
-                                <div class="books__container">
-                                    <div class="books__cover">
-                                        <div class="books__back-cover"></div>
-                                        <div class="books__inside">
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                        </div>
-                                        <div class="books__image">
-                                            <img src="./uop.png" alt="University of Phoenix">
-                                            <div class="books__effect"></div>
-                                            <div class="books__light"></div>
-                                        </div>
-                                        <div class="books__hitbox" data-book-index="2" data-book-title="Cultural Affairs"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Certification Books -->
-                            <div class="books__item">
-                                <div class="books__container">
-                                    <div class="books__cover">
-                                        <div class="books__back-cover"></div>
-                                        <div class="books__inside">
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                        </div>
-                                        <div class="books__image">
-                                            <img src="./prosci-logo.svg" alt="Prosci Certification">
-                                            <div class="books__effect"></div>
-                                            <div class="books__light"></div>
-                                        </div>
-                                        <div class="books__hitbox" data-book-index="3" data-book-title="Prosci Certification"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="books__item">
-                                <div class="books__container">
-                                    <div class="books__cover">
-                                        <div class="books__back-cover"></div>
-                                        <div class="books__inside">
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                        </div>
-                                        <div class="books__image">
-                                            <img src="./ica2.png" alt="ICA Certification">
-                                            <div class="books__effect"></div>
-                                            <div class="books__light"></div>
-                                        </div>
-                                        <div class="books__hitbox" data-book-index="4" data-book-title="ICA Certification"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="books__item">
-                                <div class="books__container">
-                                    <div class="books__cover">
-                                        <div class="books__back-cover"></div>
-                                        <div class="books__inside">
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                            <div class="books__page"></div>
-                                        </div>
-                                        <div class="books__image">
-                                            <img src="./asq logo.png" alt="ASQ Certification">
-                                            <div class="books__effect"></div>
-                                            <div class="books__light"></div>
-                                        </div>
-                                        <div class="books__hitbox" data-book-index="5" data-book-title="ASQ Certification"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="book-descriptions">
-                            <!-- University Descriptions -->
-                            <div class="book-description" data-book-index="0">
-                                <h3>Arizona State University</h3>
-                                <div class="author">Bachelor of Science in Psychology</div>
-                                <div class="lines-animation">
-                                    <p>Comprehensive study of human behavior, cognition, and mental processes. Developed strong analytical and research skills.</p>
-                                </div>
-                            </div>
-
-                            <div class="book-description" data-book-index="side">
-                                <h3>Cultural Affairs</h3>
-                                <div class="author">Master of Business Administration</div>
-                                <div class="lines-animation">
-                                    <p>Advanced business education focusing on leadership, strategy, and organizational development.</p>
-                                </div>
-                            </div>
-
-                            <div class="book-description" data-book-index="1">
-                                <h3>Arizona State University</h3>
-                                <div class="author">Bachelor of Arts in Sociology</div>
-                                <div class="lines-animation">
-                                    <p>Study of social structures, relationships, and institutions. Gained insights into organizational dynamics and social change.</p>
-                                </div>
-                            </div>
-
-                            <div class="book-description active" data-book-index="2">
-                                <h3>Cultural Affairs</h3>
-                                <div class="author">Master of Business Administration</div>
-                                <div class="lines-animation">
-                                    <p>Comprehensive business education with focus on strategic management, leadership development, and organizational transformation.</p>
-                                </div>
-                            </div>
-
-                            <!-- Certification Descriptions -->
-                            <div class="book-description" data-book-index="3">
-                                <h3>Prosci Certification</h3>
-                                <div class="author">Change Management Professional</div>
-                                <div class="lines-animation">
-                                    <p>Certified in Prosci's ADKAR methodology for effective change management and organizational transformation.</p>
-                                </div>
-                            </div>
-
-                            <div class="book-description" data-book-index="4">
-                                <h3>ICA Certification</h3>
-                                <div class="author">Technology of Participation Facilitator</div>
-                                <div class="lines-animation">
-                                    <p>Certified facilitator in Technology of Participation methods for engaging groups and driving meaningful change.</p>
-                                </div>
-                            </div>
-
-                            <div class="book-description" data-book-index="5">
-                                <h3>ASQ Certification</h3>
-                                <div class="author">American Society for Quality</div>
-                                <div class="lines-animation">
-                                    <p>Professional certification in quality management and continuous improvement methodologies.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
-            <style>
-                /* Miniature card hover effects */
-                .mini-card:hover h2 {
-                    top: 20px !important;
-                    left: 15px !important;
-                    transform: none !important;
-                    transition: all 0.3s ease-out !important;
-                }
-                .mini-card:hover p {
-                    opacity: 1 !important;
-                    transition: opacity 0.5s 0.1s ease-in !important;
-                }
-                .mini-card:hover img {
-                    transition: opacity 0.3s ease-in !important;
-                    opacity: 1 !important;
-                }
-                
-                /* ASQ book dark background for white logo */
-                #books-component-container-full .books__item:last-child .books__image,
-                #books-component-container-full [data-book-title="ASQ Certification"] .books__image,
-                #books-component-container-full .books__item:nth-child(6) .books__image {
-                    background-color: #2c3e50 !important;
-                }
-                
-                /* Force ASQ book background with higher specificity */
-                #books-component-container-full .books-wrapper .books__item:last-child .books__image {
-                    background-color: #2c3e50 !important;
-                }
-                
-                /* Even more specific targeting for ASQ book */
-                #books-component-container-full .books-wrapper .books__item:nth-child(6) .books__image,
-                #books-component-container-full .books-wrapper .books__item:last-child .books__image,
-                #books-component-container-full .books-wrapper .books__item[data-book-title="ASQ Certification"] .books__image {
-                    background-color: #2c3e50 !important;
-                    background: #2c3e50 !important;
-                }
-                
-                /* Target the img element inside ASQ book */
-                #books-component-container-full .books-wrapper .books__item:last-child .books__image img {
-                    background-color: #2c3e50 !important;
-                    background: #2c3e50 !important;
-                }
-                
-                /* Nuclear option - target everything ASQ related */
-                #books-component-container-full .books__item:last-child,
-                #books-component-container-full .books__item:last-child .books__container,
-                #books-component-container-full .books__item:last-child .books__cover,
-                #books-component-container-full .books__item:last-child .books__image,
-                #books-component-container-full .books__item:last-child .books__image img {
-                    background-color: #2c3e50 !important;
-                    background: #2c3e50 !important;
-                }
-                
-                /* Color customization for other books */
                 /* ASU book 1 - Sun Devil colors (maroon/gold) - keep maroon */
                 #books-component-container-full .books__item:nth-child(1) .books__image,
                 #books-component-container-full .books__item:nth-child(1) .books__image img {
@@ -918,16 +592,17 @@
                 
                 /* ASU book 2 - White background */
                 #books-component-container-full .books__item:nth-child(3) .books__image,
-                #books-component-container-full .books__item:nth-child(3) .books__image img {
+                #books-component-container-full .books__item:nth-child(3) .books__image img,
+                #books-component-container-full [src="./asu2.png"] {
                     background-color: #FFFFFF !important;
                     background: #FFFFFF !important;
                 }
                 
-                /* UOP book - Match logo color #e03718 */
+                /* UOP book - New color #e1391a */
                 #books-component-container-full .books__item:nth-child(4) .books__image,
                 #books-component-container-full .books__item:nth-child(4) .books__image img {
-                    background-color: #e03718 !important;
-                    background: #e03718 !important;
+                    background-color: #e1391a !important;
+                    background: #e1391a !important;
                 }
                 
                 /* Prosci book - White background */
@@ -939,16 +614,13 @@
                 
                 /* ICA book - Light gray and 60% width */
                 #books-component-container-full .books__item:nth-child(6) .books__image,
-                #books-component-container-full .books__item:nth-child(6) .books__image img {
+                #books-component-container-full .books__item:nth-child(6) .books__image img,
+                #books-component-container-full [data-book-title="ICA Certification"] .books__image,
+                #books-component-container-full [data-book-title="ICA Certification"] .books__image img {
                     background-color: #D3D3D3 !important;
                     background: #D3D3D3 !important;
                 }
-                
-                /* ICA book - 60% width */
-                #books-component-container-full .books__item:nth-child(6) .books__container {
-                    width: 60% !important;
-                }
-                
+
                 /* Make bookshelf wider to match book span */
                 #books-component-container-full .shelf {
                     width: 100% !important;
@@ -959,43 +631,6 @@
     </div>
 
     <script>
-        // Force ASQ book background color
-        document.addEventListener('DOMContentLoaded', function() {
-            // Force ASQ book background - try multiple times
-            function forceASQBackground() {
-                const asqBook = document.querySelector('#books-component-container-full [data-book-title="ASQ Certification"] .books__image');
-                const asqBookLast = document.querySelector('#books-component-container-full .books-wrapper .books__item:last-child .books__image');
-                const asqBookImg = document.querySelector('#books-component-container-full .books-wrapper .books__item:last-child .books__image img');
-                
-                if (asqBook) {
-                    asqBook.style.backgroundColor = '#2c3e50';
-                    asqBook.style.setProperty('background-color', '#2c3e50', 'important');
-                    asqBook.style.background = '#2c3e50';
-                    asqBook.style.setProperty('background', '#2c3e50', 'important');
-                }
-                
-                if (asqBookLast) {
-                    asqBookLast.style.backgroundColor = '#2c3e50';
-                    asqBookLast.style.setProperty('background-color', '#2c3e50', 'important');
-                    asqBookLast.style.background = '#2c3e50';
-                    asqBookLast.style.setProperty('background', '#2c3e50', 'important');
-                }
-                
-                if (asqBookImg) {
-                    asqBookImg.style.backgroundColor = '#2c3e50';
-                    asqBookImg.style.setProperty('background-color', '#2c3e50', 'important');
-                    asqBookImg.style.background = '#2c3e50';
-                    asqBookImg.style.setProperty('background', '#2c3e50', 'important');
-                }
-            }
-            
-            // Run immediately and after a delay
-            forceASQBackground();
-            setTimeout(forceASQBackground, 100);
-            setTimeout(forceASQBackground, 500);
-            setTimeout(forceASQBackground, 1000);
-        });
-        
         // Accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
             const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -1025,11 +660,21 @@
     <!-- Refracted Ball Component -->
     <script type="module" src="./refracted-ball.js"></script>
     
+    <!-- Blog Slider Libraries -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+    
     <!-- Books Component Libraries -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/CustomEase.min.js'></script>
     <script src='https://unpkg.com/split-type@0.3.4/umd/index.min.js'></script>
     <script src="./books-component.js"></script>
     <script src="./books-component-full.js"></script>
+    <script src="./education-books-component.js"></script>
+    
+    <!-- Resume Components -->
+    <script src="./blog-slider-resume.js"></script>
+
+
 </body>
 </html>

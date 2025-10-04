@@ -1,65 +1,8 @@
-/* Original idea and inspiration for the Book Cover Effect by https://codepen.io/realvjy */
+/* Isolated Education Books Component Styles */
+/* This file contains scoped styles specifically for the education section books component */
 
-:root {
-  /* Light mode variables */
-  --bg-color: #ffffff;
-  --text-color: #333333;
-  --title-color: #000000;
-  --overlay-text-color: rgba(0, 0, 0, 0.05);
-  --shelf-bg: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
-  --shelf-edge-top: rgba(255, 255, 255, 0.01);
-  --shelf-edge-bottom: rgba(0, 0, 0, 0.1);
-  --book-back-cover: #111111;
-  --book-page: #ffffff;
-  --book-page-border: rgba(0, 0, 0, 0.2);
-  --book-shadow: rgba(0, 0, 0, 0.15);
-  --book-shadow-strong: rgba(0, 0, 0, 0.35);
-  --side-book-bg: linear-gradient(to right, #444 0%, #666 50%, #444 100%);
-  --side-book-text: #f0f0f0;
-  --side-book-decoration: rgba(255, 255, 255, 0.3);
-  --toggle-dot: #333333;
-}
-
-.dark-mode {
-  /* Dark mode variables */
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --title-color: #ffffff;
-  --overlay-text-color: rgba(255, 255, 255, 0.05);
-  --shelf-bg: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
-  --shelf-edge-top: rgba(255, 255, 255, 0.03); /* Lighter in dark mode */
-  --shelf-edge-bottom: rgba(0, 0, 0, 0.3);
-  --book-back-cover: #ffffff; /* Changed to white in dark mode */
-  --book-page: #ffffff; /* Changed to white in dark mode */
-  --book-page-border: rgba(0, 0, 0, 0.2);
-  --book-shadow: rgba(0, 0, 0, 0.3);
-  --book-shadow-strong: rgba(0, 0, 0, 0.5);
-  --side-book-bg: linear-gradient(to right, #222 0%, #444 50%, #222 100%);
-  --side-book-text: #ffffff;
-  --side-book-decoration: rgba(255, 255, 255, 0.2);
-  --toggle-dot: #ffffff;
-}
-
-@font-face {
-  font-family: "Cabinet Grotesk";
-  font-style: normal;
-  font-weight: 800;
-  src: local("Cabinet Grotesk"),
-    url("https://fonts.cdnfonts.com/s/85514/CabinetGrotesk-Extrabold.woff")
-      format("woff");
-}
-
-@font-face {
-  font-family: "Cabinet Grotesk";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Cabinet Grotesk"),
-    url("https://fonts.cdnfonts.com/s/85514/CabinetGrotesk-Medium.woff")
-      format("woff");
-}
-
-/* Books component container styles */
-#books-component-container {
+/* Education books component container styles */
+#books-component-container-education.education-books-isolated {
   background-color: var(--bg-color);
   margin: 0;
   padding: 0;
@@ -76,8 +19,8 @@
   position: relative;
 }
 
-/* Theme toggle dot */
-.theme-toggle {
+/* Education theme toggle dot */
+#books-component-container-education .education-theme-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -90,8 +33,8 @@
   transition: background-color 0.3s ease;
 }
 
-/* Big centered text that appears on hover */
-.book-title-overlay {
+/* Education big centered text that appears on hover */
+#books-component-container-education .book-title-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -106,7 +49,7 @@
   pointer-events: none;
 }
 
-.book-title-text {
+#books-component-container-education .book-title-text {
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 800;
   font-size: 20rem;
@@ -118,8 +61,8 @@
   transition: color 0.5s ease;
 }
 
-/* Shelf container to manage stacking context */
-.shelf-container {
+/* Education shelf container to manage stacking context */
+#books-component-container-education .shelf-container {
   position: relative;
   width: 100%;
   height: 350px; /* Reduced height for testing area */
@@ -130,7 +73,7 @@
   /* Above the text overlay */
 }
 
-.shelf {
+#books-component-container-education .shelf {
   display: block;
   position: absolute;
   bottom: 120px; /* Adjusted for testing area */
@@ -152,8 +95,8 @@
   transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Add a subtle edge to the shelf */
-.shelf:after {
+/* Add a subtle edge to the education shelf */
+#books-component-container-education .shelf:after {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -164,7 +107,7 @@
   transition: background-color 0.5s ease;
 }
 
-.shelf:before {
+#books-component-container-education .shelf:before {
   content: "";
   position: absolute;
   top: -2px;
@@ -175,8 +118,8 @@
   transition: background-color 0.5s ease;
 }
 
-/* Books wrapper */
-.books-wrapper {
+/* Education books wrapper */
+#books-component-container-education .books-wrapper {
   position: absolute;
   bottom: 137px; /* Adjusted to match new shelf position */
   left: 50%;
@@ -189,27 +132,27 @@
   /* Below the shelf */
 }
 
-/* Book Item Styles */
-.books__item {
+/* Education Book Item Styles */
+#books-component-container-education .books__item {
   text-align: center;
   cursor: default;
   height: 160px; /* Reduced height for testing area */
 }
 
-.books__container {
+#books-component-container-education .books__container {
   position: relative;
   width: 120px; /* Reduced width for testing area */
   margin: 0 auto;
   height: 100%;
 }
 
-.books__cover {
+#books-component-container-education .books__cover {
   position: relative;
   will-change: transform;
   height: 100%;
 }
 
-.books__hitbox {
+#books-component-container-education .books__hitbox {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -219,8 +162,8 @@
   cursor: pointer;
 }
 
-/* Back Cover: 96% with 2% margin */
-.books__back-cover {
+/* Education Back Cover: 96% with 2% margin */
+#books-component-container-education .books__back-cover {
   position: absolute;
   width: 96%;
   height: 96%;
@@ -233,8 +176,8 @@
   transition: background 0.5s ease;
 }
 
-/* Paper Container: 90% with equal top/bottom margin */
-.books__inside {
+/* Education Paper Container: 90% with equal top/bottom margin */
+#books-component-container-education .books__inside {
   position: absolute;
   width: 90%;
   height: 94%;
@@ -243,8 +186,8 @@
   z-index: 0;
 }
 
-/* Paper Pages: height is 100% */
-.books__page {
+/* Education Paper Pages: height is 100% */
+#books-component-container-education .books__page {
   position: absolute;
   top: 0;
   right: 0;
@@ -259,8 +202,8 @@
   transition: background 0.5s ease, border-color 0.5s ease;
 }
 
-/* Front Cover Image */
-.books__image {
+/* Education Front Cover Image */
+#books-component-container-education .books__image {
   line-height: 0;
   position: relative;
   border-radius: 2px 6px 6px 2px;
@@ -274,7 +217,7 @@
   transition: box-shadow 0.5s ease;
 }
 
-.books__image img {
+#books-component-container-education .books__image img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain; /* Changed from cover to contain for logos */
@@ -285,27 +228,21 @@
 }
 
 /* Reduce size of specific logos except CIC */
-[data-book-title*="Arizona State"] .books__image img,
-[data-book-title*="University of Phoenix"] .books__image img,
-[data-book-title*="Prosci"] .books__image img,
-[data-book-title*="ASQ"] .books__image img {
+#books-component-container-education [data-book-title*="Arizona State"] .books__image img,
+#books-component-container-education [data-book-title*="University of Phoenix"] .books__image img,
+#books-component-container-education [data-book-title*="Prosci"] .books__image img,
+#books-component-container-education [data-book-title*="ASQ"] .books__image img {
   transform: scale(0.7); /* Reduce size to 70% */
   transform-origin: center;
 }
 
 /* Keep CIC (Cultural Affairs) at original size */
-[data-book-title*="Cultural Affairs"] .books__image img {
+#books-component-container-education [data-book-title*="Cultural Affairs"] .books__image img {
   transform: scale(1); /* Keep original size */
   transform-origin: center;
 }
 
-/* ASQ book dark background for white logo */
-#books-component-container-full .books__item:last-child .books__image,
-#books-component-container-full [data-book-title="ASQ Certification"] .books__image {
-  background-color: #2c3e50 !important;
-}
-
-.books__effect {
+#books-component-container-education .books__effect {
   position: absolute;
   width: 24px;
   height: 100%;
@@ -323,7 +260,7 @@
   will-change: margin-left;
 }
 
-.books__light {
+#books-component-container-education .books__light {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -345,8 +282,8 @@
   will-change: opacity;
 }
 
-/* Side view book styles */
-.side-book {
+/* Education side view book styles */
+#books-component-container-education .side-book {
   height: 160px; /* Reduced height for testing area */
   width: 25px; /* Reduced width for testing area */
   /* Thin width for side view */
@@ -360,7 +297,7 @@
   transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-.side-book__title {
+#books-component-container-education .side-book__title {
   position: absolute;
   top: 0;
   left: 0;
@@ -383,7 +320,7 @@
   transition: color 0.5s ease;
 }
 
-.side-book__decoration {
+#books-component-container-education .side-book__decoration {
   position: absolute;
   top: 20px;
   left: 50%;
@@ -394,13 +331,13 @@
   transition: background-color 0.5s ease;
 }
 
-.side-book__decoration:nth-child(2) {
+#books-component-container-education .side-book__decoration:nth-child(2) {
   top: auto;
   bottom: 20px;
 }
 
-/* Contact shadow where book meets shelf */
-.book-shadow {
+/* Education contact shadow where book meets shelf */
+#books-component-container-education .book-shadow {
   position: absolute;
   bottom: 135px; /* Adjusted to match new shelf position */
   left: 50%;
@@ -413,7 +350,7 @@
   /* Between books and shelf */
 }
 
-.book-shadow__item {
+#books-component-container-education .book-shadow__item {
   width: 90px; /* Reduced width for testing area */
   height: 2px;
   background: radial-gradient(
@@ -426,12 +363,12 @@
   transition: background 0.5s ease;
 }
 
-.book-shadow__item.side {
+#books-component-container-education .book-shadow__item.side {
   width: 20px; /* Reduced width for testing area */
 }
 
-/* Book descriptions */
-.book-descriptions {
+/* Education book descriptions */
+#books-component-container-education .book-descriptions {
   position: absolute;
   bottom: 10px; /* Adjusted for testing area */
   left: 50%;
@@ -442,7 +379,7 @@
   height: 100px; /* Reduced height for testing area */
 }
 
-.book-description {
+#books-component-container-education .book-description {
   position: absolute;
   top: 0;
   left: 0;
@@ -457,12 +394,12 @@
   transition: opacity 0.3s ease, visibility 0.3s ease, color 0.5s ease;
 }
 
-.book-description.active {
+#books-component-container-education .book-description.active {
   opacity: 1;
   visibility: visible;
 }
 
-.book-description h3 {
+#books-component-container-education .book-description h3 {
   font-weight: 800;
   font-size: 1.3rem; /* Reduced font size for testing area */
   margin-bottom: 0.3rem; /* Reduced margin for testing area */
@@ -470,29 +407,29 @@
   transition: color 0.5s ease;
 }
 
-.book-description .author {
+#books-component-container-education .book-description .author {
   font-style: italic;
   opacity: 0.8;
   margin-bottom: 0.5rem; /* Reduced margin for testing area */
 }
 
-.book-description p {
+#books-component-container-education .book-description p {
   margin-bottom: 0.75rem;
 }
 
-/* Split Type styles */
-.lines-animation {
+/* Education Split Type styles */
+#books-component-container-education .lines-animation {
   overflow: hidden;
 }
 
 /* Critical fix: Ensure each line has overflow hidden */
-.line {
+#books-component-container-education .line {
   overflow: hidden !important;
   display: block;
 }
 
 /* Ensure the line inner content has proper transform properties */
-.line .line-inner {
+#books-component-container-education .line .line-inner {
   display: block;
   transform: translateY(
     0
