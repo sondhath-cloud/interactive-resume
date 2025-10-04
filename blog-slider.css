@@ -120,7 +120,6 @@ body {
   transform: translateX(-10px);
   overflow: hidden;
 }
-/* Filter overlay removed - images will show without tint */
 .blog-slider__img img {
   width: 100%;
   height: 100%;

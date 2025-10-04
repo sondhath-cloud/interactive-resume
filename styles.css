@@ -28,8 +28,8 @@ body {
 
 /* Resume Container */
 .resume-container {
-    max-width: 1200px;
-    margin: 20px auto;
+    width: 100%;
+    margin: 30px 0;
     background-color: var(--white);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -39,7 +39,7 @@ body {
 
 /* Left Column */
 .left-column {
-    width: 35%;
+    width: 40%;
     background-color: var(--light-gray);
     padding: 0;
     display: flex;
@@ -531,45 +531,19 @@ body {
     transition: width 0.3s ease;
 }
 
-/* Right Edge Strip */
-.right-strip {
-    width: 5%;
-    background-color: var(--darker-gray);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.strip-content {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-align: center;
-    line-height: 2;
-}
-
-.strip-accent {
-    display: none;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .resume-container {
         flex-direction: column;
-        margin: 10px;
+        margin: 20px 0;
+        width: 100%;
     }
     
     .left-column, .right-column {
         width: 100%;
     }
     
-    .right-strip {
-        display: none;
-    }
     
     
     .interests-grid {
