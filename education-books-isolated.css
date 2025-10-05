@@ -60,11 +60,8 @@
         /* Subtle top highlight */ 0px -1px 1px rgba(255, 255, 255, 0.15),
     /* Close shadow */ 0px 2px 3px rgba(0, 0, 0, 0.12),
     /* Medium shadow */ 0px 5px 10px rgba(0, 0, 0, 0.08),
-    /* Larger shadow */ 0px 15px 20px rgba(0, 0, 0, 0.06),
-    /* Very large diffused shadow */ 0px 25px 30px rgba(0, 0, 0, 0.04),
-    /* Extra large ambient shadow */ 0px 40px 60px rgba(0, 0, 0, 0.2),
-    /* Massive soft shadow for dramatic effect */ 0px 60px 80px
-      rgba(0, 0, 0, 0.12);
+    /* Reduced larger shadow */ 0px 10px 15px rgba(0, 0, 0, 0.04),
+    /* Minimal diffused shadow */ 0px 15px 20px rgba(0, 0, 0, 0.02);
   transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -188,6 +185,8 @@
   will-change: transform, box-shadow;
   z-index: 10;
   transition: box-shadow 0.5s ease;
+  border: none; /* Remove any default borders */
+  outline: none; /* Remove focus outlines */
 }
 
 #books-component-container-top .books__image img {
@@ -282,54 +281,79 @@
   }
 }
 
-/* Green Tree Book - Green background with white tree */
-#books-component-container-top [data-book-index="top-edu-6"] .books__image {
-  background-color: #2E7D32 !important;
-  background: #2E7D32 !important;
-}
-
-#books-component-container-top [data-book-title="Environmental Leadership"] .books__image {
-  background-color: #2E7D32 !important;
-  background: #2E7D32 !important;
-}
-
-/* Tree icon styling */
-#books-component-container-top .tree-icon {
-  font-size: 24px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* INPUT Book - Blue background with white INPUT text */
+/* Wildcard Book - Blue background with white asterisk symbols */
 #books-component-container-top [data-book-index="top-edu-7"] .books__image {
   background-color: #1976D2 !important;
   background: #1976D2 !important;
+  border: none !important; /* Ensure no borders */
+  outline: none !important; /* Ensure no outlines */
 }
 
 #books-component-container-top [data-book-title="Data Analysis & Input Management"] .books__image {
   background-color: #1976D2 !important;
   background: #1976D2 !important;
+  border: none !important; /* Ensure no borders */
+  outline: none !important; /* Ensure no outlines */
 }
 
-/* INPUT text styling */
-#books-component-container-top .input-text {
-  font-size: 16px;
+/* Force remove all borders and outlines from wildcard book */
+#books-component-container-top [data-book-index="top-edu-7"] .books__image,
+#books-component-container-top [data-book-title="Data Analysis & Input Management"] .books__image,
+#books-component-container-top [data-book-index="top-edu-7"] .books__cover,
+#books-component-container-top [data-book-title="Data Analysis & Input Management"] .books__cover {
+  border: none !important;
+  outline: none !important;
+  box-shadow: var(--book-shadow) 10px -5px 20px, var(--book-shadow) 20px 0px 30px !important;
+}
+
+/* Remove focus outlines from all book elements */
+#books-component-container-top .books__item:focus,
+#books-component-container-top .books__image:focus,
+#books-component-container-top .books__hitbox:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+/* Comprehensive border removal for wildcard book */
+#books-component-container-top [data-book-index="top-edu-7"] *,
+#books-component-container-top [data-book-title="Data Analysis & Input Management"] * {
+  border: none !important;
+  outline: none !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  border-color: transparent !important;
+}
+
+/* Wildcard icon styling */
+#books-component-container-top .wildcard-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 48px;
+  color: black;
   font-weight: bold;
-  color: white;
+}
+
+#books-component-container-top .wildcard-icon i {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Wildcard text styling */
+#books-component-container-top .input-text {
+  font-size: 48px; /* Large size */
+  font-weight: bold;
+  color: black; /* Black color */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 100%;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  line-height: 1.1;
-  letter-spacing: 0.5px;
+  text-shadow: none; /* Remove text shadow for cleaner look */
+  line-height: 1;
+  letter-spacing: 0;
 }
 
 #books-component-container-top .books__effect {
@@ -442,11 +466,11 @@
 
 #books-component-container-top .book-shadow__item {
   width: 90px; /* Reduced width for testing area */
-  height: 2px;
+  height: 1px; /* Reduced height to minimize shadow */
   background: radial-gradient(
     ellipse at center,
     var(--book-shadow) 0%,
-    rgba(0, 0, 0, 0) 70%
+    rgba(0, 0, 0, 0) 50% /* Reduced spread to minimize shadow */
   );
   border-radius: 50%;
   will-change: width, opacity;
@@ -460,7 +484,7 @@
 /* Education book descriptions */
 #books-component-container-top .book-descriptions {
   position: absolute;
-  bottom: 10px; /* Adjusted for testing area */
+  bottom: 70px; /* Moved down by 40px from 110px */
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -472,7 +496,7 @@
 /* Responsive book descriptions */
 @media screen and (max-width: 768px) {
   #books-component-container-top .book-descriptions {
-    bottom: 20px; /* Move closer to bookshelf */
+    bottom: 80px; /* Moved down by 40px from 120px */
     max-width: 90%;
     height: auto;
     min-height: 80px;
@@ -481,7 +505,7 @@
 
 @media screen and (max-width: 576px) {
   #books-component-container-top .book-descriptions {
-    bottom: 15px; /* Even closer to bookshelf */
+    bottom: 75px; /* Moved down by 40px from 115px */
     max-width: 95%;
     height: auto;
     min-height: 70px;
