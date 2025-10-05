@@ -72,12 +72,8 @@ function initEducationSection(container, prefix, defaultBookId) {
 
     // Initialize education books component
     function initEducationBooks() {
-        // Set default open book for education
-        const defaultBook = container.querySelector(`#${defaultBookId}`);
-        if (defaultBook) {
-            const bookIndex = defaultBook.querySelector('.books__hitbox').getAttribute('data-book-index');
-            showEducationBookDescription(bookIndex);
-        }
+        // Show default description initially
+        showEducationBookDescription('default');
 
         // Add click event listeners to education books only
         educationBooks.forEach(book => {
