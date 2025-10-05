@@ -1,4 +1,3 @@
-// Text Drawing Component
 class TextDrawing {
     constructor(containerId) {
         this.container = document.getElementById(containerId);
@@ -10,11 +9,9 @@ class TextDrawing {
         this.angleDistortion = 0;
         this.mouse = {x: 0, y: 0, down: false};
         
-        // Text content - professional resume related text
-        this.letters = "Sondra Hathaway Organizational Developer Change Management Leadership Development Strategic Planning Team Building Process Improvement Quality Management Employee Engagement Digital Transformation Innovation Results Focused People Centric Scrappy Tech Savvy Just Do It Energy Adapting Trust Building Continuous Improvement Organizational Excellence";
+        this.letters = "people-centric    scrappy    tech-savvy   empathy   optimism   innovation   initiatvive   ";
         
-        // Color palette matching resume theme
-        this.colors = ["#27918F", "#90A998", "#549389", "#ED2A09"];
+        this.colors = ["#27918F", "#90A998", "#549389"];
         this.colorIndex = 0;
         
         this.init();
@@ -23,31 +20,24 @@ class TextDrawing {
     init() {
         console.log('Initializing text drawing component...');
         
-        // Create canvas element
         this.canvas = document.createElement('canvas');
         this.canvas.className = 'text-drawing-canvas';
         this.canvas.id = 'text-drawing-canvas';
         
-        // Add canvas to container
         this.container.appendChild(this.canvas);
         console.log('Canvas added to container');
         
-        // Get context
         this.context = this.canvas.getContext('2d');
         console.log('Canvas context obtained');
         
-        // Set canvas size
         this.resizeCanvas();
         
-        // Set initial background
         this.context.fillStyle = '#ffffff';
         this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
-        // Add event listeners
         this.addEventListeners();
         console.log('Event listeners added');
         
-        // Handle window resize
         window.addEventListener('resize', () => this.resizeCanvas());
         
         console.log('Text drawing component initialized successfully');
@@ -62,20 +52,17 @@ class TextDrawing {
         
         console.log('Canvas resized to:', this.canvas.width, 'x', this.canvas.height);
         
-        // Restore background after resize
         this.context.fillStyle = '#ffffff';
         this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
     }
     
     addEventListeners() {
-        // Mouse events
         this.canvas.addEventListener('mousemove', (e) => this.handleMouseMove(e));
         this.canvas.addEventListener('mousedown', (e) => this.handleMouseDown(e));
         this.canvas.addEventListener('mouseup', (e) => this.handleMouseUp(e));
         this.canvas.addEventListener('mouseout', (e) => this.handleMouseUp(e));
         this.canvas.addEventListener('dblclick', (e) => this.handleDoubleClick(e));
         
-        // Touch events for mobile
         this.canvas.addEventListener('touchstart', (e) => {
             e.preventDefault();
             const touch = e.touches[0];
@@ -119,7 +106,6 @@ class TextDrawing {
         
         console.log('Mouse position:', this.position.x, this.position.y);
         
-        // Hide info when drawing starts
         const info = document.querySelector('.text-drawing-info');
         if (info) {
             info.style.display = 'none';
@@ -131,15 +117,12 @@ class TextDrawing {
     }
     
     handleDoubleClick(event) {
-        // Clear canvas and restore background
         this.context.fillStyle = '#ffffff';
         this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
-        // Reset counter and color
         this.counter = 0;
         this.colorIndex = 0;
         
-        // Show info again
         const info = document.querySelector('.text-drawing-info');
         if (info) {
             info.style.display = 'block';
@@ -197,11 +180,10 @@ class TextDrawing {
     }
 }
 
-// Initialize text drawing when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Add a small delay to ensure all styles are applied
+
     setTimeout(() => {
-        // Check if text drawing container exists
+
         const textDrawingContainer = document.getElementById('text-drawing-container');
         if (textDrawingContainer) {
             console.log('Text drawing container found, initializing...');

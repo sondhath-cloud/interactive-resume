@@ -13,6 +13,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Text Scramble Container -->
+    <div class="text-scramble-container">
+        <div id="scramble-text" class="scramble-text"></div>
+    </div>
+
     <!-- Header Container with Text Drawing -->
     <div class="header-container">
         <div id="text-drawing-container" class="text-drawing-container">
@@ -45,7 +50,6 @@
         <div class="column-3">
             <h3>ABOUT</h3>
             <div class="about-content">
-                <p>People-centric, scrappy, and tech-savvy creator with JDI (just do it) energy.</p>
                 <p>I pride myself on seeing around corners, earning trust, and not taking myself too seriously. I love starting from scratch, challenging the status quo, improving continuously, and results.</p>
             </div>
         </div>
@@ -271,309 +275,239 @@
         </div>
     </div>
 
+    <!-- Featured Projects Container -->
+    <div class="skills-container">
+        <div class="skills-content">
+            <h3 class="section-title">FEATURED PROJECTS</h3>
+            <div class="resume-blog-slider swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Project 1 -->
+                    <div class="resume-blog-slider__item swiper-slide">
+                        <div class="resume-blog-slider__img">
+                            <img src="./images/card1.jpeg" alt="Remote Work Technology Project">
+                        </div>
+                        <div class="resume-blog-slider__content">
+                            <span class="resume-blog-slider__code">2024</span>
+                            <div class="resume-blog-slider__title">Remote Work Technology Implementation</div>
+                            <div class="resume-blog-slider__text">Led digital transformation initiatives for seamless remote collaboration, implementing new technologies and change management strategies across multiple organizations.</div>
+                            <a href="#" class="resume-blog-slider__button" data-project="2">VIEW PROJECT</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="resume-blog-slider__item swiper-slide">
+                        <div class="resume-blog-slider__img">
+                            <img src="./images/card2.png" alt="Organizational Development Project">
+                        </div>
+                        <div class="resume-blog-slider__content">
+                            <span class="resume-blog-slider__code">2023</span>
+                            <div class="resume-blog-slider__title">Organizational Development Framework</div>
+                            <div class="resume-blog-slider__text">Designed and implemented comprehensive organizational development programs that improved employee engagement and reduced turnover by 25%.</div>
+                            <a href="#" class="resume-blog-slider__button" data-project="1">VIEW PROJECT</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="resume-blog-slider__item swiper-slide">
+                        <div class="resume-blog-slider__img">
+                            <img src="./images/card3.png" alt="Change Management Project">
+                        </div>
+                        <div class="resume-blog-slider__content">
+                            <span class="resume-blog-slider__code">2023</span>
+                            <div class="resume-blog-slider__title">Strategic Change Management Initiative</div>
+                            <div class="resume-blog-slider__text">Facilitated major organizational restructuring using Prosci ADKAR methodology, achieving 95% adoption rates and minimizing resistance.</div>
+                            <a href="#" class="resume-blog-slider__button" data-project="2">VIEW PROJECT</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="resume-blog-slider__item swiper-slide">
+                        <div class="resume-blog-slider__img">
+                            <img src="./images/card4.png" alt="Leadership Development Project">
+                        </div>
+                        <div class="resume-blog-slider__content">
+                            <span class="resume-blog-slider__code">2022</span>
+                            <div class="resume-blog-slider__title">Leadership Development Program</div>
+                            <div class="resume-blog-slider__text">Created and delivered leadership development workshops for 200+ executives, focusing on strategic planning and organizational transformation.</div>
+                            <a href="#" class="resume-blog-slider__button" data-project="3">VIEW PROJECT</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="resume-blog-slider__item swiper-slide">
+                        <div class="resume-blog-slider__img">
+                            <img src="./images/card5.png" alt="Quality Management Project">
+                        </div>
+                        <div class="resume-blog-slider__content">
+                            <span class="resume-blog-slider__code">2021</span>
+                            <div class="resume-blog-slider__title">Quality Management System</div>
+                            <div class="resume-blog-slider__text">Implemented ASQ-certified quality management frameworks that improved organizational performance and established continuous improvement processes.</div>
+                            <a href="#" class="resume-blog-slider__button" data-project="4">VIEW PROJECT</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-blog-slider__pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Popup Modal -->
+    <div id="project-popup" class="project-popup">
+        <div class="popup-overlay"></div>
+        <div class="popup-content">
+            <button class="popup-close">&times;</button>
+            <div class="popup-header">
+                <h3 class="popup-title"></h3>
+                <span class="popup-year"></span>
+            </div>
+            <div class="popup-body">
+                <div class="popup-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Project Image</p>
+                    </div>
+                </div>
+                <div class="popup-description">
+                    <h4>Project Overview</h4>
+                    <p class="popup-text"></p>
+                    <h4>Key Achievements</h4>
+                    <ul class="popup-achievements"></ul>
+                    <h4>Technologies & Methods</h4>
+                    <div class="popup-technologies"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="resume-container">
         <!-- Left Column -->
         <div class="left-column">
-            <!-- Profile Section -->
-            <div class="profile-section">
-                <div class="name-band">
-                    <h1 class="full-name">SONDRA HATHAWAY</h1>
-                    <h2 class="job-title">ORGANIZATIONAL DEVELOPER</h2>
-                </div>
-            </div>
-
-
-            <!-- Featured Projects Section -->
-            <div class="featured-projects-section">
-                <h3 class="section-title">FEATURED PROJECTS</h3>
-                <div class="resume-blog-slider swiper-container">
-                    <div class="swiper-wrapper">
-                        <!-- Project 1 -->
-                        <div class="resume-blog-slider__item swiper-slide">
-                            <div class="resume-blog-slider__img">
-                                <img src="./images/card1.jpeg" alt="Remote Work Technology Project">
-                            </div>
-                            <div class="resume-blog-slider__content">
-                                <span class="resume-blog-slider__code">2024</span>
-                                <div class="resume-blog-slider__title">Remote Work Technology Implementation</div>
-                                <div class="resume-blog-slider__text">Led digital transformation initiatives for seamless remote collaboration, implementing new technologies and change management strategies across multiple organizations.</div>
-                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
-                            </div>
+            <!-- Work Experience Cards -->
+            <div class="work-experience-cards">
+                <h3 class="section-title">WORK EXPERIENCE</h3>
+                <div class="experience-cards">
+                    <div class="experience-card" data-experience="0">
+                        <div class="experience-left">
+                            <h4 class="position">Senior Organizational Development Consultant</h4>
+                            <span class="date">2023-Present</span>
                         </div>
-
-                        <!-- Project 2 -->
-                        <div class="resume-blog-slider__item swiper-slide">
-                            <div class="resume-blog-slider__img">
-                                <img src="./images/card2.png" alt="Organizational Development Project">
-                            </div>
-                            <div class="resume-blog-slider__content">
-                                <span class="resume-blog-slider__code">2023</span>
-                                <div class="resume-blog-slider__title">Organizational Development Framework</div>
-                                <div class="resume-blog-slider__text">Designed and implemented comprehensive organizational development programs that improved employee engagement and reduced turnover by 25%.</div>
-                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
-                            </div>
-                        </div>
-
-                        <!-- Project 3 -->
-                        <div class="resume-blog-slider__item swiper-slide">
-                            <div class="resume-blog-slider__img">
-                                <img src="./images/card3.png" alt="Change Management Project">
-                            </div>
-                            <div class="resume-blog-slider__content">
-                                <span class="resume-blog-slider__code">2023</span>
-                                <div class="resume-blog-slider__title">Strategic Change Management Initiative</div>
-                                <div class="resume-blog-slider__text">Facilitated major organizational restructuring using Prosci ADKAR methodology, achieving 95% adoption rates and minimizing resistance.</div>
-                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
-                            </div>
-                        </div>
-
-                        <!-- Project 4 -->
-                        <div class="resume-blog-slider__item swiper-slide">
-                            <div class="resume-blog-slider__img">
-                                <img src="./images/card4.png" alt="Leadership Development Project">
-                            </div>
-                            <div class="resume-blog-slider__content">
-                                <span class="resume-blog-slider__code">2022</span>
-                                <div class="resume-blog-slider__title">Leadership Development Program</div>
-                                <div class="resume-blog-slider__text">Created and delivered leadership development workshops for 200+ executives, focusing on strategic planning and organizational transformation.</div>
-                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
-                            </div>
-                        </div>
-
-                        <!-- Project 5 -->
-                        <div class="resume-blog-slider__item swiper-slide">
-                            <div class="resume-blog-slider__img">
-                                <img src="./images/card5.png" alt="Quality Management Project">
-                            </div>
-                            <div class="resume-blog-slider__content">
-                                <span class="resume-blog-slider__code">2021</span>
-                                <div class="resume-blog-slider__title">Quality Management System</div>
-                                <div class="resume-blog-slider__text">Implemented ASQ-certified quality management frameworks that improved organizational performance and established continuous improvement processes.</div>
-                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
-                            </div>
+                        <div class="experience-right">
+                            <h5 class="company">Civic Innovation Consultants</h5>
+                            <p class="summary">Leading organizational transformation initiatives for government and nonprofit clients.</p>
                         </div>
                     </div>
-                    <div class="resume-blog-slider__pagination"></div>
+                    
+                    <div class="experience-card" data-experience="1">
+                        <div class="experience-left">
+                            <h4 class="position">Senior Change Management Consultant</h4>
+                            <span class="date">2020-2023</span>
+                        </div>
+                        <div class="experience-right">
+                            <h5 class="company">Berry-Dunn</h5>
+                            <p class="summary">Specialized in healthcare and government sector organizational change initiatives.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-card" data-experience="2">
+                        <div class="experience-left">
+                            <h4 class="position">Engagement and Development Director</h4>
+                            <span class="date">2017-2018</span>
+                        </div>
+                        <div class="experience-right">
+                            <h5 class="company">City of Garland</h5>
+                            <p class="summary">Directed employee engagement and professional development programs for municipal government.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-card" data-experience="3">
+                        <div class="experience-left">
+                            <h4 class="position">Senior Organizational Developer</h4>
+                            <span class="date">2017-2018</span>
+                        </div>
+                        <div class="experience-right">
+                            <h5 class="company">TXU Energy</h5>
+                            <p class="summary">Led organizational development initiatives for energy sector transformation.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-   
-            <!-- Bottom Bar -->
-            <div class="bottom-bar">
-                <span>WWW.SONDRAHATHAWAY.COM</span>
             </div>
         </div>
 
         <!-- Right Column -->
         <div class="right-column">
-            <!-- Work Experience Section -->
-            <div class="work-experience-section">
-                <h3 class="section-title">WORK EXPERIENCE</h3>
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <div class="experience-left">
-                                <h4 class="position">Senior Organizational Development Consultant</h4>
-                                <span class="date">2023-Present</span>
-                            </div>
-                            <div class="experience-right">
-                                <h5 class="company">Civic Innovation Consultants</h5>
-                                <p class="summary">Leading organizational transformation initiatives for government and nonprofit clients.</p>
-                            </div>
-                            <div class="accordion-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="accomplishments">
-                                <h6>Key Accomplishments:</h6>
-                                <ul>
-                                    <li>Developed and implemented change management strategies for 15+ organizations</li>
-                                    <li>Facilitated leadership development programs impacting 200+ executives</li>
-                                    <li>Reduced employee turnover by 25% through culture transformation initiatives</li>
-                                    <li>Led digital transformation projects with 95% adoption rates</li>
-                                </ul>
-                            </div>
+            <!-- Experience Details -->
+            <div class="experience-details">
+                <h3 class="section-title">EXPERIENCE DETAILS</h3>
+                <div class="details-content">
+                    <div class="experience-detail" data-detail="0">
+                        <div class="accomplishments">
+                            <h6>Key Accomplishments:</h6>
+                            <ul>
+                                <li>Developed and implemented change management strategies for 15+ organizations</li>
+                                <li>Facilitated leadership development programs impacting 200+ executives</li>
+                                <li>Reduced employee turnover by 25% through culture transformation initiatives</li>
+                                <li>Led digital transformation projects with 95% adoption rates</li>
+                            </ul>
                         </div>
                     </div>
                     
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <div class="experience-left">
-                                <h4 class="position">Senior Change Management Consultant</h4>
-                                <span class="date">2020-2023</span>
-                            </div>
-                            <div class="experience-right">
-                                <h5 class="company">Berry-Dunn</h5>
-                                <p class="summary">Specialized in healthcare and government sector organizational change initiatives.</p>
-                            </div>
-                            <div class="accordion-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="accomplishments">
-                                <h6>Key Tasks and Accomplishments:</h6>
-                                <ul>
-                                    <li>Lead the design and implementation of change management strategies for organizational initiatives, including technology adoption, policy updates, structural reorganization, and cultural change.
-                                        <li>Guide strategic planning efforts by facilitating visioning, environmental scans, stakeholder engagement, and alignment of goals with community needs and mandates.
-                                            <li>Coach leaders and teams through transitions, helping them build readiness, manage resistance, and embed new ways of working.
-                                                <li>Develop and deliver communication and engagement plans tailored to internal and external audiences.
-                                                    <li>Conduct impact assessments, readiness evaluations, and risk mitigation planning to support smooth execution of change initiatives.
-                                                        <li>Design and facilitate workshops, retreats, and cross-functional planning sessions.
-                                                            <li>Analyze organizational performance data to recommend improvements and track progress against strategic goals.
-                                                                <li>Ensure all work aligns with organizational values, equity goals, and legal and policy frameworks.
-                                                                    <li>Build strong relationships across departments, elected bodies, and community stakeholders to promote collaboration and trust.
-                                                                        <li>Support continuous improvement by documenting lessons learned and institutionalizing best practices.
-                                        
-                                </ul>
-                            </div>
+                    <div class="experience-detail" data-detail="1">
+                        <div class="accomplishments">
+                            <h6>Key Tasks and Accomplishments:</h6>
+                            <ul>
+                                <li>Lead the design and implementation of change management strategies for organizational initiatives, including technology adoption, policy updates, structural reorganization, and cultural change.</li>
+                                <li>Guide strategic planning efforts by facilitating visioning, environmental scans, stakeholder engagement, and alignment of goals with community needs and mandates.</li>
+                                <li>Coach leaders and teams through transitions, helping them build readiness, manage resistance, and embed new ways of working.</li>
+                                <li>Develop and deliver communication and engagement plans tailored to internal and external audiences.</li>
+                                <li>Conduct impact assessments, readiness evaluations, and risk mitigation planning to support smooth execution of change initiatives.</li>
+                                <li>Design and facilitate workshops, retreats, and cross-functional planning sessions.</li>
+                                <li>Analyze organizational performance data to recommend improvements and track progress against strategic goals.</li>
+                                <li>Ensure all work aligns with organizational values, equity goals, and legal and policy frameworks.</li>
+                                <li>Build strong relationships across departments, elected bodies, and community stakeholders to promote collaboration and trust.</li>
+                                <li>Support continuous improvement by documenting lessons learned and institutionalizing best practices.</li>
+                            </ul>
                         </div>
                     </div>
                     
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <div class="experience-left">
-                                <h4 class="position">Engagement and Development Director</h4>
-                                <span class="date">2017-2018</span>
-                            </div>
-                            <div class="experience-right">
-                                <h5 class="company">City of Garland</h5>
-                                <p class="summary">Directed employee engagement and professional development programs for municipal government.</p>
-                            </div>
-                            <div class="accordion-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="accomplishments">
-                                <h6>Key Tasks and Accomplishments:</h6>
-                                <ul>
-                                    <li>Designed and launched a succession planning framework for critical positions, increasing leadership bench strength and reducing vacancy fill times by 15%.</li> 
-                                    <li>Provided guidance on employee relations to 60 supervisors.</li>
-                                     <li>Coordinated and delivered new employee orientation for 150 new hires annually, resulting in a 12% increase in first-year retention.</li>
-                                      <li>Directed a learning and development team that designed and delivered training to 2,000 employees, achieving an average satisfaction score of 4.6/5 and contributing to a 10% improvement in performance outcomes.</li> 
-                                     <li>Facilitated quarterly development sessions for 75 supervisors, with 85% reporting increased confidence in leadership skills.</li>
-                                      <li>Implemented and analyzed an employee engagement survey with 72% participation, using statistical tools to identify key drivers of engagement and leading to a 9% improvement in engagement scores year-over-year.</li>
-                                      <li>Led HR process improvement initiatives that streamlined talent strategies, reducing time-to-hire by 18 days and increasing internal mobility by 22%.</li> 
-                                      <li>Collaborated on annual recognition programs, charitable fundraising campaigns, and well-being initiatives, achieving 65% employee participation and strengthening organizational culture.</li>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="experience-detail" data-detail="2">
+                        <div class="accomplishments">
+                            <h6>Key Tasks and Accomplishments:</h6>
+                            <ul>
+                                <li>Designed and launched a succession planning framework for critical positions, increasing leadership bench strength and reducing vacancy fill times by 15%.</li> 
+                                <li>Provided guidance on employee relations to 60 supervisors.</li>
+                                <li>Coordinated and delivered new employee orientation for 150 new hires annually, resulting in a 12% increase in first-year retention.</li>
+                                <li>Directed a learning and development team that designed and delivered training to 2,000 employees, achieving an average satisfaction score of 4.6/5 and contributing to a 10% improvement in performance outcomes.</li> 
+                                <li>Facilitated quarterly development sessions for 75 supervisors, with 85% reporting increased confidence in leadership skills.</li>
+                                <li>Implemented and analyzed an employee engagement survey with 72% participation, using statistical tools to identify key drivers of engagement and leading to a 9% improvement in engagement scores year-over-year.</li>
+                                <li>Led HR process improvement initiatives that streamlined talent strategies, reducing time-to-hire by 18 days and increasing internal mobility by 22%.</li> 
+                                <li>Collaborated on annual recognition programs, charitable fundraising campaigns, and well-being initiatives, achieving 65% employee participation and strengthening organizational culture.</li>
+                            </ul>
                         </div>
                     </div>
                     
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <div class="experience-left">
-                                <h4 class="position">Senior Organizational Developer</h4>
-                                <span class="date">2017-2018</span>
-                            </div>
-                            <div class="experience-right">
-                                <h5 class="company">TXU Energy</h5>
-                                <p class="summary">Led organizational development initiatives for energy sector transformation.</p>
-                            </div>
-                            <div class="accordion-toggle">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
+                    <div class="experience-detail" data-detail="3">
+                        <div class="accomplishments">
+                            <h6>Key Accomplishments:</h6>
+                            <ul>
+                                <li>Designed and delivered change management for major restructuring</li>
+                                <li>Facilitated cross-functional team development workshops</li>
+                                <li>Implemented performance management system for 2,000+ employees</li>
+                                <li>Led culture assessment and improvement initiatives</li>
+                            </ul>
                         </div>
-                        <div class="accordion-content">
-                            <div class="accomplishments">
-                                <h6>Key Accomplishments:</h6>
-                                <ul>
-                                    <li>Designed and delivered change management for major restructuring</li>
-                                    <li>Facilitated cross-functional team development workshops</li>
-                                    <li>Implemented performance management system for 2,000+ employees</li>
-                                    <li>Led culture assessment and improvement initiatives</li>
-                                </ul>
-                            </div>
-                        </div>
+                    </div>
+                    
+                    <!-- Default state when no card is selected -->
+                    <div class="experience-detail default-detail">
+                        <p>Click on a work experience card to view detailed accomplishments and tasks.</p>
                     </div>
                 </div>
             </div>
 
 
 
-            <!-- Miniature Animated Cards Section -->
-            <div class="miniature-cards-section">
-                <h3 class="section-title">INTERESTS</h3>
-                <div class="cards-container" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 20px;">
-                    <!-- Music Card -->
-                    <div class="mini-card" style="width: 150px; height: 225px; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; color: #f0f0f0; box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);">
-                        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="Distant stage with lights" style="position: absolute; object-fit: cover; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.9; transition: opacity 0.2s ease-out;">
-                        <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; transition: all 0.3s 0.3s ease-out; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; font-size: 25px; text-align: center;">
-                            Music
-                        </h2>
-                        <p style="position: absolute; opacity: 0; max-width: 80%; transition: opacity 0.3s ease-out; inset: auto auto 20px 15px; font-size: 24px; line-height: 1.2; font-weight: bold;">
-                            Playing the drums
-                        </p>
-                    </div>
-                    
-                    <!-- Garden Card -->
-                    <div class="mini-card" style="width: 150px; height: 225px; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; color: #f0f0f0; box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);">
-                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="Green sunny vegetable garden" style="position: absolute; object-fit: cover; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.9; transition: opacity 0.2s ease-out;">
-                        <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; transition: all 0.3s 0.3s ease-out; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; font-size: 25px; text-align: center;">
-                            Garden
-                        </h2>
-                        <p style="position: absolute; opacity: 0; max-width: 80%; transition: opacity 0.3s ease-out; inset: auto auto 20px 15px; font-size: 24px; line-height: 1.2; font-weight: bold;">
-                            Tomatoes and berries
-                        </p>
-                    </div>
-                    
-                    <!-- Design Card -->
-                    <div class="mini-card" style="width: 150px; height: 225px; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; color: #f0f0f0; box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="Computer screen with ASCII" style="position: absolute; object-fit: cover; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.9; transition: opacity 0.2s ease-out;">
-                        <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; transition: all 0.3s 0.3s ease-out; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; font-size: 25px; text-align: center;">
-                            Design
-                        </h2>
-                        <p style="position: absolute; opacity: 0; max-width: 80%; transition: opacity 0.3s ease-out; inset: auto auto 20px 15px; font-size: 24px; line-height: 1.2; font-weight: bold;">
-                            Software development
-                        </p>
-                    </div>
-                    
-                    <!-- Cooking Card -->
-                    <div class="mini-card" style="width: 150px; height: 225px; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; color: #f0f0f0; box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="Cooking pot" style="position: absolute; object-fit: cover; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.9; transition: opacity 0.2s ease-out;">
-                        <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; transition: all 0.3s 0.3s ease-out; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; font-size: 25px; text-align: center;">
-                            Cooking
-                        </h2>
-                        <p style="position: absolute; opacity: 0; max-width: 80%; transition: opacity 0.3s ease-out; inset: auto auto 20px 15px; font-size: 24px; line-height: 1.2; font-weight: bold;">
-                            And eating
-                        </p>
-                    </div>
-                    
-                    <!-- Dogs Card -->
-                    <div class="mini-card" style="width: 150px; height: 225px; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; color: #f0f0f0; box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);">
-                        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="Yorkshire terrier" style="position: absolute; object-fit: cover; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.9; transition: opacity 0.2s ease-out;">
-                        <h2 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; transition: all 0.3s 0.3s ease-out; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; font-size: 25px; text-align: center;">
-                            Dogs
-                        </h2>
-                        <p style="position: absolute; opacity: 0; max-width: 80%; transition: opacity 0.3s ease-out; inset: auto auto 20px 15px; font-size: 24px; line-height: 1.2; font-weight: bold;">
-                            Esp. Chewy
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <style>
-            /* Miniature card hover effects */
-            .mini-card:hover h2 {
-                top: 20px !important;
-                left: 15px !important;
-                transform: none !important;
-                transition: all 0.3s ease-out !important;
-            }
-            .mini-card:hover p {
-                opacity: 1 !important;
-                transition: opacity 0.5s 0.1s ease-in !important;
-            }
-            .mini-card:hover img {
-                transition: opacity 0.3s ease-in !important;
-                opacity: 1 !important;
-            }
-        </style>
     </div>        
                     <!-- Theme toggle -->
                     <div class="theme-toggle" id="theme-toggle-full"></div>
@@ -627,29 +561,182 @@
     </div>
 
     <script>
-        // Accordion functionality
+        // Split-view work experience functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            console.log('DOM loaded, initializing work experience functionality...');
             
-            accordionHeaders.forEach(header => {
-                header.addEventListener('click', function() {
-                    const accordionItem = this.parentElement;
-                    const accordionContent = accordionItem.querySelector('.accordion-content');
-                    const isActive = accordionItem.classList.contains('active');
+            const experienceCards = document.querySelectorAll('.experience-card');
+            const experienceDetails = document.querySelectorAll('.experience-detail');
+            const defaultDetail = document.querySelector('.default-detail');
+            
+            console.log('Found cards:', experienceCards.length);
+            console.log('Found details:', experienceDetails.length);
+            console.log('Found default detail:', defaultDetail);
+            
+            experienceCards.forEach((card, index) => {
+                console.log(`Setting up card ${index}:`, card);
+                card.addEventListener('click', function() {
+                    console.log('Card clicked:', this);
+                    const experienceIndex = this.getAttribute('data-experience');
+                    console.log('Experience index:', experienceIndex);
                     
-                    // Close all other accordion items
-                    document.querySelectorAll('.accordion-item').forEach(item => {
-                        item.classList.remove('active');
-                        item.querySelector('.accordion-content').classList.remove('active');
-                    });
+                    // Remove active class from all cards
+                    experienceCards.forEach(c => c.classList.remove('active'));
                     
-                    // Toggle current item
-                    if (!isActive) {
-                        accordionItem.classList.add('active');
-                        accordionContent.classList.add('active');
+                    // Add active class to clicked card
+                    this.classList.add('active');
+                    
+                    // Hide all details (including default)
+                    experienceDetails.forEach(detail => detail.classList.remove('active'));
+                    
+                    // Find and show the corresponding detail
+                    const targetDetail = document.querySelector(`[data-detail="${experienceIndex}"]`);
+                    console.log('Target detail:', targetDetail);
+                    if (targetDetail) {
+                        targetDetail.classList.add('active');
+                        console.log('Showing detail for experience:', experienceIndex);
+                    } else {
+                        console.log('No target detail found for index:', experienceIndex);
+                        // Show default if no detail found
+                        if (defaultDetail) {
+                            defaultDetail.classList.add('active');
+                        }
                     }
                 });
             });
+        });
+        
+        // Project popup functionality
+        const projectData = [
+            {
+                title: "Remote Work Technology Implementation",
+                year: "2024",
+                description: "Led comprehensive digital transformation initiatives across multiple organizations, implementing cutting-edge remote collaboration technologies and change management strategies. This project revolutionized how teams work together in distributed environments.",
+                achievements: [
+                    "Deployed Microsoft Teams and Slack integrations for 500+ users",
+                    "Reduced meeting setup time by 60% through automated workflows",
+                    "Achieved 95% user adoption rate within 3 months",
+                    "Implemented security protocols reducing data breaches by 40%",
+                    "Created training programs for 200+ managers"
+                ],
+                technologies: ["Microsoft Teams", "Slack API", "Zoom SDK", "Change Management", "Training Development"]
+            },
+            {
+                title: "Organizational Development Framework",
+                year: "2023",
+                description: "Designed and implemented a comprehensive organizational development program that transformed company culture and significantly improved employee engagement metrics across multiple departments.",
+                achievements: [
+                    "Reduced employee turnover by 25% in first year",
+                    "Increased employee satisfaction scores from 3.2 to 4.6/5",
+                    "Implemented 360-degree feedback system for 300+ employees",
+                    "Created leadership development pipeline for 50+ managers",
+                    "Established quarterly culture assessment processes"
+                ],
+                technologies: ["Culture Assessment", "360 Feedback", "Leadership Development", "Employee Engagement", "Performance Management"]
+            },
+            {
+                title: "Strategic Change Management Initiative",
+                year: "2023",
+                description: "Facilitated major organizational restructuring using Prosci ADKAR methodology, ensuring smooth transitions and minimal resistance while maintaining operational excellence throughout the transformation process.",
+                achievements: [
+                    "Achieved 95% adoption rates for new processes",
+                    "Reduced change resistance by 70% through targeted communication",
+                    "Trained 150+ change champions across departments",
+                    "Completed restructuring 2 weeks ahead of schedule",
+                    "Maintained 98% customer satisfaction during transition"
+                ],
+                technologies: ["Prosci ADKAR", "Change Communication", "Stakeholder Management", "Training Design", "Process Mapping"]
+            },
+            {
+                title: "Leadership Development Program",
+                year: "2022",
+                description: "Created and delivered comprehensive leadership development workshops for executives, focusing on strategic planning, organizational transformation, and modern leadership practices in dynamic business environments.",
+                achievements: [
+                    "Delivered workshops to 200+ executives across 15 companies",
+                    "Improved leadership effectiveness scores by 35%",
+                    "Created mentorship program pairing 50 senior leaders with junior managers",
+                    "Developed custom leadership assessment tools",
+                    "Achieved 90% program completion rate"
+                ],
+                technologies: ["Executive Coaching", "Strategic Planning", "Mentorship Programs", "Leadership Assessment", "Workshop Design"]
+            },
+            {
+                title: "Quality Management System",
+                year: "2021",
+                description: "Implemented ASQ-certified quality management frameworks that significantly improved organizational performance and established robust continuous improvement processes across all operational areas.",
+                achievements: [
+                    "Achieved ISO 9001:2015 certification within 6 months",
+                    "Reduced process defects by 45%",
+                    "Implemented automated quality tracking systems",
+                    "Trained 100+ employees on quality standards",
+                    "Established monthly quality review processes"
+                ],
+                technologies: ["ISO 9001", "Quality Management", "Process Improvement", "Automation", "Training Systems"]
+            }
+        ];
+        
+        const popup = document.getElementById('project-popup');
+        const popupTitle = popup.querySelector('.popup-title');
+        const popupYear = popup.querySelector('.popup-year');
+        const popupText = popup.querySelector('.popup-text');
+        const popupAchievements = popup.querySelector('.popup-achievements');
+        const popupTechnologies = popup.querySelector('.popup-technologies');
+        const popupClose = popup.querySelector('.popup-close');
+        
+        // Add click listeners to all project buttons
+        document.querySelectorAll('.resume-blog-slider__button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const projectIndex = parseInt(this.getAttribute('data-project'));
+                const project = projectData[projectIndex];
+                
+                if (project) {
+                    // Populate popup content
+                    popupTitle.textContent = project.title;
+                    popupYear.textContent = project.year;
+                    popupText.textContent = project.description;
+                    
+                    // Clear and populate achievements
+                    popupAchievements.innerHTML = '';
+                    project.achievements.forEach(achievement => {
+                        const li = document.createElement('li');
+                        li.textContent = achievement;
+                        popupAchievements.appendChild(li);
+                    });
+                    
+                    // Clear and populate technologies
+                    popupTechnologies.innerHTML = '';
+                    project.technologies.forEach(tech => {
+                        const tag = document.createElement('span');
+                        tag.className = 'tech-tag';
+                        tag.textContent = tech;
+                        popupTechnologies.appendChild(tag);
+                    });
+                    
+                    // Show popup
+                    popup.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Close popup functionality
+        popupClose.addEventListener('click', function() {
+            popup.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        popup.querySelector('.popup-overlay').addEventListener('click', function() {
+            popup.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && popup.classList.contains('active')) {
+                popup.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
         });
     </script>
     
@@ -673,6 +760,9 @@
     
     <!-- Text Drawing Component -->
     <script src="./text-drawing.js"></script>
+    
+    <!-- Text Scramble Component -->
+    <script src="./text-scramble.js"></script>
     
 
 
