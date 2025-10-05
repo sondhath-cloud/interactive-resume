@@ -8,13 +8,52 @@
     <link rel="stylesheet" href="books-component.css">
     <link rel="stylesheet" href="education-books-isolated.css">
     <link rel="stylesheet" href="blog-slider-resume.css">
+    <link rel="stylesheet" href="text-drawing.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Header Container with Text Drawing -->
+    <div class="header-container">
+        <div id="text-drawing-container" class="text-drawing-container">
+            <div class="text-drawing-info">
+                <p>Click and drag to draw with text. Double-click to clear the canvas.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 Column Container -->
+    <div class="three-column-container">
+        <div class="column-1">
+            <h3>CONTACT</h3>
+            <div class="contact-info">
+                <p>sondrahathaway.com</p>
+                <p>+01 602 380 7231</p>
+                <p>sondra@sondrahathaway.com</p>
+                <p>Princeton, TX 75407</p>
+            </div>
+        </div>
+        <div class="column-2">
+            <div id="refracted-ball-container" style="width: 300px; height: 300px; border-radius: 8px; overflow: hidden;"></div>
+            <div class="pattern-controls" style="display: flex; gap: 5px; margin-top: 10px;">
+                <button onclick="switchPattern(1)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: var(--salmon); cursor: pointer;"></button>
+                <button onclick="switchPattern(2)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: transparent; cursor: pointer;"></button>
+                <button onclick="switchPattern(3)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: transparent; cursor: pointer;"></button>
+                <button onclick="switchPattern(4)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: transparent; cursor: pointer;"></button>
+            </div>
+        </div>
+        <div class="column-3">
+            <h3>ABOUT</h3>
+            <div class="about-content">
+                <p>People-centric, scrappy, and tech-savvy creator with JDI (just do it) energy.</p>
+                <p>I pride myself on seeing around corners, earning trust, and not taking myself too seriously. I love starting from scratch, challenging the status quo, improving continuously, and results.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Top Container 1 - Education and Certification Section -->
-    <div class="education-testing-area" style="margin: 30px 0; padding: 20px; background-color: #f8f9fa; border-radius: 8px; border: 1px solid #e9ecef;">
-        <h3 class="section-title" style="color: #495057; margin-bottom: 20px;">EDUCATION & CERTIFICATIONS</h3>
+    <div class="education-testing-area">
+        <h3 class="section-title" style="color: #495057; margin-bottom: 20px;">EDUCATION AND CERTIFICATIONS</h3>
         <div id="books-component-container-top" class="education-books-isolated" style="width: 100%; height: 400px; position: relative; overflow: hidden; background-color: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
             <!-- Theme toggle -->
             <div class="theme-toggle education-theme-toggle" id="theme-toggle-top"></div>
@@ -227,6 +266,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -237,51 +277,84 @@
         <div class="left-column">
             <!-- Profile Section -->
             <div class="profile-section">
-                <div class="profile-image" style="background-color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
-                    <div id="refracted-ball-container" style="width: 300px; height: 300px; border-radius: 8px; overflow: hidden;"></div>
-                    <div class="pattern-controls" style="display: flex; gap: 5px;">
-                        <button onclick="switchPattern(1)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: var(--salmon); cursor: pointer;"></button>
-                        <button onclick="switchPattern(2)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: transparent; cursor: pointer;"></button>
-                        <button onclick="switchPattern(3)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: transparent; cursor: pointer;"></button>
-                        <button onclick="switchPattern(4)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: transparent; cursor: pointer;"></button>
-                    </div>
-                </div>
                 <div class="name-band">
                     <h1 class="full-name">SONDRA HATHAWAY</h1>
                     <h2 class="job-title">ORGANIZATIONAL DEVELOPER</h2>
                 </div>
             </div>
 
-            <!-- Contact Section -->
-            <div class="contact-section">
-                <h3 class="section-title">CONTACT</h3>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <span>sondrahathaway.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+01 602 380 7231</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>sondra@sondrahathaway.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Princeton, TX 75407</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- About Section -->
-            <div class="about-section">
-                <h3 class="section-title">ABOUT</h3>
-                <div class="about-content">
-                    <p>People-centric, scrappy, and tech-savvy creator with JDI (just do it) energy.</p>
-            
-                    <p>I pride myself on adapting, earning trust, and not taking myself too seriously. I love starting from scratch, challenging the status quo, improving continuously, and results.</p>
+            <!-- Featured Projects Section -->
+            <div class="featured-projects-section">
+                <h3 class="section-title">FEATURED PROJECTS</h3>
+                <div class="resume-blog-slider swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- Project 1 -->
+                        <div class="resume-blog-slider__item swiper-slide">
+                            <div class="resume-blog-slider__img">
+                                <img src="./images/card1.jpeg" alt="Remote Work Technology Project">
+                            </div>
+                            <div class="resume-blog-slider__content">
+                                <span class="resume-blog-slider__code">2024</span>
+                                <div class="resume-blog-slider__title">Remote Work Technology Implementation</div>
+                                <div class="resume-blog-slider__text">Led digital transformation initiatives for seamless remote collaboration, implementing new technologies and change management strategies across multiple organizations.</div>
+                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="resume-blog-slider__item swiper-slide">
+                            <div class="resume-blog-slider__img">
+                                <img src="./images/card2.png" alt="Organizational Development Project">
+                            </div>
+                            <div class="resume-blog-slider__content">
+                                <span class="resume-blog-slider__code">2023</span>
+                                <div class="resume-blog-slider__title">Organizational Development Framework</div>
+                                <div class="resume-blog-slider__text">Designed and implemented comprehensive organizational development programs that improved employee engagement and reduced turnover by 25%.</div>
+                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="resume-blog-slider__item swiper-slide">
+                            <div class="resume-blog-slider__img">
+                                <img src="./images/card3.png" alt="Change Management Project">
+                            </div>
+                            <div class="resume-blog-slider__content">
+                                <span class="resume-blog-slider__code">2023</span>
+                                <div class="resume-blog-slider__title">Strategic Change Management Initiative</div>
+                                <div class="resume-blog-slider__text">Facilitated major organizational restructuring using Prosci ADKAR methodology, achieving 95% adoption rates and minimizing resistance.</div>
+                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="resume-blog-slider__item swiper-slide">
+                            <div class="resume-blog-slider__img">
+                                <img src="./images/card4.png" alt="Leadership Development Project">
+                            </div>
+                            <div class="resume-blog-slider__content">
+                                <span class="resume-blog-slider__code">2022</span>
+                                <div class="resume-blog-slider__title">Leadership Development Program</div>
+                                <div class="resume-blog-slider__text">Created and delivered leadership development workshops for 200+ executives, focusing on strategic planning and organizational transformation.</div>
+                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="resume-blog-slider__item swiper-slide">
+                            <div class="resume-blog-slider__img">
+                                <img src="./images/card5.png" alt="Quality Management Project">
+                            </div>
+                            <div class="resume-blog-slider__content">
+                                <span class="resume-blog-slider__code">2021</span>
+                                <div class="resume-blog-slider__title">Quality Management System</div>
+                                <div class="resume-blog-slider__text">Implemented ASQ-certified quality management frameworks that improved organizational performance and established continuous improvement processes.</div>
+                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resume-blog-slider__pagination"></div>
                 </div>
             </div>
 
@@ -420,79 +493,6 @@
                 </div>
             </div>
 
-            <!-- Featured Projects Section -->
-            <div class="featured-projects-section">
-                <h3 class="section-title">FEATURED PROJECTS</h3>
-                <div class="resume-blog-slider swiper-container">
-                    <div class="swiper-wrapper">
-                        <!-- Project 1 -->
-                        <div class="resume-blog-slider__item swiper-slide">
-                            <div class="resume-blog-slider__img">
-                                <img src="./images/card1.jpeg" alt="Remote Work Technology Project">
-                            </div>
-                            <div class="resume-blog-slider__content">
-                                <span class="resume-blog-slider__code">2024</span>
-                                <div class="resume-blog-slider__title">Remote Work Technology Implementation</div>
-                                <div class="resume-blog-slider__text">Led digital transformation initiatives for seamless remote collaboration, implementing new technologies and change management strategies across multiple organizations.</div>
-                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
-                            </div>
-                        </div>
-
-                        <!-- Project 2 -->
-                        <div class="resume-blog-slider__item swiper-slide">
-                            <div class="resume-blog-slider__img">
-                                <img src="./images/card2.png" alt="Organizational Development Project">
-                            </div>
-                            <div class="resume-blog-slider__content">
-                                <span class="resume-blog-slider__code">2023</span>
-                                <div class="resume-blog-slider__title">Organizational Development Framework</div>
-                                <div class="resume-blog-slider__text">Designed and implemented comprehensive organizational development programs that improved employee engagement and reduced turnover by 25%.</div>
-                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
-                            </div>
-                        </div>
-
-                        <!-- Project 3 -->
-                        <div class="resume-blog-slider__item swiper-slide">
-                            <div class="resume-blog-slider__img">
-                                <img src="./images/card3.png" alt="Change Management Project">
-                            </div>
-                            <div class="resume-blog-slider__content">
-                                <span class="resume-blog-slider__code">2023</span>
-                                <div class="resume-blog-slider__title">Strategic Change Management Initiative</div>
-                                <div class="resume-blog-slider__text">Facilitated major organizational restructuring using Prosci ADKAR methodology, achieving 95% adoption rates and minimizing resistance.</div>
-                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
-                            </div>
-                        </div>
-
-                        <!-- Project 4 -->
-                        <div class="resume-blog-slider__item swiper-slide">
-                            <div class="resume-blog-slider__img">
-                                <img src="./images/card4.png" alt="Leadership Development Project">
-                            </div>
-                            <div class="resume-blog-slider__content">
-                                <span class="resume-blog-slider__code">2022</span>
-                                <div class="resume-blog-slider__title">Leadership Development Program</div>
-                                <div class="resume-blog-slider__text">Created and delivered leadership development workshops for 200+ executives, focusing on strategic planning and organizational transformation.</div>
-                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
-                            </div>
-                        </div>
-
-                        <!-- Project 5 -->
-                        <div class="resume-blog-slider__item swiper-slide">
-                            <div class="resume-blog-slider__img">
-                                <img src="./images/card5.png" alt="Quality Management Project">
-                            </div>
-                            <div class="resume-blog-slider__content">
-                                <span class="resume-blog-slider__code">2021</span>
-                                <div class="resume-blog-slider__title">Quality Management System</div>
-                                <div class="resume-blog-slider__text">Implemented ASQ-certified quality management frameworks that improved organizational performance and established continuous improvement processes.</div>
-                                <a href="#" class="resume-blog-slider__button">VIEW PROJECT</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="resume-blog-slider__pagination"></div>
-                </div>
-            </div>
 
 
             <!-- Miniature Animated Cards Section -->
@@ -573,13 +573,12 @@
                 transition: opacity 0.3s ease-in !important;
                 opacity: 1 !important;
             }
-
-
+        </style>
     </div>        
                     <!-- Theme toggle -->
                     <div class="theme-toggle" id="theme-toggle-full"></div>
 
-            
+            <style>
                 /* ASU book 1 - Sun Devil colors (maroon/gold) - keep maroon */
                 #books-component-container-full .books__item:nth-child(1) .books__image,
                 #books-component-container-full .books__item:nth-child(1) .books__image img {
@@ -667,9 +666,13 @@
     <script src='https://unpkg.com/split-type@0.3.4/umd/index.min.js'></script>
     <script src="./books-component.js"></script>
     <script src="./books-component-full.js"></script>
+    <script src="./education-books-component.js"></script>
     
     <!-- Resume Components -->
     <script src="./blog-slider-resume.js"></script>
+    
+    <!-- Text Drawing Component -->
+    <script src="./text-drawing.js"></script>
     
 
 

@@ -18,9 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggle.style.color = isDarkTheme ? "#333" : "#fff";
   });
 
-  // Get the overlay elements
-  const overlay = booksContainer.querySelector(".book-title-overlay");
-  const overlayText = booksContainer.querySelector(".book-title-text");
 
   // Track the currently active book
   let activeBookIndex = 2; // Start with the University of Phoenix book (index 2)
@@ -60,13 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Play this book's animation
       timeline.play();
 
-      // Update the overlay text
-      overlayText.textContent = bookTitle;
-      gsap.to(overlay, {
-        opacity: 1,
-        duration: 0.3
-      });
-
       // Update the description
       updateDescription(index.toString());
     });
@@ -76,10 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Only reset if this is the currently active book
       if (activeBookIndex === index) {
         timeline.reverse();
-        gsap.to(overlay, {
-          opacity: 0,
-          duration: 0.3
-        });
       }
     });
   });
@@ -108,14 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Play side book hover animation
       sideBookTimeline.play();
 
-      // Show the side book title in the overlay
-      const sideBookTitle = sideBook.getAttribute("data-book-title");
-      overlayText.textContent = sideBookTitle;
-      gsap.to(overlay, {
-        opacity: 1,
-        duration: 0.3
-      });
-
       // Update the description
       updateDescription("side");
     });
@@ -124,10 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Reset side book animation
       if (activeBookIndex === "side") {
         sideBookTimeline.reverse();
-        gsap.to(overlay, {
-          opacity: 0,
-          duration: 0.3
-        });
       }
     });
   }
@@ -174,12 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
   activeBookIndex = 2;
   activeBookTimeline = bookTimelines[2];
 
-  // Show the default book title (no animation on load)
-  overlayText.textContent = defaultBookTitle;
-  gsap.to(overlay, {
-    opacity: 1,
-    duration: 0.3
-  });
 
   // Handle mouse leaving the entire shelf area
   document
@@ -196,12 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
       activeBookIndex = 2;
       activeBookTimeline = bookTimelines[2];
 
-      // Show the default book title in the overlay (no animation)
-      overlayText.textContent = defaultBookTitle;
-      gsap.to(overlay, {
-        opacity: 1,
-        duration: 0.3
-      });
 
       // Update the description to show the default book's description
       updateDescription("2");

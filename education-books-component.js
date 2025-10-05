@@ -2,17 +2,24 @@
 // This script handles only the education section books component to prevent interference with other instances
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Education books component script loaded');
+    
     // Target both education books components
     const educationContainer = document.getElementById('books-component-container-education');
     const topEducationContainer = document.getElementById('books-component-container-top');
     
+    console.log('Education container:', educationContainer);
+    console.log('Top education container:', topEducationContainer);
+    
     // Initialize education section if it exists
     if (educationContainer) {
+        console.log('Initializing education section');
         initEducationSection(educationContainer, 'edu-', 'default-open-book-education');
     }
     
     // Initialize top education section if it exists
     if (topEducationContainer) {
+        console.log('Initializing top education section');
         initEducationSection(topEducationContainer, 'top-edu-', 'default-open-book-top');
     }
 });
@@ -28,31 +35,38 @@ function initEducationSection(container, prefix, defaultBookId) {
     const educationBookData = {
         [`${prefix}0`]: {
             title: 'Arizona State University',
-            description: 'Bachelor of Science in Psychology'
+            description: 'Bachelor of Science in Psychology',
+            detailText: 'Comprehensive study of human behavior, cognition, and mental processes. Developed strong analytical and research skills.'
         },
         [`${prefix}side`]: {
             title: prefix === 'edu-' ? 'Cultural Affairs' : 'Education',
-            description: 'Master of Business Administration'
+            description: 'Master of Business Administration',
+            detailText: 'Advanced business education focusing on leadership, strategy, and organizational development.'
         },
         [`${prefix}1`]: {
             title: 'Arizona State University',
-            description: 'Master of Business Administration'
+            description: 'Master of Business Administration',
+            detailText: 'Comprehensive business education with focus on strategic management, leadership development, and organizational transformation.'
         },
         [`${prefix}2`]: {
             title: 'University of Phoenix',
-            description: 'Master of Business Administration'
+            description: 'Master of Business Administration',
+            detailText: 'Advanced business education focusing on leadership, strategy, and organizational development.'
         },
         [`${prefix}3`]: {
             title: 'Prosci Certification',
-            description: 'Change Management Professional'
+            description: 'Change Management Professional',
+            detailText: 'Certified in Prosci\'s ADKAR methodology for change management, enabling effective organizational transformation and change leadership.'
         },
         [`${prefix}4`]: {
             title: 'ICA Certification',
-            description: 'International Coaching Academy'
+            description: 'International Coaching Academy',
+            detailText: 'Professional coaching certification focused on leadership development, team dynamics, and organizational effectiveness.'
         },
         [`${prefix}5`]: {
             title: 'ASQ Certification',
-            description: 'American Society for Quality'
+            description: 'American Society for Quality',
+            detailText: 'Quality management and process improvement certification demonstrating expertise in organizational excellence and continuous improvement methodologies.'
         }
     };
 
@@ -71,6 +85,7 @@ function initEducationSection(container, prefix, defaultBookId) {
                 const bookIndex = this.getAttribute('data-book-index');
                 showEducationBookDescription(bookIndex);
             });
+
         });
 
         // Add click event listener to education side book
@@ -79,6 +94,7 @@ function initEducationSection(container, prefix, defaultBookId) {
                 const bookIndex = this.getAttribute('data-book-index');
                 showEducationBookDescription(bookIndex);
             });
+
         }
 
         // Add theme toggle for education
@@ -102,17 +118,13 @@ function initEducationSection(container, prefix, defaultBookId) {
             selectedDesc.classList.add('active');
         }
 
-        // Update education title overlay
-        const titleOverlay = container.querySelector('.book-title-text');
-        if (titleOverlay && educationBookData[bookIndex]) {
-            titleOverlay.textContent = educationBookData[bookIndex].title;
-        }
     }
 
     // Toggle education theme
     function toggleEducationTheme() {
         container.classList.toggle('dark-mode');
     }
+
 
     // Initialize the education books component
     initEducationBooks();

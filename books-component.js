@@ -37,9 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Get the overlay elements
-  const overlay = document.querySelector(".book-title-overlay");
-  const overlayText = document.querySelector(".book-title-text");
 
   // Track the currently active book
   let activeBookIndex = 2; // Start with the University of Phoenix book (index 2)
@@ -180,13 +177,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // Play this book's animation
       hoverIn.play();
 
-      // Show the book title in the overlay
-      overlayText.textContent = bookTitle;
-      gsap.to(overlay, {
-        opacity: 1,
-        duration: 0.3
-      });
-
       // Update the description
       updateDescription(bookIndex);
     });
@@ -239,13 +229,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Play side book animation
     sideHoverIn.play();
 
-    // Show the book title in the overlay
-    overlayText.textContent = sideBookTitle;
-    gsap.to(overlay, {
-      opacity: 1,
-      duration: 0.3
-    });
-
     // Update the description
     updateDescription("side");
   });
@@ -262,13 +245,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Play the default book's animation
   bookTimelines[2].play();
-
-  // Show the default book title
-  overlayText.textContent = defaultBookTitle;
-  gsap.to(overlay, {
-    opacity: 1,
-    duration: 0.3
-  });
 
   // Handle mouse leaving the entire shelf area
   document
@@ -287,13 +263,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Play the default book's animation
       bookTimelines[2].play();
-
-      // Show the default book title in the overlay
-      overlayText.textContent = defaultBookTitle;
-      gsap.to(overlay, {
-        opacity: 1,
-        duration: 0.3
-      });
 
       // Update the description to show the default book's description
       updateDescription("2");

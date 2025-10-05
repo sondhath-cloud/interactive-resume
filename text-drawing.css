@@ -1,0 +1,64 @@
+/* Text Drawing Component Styles */
+.text-drawing-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    overflow: hidden;
+    background: #ffffff;
+    cursor: crosshair;
+}
+
+.text-drawing-canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.text-drawing-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #495057;
+    font-size: 14px;
+    font-family: Georgia, serif;
+    z-index: 10;
+    max-width: 280px;
+    line-height: 1.4;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.text-drawing-info h3 {
+    color: #ED2A09;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.text-drawing-info p {
+    margin: 0;
+    font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .text-drawing-info {
+        font-size: 12px;
+        padding: 10px;
+        max-width: 200px;
+    }
+    
+    .text-drawing-info h3 {
+        font-size: 14px;
+    }
+    
+    .text-drawing-info p {
+        font-size: 11px;
+    }
+}
