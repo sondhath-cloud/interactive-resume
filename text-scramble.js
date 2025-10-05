@@ -8,6 +8,7 @@ class TextScramble {
         this.frameRequest = null;
         
         this.phrases = [
+            'SONDRA HATHAWAY',
             'ORGANIZATIONAL DEVELOPER',
             'ARTIST',
             'CHANGE MANAGEMENT PRACTITIONER',

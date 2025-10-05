@@ -18,15 +18,6 @@
         <div id="scramble-text" class="scramble-text"></div>
     </div>
 
-    <!-- Header Container with Text Drawing -->
-    <div class="header-container">
-        <div id="text-drawing-container" class="text-drawing-container">
-            <div class="text-drawing-info">
-                <p>Click and drag to draw with text. Double-click to clear the canvas.</p>
-            </div>
-        </div>
-    </div>
-
     <!-- 3 Column Container -->
     <div class="three-column-container">
         <div class="column-1">
@@ -229,6 +220,26 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- New INPUT Book -->
+                    <div class="books__item">
+                        <div class="books__container">
+                            <div class="books__cover">
+                                <div class="books__back-cover"></div>
+                                <div class="books__inside">
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                </div>
+                                <div class="books__image">
+                                    <div class="input-text">INPUT<br>INPUT<br>INPUT</div>
+                                    <div class="books__effect"></div>
+                                    <div class="books__light"></div>
+                                </div>
+                                <div class="books__hitbox" data-book-index="top-edu-7" data-book-title="Data Analysis & Input Management"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="book-descriptions">
@@ -304,6 +315,14 @@
                         <div class="author">Sustainability & Green Initiatives</div>
                         <div class="lines-animation">
                             <p>Led environmental sustainability programs and green initiatives, promoting eco-friendly practices and environmental stewardship across organizations.</p>
+                        </div>
+                    </div>
+
+                    <div class="book-description" data-book-index="top-edu-7">
+                        <h3>Data Analysis & Input Management</h3>
+                        <div class="author">Information Processing & Systems</div>
+                        <div class="lines-animation">
+                            <p>Specialized expertise in data input management, information processing systems, and analytical frameworks for organizational decision-making and process optimization.</p>
                         </div>
                     </div>
                 </div>
@@ -712,6 +731,10 @@
                 technologies: ["ISO 9001", "Quality Management", "Process Improvement", "Automation", "Training Systems"]
             }
         ];
+
+
+
+        
         
         const popup = document.getElementById('project-popup');
         const popupTitle = popup.querySelector('.popup-title');
@@ -802,7 +825,12 @@
     <!-- Text Scramble Component -->
     <script src="./text-scramble.js"></script>
     
-
+    <!-- Text Drawing Container - At Bottom of Page -->
+    <div id="text-drawing-container-2" class="text-drawing-container">
+        <div class="text-drawing-info">
+            <p>Click and drag to draw with text. Double-click to clear the canvas.</p>
+        </div>
+    </div>
 
 </body>
 </html>

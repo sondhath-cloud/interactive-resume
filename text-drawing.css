@@ -1,12 +1,17 @@
-/* Text Drawing Component Styles */
+
 .text-drawing-container {
     position: relative;
     width: 100%;
-    height: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    height: 300px;
     min-height: 300px;
     overflow: hidden;
     background: #ffffff;
     cursor: crosshair;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .text-drawing-canvas {

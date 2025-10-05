@@ -184,13 +184,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(() => {
 
-        const textDrawingContainer = document.getElementById('text-drawing-container');
-        if (textDrawingContainer) {
-            console.log('Text drawing container found, initializing...');
-            console.log('Container dimensions:', textDrawingContainer.offsetWidth, 'x', textDrawingContainer.offsetHeight);
-            window.textDrawing = new TextDrawing('text-drawing-container');
+        // Initialize second text drawing container (at bottom of page)
+        const textDrawingContainer2 = document.getElementById('text-drawing-container-2');
+        if (textDrawingContainer2) {
+            console.log('Text drawing container 2 found, initializing...');
+            console.log('Container 2 dimensions:', textDrawingContainer2.offsetWidth, 'x', textDrawingContainer2.offsetHeight);
+            window.textDrawing2 = new TextDrawing('text-drawing-container-2');
         } else {
-            console.log('Text drawing container not found');
+            console.log('Text drawing container 2 not found');
         }
     }, 100);
 });
