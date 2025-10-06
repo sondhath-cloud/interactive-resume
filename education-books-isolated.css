@@ -281,19 +281,29 @@
   }
 }
 
-/* Wildcard Book - Blue background with white asterisk symbols */
+/* Wildcard Book - Golden yellow background */
 #books-component-container-top [data-book-index="top-edu-7"] .books__image {
-  background-color: #1976D2 !important;
-  background: #1976D2 !important;
+  background-color: #fdc923 !important;
+  background: #fdc923 !important;
   border: none !important; /* Ensure no borders */
   outline: none !important; /* Ensure no outlines */
 }
 
+#books-component-container-top [data-book-index="top-edu-7"] .books__image img {
+  background-color: #fdc923 !important;
+  background: #fdc923 !important;
+}
+
 #books-component-container-top [data-book-title="Data Analysis & Input Management"] .books__image {
-  background-color: #1976D2 !important;
-  background: #1976D2 !important;
+  background-color: #fdc923 !important;
+  background: #fdc923 !important;
   border: none !important; /* Ensure no borders */
   outline: none !important; /* Ensure no outlines */
+}
+
+#books-component-container-top [data-book-title="Data Analysis & Input Management"] .books__image img {
+  background-color: #fdc923 !important;
+  background: #fdc923 !important;
 }
 
 /* Force remove all borders and outlines from wildcard book */

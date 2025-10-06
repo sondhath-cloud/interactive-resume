@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sondra Hathaway Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .pdf-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ff4500;
+            padding-bottom: 15px;
+        }
+        .pdf-header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+        .pdf-contact {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 11px;
+            flex-wrap: wrap;
+            padding: 0 40px;
+        }
+        .pdf-contact div {
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .pdf-section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        .pdf-section h2 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff4500;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ff4500;
+            padding-bottom: 5px;
+        }
+        .pdf-about {
+            margin-bottom: 25px;
+            text-align: justify;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .pdf-about p {
+            margin: 0;
+        }
+        .pdf-education {
+            margin-bottom: 25px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .pdf-education-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .pdf-education-item:last-child {
+            border-bottom: none;
+        }
+        .pdf-education-item h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+        .pdf-education-item .institution {
+            font-size: 12px;
+            color: #666;
+            font-weight: normal;
+            font-style: italic;
+            display: inline;
+        }
+        .pdf-education-item p {
+            font-size: 11px;
+            color: #555;
+            margin: 0;
+            line-height: 1.3;
+        }
+        .pdf-projects {
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .pdf-project-item {
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: box-shadow 0.2s ease;
+        }
+        .pdf-project-item h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #2c3e50;
+            line-height: 1.3;
+        }
+        .pdf-project-item .year {
+            font-size: 11px;
+            color: #6c757d;
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .pdf-project-item p {
+            font-size: 11px;
+            color: #495057;
+            margin: 0 0 12px 0;
+            line-height: 1.5;
+        }
+        .pdf-project-item ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+        .pdf-project-item li {
+            font-size: 10px;
+            color: #6c757d;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+        .pdf-experience {
+            margin-bottom: 25px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .pdf-experience-item {
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: box-shadow 0.2s ease;
+        }
+        .pdf-experience-item h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #2c3e50;
+            line-height: 1.3;
+        }
+        .pdf-experience-item .company-date {
+            font-size: 11px;
+            color: #6c757d;
+            margin-bottom: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .pdf-experience-item .summary {
+            font-size: 11px;
+            color: #495057;
+            margin: 0 0 12px 0;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        .pdf-experience-item ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+        .pdf-experience-item li {
+            font-size: 10px;
+            color: #6c757d;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+        .pdf-cover-letter {
+            margin-top: 30px;
+            page-break-before: always;
+            padding-top: 30px;
+            padding-right: 40px;
+        }
+        .pdf-cover-letter h2 {
+            text-align: left;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ff4500;
+            border-bottom: 2px solid #ff4500;
+            padding-bottom: 10px;
+        }
+        .pdf-cover-letter p {
+            text-align: justify;
+            margin-bottom: 15px;
+            font-size: 11px;
+            line-height: 1.5;
+            padding-left: 40px;
+        }
+        @media print {
+            body { margin: 0; padding: 15px; }
+            .pdf-section { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="pdf-header">
+        <h1>Sondra Hathaway</h1>
+    </div>
+    
+    <!-- Contact Information -->
+    <div class="pdf-contact">
+        <div>sondrahathaway.com</div>
+        <div>+01 602 380 7231</div>
+        <div>sondra@sondrahathaway.com</div>
+        <div>Princeton, TX 75407</div>
+    </div>
+    
+    <!-- About Section -->
+    <div class="pdf-section">
+        <h2>About</h2>
+        <div class="pdf-about">
+            <p>I pride myself on seeing around corners, earning trust, and not taking myself too seriously. I love starting from scratch, challenging the status quo, improving continuously, and results.</p>
+        </div>
+    </div>
+    
+    <!-- Education and Certifications -->
+    <div class="pdf-section">
+        <h2>Education and Certifications</h2>
+        <div class="pdf-education">
+            <div class="pdf-education-item">
+                <h3>Bachelor of Science in Psychology, <span class="institution">Arizona State University</span></h3>
+            </div>
+            <div class="pdf-education-item">
+                <h3>Bachelor of Arts Sociology, <span class="institution">Arizona State University</span></h3>
+            </div>
+            <div class="pdf-education-item">
+                <h3>Master of Business Administration, <span class="institution">University of Phoenix</span></h3>
+            </div>
+            <div class="pdf-education-item">
+                <h3>Change Management Practitioner, <span class="institution">Prosci</span></h3>
+            </div>
+            <div class="pdf-education-item">
+                <h3>Strategic Planning Facilitator, <span class="institution">Institute of Cultural Affairs</span></h3>
+            </div>
+            <div class="pdf-education-item">
+                <h3>Manager of Quality and Organizational Excellence, <span class="institution">American Society for Quality</span></h3>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Featured Projects -->
+    <div class="pdf-section">
+        <h2>Featured Projects</h2>
+        <div class="pdf-projects">
+            <div class="pdf-project-item">
+                <h3>Remote Work Technology Implementation</h3>
+                <div class="year">2024</div>
+                <p>Led comprehensive digital transformation initiatives across multiple organizations, implementing cutting-edge remote collaboration technologies and change management strategies. This project revolutionized how teams work together in distributed environments.</p>
+                <ul>
+                    <li>Deployed Microsoft Teams and Slack integrations for 500+ users</li>
+                    <li>Reduced meeting setup time by 60% through automated workflows</li>
+                    <li>Achieved 95% user adoption rate within 3 months</li>
+                    <li>Implemented security protocols reducing data breaches by 40%</li>
+                    <li>Created training programs for 200+ managers</li>
+                </ul>
+            </div>
+            <div class="pdf-project-item">
+                <h3>Organizational Development Framework</h3>
+                <div class="year">2023</div>
+                <p>Designed and implemented a comprehensive organizational development program that transformed company culture and significantly improved employee engagement metrics across multiple departments.</p>
+                <ul>
+                    <li>Reduced employee turnover by 25% in first year</li>
+                    <li>Increased employee satisfaction scores from 3.2 to 4.6/5</li>
+                    <li>Implemented 360-degree feedback system for 300+ employees</li>
+                    <li>Created leadership development pipeline for 50+ managers</li>
+                    <li>Established quarterly culture assessment processes</li>
+                </ul>
+            </div>
+            <div class="pdf-project-item">
+                <h3>Strategic Change Management Initiative</h3>
+                <div class="year">2023</div>
+                <p>Facilitated major organizational restructuring using Prosci ADKAR methodology, ensuring smooth transitions and minimal resistance while maintaining operational excellence throughout the transformation process.</p>
+                <ul>
+                    <li>Achieved 95% adoption rates for new processes</li>
+                    <li>Reduced change resistance by 70% through targeted communication</li>
+                    <li>Trained 150+ change champions across departments</li>
+                    <li>Completed restructuring 2 weeks ahead of schedule</li>
+                    <li>Maintained 98% customer satisfaction during transition</li>
+                </ul>
+            </div>
+            <div class="pdf-project-item">
+                <h3>Leadership Development Program</h3>
+                <div class="year">2022</div>
+                <p>Created and delivered comprehensive leadership development workshops for executives, focusing on strategic planning, organizational transformation, and modern leadership practices in dynamic business environments.</p>
+                <ul>
+                    <li>Delivered workshops to 200+ executives across 15 companies</li>
+                    <li>Improved leadership effectiveness scores by 35%</li>
+                    <li>Created mentorship program pairing 50 senior leaders with junior managers</li>
+                    <li>Developed custom leadership assessment tools</li>
+                    <li>Achieved 90% program completion rate</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Work Experience -->
+    <div class="pdf-section">
+        <h2>Work Experience</h2>
+        <div class="pdf-experience">
+            <div class="pdf-experience-item">
+                <h3>Senior Organizational Development Consultant</h3>
+                <div class="company-date">Civic Innovation Consultants | 2023-Present</div>
+                <div class="summary">Leading organizational transformation initiatives for government and nonprofit clients.</div>
+                <ul>
+                    <li>Developed and implemented change management strategies for 15+ organizations</li>
+                    <li>Facilitated leadership development programs impacting 200+ executives</li>
+                    <li>Reduced employee turnover by 25% through culture transformation initiatives</li>
+                    <li>Led digital transformation projects with 95% adoption rates</li>
+                </ul>
+            </div>
+            <div class="pdf-experience-item">
+                <h3>Senior Change Management Consultant</h3>
+                <div class="company-date">Berry-Dunn | 2020-2023</div>
+                <div class="summary">Specialized in healthcare and government sector organizational change initiatives.</div>
+                <ul>
+                    <li>Lead the design and implementation of change management strategies for organizational initiatives, including technology adoption, policy updates, structural reorganization, and cultural change.</li>
+                    <li>Guide strategic planning efforts by facilitating visioning, environmental scans, stakeholder engagement, and alignment of goals with community needs and mandates.</li>
+                    <li>Coach leaders and teams through transitions, helping them build readiness, manage resistance, and embed new ways of working.</li>
+                    <li>Develop and deliver communication and engagement plans tailored to internal and external audiences.</li>
+                    <li>Conduct impact assessments, readiness evaluations, and risk mitigation planning to support smooth execution of change initiatives.</li>
+                    <li>Design and facilitate workshops, retreats, and cross-functional planning sessions.</li>
+                    <li>Analyze organizational performance data to recommend improvements and track progress against strategic goals.</li>
+                    <li>Ensure all work aligns with organizational values, equity goals, and legal and policy frameworks.</li>
+                    <li>Build strong relationships across departments, elected bodies, and community stakeholders to promote collaboration and trust.</li>
+                    <li>Support continuous improvement by documenting lessons learned and institutionalizing best practices.</li>
+                </ul>
+            </div>
+            <div class="pdf-experience-item">
+                <h3>Engagement and Development Director</h3>
+                <div class="company-date">City of Garland | 2017-2018</div>
+                <div class="summary">Directed employee engagement and professional development programs for municipal government.</div>
+                <ul>
+                    <li>Designed and launched a succession planning framework for critical positions, increasing leadership bench strength and reducing vacancy fill times by 15%.</li>
+                    <li>Provided guidance on employee relations to 60 supervisors.</li>
+                    <li>Coordinated and delivered new employee orientation for 150 new hires annually, resulting in a 12% increase in first-year retention.</li>
+                    <li>Directed a learning and development team that designed and delivered training to 2,000 employees, achieving an average satisfaction score of 4.6/5 and contributing to a 10% improvement in performance outcomes.</li>
+                    <li>Facilitated quarterly development sessions for 75 supervisors, with 85% reporting increased confidence in leadership skills.</li>
+                    <li>Implemented and analyzed an employee engagement survey with 72% participation, using statistical tools to identify key drivers of engagement and leading to a 9% improvement in engagement scores year-over-year.</li>
+                    <li>Led HR process improvement initiatives that streamlined talent strategies, reducing time-to-hire by 18 days and increasing internal mobility by 22%.</li>
+                    <li>Collaborated on annual recognition programs, charitable fundraising campaigns, and well-being initiatives, achieving 65% employee participation and strengthening organizational culture.</li>
+                </ul>
+            </div>
+            <div class="pdf-experience-item">
+                <h3>Senior Organizational Developer</h3>
+                <div class="company-date">TXU Energy | 2017-2018</div>
+                <div class="summary">Led organizational development initiatives for energy sector transformation.</div>
+                <ul>
+                    <li>Designed and delivered change management for major restructuring</li>
+                    <li>Facilitated cross-functional team development workshops</li>
+                    <li>Implemented performance management system for 2,000+ employees</li>
+                    <li>Led culture assessment and improvement initiatives</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cover Letter -->
+    <div class="pdf-cover-letter">
+        <h2>Cover Letter</h2>
+        <p>I've spent the last five years really immersed in the people side of business, and honestly, it's become my passion. I actually started with a bachelor's in Sociology because I was fascinated by how people interact within systems and organizations. Later, I went back for my MBA to add that business strategy lens, and the combination has been incredibly valuable in how I approach organizational challenges.</p>
+        
+        <p>Throughout my career, I've gotten my hands dirty with succession planning and performance management systems, really building those from scratch in a couple of cases. What I love most is diving into the data. I know that might sound odd, but I genuinely get excited about finding patterns in people analytics and translating those insights into strategies that actually move the needle. I've used tools like NVivo for qualitative data analysis, which has been a game changer when it comes to understanding employee feedback and sentiment at scale. I've presented to leadership teams more times than I can count, turning complex workforce data into clear stories that drive decision making.</p>
+        
+        <p>I've done most of this work in tech and SaaS companies, which I absolutely thrive in. There's something about that fast paced, high growth environment that brings out the best in me. You have to be comfortable with ambiguity and ready to pivot quickly. I'm completely fluent in English and pretty solid in Spanish, which has really helped working with our global teams.</p>
+        
+        <p>When it comes to tools, I'm very comfortable with the entire Microsoft Office Suite, but I've also built training materials and communications using Adobe Creative Suite and Camtasia for video content. Being able to create visually compelling presentations or quick tutorial videos has been surprisingly useful in driving adoption of new programs.</p>
+        
+        <p>But what I think really sets me apart is that I'm a builder at heart. I don't just want to maintain systems; I want to create them, improve them, make them better. I love that moment when you design a process and see it actually work across the organization.</p>
+        
+        <p>Right now, I'm actively looking for a full time opportunity to join a team, which is a shift for me. I've been consulting for the past couple of years, and while I've loved the variety and the challenge of parachuting into different organizations, I'm really craving that deeper connection. When you're consulting, you build something and then you hand it off, but you don't always get to see it evolve or refine it based on how people actually use it. I want to be embedded in one culture, really understand the nuances of one business, and be there for the long haul to see the impact of what we build together. There's something special about being part of a team where you can build those lasting relationships and truly become a trusted partner.</p>
+        
+        <p>I've been told I'm a strong strategic thinker, but I never lose sight of the details because both matter equally to me. And I think my real strength is in how I work with people. I've built partnerships across every level and every region, and I think it's because I genuinely listen and try to understand what different teams need. Leading change can be tough, but I've found that when you bring people along with you and create real collaboration, amazing things happen.</p>
+    </div>
+</body>
+</html>

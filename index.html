@@ -42,6 +42,8 @@
             <h3>ABOUT</h3>
             <div class="about-content">
                 <p>I pride myself on seeing around corners, earning trust, and not taking myself too seriously. I love starting from scratch, challenging the status quo, improving continuously, and results.</p>
+                <button class="cover-letter-btn" onclick="openCoverLetter()">Read Cover Letter</button>
+                <button class="pdf-btn" onclick="generatePDF()">PDF Version of Sondra Hathaway Resume</button>
             </div>
         </div>
     </div>
@@ -62,7 +64,6 @@
                 </defs>
                 <rect width="100%" height="100%" fill="url(#dottedGridTop)" />
             </svg>
-
 
             <!-- Shelf container -->
             <div class="shelf-container">
@@ -212,7 +213,7 @@
                                     <div class="books__page"></div>
                                 </div>
                                 <div class="books__image">
-                                    <img src="./prosci-logo.svg" alt="Prosci Logo">
+                                    <img src="./wildcard.png" alt="Wildcard">
                                     <div class="books__effect"></div>
                                     <div class="books__light"></div>
                                 </div>
@@ -225,10 +226,10 @@
                 <div class="book-descriptions">
                     <!-- Default Description -->
                     <div class="book-description default-description" data-book-index="default">
-                        <h3>Lifelong Learning</h3>
-                        <div class="author">Holistic Knowledge Development</div>
+                        <h3>Knowledge is an evolving journey</h3>
+                        <div class="author"></div>
                         <div class="lines-animation">
-                            <p>I am a lifelong learner who considers the degrees and certifications I've earned as just a fraction of my knowledge base. Direct experience and others' input complement my formal education, giving me a holistic perspective to innovate and solve problems.</p>
+                            <p>I am committed to intellectual and personal growth. I consider the degrees and certifications I've earned as just a fraction of my knowledge base. Direct experience and others' input are integral complements to my formal education. Click on a book cover to learn more about degrees and cerifications I have earned.</p>
                         </div>
                     </div>
 
@@ -268,24 +269,24 @@
 
                     <!-- Certification Descriptions -->
                     <div class="book-description" data-book-index="top-edu-3">
-                        <h3>Prosci Certification</h3>
-                        <div class="author">Change Management Professional</div>
+                        <h3>Change Management Practitioner</h3>
+                        <div class="author">Prosci</div>
                         <div class="lines-animation">
                             <p>Prosci certification equipped me with a structured approach to managing change in organizations. I learned how to guide people through transitions, ensuring smoother, more effective change processes. This methodology provides a building block for leading change initiatives with confidence.</p>
                         </div>
                     </div>
 
                     <div class="book-description" data-book-index="top-edu-4">
-                        <h3>Institute of Cultural Affairs</h3>
-                        <div class="author">Technology of Participation Certification</div>
+                        <h3>Strategic Planning Facilitator</h3>
+                        <div class="author">Institute of Cultural Affairs</div>
                         <div class="lines-animation">
-                            <p>The ICA ToP Facilitator certification taught me how to guide groups through structured decision-making processes. It empowered me to facilitate inclusive conversations, ensuring all voices are heard. This training has been key in fostering collaboration and building consensus in both professional and community settings.</p>
+                            <p>The ICA Technology of Participation Strategic Planning Facilitator certification taught me how to guide groups through structured decision-making processes. It empowered me to facilitate inclusive conversations, ensuring all voices are heard. This training has been key in fostering collaboration and building consensus in both professional and community settings.</p>
                         </div>
                     </div>
 
                     <div class="book-description" data-book-index="top-edu-5">
-                        <h3>American Society for Quality</h3>
-                        <div class="author">Certified Manager of Quality and Organizational Excellence</div>
+                        <h3>Manager of Quality and Organizational Excellence</h3>
+                        <div class="author">American Society for Quality</div>
                         <div class="lines-animation">
                             <p>The ASQ certification provided me with tools to drive continuous improvement in organizations. I gained expertise in quality management, data analysis, and fostering a culture of excellence. This credential has helped me lead initiatives that optimize processes and maintain high standards of quality.</p>
                         </div>
@@ -403,6 +404,35 @@
                     <ul class="popup-achievements"></ul>
                     <h4>Technologies & Methods</h4>
                     <div class="popup-technologies"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cover Letter Popup Modal -->
+    <div id="cover-letter-popup" class="cover-letter-popup">
+        <div class="popup-overlay" onclick="closeCoverLetter()"></div>
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeCoverLetter()">&times;</button>
+            <div class="popup-header">
+                <h3 class="popup-title">Cover Letter</h3>
+                <span class="popup-year">Sondra Hathaway</span>
+            </div>
+            <div class="popup-body">
+                <div class="cover-letter-content">
+                    <p>I've spent the last five years really immersed in the people side of business, and honestly, it's become my passion. I actually started with a bachelor's in Sociology because I was fascinated by how people interact within systems and organizations. Later, I went back for my MBA to add that business strategy lens, and the combination has been incredibly valuable in how I approach organizational challenges.</p>
+                    
+                    <p>Throughout my career, I've gotten my hands dirty with succession planning and performance management systems, really building those from scratch in a couple of cases. What I love most is diving into the data. I know that might sound odd, but I genuinely get excited about finding patterns in people analytics and translating those insights into strategies that actually move the needle. I've used tools like NVivo for qualitative data analysis, which has been a game changer when it comes to understanding employee feedback and sentiment at scale. I've presented to leadership teams more times than I can count, turning complex workforce data into clear stories that drive decision making.</p>
+                    
+                    <p>I've done most of this work in tech and SaaS companies, which I absolutely thrive in. There's something about that fast paced, high growth environment that brings out the best in me. You have to be comfortable with ambiguity and ready to pivot quickly. I'm completely fluent in English and pretty solid in Spanish, which has really helped working with our global teams.</p>
+                    
+                    <p>When it comes to tools, I'm very comfortable with the entire Microsoft Office Suite, but I've also built training materials and communications using Adobe Creative Suite and Camtasia for video content. Being able to create visually compelling presentations or quick tutorial videos has been surprisingly useful in driving adoption of new programs.</p>
+                    
+                    <p>But what I think really sets me apart is that I'm a builder at heart. I don't just want to maintain systems; I want to create them, improve them, make them better. I love that moment when you design a process and see it actually work across the organization.</p>
+                    
+                    <p>Right now, I'm actively looking for a full time opportunity to join a team, which is a shift for me. I've been consulting for the past couple of years, and while I've loved the variety and the challenge of parachuting into different organizations, I'm really craving that deeper connection. When you're consulting, you build something and then you hand it off, but you don't always get to see it evolve or refine it based on how people actually use it. I want to be embedded in one culture, really understand the nuances of one business, and be there for the long haul to see the impact of what we build together. There's something special about being part of a team where you can build those lasting relationships and truly become a trusted partner.</p>
+                    
+                    <p>I've been told I'm a strong strategic thinker, but I never lose sight of the details because both matter equally to me. And I think my real strength is in how I work with people. I've built partnerships across every level and every region, and I think it's because I genuinely listen and try to understand what different teams need. Leading change can be tough, but I've found that when you bring people along with you and create real collaboration, amazing things happen.</p>
                 </div>
             </div>
         </div>
@@ -772,6 +802,33 @@
                 document.body.style.overflow = 'auto';
             }
         });
+
+        // Cover Letter Popup Functions
+        function openCoverLetter() {
+            const popup = document.getElementById('cover-letter-popup');
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCoverLetter() {
+            const popup = document.getElementById('cover-letter-popup');
+            popup.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeCoverLetter();
+            }
+        });
+
+        // PDF Generation Function - Opens dedicated PDF page
+        function generatePDF() {
+            // Open the dedicated PDF resume page with cache-busting parameter
+            const timestamp = new Date().getTime();
+            window.open(`pdf-resume.html?t=${timestamp}`, '_blank');
+        }
     </script>
     
     <!-- Refracted Ball Component -->
@@ -798,10 +855,13 @@
     <!-- Text Scramble Component -->
     <script src="./text-scramble.js"></script>
     
+    <!-- PDF Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
     <!-- Text Drawing Container - At Bottom of Page -->
     <div id="text-drawing-container-2" class="text-drawing-container">
         <div class="text-drawing-info">
-            <p>Click and drag to learn a few last things about Sondra. Double-click to clear the canvas.</p>
+            <p>Click and drag in this container to learn a few last things about Sondra. Double-click to clear the canvas.</p>
         </div>
     </div>
 
