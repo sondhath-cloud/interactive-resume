@@ -23,7 +23,7 @@
         <div class="column-1">
             <h3>CONTACT</h3>
             <div class="contact-info">
-                <p>sondrahathaway.com</p>
+                <p>Sondra Hathaway</p><p>sondrahathaway.com</p>
                 <p>+01 602 380 7231</p>
                 <p>sondra@sondrahathaway.com</p>
                 <p>Princeton, TX 75407</p>
@@ -41,9 +41,8 @@
         <div class="column-3">
             <h3>ABOUT</h3>
             <div class="about-content">
-                <p>I pride myself on seeing around corners, earning trust, and not taking myself too seriously. I love starting from scratch, challenging the status quo, improving continuously, and results.</p>
-                <button class="cover-letter-btn" onclick="openCoverLetter()">Read Cover Letter</button>
-                <button class="pdf-btn" onclick="generatePDF()">PDF Version of Sondra Hathaway Resume</button>
+                <p>I pride myself on seeing around corners, earning trust, and not taking myself too seriously. My dream job lets me start from scratch, respectfully challenge the status quo, improve continuously, and achieve results.</p>
+                <button class="word-btn" onclick="generateWordDoc(event)">View Resume Text Version</button>
             </div>
         </div>
     </div>
@@ -202,6 +201,26 @@
                         </div>
                     </div>
 
+                    <!-- Lean Six Sigma Book -->
+                    <div class="books__item">
+                        <div class="books__container">
+                            <div class="books__cover">
+                                <div class="books__back-cover"></div>
+                                <div class="books__inside">
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                </div>
+                                <div class="books__image">
+                                    <img src="./peak.png" alt="Lean Six Sigma Certification">
+                                    <div class="books__effect"></div>
+                                    <div class="books__light"></div>
+                                </div>
+                                <div class="books__hitbox" data-book-index="top-edu-6" data-book-title="Lean Six Sigma Certification"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- ICA Book Copy -->
                     <div class="books__item">
                         <div class="books__container">
@@ -217,7 +236,7 @@
                                     <div class="books__effect"></div>
                                     <div class="books__light"></div>
                                 </div>
-                                <div class="books__hitbox" data-book-index="top-edu-7" data-book-title="Data Analysis & Input Management"></div>
+                                <div class="books__hitbox" data-book-index="top-edu-7" data-book-title="Data Analysis and Input Management"></div>
                             </div>
                         </div>
                     </div>
@@ -229,7 +248,7 @@
                         <h3>Knowledge is an evolving journey</h3>
                         <div class="author"></div>
                         <div class="lines-animation">
-                            <p>I am committed to intellectual and personal growth. I consider the degrees and certifications I've earned as just a fraction of my knowledge base. Direct experience and others' input are integral complements to my formal education. Click on a book cover to learn more about degrees and cerifications I have earned.</p>
+                            <p>I am committed to intellectual and personal growth. I consider the degrees and certifications I've earned as just a fraction of my knowledge base. Direct experience and others' input are integral complements to my formal education. Click on a book cover to learn more about degrees and certifications I have earned.</p>
                         </div>
                     </div>
 
@@ -292,6 +311,14 @@
                         </div>
                     </div>
 
+                    <div class="book-description" data-book-index="top-edu-6">
+                        <h3>Lean Six Sigma</h3>
+                        <div class="author">Peak Academy</div>
+                        <div class="lines-animation">
+                            <p>Lean Six Sigma ctaught me multiple ways to identify waste, reduce variation, and optimize processes using data-driven approaches. This training has been instrumental in leading organizational transformations and implementing continuous improvement initiatives that deliver measurable results.</p>
+                        </div>
+                    </div>
+
                     <div class="book-description" data-book-index="top-edu-7">
                         <h3>Input and Feedback</h3>
                         <div class="author">"When the student is ready, the teacher appears."</div>
@@ -314,25 +341,25 @@
                     <!-- Project 1 -->
                     <div class="resume-blog-slider__item swiper-slide">
                         <div class="resume-blog-slider__img">
-                            <img src="./images/card1.jpeg" alt="Remote Work Technology Project">
+                            <img src="./images/card1.jpeg" alt="Strategic Planning and Change Management">
                         </div>
                         <div class="resume-blog-slider__content">
-                            <span class="resume-blog-slider__code">2024</span>
-                            <div class="resume-blog-slider__title">Remote Work Technology Implementation</div>
-                            <div class="resume-blog-slider__text">Led digital transformation initiatives for seamless remote collaboration, implementing new technologies and change management strategies across multiple organizations.</div>
-                            <a href="#" class="resume-blog-slider__button" data-project="2">VIEW PROJECT</a>
+                            <span class="resume-blog-slider__code">2023-2024</span>
+                            <div class="resume-blog-slider__title">Strategic Planning and Change Management</div>
+                            <div class="resume-blog-slider__text">Led change management efforts during organizational strategic planning, securing 95% participation from key stakeholders in strategy workshops and feedback sessions.</div>
+                            <a href="#" class="resume-blog-slider__button" data-project="0">VIEW PROJECT</a>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
                     <div class="resume-blog-slider__item swiper-slide">
                         <div class="resume-blog-slider__img">
-                            <img src="./images/card2.png" alt="Organizational Development Project">
+                            <img src="./images/card2.png" alt="Multi-Year Digital Transformation">
                         </div>
                         <div class="resume-blog-slider__content">
-                            <span class="resume-blog-slider__code">2023</span>
-                            <div class="resume-blog-slider__title">Organizational Development Framework</div>
-                            <div class="resume-blog-slider__text">Designed and implemented comprehensive organizational development programs that improved employee engagement and reduced turnover by 25%.</div>
+                            <span class="resume-blog-slider__code">2020-2023</span>
+                            <div class="resume-blog-slider__title">Multi-Year Digital Transformation</div>
+                            <div class="resume-blog-slider__text">Led change management initiatives to successfully transform culture, including multi-year digital transformations, totaling over $1.3 million revenue annually.</div>
                             <a href="#" class="resume-blog-slider__button" data-project="1">VIEW PROJECT</a>
                         </div>
                     </div>
@@ -340,12 +367,12 @@
                     <!-- Project 3 -->
                     <div class="resume-blog-slider__item swiper-slide">
                         <div class="resume-blog-slider__img">
-                            <img src="./images/card3.png" alt="Change Management Project">
+                            <img src="./images/card4.png" alt="$9.45B Company Acquisition">
                         </div>
                         <div class="resume-blog-slider__content">
-                            <span class="resume-blog-slider__code">2023</span>
-                            <div class="resume-blog-slider__title">Strategic Change Management Initiative</div>
-                            <div class="resume-blog-slider__text">Facilitated major organizational restructuring using Prosci ADKAR methodology, achieving 95% adoption rates and minimizing resistance.</div>
+                            <span class="resume-blog-slider__code">2015-2016</span>
+                            <div class="resume-blog-slider__title">$9.45B Company Acquisition</div>
+                            <div class="resume-blog-slider__text">Developed organizational change readiness in preparation for $9.45 billion company acquisition, leading organization-wide succession planning using 9-Box methodology.</div>
                             <a href="#" class="resume-blog-slider__button" data-project="2">VIEW PROJECT</a>
                         </div>
                     </div>
@@ -353,12 +380,12 @@
                     <!-- Project 4 -->
                     <div class="resume-blog-slider__item swiper-slide">
                         <div class="resume-blog-slider__img">
-                            <img src="./images/card4.png" alt="Leadership Development Project">
+                            <img src="./images/card3.png" alt="Employee Engagement Program">
                         </div>
                         <div class="resume-blog-slider__content">
-                            <span class="resume-blog-slider__code">2022</span>
-                            <div class="resume-blog-slider__title">Leadership Development Program</div>
-                            <div class="resume-blog-slider__text">Created and delivered leadership development workshops for 200+ executives, focusing on strategic planning and organizational transformation.</div>
+                            <span class="resume-blog-slider__code">2017-2018</span>
+                            <div class="resume-blog-slider__title">Employee Engagement Program</div>
+                            <div class="resume-blog-slider__text">Managed engagement, learning, and development initiatives for over 2,000 employees, receiving "highly effective" ratings from 90% of HR Business Partners.</div>
                             <a href="#" class="resume-blog-slider__button" data-project="3">VIEW PROJECT</a>
                         </div>
                     </div>
@@ -366,17 +393,209 @@
                     <!-- Project 5 -->
                     <div class="resume-blog-slider__item swiper-slide">
                         <div class="resume-blog-slider__img">
-                            <img src="./images/card5.png" alt="Quality Management Project">
+                            <img src="./images/card5.png" alt="Comprehensive Performance Management Overhaul">
                         </div>
                         <div class="resume-blog-slider__content">
-                            <span class="resume-blog-slider__code">2021</span>
-                            <div class="resume-blog-slider__title">Quality Management System</div>
-                            <div class="resume-blog-slider__text">Implemented ASQ-certified quality management frameworks that improved organizational performance and established continuous improvement processes.</div>
+                            <span class="resume-blog-slider__code">2020-2023</span>
+                            <div class="resume-blog-slider__title">Comprehensive Performance Management Overhaul</div>
+                            <div class="resume-blog-slider__text">Led a comprehensive performance management transformation that moved the organization from traditional metrics to values-based performance evaluation, including redesigned interview questions, interviewer training, and a digital tool that streamlined manager processes.</div>
                             <a href="#" class="resume-blog-slider__button" data-project="4">VIEW PROJECT</a>
                         </div>
                     </div>
                 </div>
                 <div class="resume-blog-slider__pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Container -->
+    <div class="skills-container">
+        <div class="skills-content">
+            <h3 class="section-title">COMPETENCIES</h3>
+            <div class="skills-progress-container">
+                <div class="skills-grid">
+                    
+                    <!-- Strategic and Analytical Skills -->
+                     <div class="skill-card" data-category="strategic">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-background" data-category="strategic"></div>
+                                <div class="card-content">
+                                    <h4 class="card-title">Strategic and Analytical</h4>
+                                    <p class="card-subtitle">Click to explore skills</p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h4 class="card-title">Strategic and Analytical</h4>
+                                <ul class="skills-bar-container">
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>Strategic Plan Development</h5>
+                                            <span class="years" id="strategic-plan-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progresspurple" id="progress-strategic-plan"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>Statistical Data Analysis</h5>
+                                            <span class="years" id="statistical-analysis-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progresspurple" id="progress-statistical-analysis"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>Data Dashboards</h5>
+                                            <span class="years" id="data-dashboards-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progresspurple" id="progress-data-dashboards"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technological Skills -->
+                    <div class="skill-card" data-category="technological">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-background" data-category="technological"></div>
+                                <div class="card-content">
+                                    <h4 class="card-title">Technological</h4>
+                                    <p class="card-subtitle">Click to explore skills</p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h4 class="card-title">Technological</h4>
+                                <ul class="skills-bar-container">
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>AI Literacy</h5>
+                                            <span class="years" id="ai-literacy-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progressorange" id="progress-ai-literacy"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>Prompt Engineering</h5>
+                                            <span class="years" id="prompt-engineering-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progressorange" id="progress-prompt-engineering"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>Full Stack App Development</h5>
+                                            <span class="years" id="fullstack-dev-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progressorange" id="progress-fullstack-dev"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organizational Development Skills -->
+                    <div class="skill-card" data-category="organizational">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-background" data-category="organizational"></div>
+                                <div class="card-content">
+                                    <h4 class="card-title">Organizational Development</h4>
+                                    <p class="card-subtitle">Click to explore skills</p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h4 class="card-title">Organizational Development</h4>
+                                <ul class="skills-bar-container">
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>Succession Planning</h5>
+                                            <span class="years" id="succession-planning-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progressteal" id="progress-succession-planning"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>Performance Management</h5>
+                                            <span class="years" id="performance-mgmt-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progressteal" id="progress-performance-mgmt"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>Organizational Design</h5>
+                                            <span class="years" id="org-design-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progressteal" id="progress-org-design"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interpersonal Skills -->
+                    <div class="skill-card" data-category="interpersonal">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-background" data-category="interpersonal"></div>
+                                <div class="card-content">
+                                    <h4 class="card-title">Interpersonal</h4>
+                                    <p class="card-subtitle">Click to explore skills</p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h4 class="card-title">Interpersonal</h4>
+                                <ul class="skills-bar-container">
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>Collaboration and Teambuilding</h5>
+                                            <span class="years" id="collaboration-teambuilding-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progressblue" id="progress-collaboration-teambuilding"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>Coaching</h5>
+                                            <span class="years" id="coaching-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progressblue" id="progress-coaching"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="progressbar-title">
+                                            <h5>Mentoring</h5>
+                                            <span class="years" id="mentoring-years"></span>
+                                        </div>
+                                        <div class="bar-container">
+                                            <span class="progressbar progressblue" id="progress-mentoring"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
@@ -391,183 +610,128 @@
                 <span class="popup-year"></span>
             </div>
             <div class="popup-body">
-                <div class="popup-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Project Image</p>
-                    </div>
-                </div>
                 <div class="popup-description">
                     <h4>Project Overview</h4>
                     <p class="popup-text"></p>
                     <h4>Key Achievements</h4>
                     <ul class="popup-achievements"></ul>
-                    <h4>Technologies & Methods</h4>
+                    <h4>Technologies and Methods</h4>
                     <div class="popup-technologies"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Cover Letter Popup Modal -->
-    <div id="cover-letter-popup" class="cover-letter-popup">
-        <div class="popup-overlay" onclick="closeCoverLetter()"></div>
-        <div class="popup-content">
-            <button class="popup-close" onclick="closeCoverLetter()">&times;</button>
-            <div class="popup-header">
-                <h3 class="popup-title">Cover Letter</h3>
-                <span class="popup-year">Sondra Hathaway</span>
+
+    <!-- One-Column Experience Section -->
+    <div class="one-column-experience">
+        <div class="experience-container">
+            <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
+            
+            <!-- Change Manager - CIC -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4 class="job-title">Senior Organizational Developer</h4>
+                    <div class="company-info">
+                        <span class="company-name">CIC</span>
+                        <span class="job-dates">Nov 2023-Present</span>
+                    </div>
+                </div>
+                <div class="job-summary">
+                    Leading change management efforts during organizational strategic planning and digital transformation initiatives.
+                </div>
+                <div class="job-accomplishments">
+                    <h6>Key Accomplishments:</h6>
+                    <ul>
+                        <li>Lead change management efforts during and after organizational strategic planning</li>
+                        <li>Engage individuals through 1:1, small and large group discussions; secured active participation from 95% of key stakeholders in strategy workshops and feedback sessions</li>
+                        <li>Guide employees in goal-setting process and throughout plan implementation</li>
+                        <li>Analyze and convey employee and customer insights through quantitative and qualitative data analysis</li>
+                        <li>Develop and deliver training to employees and leadership</li>
+                    </ul>
+                </div>
             </div>
-            <div class="popup-body">
-                <div class="cover-letter-content">
-                    <p>I've spent the last five years really immersed in the people side of business, and honestly, it's become my passion. I actually started with a bachelor's in Sociology because I was fascinated by how people interact within systems and organizations. Later, I went back for my MBA to add that business strategy lens, and the combination has been incredibly valuable in how I approach organizational challenges.</p>
-                    
-                    <p>Throughout my career, I've gotten my hands dirty with succession planning and performance management systems, really building those from scratch in a couple of cases. What I love most is diving into the data. I know that might sound odd, but I genuinely get excited about finding patterns in people analytics and translating those insights into strategies that actually move the needle. I've used tools like NVivo for qualitative data analysis, which has been a game changer when it comes to understanding employee feedback and sentiment at scale. I've presented to leadership teams more times than I can count, turning complex workforce data into clear stories that drive decision making.</p>
-                    
-                    <p>I've done most of this work in tech and SaaS companies, which I absolutely thrive in. There's something about that fast paced, high growth environment that brings out the best in me. You have to be comfortable with ambiguity and ready to pivot quickly. I'm completely fluent in English and pretty solid in Spanish, which has really helped working with our global teams.</p>
-                    
-                    <p>When it comes to tools, I'm very comfortable with the entire Microsoft Office Suite, but I've also built training materials and communications using Adobe Creative Suite and Camtasia for video content. Being able to create visually compelling presentations or quick tutorial videos has been surprisingly useful in driving adoption of new programs.</p>
-                    
-                    <p>But what I think really sets me apart is that I'm a builder at heart. I don't just want to maintain systems; I want to create them, improve them, make them better. I love that moment when you design a process and see it actually work across the organization.</p>
-                    
-                    <p>Right now, I'm actively looking for a full time opportunity to join a team, which is a shift for me. I've been consulting for the past couple of years, and while I've loved the variety and the challenge of parachuting into different organizations, I'm really craving that deeper connection. When you're consulting, you build something and then you hand it off, but you don't always get to see it evolve or refine it based on how people actually use it. I want to be embedded in one culture, really understand the nuances of one business, and be there for the long haul to see the impact of what we build together. There's something special about being part of a team where you can build those lasting relationships and truly become a trusted partner.</p>
-                    
-                    <p>I've been told I'm a strong strategic thinker, but I never lose sight of the details because both matter equally to me. And I think my real strength is in how I work with people. I've built partnerships across every level and every region, and I think it's because I genuinely listen and try to understand what different teams need. Leading change can be tough, but I've found that when you bring people along with you and create real collaboration, amazing things happen.</p>
+
+            <!-- Senior Change Management Consultant - BerryDunn -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4 class="job-title">Senior Change Management Consultant</h4>
+                    <div class="company-info">
+                        <span class="company-name">BerryDunn</span>
+                        <span class="job-dates">Aug 2020-Oct 2023</span>
+                    </div>
+                </div>
+                <div class="job-summary">
+                    Led change management initiatives totaling over $1.3M annual revenue, including multi-year digital transformations.
+                </div>
+                <div class="job-accomplishments">
+                    <h6>Key Tasks and Accomplishments:</h6>
+                    <ul>
+                        <li>Lead change management initiatives to successfully transform culture, including multi-year digital transformations, totaling over $1.3 million revenue annually</li>
+                        <li>Conduct change impact and stakeholder analyses, sponsor coaching, and change readiness assessments</li>
+                        <li>Develop success metrics, evaluate, and report on change effort effectiveness</li>
+                        <li>Coach and develop leaders and project teams on effective change management methodologies including ADKAR, Bridges, and Kotter's theory</li>
+                        <li>Conduct highly effective business development, including scoping, budgeting, proposal writing, and sales presentations, winning 75% of proposals compared to firm average of 33%</li>
+                        <li>Up-sell add-on change management services resulting in over $500,000 annual revenue</li>
+                        <li>Supervise, train, and mentor BerryDunn consultants delivering organizational development and change management services</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Engagement and Development Administrator - City of Garland -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4 class="job-title">Engagement and Development Administrator</h4>
+                    <div class="company-info">
+                        <span class="company-name">City of Garland, Texas</span>
+                        <span class="job-dates">Dec 2017-Aug 2018</span>
+                    </div>
+                </div>
+                <div class="job-summary">
+                    Managed engagement, learning, and development initiatives for over 2,000 employees.
+                </div>
+                <div class="job-accomplishments">
+                    <h6>Key Tasks and Accomplishments:</h6>
+                    <ul>
+                        <li>Managed engagement, learning, and development initiatives for over 2,000 employees</li>
+                        <li>Collaborated with HR Business Partners to innovate, implement, and evaluate talent strategies; received "highly effective" ratings from 90% of HRBPs in quarterly partnership reviews</li>
+                        <li>Deployed employee engagement surveys; analyzed and communicated results</li>
+                        <li>Designed and created quick-reference guides and job aids to support leaders in talent management, performance management, and career development</li>
+                        <li>Implemented learning management system for organization-wide training registration, delivery, and documentation and led change management efforts to ensure adoption</li>
+                        <li>Created engaging online learning courses and tests for employees using Articulate software</li>
+                        <li>Collaborated closely with communications team to ensure awareness, desire, knowledge, and ability for internal and public stakeholders throughout major changes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Senior Organizational Development Consultant - TXU Energy -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4 class="job-title">Senior Organizational Development Consultant</h4>
+                    <div class="company-info">
+                        <span class="company-name">TXU Energy</span>
+                        <span class="job-dates">Apr 2015-Oct 2016</span>
+                    </div>
+                </div>
+                <div class="job-summary">
+                    Developed organizational change readiness in preparation for $9.45 billion company acquisition.
+                </div>
+                <div class="job-accomplishments">
+                    <h6>Key Accomplishments:</h6>
+                    <ul>
+                        <li>Developed organizational change readiness in preparation for $9.45 billion company acquisition</li>
+                        <li>Led organization-wide succession planning using 9-Box methodology</li>
+                        <li>Developed proprietary career planning process to match internal candidates with company positions based on competencies resulting in a 17% improved ratio of Internal Promotions to External Hires for key leadership and operational roles</li>
+                        <li>Developed and delivered custom in-house leadership development program for Information Technology Department</li>
+                        <li>Provided executive coaching to company leaders</li>
+                        <li>Created online learning for employees using Camtasia software on topics including "Managing a Remote Workforce," and "Coaching Through Change"</li>
+                        <li>Demonstrated a 20% increase in project success rates for initiatives based on project manager training</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="resume-container">
-        <!-- Left Column -->
-        <div class="left-column">
-            <!-- Work Experience Cards -->
-            <div class="work-experience-cards">
-                <h3 class="section-title">WORK EXPERIENCE</h3>
-                <div class="experience-cards">
-                    <div class="experience-card" data-experience="0">
-                        <div class="experience-left">
-                            <h4 class="position">Senior Organizational Development Consultant</h4>
-                            <span class="date">2023-Present</span>
-                        </div>
-                        <div class="experience-right">
-                            <h5 class="company">Civic Innovation Consultants</h5>
-                            <p class="summary">Leading organizational transformation initiatives for government and nonprofit clients.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="experience-card" data-experience="1">
-                        <div class="experience-left">
-                            <h4 class="position">Senior Change Management Consultant</h4>
-                            <span class="date">2020-2023</span>
-                        </div>
-                        <div class="experience-right">
-                            <h5 class="company">Berry-Dunn</h5>
-                            <p class="summary">Specialized in healthcare and government sector organizational change initiatives.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="experience-card" data-experience="2">
-                        <div class="experience-left">
-                            <h4 class="position">Engagement and Development Director</h4>
-                            <span class="date">2017-2018</span>
-                        </div>
-                        <div class="experience-right">
-                            <h5 class="company">City of Garland</h5>
-                            <p class="summary">Directed employee engagement and professional development programs for municipal government.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="experience-card" data-experience="3">
-                        <div class="experience-left">
-                            <h4 class="position">Senior Organizational Developer</h4>
-                            <span class="date">2017-2018</span>
-                        </div>
-                        <div class="experience-right">
-                            <h5 class="company">TXU Energy</h5>
-                            <p class="summary">Led organizational development initiatives for energy sector transformation.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Column -->
-        <div class="right-column">
-            <!-- Experience Details -->
-            <div class="experience-details">
-                <h3 class="section-title">EXPERIENCE DETAILS</h3>
-                <div class="details-content">
-                    <div class="experience-detail" data-detail="0">
-                        <div class="accomplishments">
-                            <h6>Key Accomplishments:</h6>
-                            <ul>
-                                <li>Developed and implemented change management strategies for 15+ organizations</li>
-                                <li>Facilitated leadership development programs impacting 200+ executives</li>
-                                <li>Reduced employee turnover by 25% through culture transformation initiatives</li>
-                                <li>Led digital transformation projects with 95% adoption rates</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="experience-detail" data-detail="1">
-                        <div class="accomplishments">
-                            <h6>Key Tasks and Accomplishments:</h6>
-                            <ul>
-                                <li>Lead the design and implementation of change management strategies for organizational initiatives, including technology adoption, policy updates, structural reorganization, and cultural change.</li>
-                                <li>Guide strategic planning efforts by facilitating visioning, environmental scans, stakeholder engagement, and alignment of goals with community needs and mandates.</li>
-                                <li>Coach leaders and teams through transitions, helping them build readiness, manage resistance, and embed new ways of working.</li>
-                                <li>Develop and deliver communication and engagement plans tailored to internal and external audiences.</li>
-                                <li>Conduct impact assessments, readiness evaluations, and risk mitigation planning to support smooth execution of change initiatives.</li>
-                                <li>Design and facilitate workshops, retreats, and cross-functional planning sessions.</li>
-                                <li>Analyze organizational performance data to recommend improvements and track progress against strategic goals.</li>
-                                <li>Ensure all work aligns with organizational values, equity goals, and legal and policy frameworks.</li>
-                                <li>Build strong relationships across departments, elected bodies, and community stakeholders to promote collaboration and trust.</li>
-                                <li>Support continuous improvement by documenting lessons learned and institutionalizing best practices.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="experience-detail" data-detail="2">
-                        <div class="accomplishments">
-                            <h6>Key Tasks and Accomplishments:</h6>
-                            <ul>
-                                <li>Designed and launched a succession planning framework for critical positions, increasing leadership bench strength and reducing vacancy fill times by 15%.</li> 
-                                <li>Provided guidance on employee relations to 60 supervisors.</li>
-                                <li>Coordinated and delivered new employee orientation for 150 new hires annually, resulting in a 12% increase in first-year retention.</li>
-                                <li>Directed a learning and development team that designed and delivered training to 2,000 employees, achieving an average satisfaction score of 4.6/5 and contributing to a 10% improvement in performance outcomes.</li> 
-                                <li>Facilitated quarterly development sessions for 75 supervisors, with 85% reporting increased confidence in leadership skills.</li>
-                                <li>Implemented and analyzed an employee engagement survey with 72% participation, using statistical tools to identify key drivers of engagement and leading to a 9% improvement in engagement scores year-over-year.</li>
-                                <li>Led HR process improvement initiatives that streamlined talent strategies, reducing time-to-hire by 18 days and increasing internal mobility by 22%.</li> 
-                                <li>Collaborated on annual recognition programs, charitable fundraising campaigns, and well-being initiatives, achieving 65% employee participation and strengthening organizational culture.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="experience-detail" data-detail="3">
-                        <div class="accomplishments">
-                            <h6>Key Accomplishments:</h6>
-                            <ul>
-                                <li>Designed and delivered change management for major restructuring</li>
-                                <li>Facilitated cross-functional team development workshops</li>
-                                <li>Implemented performance management system for 2,000+ employees</li>
-                                <li>Led culture assessment and improvement initiatives</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Default state when no card is selected -->
-                    <div class="experience-detail default-detail">
-                        <p>Click on a work experience card to view detailed accomplishments and tasks.</p>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </div>
-
-    </div>        
+        
                     <!-- Theme toggle -->
                     <div class="theme-toggle" id="theme-toggle-full"></div>
 
@@ -669,69 +833,57 @@
         // Project popup functionality
         const projectData = [
             {
-                title: "Remote Work Technology Implementation",
-                year: "2024",
-                description: "Led comprehensive digital transformation initiatives across multiple organizations, implementing cutting-edge remote collaboration technologies and change management strategies. This project revolutionized how teams work together in distributed environments.",
+                title: "Strategic Planning and Change Management",
+                year: "2023-2024",
+                description: "When CIC embarked on a major strategic planning initiative, I was brought in to ensure the organization could successfully navigate this transformation. The challenge was significant, we needed to engage stakeholders who had varying levels of buy-in while maintaining operational excellence throughout the process.",
                 achievements: [
-                    "Deployed Microsoft Teams and Slack integrations for 500+ users",
-                    "Reduced meeting setup time by 60% through automated workflows",
-                    "Achieved 95% user adoption rate within 3 months",
-                    "Implemented security protocols reducing data breaches by 40%",
-                    "Created training programs for 200+ managers"
+                    "Achieved 95% participation rate in strategy workshops, the highest engagement level the organization had ever seen",
+                    "Designed and facilitated intimate 1:1 conversations with senior leaders alongside large group strategy sessions to ensure all voices were heard",
+                    "Created a goal-setting framework that employees actually embraced, moving from resistance to enthusiastic adoption",
+                    "Transformed complex employee feedback into actionable insights that directly influenced strategic decisions",
+                    "Developed custom training programs that helped leaders communicate the strategic vision with confidence and clarity"
                 ],
-                technologies: ["Microsoft Teams", "Slack API", "Zoom SDK", "Change Management", "Training Development"]
+                technologies: ["Strategic Planning", "Change Management", "Data Analysis", "Stakeholder Engagement", "Training Development"]
+            },
+            
+            {
+                title: "Change Management During Company Acquisition",
+                year: "2015-2016",
+                description: "When facing the largest bankruptcy in U.S. history followed by a $9.45 billion acquisition, I was tasked to help this organization prepare 500+ employees for their next opportunity and maintain productivity among the survivors. This wasn't just succession planning, it was helping everyone navigate uncertainty while maintaining business continuity.",
+                achievements: [
+                    "Successfully prepared 500+ employees for massive organizational change during the country's largest bankruptcy, maintaining morale and productivity throughout uncertainty",
+                    "Implemented 9-Box succession planning that identified and developed internal talent, reducing external hiring costs and improving retention",
+                    "Created a proprietary matching system that connected internal candidates with job opportunities, resulting in a 17% improvement in internal promotions over external hires",
+                    "Designed custom leadership development for the IT department, transforming technical leaders into people managers",
+                    "Achieved a 20% increase in project success rates through targeted project management training"
+                ],
+                technologies: ["Change Management", "Succession Planning", "9-Box Methodology", "Leadership Development", "Acquisition Integration"]
             },
             {
-                title: "Organizational Development Framework",
-                year: "2023",
-                description: "Designed and implemented a comprehensive organizational development program that transformed company culture and significantly improved employee engagement metrics across multiple departments.",
+                title: "Employee Engagement Program",
+                year: "2017-2018",
+                description: "I inherited an engagement program that needed help connecting with employees. The challenge was creating meaningful development opportunities for 2,000+ municipal employees across diverse agencies and departments.",
                 achievements: [
-                    "Reduced employee turnover by 25% in first year",
-                    "Increased employee satisfaction scores from 3.2 to 4.6/5",
-                    "Implemented 360-degree feedback system for 300+ employees",
-                    "Created leadership development pipeline for 50+ managers",
-                    "Established quarterly culture assessment processes"
+                    "Transformed the city's approach to employee development, creating programs that resonated with everyone from first responders to office workers",
+                    "Achieved 90% 'highly effective' ratings from department  partners, the highest satisfaction scores in the organization's history",
+                    "Designed and deployed engagement surveys that actually generated action, not just data, leading to tangible improvements in workplace satisfaction",
+                    "Created practical job aids that supervisors actually used, moving from 'shelfware' to essential tools for daily management",
+                    
                 ],
-                technologies: ["Culture Assessment", "360 Feedback", "Leadership Development", "Employee Engagement", "Performance Management"]
+                technologies: ["Employee Engagement", "Learning Management System", "Training Development", "HR Analytics", "Talent Management"]
             },
             {
-                title: "Strategic Change Management Initiative",
-                year: "2023",
-                description: "Facilitated major organizational restructuring using Prosci ADKAR methodology, ensuring smooth transitions and minimal resistance while maintaining operational excellence throughout the transformation process.",
+                title: "Comprehensive Performance Management Overhaul",
+                year: "2020-2023",
+                description: "Led a comprehensive performance management transformation that moved the organization from traditional metrics to values-based performance evaluation. This initiative required redesigning the entire performance management system to align with organizational values and create fair, consistent evaluation processes.",
                 achievements: [
-                    "Achieved 95% adoption rates for new processes",
-                    "Reduced change resistance by 70% through targeted communication",
-                    "Trained 150+ change champions across departments",
-                    "Completed restructuring 2 weeks ahead of schedule",
-                    "Maintained 98% customer satisfaction during transition"
+                    "Transformed performance management from traditional metrics to values-based evaluation criteria that aligned with organizational culture",
+                    "Redesigned interview questions and interviewer training to ensure consistent, fair evaluation processes across all departments",
+                    "Developed and implemented a digital tool that streamlined manager processes for evaluating team members fairly and consistently",
+                    "Created comprehensive training programs for managers on values-based performance evaluation and feedback delivery",
+                    "Achieved 85% manager adoption rate of the new performance management system within the first year"
                 ],
-                technologies: ["Prosci ADKAR", "Change Communication", "Stakeholder Management", "Training Design", "Process Mapping"]
-            },
-            {
-                title: "Leadership Development Program",
-                year: "2022",
-                description: "Created and delivered comprehensive leadership development workshops for executives, focusing on strategic planning, organizational transformation, and modern leadership practices in dynamic business environments.",
-                achievements: [
-                    "Delivered workshops to 200+ executives across 15 companies",
-                    "Improved leadership effectiveness scores by 35%",
-                    "Created mentorship program pairing 50 senior leaders with junior managers",
-                    "Developed custom leadership assessment tools",
-                    "Achieved 90% program completion rate"
-                ],
-                technologies: ["Executive Coaching", "Strategic Planning", "Mentorship Programs", "Leadership Assessment", "Workshop Design"]
-            },
-            {
-                title: "Quality Management System",
-                year: "2021",
-                description: "Implemented ASQ-certified quality management frameworks that significantly improved organizational performance and established robust continuous improvement processes across all operational areas.",
-                achievements: [
-                    "Achieved ISO 9001:2015 certification within 6 months",
-                    "Reduced process defects by 45%",
-                    "Implemented automated quality tracking systems",
-                    "Trained 100+ employees on quality standards",
-                    "Established monthly quality review processes"
-                ],
-                technologies: ["ISO 9001", "Quality Management", "Process Improvement", "Automation", "Training Systems"]
+                technologies: ["Performance Management", "Values-Based Evaluation", "Digital Tools", "Manager Training", "Process Design"]
             }
         ];
 
@@ -803,32 +955,242 @@
             }
         });
 
-        // Cover Letter Popup Functions
-        function openCoverLetter() {
-            const popup = document.getElementById('cover-letter-popup');
-            popup.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeCoverLetter() {
-            const popup = document.getElementById('cover-letter-popup');
-            popup.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close popup with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeCoverLetter();
+        // Word Document Generation Function
+        async function generateWordDoc(event) {
+            console.log('Word document generation started');
+            console.log('Event:', event);
+            console.log('Button:', event.target);
+            
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = 'Generating Document...';
+            button.disabled = true;
+            
+            try {
+                // Extract resume content and create HTML document
+                const content = createWordContent();
+                await downloadHTMLResume(content, 'Sondra_Hathaway_Resume.html');
+                
+            } catch (error) {
+                console.error('Error generating document:', error);
+                alert('Error generating document. Please try again.');
+            } finally {
+                // Restore button
+                button.textContent = originalText;
+                button.disabled = false;
             }
-        });
-
-        // PDF Generation Function - Opens dedicated PDF page
-        function generatePDF() {
-            // Open the dedicated PDF resume page with cache-busting parameter
-            const timestamp = new Date().getTime();
-            window.open(`pdf-resume.html?t=${timestamp}`, '_blank');
         }
+        
+        async function downloadHTMLResume(content, filename) {
+            // Create HTML content that Word can open
+            const htmlContent = `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${content.name} - Resume</title>
+    <style>
+        body { 
+            font-family: 'Times New Roman', serif; 
+            font-size: 11pt; 
+            line-height: 1.4; 
+            margin: 1in; 
+            color: #000;
+        }
+        h1 { 
+            font-size: 18pt; 
+            font-weight: bold; 
+            text-align: center; 
+            margin-bottom: 10px; 
+        }
+        h2 { 
+            font-size: 14pt; 
+            font-weight: bold; 
+            margin-top: 20px; 
+            margin-bottom: 10px; 
+            border-bottom: 1px solid #000; 
+        }
+        h3 { 
+            font-size: 12pt; 
+            font-weight: bold; 
+            margin-top: 15px; 
+            margin-bottom: 5px; 
+        }
+        .subtitle { 
+            text-align: center; 
+            font-style: italic; 
+            margin-bottom: 20px; 
+        }
+        .experience-item { 
+            margin-bottom: 15px; 
+        }
+        .job-header { 
+            font-weight: bold; 
+        }
+        .company-dates { 
+            font-style: italic; 
+        }
+        .summary { 
+            margin: 5px 0; 
+        }
+        ul { 
+            margin: 5px 0; 
+            padding-left: 20px; 
+        }
+        li { 
+            margin-bottom: 3px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>${content.name}</h1>
+    <div class="subtitle">${content.title}</div>
+    
+    <h2>PROFESSIONAL SUMMARY</h2>
+    <p>${content.about}</p>
+    
+    <h2>PROFESSIONAL EXPERIENCE</h2>
+    ${content.experiences.map(exp => `
+        <div class="experience-item">
+            <div class="job-header">${exp.title}</div>
+            <div class="company-dates">${exp.company} | ${exp.dates}</div>
+            <div class="summary">${exp.summary}</div>
+            <ul>
+                ${exp.accomplishments.map(acc => `<li>${acc}</li>`).join('')}
+            </ul>
+        </div>
+    `).join('')}
+</body>
+</html>`;
+            
+            // Create blob and download
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        async function saveBlobWithPickerOrDownload(blob, filename, mime) {
+            const supportsFS = typeof window.showSaveFilePicker === 'function';
+            if (supportsFS) {
+                try {
+                    const isDocx = (mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') || /\.docx$/i.test(filename);
+                    const types = [
+                        isDocx
+                            ? { description: 'Word Document', accept: { 'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx'] } }
+                            : { description: 'PDF Document', accept: { 'application/pdf': ['.pdf'] } }
+                    ];
+                    const handle = await window.showSaveFilePicker({
+                        suggestedName: filename,
+                        types
+                    });
+                    const writable = await handle.createWritable();
+                    await writable.write(blob);
+                    await writable.close();
+                    return;
+                } catch (err) {
+                    // If the user cancels, do nothing. If it fails for other reasons, fall back to download.
+                    if (err && err.name === 'AbortError') return;
+                }
+            }
+            // Fallback: download
+            const url = URL.createObjectURL(blob);
+            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            if (isSafari) {
+                // Safari often ignores programmatic clicks with download; open in a new tab instead
+                const newTab = window.open(url, '_blank');
+                setTimeout(() => URL.revokeObjectURL(url), 2000);
+                return;
+            }
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.rel = 'noopener';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+        }
+        
+        function createWordContent() {
+            // Extract all the resume content
+            const content = {
+                name: 'Sondra Hathaway',
+                title: 'Change Management & Organizational Development Professional',
+                about: 'I pride myself on seeing around corners, earning trust, and not taking myself too seriously. My dream job lets me start from scratch, respectfully challenge the status quo, improve continuously, and achieve results.',
+                experiences: [],
+                education: [],
+                certifications: []
+            };
+            
+            // Extract experience data
+            const experienceItems = document.querySelectorAll('.experience-item');
+            experienceItems.forEach(item => {
+                const title = item.querySelector('.job-title')?.textContent || '';
+                const company = item.querySelector('.company-name')?.textContent || '';
+                const dates = item.querySelector('.job-dates')?.textContent || '';
+                const summary = item.querySelector('.job-summary')?.textContent || '';
+                const accomplishments = [];
+                
+                const accomplishmentItems = item.querySelectorAll('.job-accomplishments li');
+                accomplishmentItems.forEach(li => {
+                    accomplishments.push(li.textContent);
+                });
+                
+                content.experiences.push({
+                    title,
+                    company,
+                    dates,
+                    summary,
+                    accomplishments
+                });
+            });
+            
+            return content;
+        }
+        
+
+        // Skills Progress Bar Animation - Years of Experience
+        const skillsData = {
+            // Strategic and Analytical Skills
+            "strategic-plan": { years: "8+", percentage: 85 },
+            "statistical-analysis": { years: "7+", percentage: 75 },
+            "data-dashboards": { years: "6+", percentage: 70 },
+            
+            // Technological Skills
+            "ai-literacy": { years: "3+", percentage: 60 },
+            "prompt-engineering": { years: "2+", percentage: 55 },
+            "fullstack-dev": { years: "4+", percentage: 65 },
+            
+            // Organizational Development Skills
+            "succession-planning": { years: "8+", percentage: 80 },
+            "performance-mgmt": { years: "9+", percentage: 90 },
+            "org-design": { years: "7+", percentage: 75 },
+            
+            // Interpersonal Skills
+            "collaboration-teambuilding": { years: "10+", percentage: 95 },
+            "coaching": { years: "8+", percentage: 85 },
+            "mentoring": { years: "7+", percentage: 80 }
+        };
+
+        let multiply = 1;
+
+        Object.keys(skillsData).forEach(function(skill, index) {
+            const delay = 500;
+            
+            setTimeout(function() {
+                const skillElement = document.getElementById(skill + '-years');
+                if (skillElement) {
+                    skillElement.innerHTML = skillsData[skill].years;
+                }
+            }, delay * multiply);
+            
+            multiply++;
+        });
     </script>
     
     <!-- Refracted Ball Component -->
@@ -855,8 +1217,9 @@
     <!-- Text Scramble Component -->
     <script src="./text-scramble.js"></script>
     
-    <!-- PDF Generation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Template engine: PizZip and docxtemplater (CDN) -->
+    <script src="https://unpkg.com/pizzip@3.1.3/dist/pizzip.min.js"></script>
+    <script src="https://unpkg.com/docxtemplater@3.39.1/build/docxtemplater.js"></script>
     
     <!-- Text Drawing Container - At Bottom of Page -->
     <div id="text-drawing-container-2" class="text-drawing-container">

@@ -220,6 +220,17 @@
   background: #1B2951 !important;
 }
 
+/* Lean Six Sigma book - Dark blue background */
+#books-component-container-top [data-book-index="top-edu-6"] .books__image img {
+  background-color: #032f51 !important;
+  background: #032f51 !important;
+}
+
+#books-component-container-top [data-book-title="Lean Six Sigma Certification"] .books__image img {
+  background-color: #032f51 !important;
+  background: #032f51 !important;
+}
+
 #books-component-container-top [data-book-title="ASQ Certification"] .books__image img {
   background-color: #1B2951 !important;
   background: #1B2951 !important;

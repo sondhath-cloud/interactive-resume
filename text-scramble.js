@@ -11,11 +11,11 @@ class TextScramble {
             'SONDRA HATHAWAY',
             'ORGANIZATIONAL DEVELOPER',
             'ARTIST',
-            'CHANGE MANAGEMENT PRACTITIONER',
+            'CHANGE ENABLER',
             'DRUMMER',
             'STRATEGIC PLANNER',
-            'LIFELONG LEARNER',
             'PROCESS IMPROVER',
+            'SYSTEMS THINKER',
         ];
         
         this.currentPhraseIndex = 0;
