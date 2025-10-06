@@ -125,6 +125,89 @@ function initEducationSection(container, prefix, defaultBookId) {
     // Initialize the education books component
     initEducationBooks();
 
+    // Add responsive behavior
+    function addResponsiveBehavior() {
+        function adjustBooksForScreenSize() {
+            const container = document.getElementById('books-component-container-top');
+            if (!container) return;
+            
+            const booksWrapper = container.querySelector('.books-wrapper');
+            const shelf = container.querySelector('.shelf');
+            const bookShadows = container.querySelectorAll('.book-shadow__item');
+            
+            if (!booksWrapper || !shelf) return;
+            
+            const containerWidth = container.offsetWidth;
+            const books = booksWrapper.querySelectorAll('.books__item, .side-book');
+            const totalBooks = books.length;
+            
+            // Calculate if books need to be scaled down further
+            const bookWidth = 88; // Base book width
+            const sideBookWidth = 18; // Base side book width
+            const gap = 16; // Base gap in pixels
+            const sideBookCount = 1; // Number of side books
+            const regularBookCount = totalBooks - sideBookCount;
+            
+            const totalWidth = (regularBookCount * bookWidth) + (sideBookCount * sideBookWidth) + ((totalBooks - 1) * gap);
+            
+            // If books don't fit, we need to scale them down
+            if (totalWidth > containerWidth * 0.9) { // 90% of container width
+                const scaleFactor = (containerWidth * 0.9) / totalWidth;
+                
+                // Apply scaling to books
+                books.forEach(book => {
+                    if (book.classList.contains('side-book')) {
+                        book.style.transform = `scale(${scaleFactor})`;
+                    } else {
+                        book.style.transform = `scale(${scaleFactor})`;
+                    }
+                });
+                
+                // Scale the shelf
+                shelf.style.transform = `scale(${scaleFactor})`;
+                
+                // Scale the shadows
+                bookShadows.forEach(shadow => {
+                    if (shadow.classList.contains('side')) {
+                        shadow.style.transform = `scale(${scaleFactor})`;
+                    } else {
+                        shadow.style.transform = `scale(${scaleFactor})`;
+                    }
+                });
+            } else {
+                // Reset scaling if books fit
+                books.forEach(book => {
+                    book.style.transform = '';
+                });
+                shelf.style.transform = '';
+                bookShadows.forEach(shadow => {
+                    shadow.style.transform = '';
+                });
+            }
+        }
+        
+        // Run on load and resize
+        adjustBooksForScreenSize();
+        window.addEventListener('resize', adjustBooksForScreenSize);
+        
+        // Also run when the container becomes visible (for lazy loading)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    adjustBooksForScreenSize();
+                }
+            });
+        });
+        
+        const container = document.getElementById('books-component-container-top');
+        if (container) {
+            observer.observe(container);
+        }
+    }
+
+    // Initialize responsive behavior
+    addResponsiveBehavior();
+
     // Optional: Add some education-specific animations
     function addEducationAnimations() {
         // Add subtle hover effects for education books

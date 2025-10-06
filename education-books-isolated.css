@@ -3,7 +3,12 @@
 
 /* Education books component container styles */
 #books-component-container-top.education-books-isolated {
-  background-color: var(--bg-color);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(20px);
   margin: 0;
   padding: 0;
   height: 100%;
@@ -14,9 +19,33 @@
   overflow: hidden;
   font-family: "Cabinet Grotesk", sans-serif;
   letter-spacing: -0.02em;
-  color: var(--text-color);
+  color: #ffffff;
   transition: background-color 0.5s ease, color 0.5s ease;
   position: relative;
+  min-height: 300px; /* Ensure minimum height */
+  border-radius: 16px;
+  box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.2) inset,
+      0 1px 0 0 rgba(255, 255, 255, 0.4) inset, 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive container adjustments */
+@media screen and (max-width: 768px) {
+  #books-component-container-top.education-books-isolated {
+    min-height: 250px; /* Reduce minimum height on mobile */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #books-component-container-top.education-books-isolated {
+    min-height: 200px; /* Further reduce minimum height on small mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #books-component-container-top.education-books-isolated {
+    min-height: 180px; /* Minimum height for very small screens */
+  }
 }
 
 /* Education theme toggle dot */
@@ -514,8 +543,134 @@
   height: 100px; /* Reduced height for testing area */
 }
 
-/* Responsive book descriptions */
+/* Responsive scaling for books on smaller screens */
+@media screen and (max-width: 1200px) {
+  #books-component-container-top .books__item {
+    height: 100px; /* Scale down from 116px */
+  }
+  
+  #books-component-container-top .books__container {
+    width: 75px; /* Scale down from 88px */
+  }
+  
+  #books-component-container-top .side-book {
+    height: 100px; /* Scale down from 116px */
+    width: 15px; /* Scale down from 18px */
+  }
+  
+  #books-component-container-top .side-book__title {
+    font-size: 7px; /* Scale down from 8px */
+    padding: 2.5px 0; /* Scale down padding */
+  }
+  
+  #books-component-container-top .side-book__decoration {
+    top: 18px; /* Adjust decoration position */
+  }
+  
+  #books-component-container-top .side-book__decoration:nth-child(2) {
+    bottom: 18px; /* Adjust decoration position */
+  }
+  
+  #books-component-container-top .books-wrapper {
+    gap: 0.8rem; /* Reduce gap slightly */
+  }
+  
+  #books-component-container-top .book-shadow__item {
+    width: 75px; /* Scale down shadow */
+  }
+  
+  #books-component-container-top .book-shadow__item.side {
+    width: 17px; /* Scale down side shadow */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #books-component-container-top .books__item {
+    height: 85px; /* Further scale down */
+  }
+  
+  #books-component-container-top .books__container {
+    width: 65px; /* Further scale down */
+  }
+  
+  #books-component-container-top .side-book {
+    height: 85px; /* Further scale down */
+    width: 13px; /* Further scale down */
+  }
+  
+  #books-component-container-top .side-book__title {
+    font-size: 6.5px; /* Further scale down */
+    padding: 2px 0; /* Further scale down padding */
+  }
+  
+  #books-component-container-top .side-book__decoration {
+    top: 16px; /* Adjust decoration position */
+  }
+  
+  #books-component-container-top .side-book__decoration:nth-child(2) {
+    bottom: 16px; /* Adjust decoration position */
+  }
+  
+  #books-component-container-top .books-wrapper {
+    gap: 0.6rem; /* Further reduce gap */
+  }
+  
+  #books-component-container-top .book-shadow__item {
+    width: 65px; /* Further scale down shadow */
+  }
+  
+  #books-component-container-top .book-shadow__item.side {
+    width: 15px; /* Further scale down side shadow */
+  }
+  
+  #books-component-container-top .shelf {
+    max-width: 750px; /* Scale down shelf */
+  }
+}
+
 @media screen and (max-width: 768px) {
+  #books-component-container-top .books__item {
+    height: 70px; /* Scale down for mobile */
+  }
+  
+  #books-component-container-top .books__container {
+    width: 55px; /* Scale down for mobile */
+  }
+  
+  #books-component-container-top .side-book {
+    height: 70px; /* Scale down for mobile */
+    width: 11px; /* Scale down for mobile */
+  }
+  
+  #books-component-container-top .side-book__title {
+    font-size: 6px; /* Scale down for mobile */
+    padding: 1.5px 0; /* Scale down padding for mobile */
+  }
+  
+  #books-component-container-top .side-book__decoration {
+    top: 14px; /* Adjust decoration position for mobile */
+  }
+  
+  #books-component-container-top .side-book__decoration:nth-child(2) {
+    bottom: 14px; /* Adjust decoration position for mobile */
+  }
+  
+  #books-component-container-top .books-wrapper {
+    gap: 0.4rem; /* Reduce gap for mobile */
+  }
+  
+  #books-component-container-top .book-shadow__item {
+    width: 55px; /* Scale down shadow for mobile */
+  }
+  
+  #books-component-container-top .book-shadow__item.side {
+    width: 13px; /* Scale down side shadow for mobile */
+  }
+  
+  #books-component-container-top .shelf {
+    max-width: 600px; /* Scale down shelf for mobile */
+  }
+  
   #books-component-container-top .book-descriptions {
     bottom: 80px; /* Moved down by 40px from 120px */
     max-width: 90%;
@@ -525,11 +680,98 @@
 }
 
 @media screen and (max-width: 576px) {
+  #books-component-container-top .books__item {
+    height: 60px; /* Scale down for small mobile */
+  }
+  
+  #books-component-container-top .books__container {
+    width: 45px; /* Scale down for small mobile */
+  }
+  
+  #books-component-container-top .side-book {
+    height: 60px; /* Scale down for small mobile */
+    width: 9px; /* Scale down for small mobile */
+  }
+  
+  #books-component-container-top .side-book__title {
+    font-size: 5.5px; /* Scale down for small mobile */
+    padding: 1px 0; /* Scale down padding for small mobile */
+  }
+  
+  #books-component-container-top .side-book__decoration {
+    top: 12px; /* Adjust decoration position for small mobile */
+  }
+  
+  #books-component-container-top .side-book__decoration:nth-child(2) {
+    bottom: 12px; /* Adjust decoration position for small mobile */
+  }
+  
+  #books-component-container-top .books-wrapper {
+    gap: 0.3rem; /* Reduce gap for small mobile */
+  }
+  
+  #books-component-container-top .book-shadow__item {
+    width: 45px; /* Scale down shadow for small mobile */
+  }
+  
+  #books-component-container-top .book-shadow__item.side {
+    width: 11px; /* Scale down side shadow for small mobile */
+  }
+  
+  #books-component-container-top .shelf {
+    max-width: 500px; /* Scale down shelf for small mobile */
+  }
+  
   #books-component-container-top .book-descriptions {
     bottom: 75px; /* Moved down by 40px from 115px */
     max-width: 95%;
     height: auto;
     min-height: 70px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #books-component-container-top .books__item {
+    height: 50px; /* Scale down for very small screens */
+  }
+  
+  #books-component-container-top .books__container {
+    width: 38px; /* Scale down for very small screens */
+  }
+  
+  #books-component-container-top .side-book {
+    height: 50px; /* Scale down for very small screens */
+    width: 8px; /* Scale down for very small screens */
+  }
+  
+  #books-component-container-top .books-wrapper {
+    gap: 0.2rem; /* Reduce gap for very small screens */
+  }
+  
+  #books-component-container-top .book-shadow__item {
+    width: 38px; /* Scale down shadow for very small screens */
+  }
+  
+  #books-component-container-top .book-shadow__item.side {
+    width: 9px; /* Scale down side shadow for very small screens */
+  }
+  
+  #books-component-container-top .shelf {
+    max-width: 400px; /* Scale down shelf for very small screens */
+  }
+  
+  /* Adjust font sizes for very small screens */
+  #books-component-container-top .side-book__title {
+    font-size: 6px;
+    padding: 2px 0;
+  }
+  
+  #books-component-container-top .side-book__decoration {
+    top: 15px;
+  }
+  
+  #books-component-container-top .side-book__decoration:nth-child(2) {
+    bottom: 15px;
   }
 }
 

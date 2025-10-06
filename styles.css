@@ -21,11 +21,128 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(-45deg, #008080, #004d7a, #0066cc, #003366, #20b2aa, #0080ff);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            color: #ffffff;
+            background: #262626;
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating Animated Background Circles */
+        .circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6b6b;
+            background-image: linear-gradient(
+                225deg,
+                #ff6b6b 0%,
+                #ff8e53 50%,
+                #ff6b9d 100%
+            );
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+        }
+
+        .circles li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .circles li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .circles li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+
+        .circles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .circles li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        .circles li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+
+        .circles li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+
+        .circles li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+
+        .circles li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+
+        .circles li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
         }
 
 /* Color Variables */
@@ -51,7 +168,16 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(15px);
+    border-radius: 0 0 20px 20px;
+    border-bottom: none;
+    box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.1) inset,
+        0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
 }
 
 .scramble-text {
@@ -73,10 +199,18 @@
     width: 100%;
     max-width: 1200px;
     margin: 30px auto;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    border: 1px solid #e9ecef;
+    padding: 0 20px;
+}
+
+/* Make all text in education section white */
+.education-testing-area h3,
+.education-testing-area h2,
+.education-testing-area p,
+.education-testing-area .book-description h3,
+.education-testing-area .book-description .author,
+.education-testing-area .book-description p,
+.education-testing-area .book-description .lines-animation p {
+    color: #ffffff !important;
 }
 
 /* Header Container */
@@ -125,13 +259,20 @@
     width: 100%;
     max-width: 1200px;
     margin: 30px auto;
-    padding: 0 20px;
-    background-color: var(--white);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+    padding: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.28) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.23) inset,
+        0 1px 0 0 rgba(255, 255, 255, 0.66) inset, 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-radius: 20px;
     display: flex;
     min-height: 400px;
     position: relative;
+    z-index: 10;
 }
 
 .column-1, .column-2, .column-3 {
@@ -140,25 +281,26 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    color: #ffffff;
 }
 
 .column-1 {
-    background-color: var(--white);
+    /* Background removed to show glassmorphism */
 }
 
 .column-2 {
-    background-color: var(--white);
+    /* Background removed to show glassmorphism */
     justify-content: center;
     align-items: center;
 }
 
 .column-3 {
-    background-color: var(--white);
-    color: var(--dark-gray);
+    /* Background removed to show glassmorphism */
+    color: #ffffff;
 }
 
 .column-1 h3, .column-2 h3 {
-    color: var(--dark-gray);
+    color: #ffffff;
     margin: 0 0 15px 0;
     font-size: 18px;
     font-weight: 600;
@@ -166,7 +308,7 @@
 }
 
 .column-3 h3 {
-    color: var(--dark-gray);
+    color: #ffffff;
     margin: 0 0 15px 0;
     font-size: 18px;
     font-weight: 600;
@@ -273,7 +415,6 @@
     font-size: 28px;
     font-weight: 700;
     margin: 0 0 10px 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .popup-year {
@@ -338,7 +479,7 @@
 }
 
 .popup-text {
-    color: var(--dark-gray);
+    color: #000000;
     line-height: 1.6;
     margin-bottom: 25px;
     font-size: 15px;
@@ -365,6 +506,33 @@
     font-weight: bold;
     position: absolute;
     left: 0;
+}
+
+.popup-navigation {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.popup-next-btn {
+    background: var(--salmon);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.popup-next-btn:hover {
+    background: var(--salmon-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
 
 .popup-technologies {
@@ -556,7 +724,7 @@
 .section-title {
     font-size: 16px;
     font-weight: 700;
-    color: var(--darker-gray);
+    color: #ffffff;
     margin-bottom: 20px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -890,7 +1058,7 @@
 
 .popup-content li {
     margin-bottom: 8px;
-    color: var(--medium-gray);
+    color: #000000;
 }
 
 .experience-cards {
@@ -929,13 +1097,13 @@
 .experience-card .position {
     font-size: 16px;
     font-weight: 700;
-    color: var(--darker-gray);
+    color: #ffffff;
     margin-bottom: 5px;
 }
 
 .experience-card .date {
     font-size: 12px;
-    color: var(--salmon);
+    color: #ffffff;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -944,13 +1112,13 @@
 .experience-card .company {
     font-size: 14px;
     font-weight: 600;
-    color: var(--salmon);
+    color: #ffffff;
     margin-bottom: 8px;
 }
 
 .experience-card .summary {
     font-size: 13px;
-    color: var(--dark-gray);
+    color: #ffffff;
     line-height: 1.5;
     margin: 0;
 }
@@ -985,7 +1153,7 @@
 }
 
 .experience-summary .accomplishments h6 {
-    color: var(--dark-gray);
+    color: #ffffff;
     font-size: 16px;
     font-weight: 600;
     margin: 0 0 15px 0;
@@ -998,7 +1166,7 @@
 
 .experience-summary .accomplishments li {
     margin-bottom: 10px;
-    color: var(--medium-gray);
+    color: #ffffff;
     line-height: 1.6;
 }
 
@@ -1045,7 +1213,7 @@
 }
 
 .accomplishments li {
-    color: var(--dark-gray);
+    color: #ffffff;
     font-size: 13px;
     margin-bottom: 12px;
     padding-left: 20px;
@@ -1191,33 +1359,33 @@
 .position, .school {
     font-size: 16px;
     font-weight: 600;
-    color: var(--darker-gray);
+    color: #ffffff;
     margin-bottom: 5px;
 }
 
 .date {
     font-size: 14px;
-    color: var(--dark-gray);
+    color: #ffffff;
     font-weight: 500;
 }
 
 .company, .location {
     font-size: 15px;
     font-weight: 600;
-    color: var(--dark-gray);
+    color: #ffffff;
     margin-bottom: 8px;
 }
 
 .summary {
     font-size: 14px;
-    color: var(--dark-gray);
+    color: #ffffff;
     line-height: 1.6;
     margin: 0;
 }
 
 .experience-right p, .education-right p {
     font-size: 14px;
-    color: var(--dark-gray);
+    color: #ffffff;
     line-height: 1.6;
 }
 
@@ -1637,7 +1805,7 @@
     padding: 20px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: none;
 }
 
 .card-front {
@@ -1942,8 +2110,8 @@
 
 /* One-Column Experience Section */
 .one-column-experience {
-    background-color: #f8f9fa;
     padding: 60px 0;
+    margin: 20px 0;
 }
 
 .experience-container {
@@ -1953,11 +2121,18 @@
 }
 
 .experience-item {
-    background: white;
-    border-radius: 12px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
     padding: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.2) inset,
+        0 1px 0 0 rgba(255, 255, 255, 0.4) inset, 0 4px 16px rgba(0, 0, 0, 0.1);
+    border: none;
 }
 
 .experience-header {
@@ -2025,7 +2200,7 @@
 
 .job-accomplishments li {
     margin-bottom: 10px;
-    color: #000000;
+    color: #ffffff;
     line-height: 1.6;
 }
 
@@ -2184,4 +2359,175 @@
         font-size: 11px;
     }
 }
+
+/* Technical Skills Section Styles */
+.technical-skills-container {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.technical-skills-content {
+    padding: 30px 0;
+}
+
+.technical-skills-content .section-title {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.technical-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.technical-skill-category {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.2) inset,
+        0 1px 0 0 rgba(255, 255, 255, 0.4) inset, 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.technical-skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.3) inset,
+        0 1px 0 0 rgba(255, 255, 255, 0.5) inset, 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.technical-skill-category h4 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 10px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.skill-tag {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 107, 107, 0.8),
+        rgba(255, 142, 83, 0.8)
+    );
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.2) inset,
+        0 1px 0 0 rgba(255, 255, 255, 0.4) inset, 0 2px 8px rgba(255, 69, 0, 0.3);
+    border: none;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.4);
+    background: linear-gradient(135deg, var(--salmon), var(--salmon-dark));
+}
+
+/* Responsive Design for Technical Skills */
+@media screen and (max-width: 768px) {
+    .technical-skills-container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    
+    .technical-skills-content {
+        padding: 20px;
+    }
+    
+    .technical-skills-content .section-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .technical-skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .technical-skill-category {
+        padding: 20px;
+    }
+    
+    .technical-skill-category h4 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .skill-tag {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .technical-skills-content {
+        padding: 15px;
+    }
+    
+    .technical-skills-content .section-title {
+        font-size: 18px;
+    }
+    
+    .technical-skill-category {
+        padding: 15px;
+    }
+    
+    .skill-tags {
+        gap: 8px;
+    }
+    
+    .skill-tag {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
+
+/* Clash of Clans Cards section removed */
+
+/* Card Swiper Isolated Container */
+.card-swiper-isolated-container {
+    display: block;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.card-swiper-isolated-container iframe {
+    all: initial;
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
+}
+
 

@@ -32,8 +32,8 @@ class TextDrawing {
         
         this.resizeCanvas();
         
-        this.context.fillStyle = '#ffffff';
-        this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        // Make canvas transparent to show glassmorphic background
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
         this.addEventListeners();
         console.log('Event listeners added');
@@ -52,8 +52,8 @@ class TextDrawing {
         
         console.log('Canvas resized to:', this.canvas.width, 'x', this.canvas.height);
         
-        this.context.fillStyle = '#ffffff';
-        this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        // Make canvas transparent to show glassmorphic background
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
     
     addEventListeners() {
@@ -117,8 +117,8 @@ class TextDrawing {
     }
     
     handleDoubleClick(event) {
-        this.context.fillStyle = '#ffffff';
-        this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        // Make canvas transparent to show glassmorphic background
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
         this.counter = 0;
         this.colorIndex = 0;
@@ -173,8 +173,8 @@ class TextDrawing {
     
     // Public method to clear the canvas
     clear() {
-        this.context.fillStyle = '#ffffff';
-        this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        // Make canvas transparent to show glassmorphic background
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.counter = 0;
         this.colorIndex = 0;
     }

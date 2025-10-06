@@ -3,8 +3,20 @@
 // 链接：https://mp.weixin.qq.com/s/wHW9mY5PxdxvTbr1SLhYww
 // 链接：https://juejin.cn/post/7498555234072739840
 
-import * as THREE from "https://esm.sh/three";
-import { OrbitControls } from "https://esm.sh/three/examples/jsm/controls/OrbitControls";
+// Using local Three.js files to avoid CORS issues
+// THREE will be loaded via script tag in HTML
+
+console.log('Refracted ball script loading...');
+
+// Wait for THREE.js to be available
+function initRefractedBall() {
+    if (typeof THREE === 'undefined') {
+        console.log('THREE.js not loaded yet, waiting...');
+        setTimeout(initRefractedBall, 100);
+        return;
+    }
+    
+    console.log('THREE.js loaded, initializing refracted ball...');
 
 let w = 300; // Fixed width for profile section (matches container - 100% larger)
 let h = 300; // Fixed height for profile section (matches container - 100% larger)
@@ -22,7 +34,18 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(w, h);
 renderer.setClearColor("#ffffff", 1);
 
-document.getElementById("refracted-ball-container").appendChild(renderer.domElement);
+// Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById("refracted-ball-container");
+    if (container) {
+        container.appendChild(renderer.domElement);
+        console.log('Refracted ball initialized successfully');
+        // Start the animation loop
+        render();
+    } else {
+        console.error('Refracted ball container not found');
+    }
+});
 
 // const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -198,7 +221,7 @@ function render() {
   requestAnimationFrame(render);
 }
 
-render();
+// render() is now called inside DOMContentLoaded event
 
 function resize() {
   w = 300; // Keep fixed size for profile section (matches container - 100% larger)
@@ -234,5 +257,18 @@ function switchPattern(patternNumber) {
   }
 }
 
-// Make function globally available
+// Make function globally available immediately
 window.switchPattern = switchPattern;
+
+// Also make it available as a fallback
+if (typeof switchPattern === 'undefined') {
+    window.switchPattern = function(patternNumber) {
+        console.log('switchPattern called with:', patternNumber);
+        // Fallback implementation
+    };
+}
+
+} // End of initRefractedBall function
+
+// Start initialization
+initRefractedBall();
