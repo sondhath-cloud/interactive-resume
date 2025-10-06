@@ -213,6 +213,24 @@
     color: #ffffff !important;
 }
 
+/* Make all text in professional experience section white */
+.one-column-experience h1,
+.one-column-experience h2,
+.one-column-experience h3,
+.one-column-experience h4,
+.one-column-experience p,
+.one-column-experience span,
+.one-column-experience div,
+.one-column-experience li,
+.one-column-experience .job-title,
+.one-column-experience .company-name,
+.one-column-experience .job-dates,
+.one-column-experience .job-summary,
+.one-column-experience .job-accomplishments li,
+.one-column-experience .accomplishments-title {
+    color: #ffffff !important;
+}
+
 /* Header Container */
 .header-container {
     width: 100%;
@@ -259,20 +277,25 @@
     width: 100%;
     max-width: 1200px;
     margin: 30px auto;
-    padding: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.28) 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    backdrop-filter: blur(30px);
-    box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.23) inset,
-        0 1px 0 0 rgba(255, 255, 255, 0.66) inset, 0 4px 16px rgba(0, 0, 0, 0.12);
+    padding: 0 20px;
+    background: #ffffff;
     border-radius: 20px;
     display: flex;
     min-height: 400px;
     position: relative;
     z-index: 10;
+}
+
+/* Make all text in three-column container black (except buttons) */
+.three-column-container h1,
+.three-column-container h2,
+.three-column-container h3,
+.three-column-container h4,
+.three-column-container p,
+.three-column-container span,
+.three-column-container div,
+.three-column-container li {
+    color: #000000 !important;
 }
 
 .column-1, .column-2, .column-3 {
