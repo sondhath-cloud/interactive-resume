@@ -983,84 +983,90 @@
         
         async function downloadHTMLResume(content, filename) {
             // Create HTML content that Word can open
-            const htmlContent = `<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>${content.name} - Resume</title>
-    <style>
-        body { 
-            font-family: 'Times New Roman', serif; 
-            font-size: 11pt; 
-            line-height: 1.4; 
-            margin: 1in; 
-            color: #000;
-        }
-        h1 { 
-            font-size: 18pt; 
-            font-weight: bold; 
-            text-align: center; 
-            margin-bottom: 10px; 
-        }
-        h2 { 
-            font-size: 14pt; 
-            font-weight: bold; 
-            margin-top: 20px; 
-            margin-bottom: 10px; 
-            border-bottom: 1px solid #000; 
-        }
-        h3 { 
-            font-size: 12pt; 
-            font-weight: bold; 
-            margin-top: 15px; 
-            margin-bottom: 5px; 
-        }
-        .subtitle { 
-            text-align: center; 
-            font-style: italic; 
-            margin-bottom: 20px; 
-        }
-        .experience-item { 
-            margin-bottom: 15px; 
-        }
-        .job-header { 
-            font-weight: bold; 
-        }
-        .company-dates { 
-            font-style: italic; 
-        }
-        .summary { 
-            margin: 5px 0; 
-        }
-        ul { 
-            margin: 5px 0; 
-            padding-left: 20px; 
-        }
-        li { 
-            margin-bottom: 3px; 
-        }
-    </style>
-</head>
-<body>
-    <h1>${content.name}</h1>
-    <div class="subtitle">${content.title}</div>
-    
-    <h2>PROFESSIONAL SUMMARY</h2>
-    <p>${content.about}</p>
-    
-    <h2>PROFESSIONAL EXPERIENCE</h2>
-    ${content.experiences.map(exp => `
-        <div class="experience-item">
-            <div class="job-header">${exp.title}</div>
-            <div class="company-dates">${exp.company} | ${exp.dates}</div>
-            <div class="summary">${exp.summary}</div>
-            <ul>
-                ${exp.accomplishments.map(acc => `<li>${acc}</li>`).join('')}
-            </ul>
-        </div>
-    `).join('')}
-</body>
-</html>`;
+            let experiencesHTML = '';
+            content.experiences.forEach(exp => {
+                let accomplishmentsHTML = '';
+                exp.accomplishments.forEach(acc => {
+                    accomplishmentsHTML += '<li>' + acc + '</li>';
+                });
+                
+                experiencesHTML += '<div class="experience-item">' +
+                    '<div class="job-header">' + exp.title + '</div>' +
+                    '<div class="company-dates">' + exp.company + ' | ' + exp.dates + '</div>' +
+                    '<div class="summary">' + exp.summary + '</div>' +
+                    '<ul>' + accomplishmentsHTML + '</ul>' +
+                    '</div>';
+            });
+            
+            const htmlContent = '<!DOCTYPE html>' +
+'<html>' +
+'<head>' +
+'    <meta charset="UTF-8">' +
+'    <title>' + content.name + ' - Resume</title>' +
+'    <style>' +
+'        body { ' +
+'            font-family: "Times New Roman", serif; ' +
+'            font-size: 11pt; ' +
+'            line-height: 1.4; ' +
+'            margin: 1in; ' +
+'            color: #000;' +
+'        }' +
+'        h1 { ' +
+'            font-size: 18pt; ' +
+'            font-weight: bold; ' +
+'            text-align: center; ' +
+'            margin-bottom: 10px; ' +
+'        }' +
+'        h2 { ' +
+'            font-size: 14pt; ' +
+'            font-weight: bold; ' +
+'            margin-top: 20px; ' +
+'            margin-bottom: 10px; ' +
+'            border-bottom: 1px solid #000; ' +
+'        }' +
+'        h3 { ' +
+'            font-size: 12pt; ' +
+'            font-weight: bold; ' +
+'            margin-top: 15px; ' +
+'            margin-bottom: 5px; ' +
+'        }' +
+'        .subtitle { ' +
+'            text-align: center; ' +
+'            font-style: italic; ' +
+'            margin-bottom: 20px; ' +
+'        }' +
+'        .experience-item { ' +
+'            margin-bottom: 15px; ' +
+'        }' +
+'        .job-header { ' +
+'            font-weight: bold; ' +
+'        }' +
+'        .company-dates { ' +
+'            font-style: italic; ' +
+'        }' +
+'        .summary { ' +
+'            margin: 5px 0; ' +
+'        }' +
+'        ul { ' +
+'            margin: 5px 0; ' +
+'            padding-left: 20px; ' +
+'        }' +
+'        li { ' +
+'            margin-bottom: 3px; ' +
+'        }' +
+'    </style>' +
+'</head>' +
+'<body>' +
+'    <h1>' + content.name + '</h1>' +
+'    <div class="subtitle">' + content.title + '</div>' +
+'    ' +
+'    <h2>PROFESSIONAL SUMMARY</h2>' +
+'    <p>' + content.about + '</p>' +
+'    ' +
+'    <h2>PROFESSIONAL EXPERIENCE</h2>' +
+    experiencesHTML +
+'</body>' +
+'</html>';
             
             // Create blob and download
             const blob = new Blob([htmlContent], { type: 'text/html' });
