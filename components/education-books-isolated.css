@@ -803,6 +803,11 @@
   transition: color 0.5s ease;
 }
 
+/* Make default description text not bold */
+#books-component-container-top .book-description.default-description h3 {
+  font-weight: normal;
+}
+
 #books-component-container-top .book-description .author {
   font-style: italic;
   opacity: 0.8;

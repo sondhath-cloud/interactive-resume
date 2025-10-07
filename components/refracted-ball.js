@@ -28,11 +28,12 @@ camera.position.set(0, 0, 2);
 camera.lookAt(new THREE.Vector3());
 
 const renderer = new THREE.WebGLRenderer({
-  antialias: true
+  antialias: true,
+  alpha: true
 });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(w, h);
-renderer.setClearColor("#ffffff", 1);
+renderer.setClearColor(0x000000, 0);
 
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', function() {
@@ -118,13 +119,23 @@ const fragment = /* GLSL */ `
 const loader = new THREE.TextureLoader();
 let currentPattern = 1;
 const patterns = [
-  "./pattern1.png",
-  "./pattern2.png", 
-  "./pattern3.png",
-  "./pattern4.png"
+  "assets/backgrounds/pattern1.png",
+  "assets/backgrounds/pattern2.png", 
+  "assets/backgrounds/pattern3.png",
+  "assets/backgrounds/pattern4.png"
 ];
 
-let texture = loader.load(patterns[currentPattern - 1]);
+console.log('Loading texture:', patterns[currentPattern - 1]);
+let texture = loader.load(
+  patterns[currentPattern - 1],
+  function(texture) {
+    console.log('Texture loaded successfully:', patterns[currentPattern - 1]);
+  },
+  undefined,
+  function(error) {
+    console.error('Error loading texture:', patterns[currentPattern - 1], error);
+  }
+);
 texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping; // RepeatWrapping MirroredRepeatWrapping
 
 const geometry = new THREE.IcosahedronGeometry(1, 2);
@@ -233,18 +244,29 @@ function resize() {
 
 window.addEventListener("resize", resize);
 
-// Pattern switching function
-function switchPattern(patternNumber) {
+// Pattern switching function - expose globally
+window.switchPattern = function(patternNumber) {
+  console.log('switchPattern called with:', patternNumber);
   if (patternNumber >= 1 && patternNumber <= 4) {
     currentPattern = patternNumber;
     
     // Load new texture
-    texture = loader.load(patterns[currentPattern - 1]);
-    texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping;
-    
-    // Update material uniforms
-    material.uniforms.uTexture.value = texture;
-    material1.uniforms.uTexture.value = texture;
+    console.log('Loading pattern:', patterns[currentPattern - 1]);
+    texture = loader.load(
+      patterns[currentPattern - 1],
+      function(loadedTexture) {
+        console.log('Pattern loaded successfully:', patterns[currentPattern - 1]);
+        loadedTexture.wrapS = loadedTexture.wrapT = THREE.MirroredRepeatWrapping;
+        
+        // Update material uniforms
+        material.uniforms.uTexture.value = loadedTexture;
+        material1.uniforms.uTexture.value = loadedTexture;
+      },
+      undefined,
+      function(error) {
+        console.error('Error loading pattern:', patterns[currentPattern - 1], error);
+      }
+    );
     
     // Update button styles
     document.querySelectorAll('.pattern-btn').forEach((btn, index) => {
@@ -255,17 +277,6 @@ function switchPattern(patternNumber) {
       }
     });
   }
-}
-
-// Make function globally available immediately
-window.switchPattern = switchPattern;
-
-// Also make it available as a fallback
-if (typeof switchPattern === 'undefined') {
-    window.switchPattern = function(patternNumber) {
-        console.log('switchPattern called with:', patternNumber);
-        // Fallback implementation
-    };
 }
 
 } // End of initRefractedBall function

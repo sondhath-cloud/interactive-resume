@@ -9,7 +9,7 @@ class TextDrawing {
         this.angleDistortion = 0;
         this.mouse = {x: 0, y: 0, down: false};
         
-        this.letters = "people-centric    scrappy    tech-savvy   empathy   optimism   innovation   initiative   ";
+        this.letters = "people-centric    scrappy    tech-savvy   empathetic   optimistic   innovative   motivated   hard worker   ";
         
         this.colors = ["#27918F", "#90A998", "#549389"];
         this.colorIndex = 0;

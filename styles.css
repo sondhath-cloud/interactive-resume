@@ -278,7 +278,7 @@
     max-width: 1200px;
     margin: 30px auto;
     padding: 0 20px;
-    background: #ffffff;
+    background: transparent;
     border-radius: 20px;
     display: flex;
     min-height: 400px;
@@ -286,7 +286,7 @@
     z-index: 10;
 }
 
-/* Make all text in three-column container black (except buttons) */
+/* Make all text in three-column container white */
 .three-column-container h1,
 .three-column-container h2,
 .three-column-container h3,
@@ -295,7 +295,7 @@
 .three-column-container span,
 .three-column-container div,
 .three-column-container li {
-    color: #000000 !important;
+    color: #ffffff !important;
 }
 
 .column-1, .column-2, .column-3 {
@@ -336,6 +336,10 @@
     font-size: 18px;
     font-weight: 600;
     text-align: center;
+}
+
+#refracted-ball-container {
+    background: transparent !important;
 }
 
 /* Project Popup Styles */
@@ -1878,7 +1882,7 @@
 }
 
 .card-background[data-category="technological"] {
-    background-image: url('./technological-bg.jpg');
+    background-image: url('./assets/backgrounds/technological-bg.jpg');
 }
 
 .card-background[data-category="organizational"] {
@@ -2171,8 +2175,8 @@
 .experience-item {
     background: linear-gradient(
         180deg,
-        rgba(255, 255, 255, 0.2) 0%,
-        rgba(255, 255, 255, 0.1) 100%
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.4) 100%
     );
     backdrop-filter: blur(20px);
     border-radius: 16px;
@@ -2235,7 +2239,7 @@
 }
 
 .job-accomplishments h6 {
-    color: #000000;
+    color: #ffffff;
     font-size: 16px;
     font-weight: 600;
     margin: 0 0 15px 0;
