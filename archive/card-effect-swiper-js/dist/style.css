@@ -47,7 +47,7 @@ section {
 }
 
 .info p {
-  color: #fff;
+  color: #000;
   font-weight: 500;
   font-size: 1rem;
   margin-bottom: 20px;
@@ -70,7 +70,7 @@ section {
   border-radius: 4px;
   outline: none;
   text-decoration: none;
-  color: #ff6b6b;
+  color: #000;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);

@@ -13,6 +13,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    
+
     <!-- Floating Background Circles -->
     <ul class="circles">
         <li></li>
@@ -56,9 +63,9 @@
         <div class="column-3">
             <h3>ABOUT</h3>
             <div class="about-content">
-                <p data-print="profile-text">I pride myself on seeing around corners, earning trust, and not taking myself too seriously. I enjoy starting from scratch as much as I love collaborating with a team to make something that exists even better. You can usually find me respectfully challenging the status quo or improving processes.</p>
+                <p data-print="profile-text">I'm conversational in Spanish, pride myself on seeing around corners, and I don't take myself too seriously. I enjoy starting from scratch as much as I love collaborating with a team to make something that exists even better. You can usually find me respectfully challenging the status quo, or working on coding new things I dream up.</p>
                 <p data-print="title" style="display:none;">Change Management and Organizational Development Professional</p>
-                <button class="print-resume-btn" onclick="window.open('resume.html', '_blank')">View Printable Resume</button>
+                <button class="print-resume-btn" onclick="openPrintableResume()" style="position: relative; z-index: 9999; pointer-events: auto;">View Printable Resume</button>
             </div>
         </div>
     </div>
@@ -261,7 +268,7 @@
                 <div class="book-descriptions">
                     <!-- Default Description -->
                     <div class="book-description default-description" data-book-index="default">
-                        <h3>Degrees and certifications I've earned are just a fraction of my knowledge base. Direct experience and others' input are integral complements to my formal education. Click on a book cover to learn more about degrees and certifications I have earned.</h3>
+                        <h3>Formal education provides a part of my knowledge base, which you can learn more about by clicking a book cover. Direct experience and others' input and feedback are just as important to me as degrees and certifications.</h3>
                         <div class="author"></div>
                         <div class="lines-animation">
                             <p></p>
@@ -273,7 +280,7 @@
                         <h3>Bachelor of Science in Psychology</h3>
                         <div class="author">Arizona State University</div>
                         <div class="lines-animation">
-                            <p>Studying Psychology gave me insight into human behavior and the mind. The coursework and research helped me understand how psychological principles apply to everyday life. It also honed my ability to empathize and approach problems from multiple angles, enriching both my personal and professional interactions.</p>
+                            <p>Studying Psychology gave me insight into human behavior and how psychological principles apply to everyday life. It also honed my ability to empathize and approach problems from multiple angles, enriching both my personal and professional interactions.</p>
                         </div>
                     </div>
 
@@ -281,7 +288,7 @@
                         <h3>Minor in Philosophy</h3>
                         <div class="author">Arizona State University</div>
                         <div class="lines-animation">
-                            <p>I accidentally earned a minor in Philosophy because I had voluntarily taken so many Philosophy classes from sheer interest. Philosophy taught me to think more deeply about my beliefs and decisions, sharpening my critical thinking, analytical skills, and broadening my perspective.</p>
+                            <p>I accidentally earned a minor in this subject because I had voluntarily taken so many Philosophy classes from sheer interest. Philosophy taught me to think more deeply about my beliefs and decisions, sharpening my critical thinking, analytical skills, and broadening my perspective.</p>
                         </div>
                     </div>
 
@@ -314,7 +321,7 @@
                         <h3>Strategic Planning Facilitator</h3>
                         <div class="author">Institute of Cultural Affairs</div>
                         <div class="lines-animation">
-                            <p>The ICA Technology of Participation Strategic Planning Facilitator certification taught me how to guide groups through structured decision-making processes. It empowered me to facilitate inclusive conversations, ensuring all voices are heard. This training has been key in fostering collaboration and building consensus in both professional and community settings.</p>
+                            <p>The ICA Technology of Participation Strategic Planning Facilitator certification taught me how to guide groups through structured decision-making processes. It empowered me to facilitate inclusive conversations, ensuring all voices are heard. This training has been instrumental in helping me build consensus in groups.</p>
                         </div>
                     </div>
 
@@ -566,6 +573,241 @@
     <script>
         // Simple test to ensure JavaScript is working
         console.log('Clean resume loaded successfully');
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Update icon
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Printable Resume Function - Make it globally accessible
+        window.openPrintableResume = function() {
+            console.log('Button clicked! openPrintableResume function called');
+            try {
+                console.log('Starting openPrintableResume function...');
+                // Extract content from the page
+                const contactSection = extractContactInfo();
+                console.log('Contact section extracted:', contactSection);
+                const aboutSection = extractAboutInfo();
+                console.log('About section extracted:', aboutSection);
+                const educationSection = extractEducationInfo();
+                console.log('Education section extracted:', educationSection);
+                const technicalSkillsSection = extractTechnicalSkillsInfo();
+                console.log('Technical skills section extracted:', technicalSkillsSection);
+                const professionalExperienceSection = extractProfessionalExperienceInfo();
+                console.log('Professional experience section extracted:', professionalExperienceSection);
+
+            // Combine all sections
+            const resumeContent = `
+SONDRA HATHAWAY RESUME
+
+${contactSection}
+
+ABOUT
+${aboutSection}
+
+EDUCATION AND CERTIFICATIONS
+${educationSection}
+
+TECHNICAL SKILLS
+${technicalSkillsSection}
+
+PROFESSIONAL EXPERIENCE
+${professionalExperienceSection}
+            `;
+
+            // Create new window with printable content
+            const printWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
+            
+            if (!printWindow || printWindow.closed || typeof printWindow.closed == 'undefined') {
+                // Popup was blocked - offer alternative download method
+                console.error('Popup blocked by browser - offering download alternative');
+                const downloadConfirm = confirm('Popup blocked! Would you like to download the resume as a text file instead?');
+                if (downloadConfirm) {
+                    // Create downloadable text file
+                    const blob = new Blob([resumeContent], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'Sondra_Hathaway_Resume.txt';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    console.log('Resume downloaded as text file');
+                }
+                return;
+            }
+            
+            printWindow.document.write(`
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sondra Hathaway - Printable Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #000;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        @media print {
+            body { margin: 20px; }
+            h1 { page-break-after: avoid; }
+            h2 { page-break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <pre>${resumeContent}</pre>
+    <script>
+        window.onload = function() {
+            window.print();
+        }
+    <\/script>
+</body>
+</html>
+            `);
+            printWindow.document.close();
+            console.log('Printable resume window opened successfully!');
+            } catch (error) {
+                console.error('Error in openPrintableResume:', error);
+                alert('Error creating printable resume: ' + error.message);
+            }
+        };
+
+        function extractContactInfo() {
+            const name = document.querySelector('[data-print="name"]')?.textContent || 'Sondra Hathaway';
+            const website = document.querySelector('[data-print="contact-website"]')?.textContent || '';
+            const phone = document.querySelector('[data-print="contact-phone"]')?.textContent || '';
+            const email = document.querySelector('[data-print="contact-email"]')?.textContent || '';
+            const address = document.querySelector('[data-print="contact-address"]')?.textContent || '';
+            
+            return `${name}
+${website}
+${phone}
+${email}
+${address}`;
+        }
+
+        function extractAboutInfo() {
+            const aboutText = document.querySelector('[data-print="profile-text"]')?.textContent || '';
+            return aboutText;
+        }
+
+        function extractEducationInfo() {
+            const educationElements = document.querySelectorAll('.education-testing-area .book-description');
+            let educationText = '';
+            
+            educationElements.forEach(element => {
+                const title = element.querySelector('h3')?.textContent || '';
+                const author = element.querySelector('.author')?.textContent || '';
+                const description = element.querySelector('p')?.textContent || '';
+                
+                if (title && title.length > 10) { // Filter out default description
+                    educationText += `${title}\n`;
+                    if (author) educationText += `${author}\n`;
+                    if (description) educationText += `${description}\n\n`;
+                }
+            });
+            
+            return educationText || 'Education information not found.';
+        }
+
+        function extractTechnicalSkillsInfo() {
+            const skillTags = document.querySelectorAll('.skill-tag');
+            let skillsText = '';
+            
+            skillTags.forEach(tag => {
+                const skill = tag.textContent.trim();
+                if (skill) {
+                    skillsText += `${skill}, `;
+                }
+            });
+            
+            return skillsText.slice(0, -2) || 'Technical skills not found.';
+        }
+
+        function extractProfessionalExperienceInfo() {
+            const experienceItems = document.querySelectorAll('.experience-item');
+            let experienceText = '';
+            
+            experienceItems.forEach(item => {
+                const jobTitle = item.querySelector('.job-title')?.textContent || '';
+                const companyName = item.querySelector('.company-name')?.textContent || '';
+                const jobDates = item.querySelector('.job-dates')?.textContent || '';
+                const jobSummary = item.querySelector('.job-summary')?.textContent || '';
+                const accomplishments = item.querySelectorAll('.job-accomplishments li');
+                
+                if (jobTitle) {
+                    experienceText += `${jobTitle}\n`;
+                    experienceText += `${companyName}\n`;
+                    experienceText += `${jobDates}\n\n`;
+                    
+                    if (jobSummary) {
+                        experienceText += `${jobSummary}\n\n`;
+                    }
+                    
+                    if (accomplishments.length > 0) {
+                        experienceText += `Key Accomplishments:\n`;
+                        accomplishments.forEach(accomplishment => {
+                            const text = accomplishment.textContent.trim();
+                            if (text) {
+                                experienceText += `• ${text}\n`;
+                            }
+                        });
+                        experienceText += '\n';
+                    }
+                }
+            });
+            
+            return experienceText || 'Professional experience not found.';
+        }
     </script>
 
 </body>
