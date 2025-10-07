@@ -37,11 +37,11 @@
         <div class="column-1">
             <h3>CONTACT</h3>
             <div class="contact-info">
-                <p>Sondra Hathaway</p>
-                <p>sondrahathaway.com</p>
-                <p>+01 602 380 7231</p>
-                <p>sondra@sondrahathaway.com</p>
-                <p>Princeton, TX 75407</p>
+                <p data-print="name">Sondra Hathaway</p>
+                <p data-print="contact-website">sondrahathaway.com</p>
+                <p data-print="contact-phone">+01 602 380 7231</p>
+                <p data-print="contact-email">sondra@sondrahathaway.com</p>
+                <p data-print="contact-address">Princeton, TX 75407</p>
             </div>
         </div>
         <div class="column-2">
@@ -56,8 +56,8 @@
         <div class="column-3">
             <h3>ABOUT</h3>
             <div class="about-content">
-                <p>I pride myself on seeing around corners, earning trust, and not taking myself too seriously. My happy place is starting from scratch. You will know me to respectfully challenge the status quo, improve continuously, and achieve results.</p>
-                <button class="word-btn" onclick="generateWordDoc(event)">View Resume Text Version</button>
+                <p data-print="profile-text">I pride myself on seeing around corners, earning trust, and not taking myself too seriously. My happy place is starting from scratch. You will know me to respectfully challenge the status quo, improve continuously, and achieve results.</p>
+                <p data-print="title" style="display:none;">Change Management and Organizational Development Professional</p>
             </div>
         </div>
     </div>
@@ -346,9 +346,9 @@
     </div>
 
     <!-- Technical Skills Section -->
-    <div class="technical-skills-container">
+    <div class="technical-skills-container" data-print="technical-skills-section">
         <h3 class="section-title">TECHNICAL SKILLS</h3>
-        <div class="skill-tags">
+        <div class="skill-tags" data-print="technical-skills">
             <span class="skill-tag">Adobe Captivate</span>
             <span class="skill-tag">Adobe Illustrator</span>
             <span class="skill-tag">Adobe InDesign</span>
@@ -392,20 +392,20 @@
             <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
             
             <!-- Change Manager - CIC -->
-            <div class="experience-item">
+            <div class="experience-item" data-print="job-1">
                 <div class="experience-header">
-                    <h4 class="job-title">Senior Organizational Developer</h4>
+                    <h4 class="job-title" data-print="job-1-title">Senior Organizational Developer</h4>
                     <div class="company-info">
-                        <span class="company-name">CIC</span>
-                        <span class="job-dates">Nov 2023-Present</span>
+                        <span class="company-name" data-print="job-1-company">CIC</span>
+                        <span class="job-dates" data-print="job-1-dates">Nov 2023-Present</span>
                     </div>
                 </div>
-                <div class="job-summary">
+                <div class="job-summary" data-print="job-1-summary">
                     Leading change management efforts during organizational strategic planning and digital transformation initiatives.
                 </div>
                 <div class="job-accomplishments">
                     <h6>Key Accomplishments:</h6>
-                    <ul>
+                    <ul data-print="job-1-accomplishments">
                         <li>Lead change management efforts during and after organizational strategic planning</li>
                         <li>Engage individuals through 1:1, small and large group discussions; secured active participation from 95% of key stakeholders in strategy workshops and feedback sessions</li>
                         <li>Guide employees in goal-setting process and throughout plan implementation</li>
@@ -416,20 +416,20 @@
             </div>
 
             <!-- Change Management Consultant - Stratalysts -->
-            <div class="experience-item">
+            <div class="experience-item" data-print="job-2">
                 <div class="experience-header">
-                    <h4 class="job-title">Change Management Consultant</h4>
+                    <h4 class="job-title" data-print="job-2-title">Change Management Consultant</h4>
                     <div class="company-info">
-                        <span class="company-name">Stratalysts</span>
-                        <span class="job-dates">Nov 2023-Mar 2025</span>
+                        <span class="company-name" data-print="job-2-company">Stratalysts</span>
+                        <span class="job-dates" data-print="job-2-dates">Nov 2023-Mar 2025</span>
                     </div>
                 </div>
-                <div class="job-summary">
+                <div class="job-summary" data-print="job-2-summary">
                     Applied frameworks such as Prosci and Kotter to develop leadership communication strategies, conduct impact analyses, and create sustainable engagement plans, resulting in 30% to 72% improvement in change readiness scores over project lifecycles.
                 </div>
                 <div class="job-accomplishments">
                     <h6>Key Accomplishments:</h6>
-                    <ul>
+                    <ul data-print="job-2-accomplishments">
                         <li>Applied frameworks such as Prosci and Kotter to develop leadership communication strategies, conduct impact analyses, and create sustainable engagement plans, resulting in 30% to 72% improvement in change readiness scores over project lifecycles</li>
                         <li>Conducted in-depth stakeholder interviews and business reviews across functions and seniority levels, gathering key insights that informed tailored change strategies and boosted project alignment by 25%</li>
                         <li>Developed and delivered online training programs utilizing software such as Articulate and Camtasia</li>
@@ -441,20 +441,20 @@
             </div>
 
             <!-- Senior Change Management Consultant - BerryDunn -->
-            <div class="experience-item">
+            <div class="experience-item" data-print="job-3">
                 <div class="experience-header">
-                    <h4 class="job-title">Senior Change Management Consultant</h4>
+                    <h4 class="job-title" data-print="job-3-title">Senior Change Management Consultant</h4>
                     <div class="company-info">
-                        <span class="company-name">BerryDunn</span>
-                        <span class="job-dates">Aug 2020-Oct 2023</span>
+                        <span class="company-name" data-print="job-3-company">BerryDunn</span>
+                        <span class="job-dates" data-print="job-3-dates">Aug 2020-Oct 2023</span>
                     </div>
                 </div>
-                <div class="job-summary">
+                <div class="job-summary" data-print="job-3-summary">
                     Led change management initiatives totaling over $2.3M annual revenue, including multi-year digital transformations.
                 </div>
                 <div class="job-accomplishments">
                     <h6>Key Tasks and Accomplishments:</h6>
-                    <ul>
+                    <ul data-print="job-3-accomplishments">
                         <li>Achieved over $2.3M in annual revenue through proactive client engagement and delivering high-impact consulting services</li>
                         <li>Built and executed tailored change management plans achieving a 100% risk resolution rate</li>
                         <li>Designed and executed large-scale organizational change strategies, by anticipating challenges, defining scope, and executing detailed project plans, achieving on-time delivery for initiatives</li>
@@ -470,20 +470,20 @@
             </div>
 
             <!-- Engagement and Development Administrator - City of Garland -->
-            <div class="experience-item">
+            <div class="experience-item" data-print="job-4">
                 <div class="experience-header">
-                    <h4 class="job-title">Engagement and Development Administrator</h4>
+                    <h4 class="job-title" data-print="job-4-title">Engagement and Development Administrator</h4>
                     <div class="company-info">
-                        <span class="company-name">City of Garland, Texas</span>
-                        <span class="job-dates">Dec 2017-Aug 2018</span>
+                        <span class="company-name" data-print="job-4-company">City of Garland, Texas</span>
+                        <span class="job-dates" data-print="job-4-dates">Dec 2017-Aug 2018</span>
                     </div>
                 </div>
-                <div class="job-summary">
+                <div class="job-summary" data-print="job-4-summary">
                     Managed engagement, learning, and development initiatives for over 2,000 employees.
                 </div>
                 <div class="job-accomplishments">
                     <h6>Key Tasks and Accomplishments:</h6>
-                    <ul>
+                    <ul data-print="job-4-accomplishments">
                         <li>Managed engagement, learning, and development initiatives for over 2,000 employees</li>
                         <li>Implemented agile and Lean methodology (including sprint planning, iterative design, waste identification and elimination, and continuous feedback loops)</li>
                         <li>Designed and implemented employee engagement and customer satisfaction surveys, analyzing trends using statistical tools</li>
@@ -500,20 +500,20 @@
             </div>
 
             <!-- Senior Organizational Development Consultant - TXU Energy -->
-            <div class="experience-item">
+            <div class="experience-item" data-print="job-5">
                 <div class="experience-header">
-                    <h4 class="job-title">Senior Organizational Development Consultant</h4>
+                    <h4 class="job-title" data-print="job-5-title">Senior Organizational Development Consultant</h4>
                     <div class="company-info">
-                        <span class="company-name">TXU Energy</span>
-                        <span class="job-dates">Apr 2015-Oct 2016</span>
+                        <span class="company-name" data-print="job-5-company">TXU Energy</span>
+                        <span class="job-dates" data-print="job-5-dates">Apr 2015-Oct 2016</span>
                     </div>
                 </div>
-                <div class="job-summary">
+                <div class="job-summary" data-print="job-5-summary">
                     Developed organizational change readiness in preparation for $9.45 billion company acquisition.
                 </div>
                 <div class="job-accomplishments">
                     <h6>Key Accomplishments:</h6>
-                    <ul>
+                    <ul data-print="job-5-accomplishments">
                         <li>Managed organizational change during $9.45 billion acquisition, ensuring seamless integration and cultural alignment</li>
                         <li>Designed executive communication and change measurement strategies that reduced resistance by 15% while ensuring sustainable organizational practices</li>
                         <li>Designed leadership development programs and succession planning frameworks using agile and 9-Box methodologies</li>
@@ -557,12 +557,6 @@
     <script>
         // Simple test to ensure JavaScript is working
         console.log('Clean resume loaded successfully');
-        
-        // Word Document Generation Function
-        function generateWordDoc(event) {
-            console.log('Word document generation started');
-            alert('Word document generation would work here');
-        }
     </script>
 
 </body>

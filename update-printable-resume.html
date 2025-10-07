@@ -1,0 +1,94 @@
+How to Add Data Attributes to Your Web Resume
+
+Add these data attributes to the corresponding sections in your web resume HTML:
+
+1. Header Section
+
+In your web resume, add these attributes:
+
+<h1 data-print="name">Sondra Hathaway</h1>
+<p data-print="title">Change Management and Organizational Development Professional</p>
+
+Contact Information:
+<span data-print="contact-website">sondrahathaway.com</span>
+<span data-print="contact-phone">+01 602 380 7231</span>
+<span data-print="contact-email">sondra@sondrahathaway.com</span>
+<span data-print="contact-address">Princeton, TX 75407</span>
+2. Profile Section
+
+<p data-print="profile-text">I pride myself on seeing around corners...</p>
+3. Job Experience Sections
+
+For each job, add these attributes:
+
+Job 1 (Senior Organizational Developer):
+<div data-print="job-1">
+  <h3 data-print="job-1-title">Senior Organizational Developer</h3>
+  <span data-print="job-1-dates">Nov 2023 - Present</span>
+  <p data-print="job-1-company">CIC</p>
+  <p data-print="job-1-summary">Leading change management efforts...</p>
+  <ul data-print="job-1-accomplishments">
+    <li>Lead change management efforts...</li>
+    <li>Engage individuals through 1:1...</li>
+  </ul>
+</div>
+
+Repeat for jobs 2-5 with:
+data-print="job-2", data-print="job-3", etc.
+4. Education Section
+
+For each education item:
+
+<div data-print="education-1">
+  <h3 data-print="education-1-title">Master of Business Administration</h3>
+  <p data-print="education-1-school">University of Phoenix</p>
+</div>
+
+Repeat for education items 2-6 with:
+data-print="education-2", data-print="education-3", etc.
+5. Technical Skills
+
+<div data-print="technical-skills">
+  <!-- Your existing skills structure -->
+</div>
+6. JavaScript to Sync Content
+
+Add this script to your printable resume to pull content:
+
+<script>
+  // Function to sync content from web resume
+  function syncFromWebResume() {
+    // Get the web resume content
+    fetch('/path/to/your/web-resume.html')
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const webResume = parser.parseFromString(html, 'text/html');
+        
+        // Sync each data-print element
+        document.querySelectorAll('[data-print]').forEach(element => {
+          const printKey = element.getAttribute('data-print');
+          const webElement = webResume.querySelector(`[data-print="${printKey}"]`);
+          if (webElement) {
+            element.innerHTML = webElement.innerHTML;
+          }
+        });
+      });
+  }
+  
+  // Run sync when page loads
+  document.addEventListener('DOMContentLoaded', syncFromWebResume);
+</script>
+Benefits of This System:
+
+Automatic Updates: When you update your web resume, the printable version updates too
+Single Source of Truth: Your web resume is the master copy
+Flexible Layout: Printable version can have different styling and layout
+Easy Maintenance: Just add data attributes to your existing HTML
+No Duplication: No need to maintain two separate content files
+Next Steps:
+
+Add the data attributes to your web resume HTML
+Test the sync function
+Customize the JavaScript to match your specific setup
+Set up automatic syncing (optional)
