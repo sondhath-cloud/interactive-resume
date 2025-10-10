@@ -1,0 +1,845 @@
+/* Isolated Education Books Component Styles */
+/* This file contains scoped styles specifically for the education section books component */
+
+/* Education books component container styles */
+#books-component-container-top.education-books-isolated {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(20px);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Cabinet Grotesk", sans-serif;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  position: relative;
+  min-height: 300px; /* Ensure minimum height */
+  border-radius: 16px;
+  box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.2) inset,
+      0 1px 0 0 rgba(255, 255, 255, 0.4) inset, 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive container adjustments */
+@media screen and (max-width: 768px) {
+  #books-component-container-top.education-books-isolated {
+    min-height: 250px; /* Reduce minimum height on mobile */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #books-component-container-top.education-books-isolated {
+    min-height: 200px; /* Further reduce minimum height on small mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #books-component-container-top.education-books-isolated {
+    min-height: 180px; /* Minimum height for very small screens */
+  }
+}
+
+/* Education theme toggle dot */
+#books-component-container-top .education-theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--toggle-dot);
+  cursor: pointer;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Education shelf container to manage stacking context */
+#books-component-container-top .shelf-container {
+  position: relative;
+  width: 100%;
+  height: 350px; /* Reduced height for testing area */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  /* Above the text overlay */
+}
+
+#books-component-container-top .shelf {
+  display: block;
+  position: absolute;
+  bottom: 210px; /* Moved up by 50px from 160px */
+  width: 100%;
+  max-width: 880px;
+  height: 15px;
+  background: var(--shelf-bg);
+  border-radius: 1px;
+  z-index: 20;
+  box-shadow:
+        /* Subtle top highlight */ 0px -1px 1px rgba(255, 255, 255, 0.15),
+    /* Close shadow */ 0px 2px 3px rgba(0, 0, 0, 0.12),
+    /* Medium shadow */ 0px 5px 10px rgba(0, 0, 0, 0.08),
+    /* Reduced larger shadow */ 0px 10px 15px rgba(0, 0, 0, 0.04),
+    /* Minimal diffused shadow */ 0px 15px 20px rgba(0, 0, 0, 0.02);
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Add a subtle edge to the education shelf */
+#books-component-container-top .shelf:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--shelf-edge-bottom);
+  transition: background-color 0.5s ease;
+}
+
+#books-component-container-top .shelf:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--shelf-edge-top);
+  transition: background-color 0.5s ease;
+}
+
+/* Education books wrapper */
+#books-component-container-top .books-wrapper {
+  position: absolute;
+  bottom: 227px; /* Moved up by 50px from 177px */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem; /* Reduced gap for 6 books */
+  z-index: 10;
+  /* Below the shelf */
+}
+
+/* Education Book Item Styles */
+#books-component-container-top .books__item {
+  text-align: center;
+  cursor: default;
+  height: 116px; /* Increased by 20% from 97px */
+}
+
+#books-component-container-top .books__container {
+  position: relative;
+  width: 88px; /* Increased by 20% from 73px */
+  margin: 0 auto;
+  height: 100%;
+}
+
+#books-component-container-top .books__cover {
+  position: relative;
+  will-change: transform;
+  height: 100%;
+}
+
+#books-component-container-top .books__hitbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Education Back Cover: 96% with 2% margin */
+#books-component-container-top .books__back-cover {
+  position: absolute;
+  width: 96%;
+  height: 96%;
+  top: 2%;
+  left: 2%;
+  background: var(--book-back-cover);
+  border-radius: 0 6px 6px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  z-index: -10;
+  transition: background 0.5s ease;
+}
+
+/* Education Paper Container: 90% with equal top/bottom margin */
+#books-component-container-top .books__inside {
+  position: absolute;
+  width: 90%;
+  height: 94%;
+  top: 3%;
+  left: 5%;
+  z-index: 0;
+}
+
+/* Education Paper Pages: height is 100% */
+#books-component-container-top .books__page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 98%;
+  height: 100%;
+  background: var(--book-page);
+  border: 1px solid var(--book-page-border);
+  border-radius: 0 6px 6px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transform-origin: right center;
+  z-index: -5;
+  transition: background 0.5s ease, border-color 0.5s ease;
+}
+
+/* Education Front Cover Image */
+#books-component-container-top .books__image {
+  line-height: 0;
+  position: relative;
+  border-radius: 2px 6px 6px 2px;
+  height: 100%;
+  box-shadow: var(--book-shadow) 10px -5px 20px,
+    var(--book-shadow) 20px 0px 30px;
+  transform-origin: left center;
+  cursor: pointer;
+  will-change: transform, box-shadow;
+  z-index: 10;
+  transition: box-shadow 0.5s ease;
+  border: none; /* Remove any default borders */
+  outline: none; /* Remove focus outlines */
+}
+
+#books-component-container-top .books__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain; /* Changed from cover to contain for logos */
+     object-fit: contain; /* Changed from cover to contain for logos */
+  border-radius: 2px 6px 6px 2px;
+  padding: 10px; /* Add padding for logos */
+  background-color: white; /* White background for logos */
+}
+
+/* Reduce size of specific logos except CIC */
+#books-component-container-top [data-book-title*="Arizona State"] .books__image img,
+#books-component-container-top [data-book-title*="University of Phoenix"] .books__image img,
+#books-component-container-top [data-book-title*="Prosci"] .books__image img,
+#books-component-container-top [data-book-title*="ASQ"] .books__image img {
+  transform: scale(0.7); /* Reduce size to 70% */
+  transform-origin: center;
+}
+
+/* Keep CIC (Cultural Affairs) at original size */
+#books-component-container-top [data-book-title*="Cultural Affairs"] .books__image img {
+  transform: scale(1); /* Keep original size */
+  transform-origin: center;
+}
+
+/* ASQ book - Navy background for better logo visibility */
+#books-component-container-top [data-book-index="top-edu-5"] .books__image {
+  background-color: #1B2951 !important;
+  background: #1B2951 !important;
+}
+
+#books-component-container-top [data-book-index="top-edu-5"] .books__image img {
+  background-color: #1B2951 !important;
+  background: #1B2951 !important;
+}
+
+/* Lean Six Sigma book - Dark blue background */
+#books-component-container-top [data-book-index="top-edu-6"] .books__image img {
+  background-color: #032f51 !important;
+  background: #032f51 !important;
+}
+
+#books-component-container-top [data-book-title="Lean Six Sigma Certification"] .books__image img {
+  background-color: #032f51 !important;
+  background: #032f51 !important;
+}
+
+#books-component-container-top [data-book-title="ASQ Certification"] .books__image img {
+  background-color: #1B2951 !important;
+  background: #1B2951 !important;
+}
+
+#books-component-container-top img[src="./asq logo.png"] {
+  background-color: #1B2951 !important;
+  background: #1B2951 !important;
+}
+
+/* UOP book - Red background for better logo visibility */
+#books-component-container-top [data-book-index="top-edu-2"] .books__image img {
+  background-color: #e1391a !important;
+  background: #e1391a !important;
+}
+
+#books-component-container-top [data-book-title="University of Phoenix"] .books__image img {
+  background-color: #e1391a !important;
+  background: #e1391a !important;
+}
+
+#books-component-container-top img[src="./uop.png"] {
+  background-color: #e1391a !important;
+  background: #e1391a !important;
+}
+
+/* Responsive book description text */
+@media screen and (max-width: 768px) {
+  #books-component-container-top .book-description h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  #books-component-container-top .book-description .author {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  #books-component-container-top .book-description .lines-animation {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #books-component-container-top .book-description h3 {
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+  }
+  
+  #books-component-container-top .book-description .author {
+    font-size: 0.65rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  #books-component-container-top .book-description .lines-animation {
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
+}
+
+/* Wildcard Book - Golden yellow background */
+#books-component-container-top [data-book-index="top-edu-7"] .books__image {
+  background-color: #fdc923 !important;
+  background: #fdc923 !important;
+  border: none !important; /* Ensure no borders */
+  outline: none !important; /* Ensure no outlines */
+}
+
+#books-component-container-top [data-book-index="top-edu-7"] .books__image img {
+  background-color: #fdc923 !important;
+  background: #fdc923 !important;
+}
+
+#books-component-container-top [data-book-title="Data Analysis & Input Management"] .books__image {
+  background-color: #fdc923 !important;
+  background: #fdc923 !important;
+  border: none !important; /* Ensure no borders */
+  outline: none !important; /* Ensure no outlines */
+}
+
+#books-component-container-top [data-book-title="Data Analysis & Input Management"] .books__image img {
+  background-color: #fdc923 !important;
+  background: #fdc923 !important;
+}
+
+/* Force remove all borders and outlines from wildcard book */
+#books-component-container-top [data-book-index="top-edu-7"] .books__image,
+#books-component-container-top [data-book-title="Data Analysis & Input Management"] .books__image,
+#books-component-container-top [data-book-index="top-edu-7"] .books__cover,
+#books-component-container-top [data-book-title="Data Analysis & Input Management"] .books__cover {
+  border: none !important;
+  outline: none !important;
+  box-shadow: var(--book-shadow) 10px -5px 20px, var(--book-shadow) 20px 0px 30px !important;
+}
+
+/* Remove focus outlines from all book elements */
+#books-component-container-top .books__item:focus,
+#books-component-container-top .books__image:focus,
+#books-component-container-top .books__hitbox:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+/* Comprehensive border removal for wildcard book */
+#books-component-container-top [data-book-index="top-edu-7"] *,
+#books-component-container-top [data-book-title="Data Analysis & Input Management"] * {
+  border: none !important;
+  outline: none !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  border-color: transparent !important;
+}
+
+/* Wildcard icon styling */
+#books-component-container-top .wildcard-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 48px;
+  color: black;
+  font-weight: bold;
+}
+
+#books-component-container-top .wildcard-icon i {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Wildcard text styling */
+#books-component-container-top .input-text {
+  font-size: 48px; /* Large size */
+  font-weight: bold;
+  color: black; /* Black color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-shadow: none; /* Remove text shadow for cleaner look */
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+#books-component-container-top .books__effect {
+  position: absolute;
+  width: 24px;
+  height: 100%;
+  margin-left: 12px;
+  top: 0;
+  border-left: 2px solid rgba(0, 0, 0, 0.08);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform-origin: left center;
+  z-index: 5;
+  pointer-events: none;
+  will-change: margin-left;
+}
+
+#books-component-container-top .books__light {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 2px 6px 6px 2px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.15;
+  transform-origin: left center;
+  z-index: 4;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  will-change: opacity;
+}
+
+/* Education side view book styles */
+#books-component-container-top .side-book {
+  height: 116px; /* Increased by 20% from 97px */
+  width: 18px; /* Increased by 20% from 15px */
+  /* Thin width for side view */
+  position: relative;
+  cursor: pointer;
+  background: var(--side-book-bg);
+  border-radius: 2px;
+  box-shadow: var(--book-shadow) 5px -3px 10px, var(--book-shadow) 10px 0px 15px;
+  transform-origin: bottom center;
+  will-change: transform, box-shadow;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+#books-component-container-top .side-book__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  -webkit-text-orientation: mixed;
+          text-orientation: mixed;
+  transform: rotate(180deg);
+  color: var(--side-book-text);
+  font-size: 8px; /* Reduced from 12px */
+  padding: 3px 0; /* Reduced padding */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; /* Reduced letter spacing */
+  transition: color 0.5s ease;
+}
+
+#books-component-container-top .side-book__decoration {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background-color: var(--side-book-decoration);
+  transition: background-color 0.5s ease;
+}
+
+#books-component-container-top .side-book__decoration:nth-child(2) {
+  top: auto;
+  bottom: 20px;
+}
+
+/* Education contact shadow where book meets shelf */
+#books-component-container-top .book-shadow {
+  position: absolute;
+  bottom: 135px; /* Adjusted to match new shelf position */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem; /* Reduced gap for 6 books */
+  z-index: 15;
+  /* Between books and shelf */
+}
+
+#books-component-container-top .book-shadow__item {
+  width: 90px; /* Reduced width for testing area */
+  height: 1px; /* Reduced height to minimize shadow */
+  background: radial-gradient(
+    ellipse at center,
+    var(--book-shadow) 0%,
+    rgba(0, 0, 0, 0) 50% /* Reduced spread to minimize shadow */
+  );
+  border-radius: 50%;
+  will-change: width, opacity;
+  transition: background 0.5s ease;
+}
+
+#books-component-container-top .book-shadow__item.side {
+  width: 20px; /* Reduced width for testing area */
+}
+
+/* Education book descriptions */
+#books-component-container-top .book-descriptions {
+  position: absolute;
+  bottom: 70px; /* Moved down by 40px from 110px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 750px; /* Increased by 50% from 500px */
+  z-index: 5;
+  height: 100px; /* Reduced height for testing area */
+}
+
+/* Responsive scaling for books on smaller screens */
+@media screen and (max-width: 1200px) {
+  #books-component-container-top .books__item {
+    height: 100px; /* Scale down from 116px */
+  }
+  
+  #books-component-container-top .books__container {
+    width: 75px; /* Scale down from 88px */
+  }
+  
+  #books-component-container-top .side-book {
+    height: 100px; /* Scale down from 116px */
+    width: 15px; /* Scale down from 18px */
+  }
+  
+  #books-component-container-top .side-book__title {
+    font-size: 7px; /* Scale down from 8px */
+    padding: 2.5px 0; /* Scale down padding */
+  }
+  
+  #books-component-container-top .side-book__decoration {
+    top: 18px; /* Adjust decoration position */
+  }
+  
+  #books-component-container-top .side-book__decoration:nth-child(2) {
+    bottom: 18px; /* Adjust decoration position */
+  }
+  
+  #books-component-container-top .books-wrapper {
+    gap: 0.8rem; /* Reduce gap slightly */
+  }
+  
+  #books-component-container-top .book-shadow__item {
+    width: 75px; /* Scale down shadow */
+  }
+  
+  #books-component-container-top .book-shadow__item.side {
+    width: 17px; /* Scale down side shadow */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #books-component-container-top .books__item {
+    height: 85px; /* Further scale down */
+  }
+  
+  #books-component-container-top .books__container {
+    width: 65px; /* Further scale down */
+  }
+  
+  #books-component-container-top .side-book {
+    height: 85px; /* Further scale down */
+    width: 13px; /* Further scale down */
+  }
+  
+  #books-component-container-top .side-book__title {
+    font-size: 6.5px; /* Further scale down */
+    padding: 2px 0; /* Further scale down padding */
+  }
+  
+  #books-component-container-top .side-book__decoration {
+    top: 16px; /* Adjust decoration position */
+  }
+  
+  #books-component-container-top .side-book__decoration:nth-child(2) {
+    bottom: 16px; /* Adjust decoration position */
+  }
+  
+  #books-component-container-top .books-wrapper {
+    gap: 0.6rem; /* Further reduce gap */
+  }
+  
+  #books-component-container-top .book-shadow__item {
+    width: 65px; /* Further scale down shadow */
+  }
+  
+  #books-component-container-top .book-shadow__item.side {
+    width: 15px; /* Further scale down side shadow */
+  }
+  
+  #books-component-container-top .shelf {
+    max-width: 750px; /* Scale down shelf */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #books-component-container-top .books__item {
+    height: 70px; /* Scale down for mobile */
+  }
+  
+  #books-component-container-top .books__container {
+    width: 55px; /* Scale down for mobile */
+  }
+  
+  #books-component-container-top .side-book {
+    height: 70px; /* Scale down for mobile */
+    width: 11px; /* Scale down for mobile */
+  }
+  
+  #books-component-container-top .side-book__title {
+    font-size: 6px; /* Scale down for mobile */
+    padding: 1.5px 0; /* Scale down padding for mobile */
+  }
+  
+  #books-component-container-top .side-book__decoration {
+    top: 14px; /* Adjust decoration position for mobile */
+  }
+  
+  #books-component-container-top .side-book__decoration:nth-child(2) {
+    bottom: 14px; /* Adjust decoration position for mobile */
+  }
+  
+  #books-component-container-top .books-wrapper {
+    gap: 0.4rem; /* Reduce gap for mobile */
+  }
+  
+  #books-component-container-top .book-shadow__item {
+    width: 55px; /* Scale down shadow for mobile */
+  }
+  
+  #books-component-container-top .book-shadow__item.side {
+    width: 13px; /* Scale down side shadow for mobile */
+  }
+  
+  #books-component-container-top .shelf {
+    max-width: 600px; /* Scale down shelf for mobile */
+  }
+  
+  #books-component-container-top .book-descriptions {
+    bottom: 80px; /* Moved down by 40px from 120px */
+    max-width: 90%;
+    height: auto;
+    min-height: 80px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #books-component-container-top .books__item {
+    height: 60px; /* Scale down for small mobile */
+  }
+  
+  #books-component-container-top .books__container {
+    width: 45px; /* Scale down for small mobile */
+  }
+  
+  #books-component-container-top .side-book {
+    height: 60px; /* Scale down for small mobile */
+    width: 9px; /* Scale down for small mobile */
+  }
+  
+  #books-component-container-top .side-book__title {
+    font-size: 5.5px; /* Scale down for small mobile */
+    padding: 1px 0; /* Scale down padding for small mobile */
+  }
+  
+  #books-component-container-top .side-book__decoration {
+    top: 12px; /* Adjust decoration position for small mobile */
+  }
+  
+  #books-component-container-top .side-book__decoration:nth-child(2) {
+    bottom: 12px; /* Adjust decoration position for small mobile */
+  }
+  
+  #books-component-container-top .books-wrapper {
+    gap: 0.3rem; /* Reduce gap for small mobile */
+  }
+  
+  #books-component-container-top .book-shadow__item {
+    width: 45px; /* Scale down shadow for small mobile */
+  }
+  
+  #books-component-container-top .book-shadow__item.side {
+    width: 11px; /* Scale down side shadow for small mobile */
+  }
+  
+  #books-component-container-top .shelf {
+    max-width: 500px; /* Scale down shelf for small mobile */
+  }
+  
+  #books-component-container-top .book-descriptions {
+    bottom: 75px; /* Moved down by 40px from 115px */
+    max-width: 95%;
+    height: auto;
+    min-height: 70px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #books-component-container-top .books__item {
+    height: 50px; /* Scale down for very small screens */
+  }
+  
+  #books-component-container-top .books__container {
+    width: 38px; /* Scale down for very small screens */
+  }
+  
+  #books-component-container-top .side-book {
+    height: 50px; /* Scale down for very small screens */
+    width: 8px; /* Scale down for very small screens */
+  }
+  
+  #books-component-container-top .books-wrapper {
+    gap: 0.2rem; /* Reduce gap for very small screens */
+  }
+  
+  #books-component-container-top .book-shadow__item {
+    width: 38px; /* Scale down shadow for very small screens */
+  }
+  
+  #books-component-container-top .book-shadow__item.side {
+    width: 9px; /* Scale down side shadow for very small screens */
+  }
+  
+  #books-component-container-top .shelf {
+    max-width: 400px; /* Scale down shelf for very small screens */
+  }
+  
+  /* Adjust font sizes for very small screens */
+  #books-component-container-top .side-book__title {
+    font-size: 6px;
+    padding: 2px 0;
+  }
+  
+  #books-component-container-top .side-book__decoration {
+    top: 15px;
+  }
+  
+  #books-component-container-top .side-book__decoration:nth-child(2) {
+    bottom: 15px;
+  }
+}
+
+#books-component-container-top .book-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem; /* Reduced font size for testing area */
+  line-height: 1.4; /* Reduced line height for testing area */
+  color: var(--text-color);
+  transition: opacity 0.3s ease, visibility 0.3s ease, color 0.5s ease;
+}
+
+#books-component-container-top .book-description.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#books-component-container-top .book-description h3 {
+  font-weight: 800;
+  font-size: 1.3rem; /* Reduced font size for testing area */
+  margin-bottom: 0.3rem; /* Reduced margin for testing area */
+  color: var(--title-color);
+  transition: color 0.5s ease;
+}
+
+/* Make default description text not bold */
+#books-component-container-top .book-description.default-description h3 {
+  font-weight: normal;
+}
+
+#books-component-container-top .book-description .author {
+  font-style: italic;
+  opacity: 0.8;
+  margin-bottom: 0.5rem; /* Reduced margin for testing area */
+}
+
+#books-component-container-top .book-description p {
+  margin-bottom: 0.75rem;
+}
+
+/* Education Split Type styles */
+#books-component-container-top .lines-animation {
+  overflow: hidden;
+}
+
+/* Critical fix: Ensure each line has overflow hidden */
+#books-component-container-top .line {
+  overflow: hidden !important;
+  display: block;
+}
+
+/* Ensure the line inner content has proper transform properties */
+#books-component-container-top .line .line-inner {
+  display: block;
+  transform: translateY(
+    0
+  ); /* Changed from 100% to make text visible by default */
+  opacity: 1; /* Changed from 0 to make text visible by default */
+}
+

@@ -22,32 +22,260 @@
 
     <!-- Floating Background Circles -->
     <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li><span class="circle-text">Adobe<br>Captivate</span></li>
+        <li><span class="circle-text">Adobe<br>Illustrator</span></li>
+        <li><span class="circle-text">Adobe<br>InDesign</span></li>
+        <li><span class="circle-text">Adobe<br>Photoshop</span></li>
+        <li><span class="circle-text">Adobe<br>Premiere</span></li>
+        <li><span class="circle-text">Articulate</span></li>
+        <li><span class="circle-text">Camtasia</span></li>
+        <li><span class="circle-text">Mac<br>OS</span></li>
+        <li><span class="circle-text">Windows<br>OS</span></li>
+        <li><span class="circle-text">Microsoft<br>Office</span></li>
+        <li><span class="circle-text">Microsoft<br>Project</span></li>
+        <li><span class="circle-text">Microsoft<br>Visio</span></li>
+        <li><span class="circle-text">SharePoint<br>Administrator</span></li>
+        <li><span class="circle-text">Power<br>BI</span></li>
+        <li><span class="circle-text">Node.js</span></li>
+        <li><span class="circle-text">PHP</span></li>
+        <li><span class="circle-text">HTML</span></li>
+        <li><span class="circle-text">CSS</span></li>
+        <li><span class="circle-text">React</span></li>
+        <li><span class="circle-text">PostgreSQL</span></li>
+        <li><span class="circle-text">VBA</span></li>
+        <li><span class="circle-text">Supabase</span></li>
+        <li><span class="circle-text">SQL</span></li>
     </ul>
 
     <!-- Text Scramble Container -->
-    <div class="text-scramble-container">
+    <div class="text-scramble-container" style="display: none;">
         <div id="scramble-text" class="scramble-text"></div>
     </div>
 
+    <!-- Sondra Component Section -->
+    <div class="sondra-component-section">
+        <style>
+            /* Isolated styles for Sondra component to prevent conflicts */
+            .sondra-component-section {
+                --primary-teal: #27918F;
+                --sage-green: #90A998;
+                --forest-green: #549389;
+                --accent-red: #ED2A09;
+                --charcoal: #49514C;
+                --spacing-sm: 1rem;
+                --spacing-md: 1.5rem;
+                --spacing-lg: 2rem;
+                --spacing-xl: 3rem;
+                
+                background: transparent;
+                padding: var(--spacing-xl) 2rem;
+                margin: 40px 0;
+                font-family: "Helvetica Neue", Calibri, Corbel, Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
+                font-weight: 300;
+                line-height: 1.6;
+                color: #333;
+            }
+
+            .sondra-component-section .section-content {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .sondra-component-section .section-title {
+                font-size: clamp(2rem, 4vw, 2.5rem);
+                font-weight: 600;
+                margin-bottom: var(--spacing-lg);
+                text-align: center;
+                color: var(--charcoal);
+            }
+
+            .sondra-component-section .team-grid {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-xl);
+                margin-top: var(--spacing-xl);
+            }
+
+            .sondra-component-section .team-member {
+                background: white;
+                padding: var(--spacing-lg);
+                border-radius: 8px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                display: flex;
+                align-items: flex-start;
+                gap: var(--spacing-lg);
+                max-width: 100%;
+            }
+
+            .sondra-component-section .member-photo {
+                flex-shrink: 0;
+            }
+
+            .sondra-component-section .member-photo img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 4px solid var(--primary-teal);
+            }
+
+            .sondra-component-section .member-info {
+                flex: 1;
+                min-width: 0;
+                overflow-wrap: break-word;
+            }
+
+            .sondra-component-section .member-info h3 {
+                color: var(--charcoal);
+                margin-bottom: var(--spacing-sm);
+                font-size: 1.3rem;
+                text-align: left;
+            }
+
+            .sondra-component-section .member-bio {
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: var(--spacing-md);
+                font-size: 0.95rem;
+                text-align: left;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                max-width: 100%;
+            }
+
+            .sondra-component-section .member-expertise {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            .sondra-component-section .expertise-tag {
+                background: var(--sage-green);
+                color: white;
+                padding: 0.25rem 0.75rem;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 500;
+            }
+
+            /* Logo Slider Styles */
+            .sondra-component-section .logo-slider-container {
+                overflow: hidden;
+                margin: var(--spacing-xl) 0;
+                background: rgba(0, 0, 0, 0.05);
+                padding: 40px 20px;
+                border-radius: 12px;
+            }
+
+            .sondra-component-section .logo-slider-container .slider {
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            .sondra-component-section .logo-slider-container .slider .logos {
+                display: inline-block;
+                animation: slidein 60s linear infinite;
+                white-space: nowrap;
+            }
+
+            .sondra-component-section .logo-slider-container .slider .logos img {
+                width: 150px;
+                height: 80px;
+                object-fit: contain;
+                animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+                margin: 0 15px;
+                opacity: 1;
+                transition: opacity 0.3s ease;
+                flex-shrink: 0;
+                filter: brightness(0.7) contrast(1.2);
+            }
+
+            .sondra-component-section .logo-slider-container .slider .logos img:first-child {
+                margin-left: 0;
+            }
+
+            .sondra-component-section .logo-slider-container .slider .logos img:last-child {
+                margin-right: 0;
+            }
+
+            .sondra-component-section .logo-slider-container .slider .logos img:hover {
+                opacity: 0.8;
+            }
+
+            @keyframes slidein {
+                from {
+                    transform: translate3d(0, 0, 0);
+                }
+                to {
+                    transform: translate3d(-100%, 0, 0);
+                }
+            }
+
+            @keyframes fade-in {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            /* Mobile Responsive */
+            @media (max-width: 768px) {
+                .sondra-component-section {
+                    padding: 1rem;
+                }
+
+                .sondra-component-section .team-member {
+                    flex-direction: column !important;
+                    text-align: center;
+                }
+
+                .sondra-component-section .member-photo img {
+                    width: 120px;
+                    height: 120px;
+                }
+
+                .sondra-component-section .member-info h3,
+                .sondra-component-section .member-bio {
+                    text-align: center;
+                }
+            }
+        </style>
+        
+        <div class="section-content">
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="assets/images/Headshot 1.png" alt="Sondra Hathaway">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sondra Hathaway</h3>
+                        <p class="member-bio">With over 20 years of experience in organizational development, Sondra leads organizations through change to successfully transform. Sondra holds degrees in business administration, psychology, and sociology. She is a certified a Manager of Quality and Organizational Excellence and Prosci Change Practitioner. Sondra has many specialty fields including strategic planning and employee engagement. She has produced several apps, designs computer-based training (CBT), and created TransformLocalGov's transformation quiz and change management software "ResultsMode."</p>
+
+                        <div class="member-expertise">
+                            <span class="expertise-tag">Outcomes and Accountability</span>
+                            <span class="expertise-tag">Capability Building</span>
+                            <span class="expertise-tag">People Experience (PX)</span>
+                            <span class="expertise-tag">Culture by Design</span>
+                            <span class="expertise-tag">Strategy and Execution</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 3 Column Container -->
-    <div class="three-column-container">
+    <div class="three-column-container" style="background: #f8f9fa; padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1200px;">
         <div class="column-1">
             <h3>CONTACT</h3>
             <div class="contact-info">
                 <p data-print="name">Sondra Hathaway</p>
                 <p data-print="contact-website">sondrahathaway.com</p>
                 <p data-print="contact-phone">+01 602 380 7231</p>
-                <p data-print="contact-email">sondra@sondrahathaway.com</p>
+                <p data-print="contact-email">hello@sondrahathaway.com</p>
                 <p data-print="contact-address">Princeton, TX 75407</p>
             </div>
         </div>
@@ -63,15 +291,16 @@
         <div class="column-3">
             <h3>ABOUT</h3>
             <div class="about-content">
-                <p data-print="profile-text">I'm conversational in Spanish, pride myself on seeing around corners, and I don't take myself too seriously. I enjoy starting from scratch as much as I love collaborating with a team to make something that exists even better. You can usually find me respectfully challenging the status quo, or working on coding new things I dream up.</p>
+                <p data-print="profile-text">Keep it light, keep it moving. I love diving into a brand-new project and building from the ground up, but I get just as much satisfaction from joining a team to refine and elevate an existing idea. My natural mode is to ask "what if?" respectfully challenge assumptions and bring solutions.</p>
                 <p data-print="title" style="display:none;">Change Management and Organizational Development Professional</p>
-                <button class="print-resume-btn" onclick="openPrintableResume()" style="position: relative; z-index: 9999; pointer-events: auto;">View Printable Resume</button>
+                <button class="print-resume-btn" onclick="window.open('Sondra-Hathaway-Resume.pdf', '_blank')" style="position: relative; z-index: 9999; pointer-events: auto;">View Printable Resume</button>
             </div>
         </div>
     </div>
 
+
     <!-- Education and Certifications Section -->
-    <div class="education-testing-area">
+    <div class="education-testing-area" style="background: #f8f9fa; padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1200px;">
         <h3 class="section-title" style="color: #ffffff; margin-bottom: 20px;">EDUCATION AND CERTIFICATIONS</h3>
         <div id="books-component-container-top" class="education-books-isolated" style="width: 100%; height: 400px; position: relative; overflow: hidden;">
             <!-- Theme toggle -->
@@ -318,10 +547,10 @@
                     </div>
 
                     <div class="book-description" data-book-index="top-edu-4">
-                        <h3>Strategic Planning Facilitator</h3>
+                        <h3>Facilitator</h3>
                         <div class="author">Institute of Cultural Affairs</div>
                         <div class="lines-animation">
-                            <p>The ICA Technology of Participation Strategic Planning Facilitator certification taught me how to guide groups through structured decision-making processes. It empowered me to facilitate inclusive conversations, ensuring all voices are heard. This training has been instrumental in helping me build consensus in groups.</p>
+                            <p>The ICA Technology of Participation Facilitator certification taught me how to guide groups through structured decision-making processes. It empowered me to facilitate inclusive conversations, ensuring all voices are heard. This training has been instrumental in helping me build consensus in groups.</p>
                         </div>
                     </div>
 
@@ -354,7 +583,7 @@
     </div>
 
     <!-- Technical Skills Section -->
-    <div class="technical-skills-container" data-print="technical-skills-section">
+    <div class="technical-skills-container" data-print="technical-skills-section" style="background: #f8f9fa; padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1200px;">
         <h3 class="section-title">TECHNICAL SKILLS</h3>
         <div class="skill-tags" data-print="technical-skills">
             <span class="skill-tag">Adobe Captivate</span>
@@ -383,112 +612,92 @@
         </div>
     </div>
 
-    <!-- Card Effect Swiper Component -->
-    <div class="card-swiper-isolated-container">
-        <iframe 
-            src="archive/card-effect-swiper-js/dist/index.html" 
-            width="100%" 
-            height="600px" 
-            frameborder="0"
-            style="border: none; display: block; margin: 0 auto; background: transparent;">
-        </iframe>
-    </div>
 
     <!-- Professional Experience Section -->
     <div class="one-column-experience">
         <div class="experience-container">
             <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
             
-            <!-- Change Manager - CIC -->
+            <!-- CIC (Civic Innovation Consultants) -->
             <div class="experience-item" data-print="job-1">
                 <div class="experience-header">
-                    <h4 class="job-title" data-print="job-1-title">Senior Organizational Developer</h4>
+                    <h4 class="job-title" data-print="job-1-title">CIC</h4>
                     <div class="company-info">
-                        <span class="company-name" data-print="job-1-company">CIC</span>
-                        <span class="job-dates" data-print="job-1-dates">Nov 2023-Present</span>
+                        <span class="job-dates" data-print="job-1-dates">Mar 2025-Present</span>
                     </div>
                 </div>
                 <div class="job-summary" data-print="job-1-summary">
-                    Lead organizational development initiatives that improve employee engagement and reduce employee attrition.
+                    Deliver services and develop tools to support strategic company development.
                 </div>
                 <div class="job-accomplishments">
                     <h6>Key Accomplishments:</h6>
                     <ul data-print="job-1-accomplishments">
-                        <li>Lead change management efforts during and after organizational strategic planning, achieving 92% on-time completion rate for more than 15 strategic initiatives</li>
-                        <li>Analyze and convey employee and customer insights through quantitative and qualitative data analysis across more than 3,000 employee surveys and more than 500 customer interviews to contribute to attrition reduction of 13%</li>
-                        <li>Develop and deliver 8 comprehensive training programs to more than 300 employees and 100 leadership team members</li>
-                        <li>Develop and implement rewards and recognition initiatives to improve employee engagement, achieving Net Promoter Score of 9 out of 10 employees recommending organization as employer</li>
-                        <li>Lead teams to develop and integrate completely new value and competency-based performance management system with matching software application</li>
-                        <li>Implement organizational customer service initiative resulting in customer rating of employee courteousness rising from 85% to 90% in one year, and to 93% in year two</li>
-                        <li>Design online dashboards and metrics to track progress toward strategic goals</li>
-                        <li>Transform culture by implementing values-based employee applicant interviewing process and design new values-based performance management system</li>
+                        <li>Manage engagements.</li> 
+                        <li>Facilitate strategic planning sessions.</li>
+                        <li>Designed and deployed 2 full-stack web apps to support project and change management.</li>
+                        <li>Designed online dashboards and metric trackers to visualize progress toward strategic goals.</li>
+                        <li>Conduct new business development, including scoping, budgeting, proposal writing, and sales presentations</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Change Management Consultant - Stratalysts -->
+            <!-- Transform Local Gov -->
             <div class="experience-item" data-print="job-2">
                 <div class="experience-header">
-                    <h4 class="job-title" data-print="job-2-title">Senior Change Manager</h4>
+                    <h4 class="job-title" data-print="job-2-title">Transform Local Gov</h4>
                     <div class="company-info">
-                        <span class="company-name" data-print="job-2-company">Stratalysts</span>
-                        <span class="job-dates" data-print="job-2-dates">Nov 2023-Mar 2025</span>
+                        <span class="job-dates" data-print="job-2-dates">Nov 2023-Present</span>
                     </div>
                 </div>
                 <div class="job-summary" data-print="job-2-summary">
-                    Led change management efforts during organizational strategic planning and digital transformation initiatives.
+                    Lead organizational development initiatives that improve employee engagement and reduce employee attrition.
                 </div>
                 <div class="job-accomplishments">
                     <h6>Key Accomplishments:</h6>
                     <ul data-print="job-2-accomplishments">
-                        <li>Applied frameworks such as Prosci and Kotter to develop leadership communication strategies, conduct impact analyses, and create sustainable engagement plans, resulting in 30% to 72% improvement in change readiness scores across more than 8 client projects</li>
-                        <li>Conducted more than 150 in-depth stakeholder interviews and business reviews across 6 functions and seniority levels, gathering key insights that informed tailored change strategies and boosted project alignment by 25%</li>
-                        <li>Developed and delivered more than 12 online training programs utilizing software such as Articulate and Camtasia, reaching more than 500 employees across more than 10 organizations</li>
-                        <li>Guided more than 20 teams in agile strategic planning and project management, ensuring alignment with organizational objectives and achieving 88% milestone completion rate across more than 15 projects</li>
-                        <li>Led more than 5 enterprise-wide digital transformation initiatives and strategic planning change management programs affecting more than 2,000 employees</li>
-                        <li>Presented at International City Managers' Association, 2024 Winter Conference with more than 800 municipal leaders in attendance</li>
-                        <li>Developed custom analytics dashboards in Power BI and created more than 15 online learning courses using Articulate and Camtasia software for more than 1,200 learners</li>
+                        <li>Analyzed and conveyed employee and customer insights through quantitative and qualitative data analysis (more than 3,000 employee surveys and more than 500 customer interviews</li>
+                        <li>Developed and implemented rewards and recognition initiatives to improve employee engagement</li>
+                        <li>Developed and delivered dozens of comprehensive training programs to hundreds of employees and leaders</li>
+                        <li>Implemented values-based employee applicant interviewing process and design new values-based performance management system</li>
+                        <li>Developed organizational customer service initiative and delivered custom in-person and online training</li>
+                        <li>Led teams to develop and integrate new value and competency-based performance management system with matching software application</li>
+                        <li>Led change management efforts during and after organizational strategic planning and digital transformations</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Senior Change Management Consultant - BerryDunn -->
+            <!-- Berry Dunn -->
             <div class="experience-item" data-print="job-3">
                 <div class="experience-header">
-                    <h4 class="job-title" data-print="job-3-title">Senior Change Management Consultant</h4>
+                    <h4 class="job-title" data-print="job-3-title">Berry Dunn</h4>
                     <div class="company-info">
-                        <span class="company-name" data-print="job-3-company">BerryDunn</span>
                         <span class="job-dates" data-print="job-3-dates">Aug 2020-Oct 2023</span>
                     </div>
                 </div>
                 <div class="job-summary" data-print="job-3-summary">
-                    Led change management initiatives totaling over $2.3M annual revenue, including multi-year digital transformations.
+                    Led organizational development initiatives totaling over $2.3M revenue, including multi-year digital and culture transformations.
                 </div>
                 <div class="job-accomplishments">
                     <h6>Key Tasks and Accomplishments:</h6>
                     <ul data-print="job-3-accomplishments">
-                        <li>Achieved over $2.3M in annual revenue through proactive client engagement and delivering high-impact consulting services to more than 25 organizations</li>
-                        <li>Built and executed more than 40 tailored change management plans achieving a 100% risk resolution rate across more than 500 identified risks</li>
-                        <li>Designed and executed large-scale organizational change strategies, by anticipating challenges, defining scope, and executing detailed project plans, achieving on-time delivery for 98% of more than 60 initiatives</li>
-                        <li>Developed custom analytics dashboards in Power BI to track change adoption, readiness assessments, and engagement metrics across more than 15 concurrent projects affecting more than 10,000 employees</li>
-                        <li>Established regular feedback loops with more than 50 clients to refine OCM strategies, resulting in a 95% client satisfaction rate and 85% client retention</li>
+                        <li>Designed and executed large-scale organizational change strategies, by anticipating challenges, defining scope, and executing detailed project plans</li>
                         <li>Conducted more than 200 change impact and stakeholder analyses, sponsor coaching sessions, and change readiness assessments across 12 industries</li>
-                        <li>Developed success metrics, evaluated, and reported on change effort effectiveness for more than 75 organizational transformation projects</li>
-                        <li>Coached and developed more than 200 leaders and project teams on effective change management methodologies including ADKAR, Bridges, and Kotter's theory across more than 30 organizations</li>
-                        <li>Conducted highly effective business development, including scoping, budgeting, proposal writing, and sales presentations, winning 75% of more than 40 proposals compared to firm average of 33%</li>
-                        <li>Supervised, trained, and mentored more than 8 BerryDunn consultants delivering organizational development and change management services to more than 100 clients</li>
-                        <li>Led change management efforts resulting in 85% employee alignment; engaged individuals through more than 300 1:1, small and large group discussions with 95% stakeholder participation across more than 25 projects</li>
-                        <li>Achieved on-time delivery for 98% of more than 60 initiatives and 92% on-time completion rate for more than 40 strategic initiatives</li>
+                        <li>Coached and developed leaders and project team members on effective change management methodologies including ADKAR, Bridges, and Kotter's theory</li>
+                        <li>Developed custom analytics dashboards using Tableau, Smartsheet, Sharepoint, MS Excel, and Power BI to help clients track change adoption, readiness assessments, and engagement metrics</li>
+                        <li>Established regular feedback loops with clients to refine OCM strategies</li>
+                        <li>Supervised, trained, and mentored peer consultants delivering organizational development and change management services</li>
+                        <li>Engaged client stakeholders through more than 100 1:1, small and large group discussions</li>
+                        <li>Developed success metrics, evaluated, and reported on change effort effectiveness for multiple, simultaneous organizational transformation projects</li>
+                        <li>Conducted new business development, including scoping, budgeting, proposal writing, and sales presentations</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Engagement and Development Administrator - City of Garland -->
+            <!-- Garland Texas -->
             <div class="experience-item" data-print="job-4">
                 <div class="experience-header">
-                    <h4 class="job-title" data-print="job-4-title">Engagement and Development Administrator</h4>
+                    <h4 class="job-title" data-print="job-4-title">GARLAND</h4>
                     <div class="company-info">
-                        <span class="company-name" data-print="job-4-company">City of Garland, Texas</span>
                         <span class="job-dates" data-print="job-4-dates">Dec 2017-Aug 2018</span>
                     </div>
                 </div>
@@ -498,28 +707,20 @@
                 <div class="job-accomplishments">
                     <h6>Key Tasks and Accomplishments:</h6>
                     <ul data-print="job-4-accomplishments">
-                        <li>Managed engagement, learning, and development initiatives for over 2,000 employees across 15 departments and more than 25 divisions</li>
+                        <li>Managed team to engage and develop for over 2,000 employees across 15 departments and more than 25 divisions</li>
+                        <li>Created more than 20 engaging online learning courses and tests for employees using Articulate software</li>
                         <li>Implemented agile and Lean methodology (including sprint planning, iterative design, waste identification and elimination, and continuous feedback loops), reducing process cycle time by 35% across more than 30 processes</li>
-                        <li>Designed and implemented employee engagement and customer satisfaction surveys, analyzing trends using statistical tools and achieving 78% response rate from more than 1,500 employees and more than 800 customers</li>
-                        <li>Led more than 12 change initiatives focused on process improvement and talent strategies affecting more than 1,800 employees</li>
-                        <li>Developed more than 25 multimedia learning solutions to support organizational development initiatives, and reinforce learning and policy changes for more than 2,000 learners</li>
-                        <li>Collaborated with more than 8 HR Business Partners to innovate, implement, and evaluate talent strategies; received "highly effective" ratings from 90% of HRBPs in quarterly partnership reviews</li>
-                        <li>Deployed more than 6 employee engagement surveys annually; analyzed and communicated results to more than 200 leaders and executives</li>
-                        <li>Designed and created more than 40 quick-reference guides and job aids to support more than 150 leaders in talent management, performance management, and career development</li>
-                        <li>Implemented learning management system for organization-wide training registration, delivery, and documentation and led change management efforts to ensure 93% adoption rate among more than 2,000 employees</li>
-                        <li>Created more than 20 engaging online learning courses and tests for employees using Articulate software, reaching more than 1,800 learners</li>
-                        <li>Collaborated closely with 5-person communications team to ensure awareness, desire, knowledge, and ability for internal and public stakeholders throughout more than 10 major changes</li>
-                        <li>Developed proprietary career planning process resulting in 17% improved ratio of Internal Promotions to External Hires for more than 50 key leadership roles</li>
+                        <li>Deployed employee engagement survey annually; analyzed and communicated results to more than 200 leaders and executives</li>
+                        <li>Collaborated closely with communications team to ensure awareness, desire, knowledge, and ability for internal and public stakeholders throughout major changes</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Senior Organizational Development Consultant - TXU Energy -->
+            <!-- TXU Energy -->
             <div class="experience-item" data-print="job-5">
                 <div class="experience-header">
-                    <h4 class="job-title" data-print="job-5-title">Senior Organizational Development Consultant</h4>
+                    <h4 class="job-title" data-print="job-5-title">TXU</h4>
                     <div class="company-info">
-                        <span class="company-name" data-print="job-5-company">TXU Energy</span>
                         <span class="job-dates" data-print="job-5-dates">Apr 2015-Oct 2016</span>
                     </div>
                 </div>
@@ -529,18 +730,14 @@
                 <div class="job-accomplishments">
                     <h6>Key Accomplishments:</h6>
                     <ul data-print="job-5-accomplishments">
-                        <li>Managed organizational change during $9.45 billion acquisition, ensuring seamless integration and cultural alignment for more than 3,500 employees across 12 business units</li>
-                        <li>Designed executive communication and change measurement strategies that reduced resistance by 15% while ensuring sustainable organizational practices across more than 25 change initiatives</li>
-                        <li>Designed leadership development programs and succession planning frameworks using agile and 9-Box methodologies, implemented across 8 departments and more than 35 teams</li>
-                        <li>Built and delivered more than 15 custom training solutions for more than 800 employees and 100 leaders</li>
-                        <li>Led organization-wide succession planning using 9-Box methodology, identifying and developing more than 45 high-potential employees for more than 60 critical roles</li>
-                        <li>Developed proprietary career planning process to match internal candidates with company positions based on competencies resulting in a 17% improved ratio of Internal Promotions to External Hires for more than 75 key leadership and operational roles</li>
-                        <li>Developed and delivered custom in-house leadership development program for Information Technology Department, training more than 60 IT leaders across 8 teams</li>
-                        <li>Provided executive coaching to more than 25 company leaders including C-suite and VP-level executives</li>
-                        <li>Created more than 12 online learning courses for employees using Camtasia software on topics including "Managing a Remote Workforce," and "Coaching Through Change" reaching more than 2,000 learners</li>
-                        <li>Demonstrated a 20% increase in project success rates for more than 40 initiatives based on project manager training for more than 80 project managers</li>
-                        <li>Presented at International City Managers' Association, 2024 Winter Conference with more than 600 attendees; provided executive coaching to more than 15 company leaders</li>
-                        <li>Led organization-wide succession planning using 9-Box methodology and designed leadership development programs and succession planning frameworks across 8 departments affecting more than 3,500 employees</li>
+                        <li>Designed executive communication and change measurement strategies to earn trust and reduce change resistance</li>
+                        <li>Collaborated to manage organizational change during $9.45 billion bankruptcy and acquisition, ensuring seamless integration and cultural alignment for more than 3,500 employees across multiple business units</li>
+                        <li>Delivered company-wide 9-Box succession planning</li>
+                        <li>Developed proprietary career planning process resulting in 17% improved ratio of Internal Promotions to External Hires</li>
+                        <li>Built and delivered more than 15 custom training solutions</li>
+                        <li>Provided executive coaching to company leaders including C-suite and VP-level executives</li>
+                        <li>Developed and delivered custom in-house leadership development program for Information Technology Department, training more than 20 IT leaders</li>
+                        <li>Designed and created more than 40 quick-reference guides and job aids to support leaders in talent management, performance management, and career development</li>
                     </ul>
                 </div>
             </div>
@@ -572,7 +769,7 @@
 
     <script>
         // Simple test to ensure JavaScript is working
-        console.log('Clean resume loaded successfully');
+        // Resume loaded successfully
 
         // Dark Mode Toggle
         const themeToggle = document.getElementById('theme-toggle');
@@ -603,124 +800,7 @@
             }
         });
 
-        // Printable Resume Function - Make it globally accessible
-        window.openPrintableResume = function() {
-            console.log('Button clicked! openPrintableResume function called');
-            try {
-                console.log('Starting openPrintableResume function...');
-                // Extract content from the page
-                const contactSection = extractContactInfo();
-                console.log('Contact section extracted:', contactSection);
-                const aboutSection = extractAboutInfo();
-                console.log('About section extracted:', aboutSection);
-                const educationSection = extractEducationInfo();
-                console.log('Education section extracted:', educationSection);
-                const technicalSkillsSection = extractTechnicalSkillsInfo();
-                console.log('Technical skills section extracted:', technicalSkillsSection);
-                const professionalExperienceSection = extractProfessionalExperienceInfo();
-                console.log('Professional experience section extracted:', professionalExperienceSection);
-
-            // Combine all sections
-            const resumeContent = `
-SONDRA HATHAWAY RESUME
-
-${contactSection}
-
-ABOUT
-${aboutSection}
-
-EDUCATION AND CERTIFICATIONS
-${educationSection}
-
-TECHNICAL SKILLS
-${technicalSkillsSection}
-
-PROFESSIONAL EXPERIENCE
-${professionalExperienceSection}
-            `;
-
-            // Create new window with printable content
-            const printWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
-            
-            if (!printWindow || printWindow.closed || typeof printWindow.closed == 'undefined') {
-                // Popup was blocked - offer alternative download method
-                console.error('Popup blocked by browser - offering download alternative');
-                const downloadConfirm = confirm('Popup blocked! Would you like to download the resume as a text file instead?');
-                if (downloadConfirm) {
-                    // Create downloadable text file
-                    const blob = new Blob([resumeContent], { type: 'text/plain' });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'Sondra_Hathaway_Resume.txt';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                    console.log('Resume downloaded as text file');
-                }
-                return;
-            }
-            
-            printWindow.document.write(`
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Sondra Hathaway - Printable Resume</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 40px;
-            color: #000;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-        h2 {
-            color: #333;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        h3 {
-            color: #555;
-            margin-top: 20px;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-        @media print {
-            body { margin: 20px; }
-            h1 { page-break-after: avoid; }
-            h2 { page-break-after: avoid; }
-        }
-    </style>
-</head>
-<body>
-    <pre>${resumeContent}</pre>
-    <script>
-        window.onload = function() {
-            window.print();
-        }
-    <\/script>
-</body>
-</html>
-            `);
-            printWindow.document.close();
-            console.log('Printable resume window opened successfully!');
-            } catch (error) {
-                console.error('Error in openPrintableResume:', error);
-                alert('Error creating printable resume: ' + error.message);
-            }
-        };
-
+        // Helper functions for extracting resume content
         function extractContactInfo() {
             const name = document.querySelector('[data-print="name"]')?.textContent || 'Sondra Hathaway';
             const website = document.querySelector('[data-print="contact-website"]')?.textContent || '';
@@ -808,7 +888,261 @@ ${address}`;
             
             return experienceText || 'Professional experience not found.';
         }
+
+        // Printable Resume Function - Make it globally accessible
+        window.openPrintableResume = function() {
+            // Button clicked! openPrintableResume function called
+            try {
+                // Starting openPrintableResume function...
+                // Extract content from the page
+                const contactSection = extractContactInfo();
+                const aboutSection = extractAboutInfo();
+                const educationSection = extractEducationInfo();
+                const technicalSkillsSection = extractTechnicalSkillsInfo();
+                const professionalExperienceSection = extractProfessionalExperienceInfo();
+
+            // Combine all sections
+            const resumeContent = `
+SONDRA HATHAWAY RESUME
+
+${contactSection}
+
+ABOUT
+${aboutSection}
+
+EDUCATION AND CERTIFICATIONS
+${educationSection}
+
+TECHNICAL SKILLS
+${technicalSkillsSection}
+
+PROFESSIONAL EXPERIENCE
+${professionalExperienceSection}
+            `;
+
+            // Create new window with printable content
+            const printWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
+            
+            if (!printWindow || printWindow.closed || typeof printWindow.closed == 'undefined') {
+                // Popup was blocked - offer alternative download method
+                console.error('Popup blocked by browser - offering download alternative');
+                const downloadConfirm = confirm('Popup blocked! Would you like to download the resume as a text file instead?');
+                if (downloadConfirm) {
+                    // Create downloadable text file
+                    const blob = new Blob([resumeContent], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'Sondra_Hathaway_Resume.txt';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    // Resume downloaded as text file
+                }
+                return;
+            }
+            
+            printWindow.document.write(`
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sondra Hathaway - Printable Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #000;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        @media print {
+            body { margin: 20px; }
+            h1 { page-break-after: avoid; }
+            h2 { page-break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <pre>${resumeContent}</pre>
+    <script>
+        window.onload = function() {
+            window.print();
+        }
+    <\/script>
+</body>
+</html>
+            `);
+            printWindow.document.close();
+            // Printable resume window opened successfully!
+            } catch (error) {
+                console.error('Error in openPrintableResume:', error);
+                alert('Error creating printable resume: ' + error.message);
+            }
+        };
     </script>
+
+    <!-- Full Width Client Logos Section -->
+    <div class="full-width-logos-section">
+        <style>
+            /* Full width logos section styles */
+            .full-width-logos-section {
+                width: 100vw;
+                position: relative;
+                left: 50%;
+                right: 50%;
+                margin-left: -50vw;
+                margin-right: -50vw;
+                background: #f8f9fa;
+                padding: 40px 0;
+                overflow: hidden;
+            }
+
+            .full-width-logos-section .logos-container {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .full-width-logos-section .section-title {
+                text-align: center;
+                font-size: clamp(1.5rem, 3vw, 2rem);
+                font-weight: 600;
+                color: #49514C;
+                margin-bottom: 40px;
+                font-family: "Helvetica Neue", Calibri, Corbel, Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
+            }
+
+            .full-width-logos-section .logo-slider-container {
+                overflow: hidden;
+                background: transparent;
+                padding: 0;
+                border-radius: 0;
+            }
+
+            .full-width-logos-section .slider {
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            .full-width-logos-section .logos {
+                display: inline-block;
+                animation: slidein 60s linear infinite;
+                white-space: nowrap;
+            }
+
+            .full-width-logos-section .logos img {
+                width: 180px;
+                height: 90px;
+                object-fit: contain;
+                animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+                margin: 0 20px;
+                opacity: 1;
+                transition: opacity 0.3s ease;
+                flex-shrink: 0;
+                filter: brightness(0.7) contrast(1.2);
+            }
+
+            .full-width-logos-section .logos img:first-child {
+                margin-left: 0;
+            }
+
+            .full-width-logos-section .logos img:last-child {
+                margin-right: 0;
+            }
+
+            .full-width-logos-section .logos img:hover {
+                opacity: 0.8;
+            }
+
+            @keyframes slidein {
+                from {
+                    transform: translate3d(0, 0, 0);
+                }
+                to {
+                    transform: translate3d(-100%, 0, 0);
+                }
+            }
+
+            @keyframes fade-in {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            /* Mobile Responsive */
+            @media (max-width: 768px) {
+                .full-width-logos-section {
+                    padding: 0;
+                }
+
+                .full-width-logos-section .logos-container {
+                    padding: 0;
+                }
+
+                .full-width-logos-section .logos img {
+                    width: 140px;
+                    height: 70px;
+                    margin: 0 15px;
+                }
+            }
+        </style>
+        
+        <div class="logos-container">
+            <div class="logo-slider-container">
+                <div class="slider">
+                    <div class="logos">
+                        <img src="AmarilloTX.png?v=2" alt="Amarillo, TX">
+                        <img src="BoulderCounty.png" alt="Boulder County">
+                        <img src="CromwellCT.png" alt="Cromwell, CT">
+                        <img src="FriscoTX.png" alt="Frisco, TX">
+                        <img src="LaCrosseCountyWI.png" alt="La Crosse County, WI">
+                        <img src="LouisvilleKY.png" alt="Louisville, KY">
+                        <img src="MarionCountyOR.png" alt="Marion County, OR">
+                        <img src="MonroeCountyFL.png" alt="Monroe County, FL">
+                        <img src="PeoriaIL.png" alt="Peoria, IL">
+                        <img src="WheatRidgeCO.png" alt="Wheat Ridge, CO">
+                        <img src="YamhillCountyOR.png" alt="Yamhill County, OR">
+                        <img src="AmarilloTX.png?v=2" alt="Amarillo, TX">
+                        <img src="BoulderCounty.png" alt="Boulder County">
+                        <img src="CromwellCT.png" alt="Cromwell, CT">
+                        <img src="FriscoTX.png" alt="Frisco, TX">
+                        <img src="LaCrosseCountyWI.png" alt="La Crosse County, WI">
+                        <img src="LouisvilleKY.png" alt="Louisville, KY">
+                        <img src="MarionCountyOR.png" alt="Marion County, OR">
+                        <img src="MonroeCountyFL.png" alt="Monroe County, FL">
+                        <img src="PeoriaIL.png" alt="Peoria, IL">
+                        <img src="WheatRidgeCO.png" alt="Wheat Ridge, CO">
+                        <img src="YamhillCountyOR.png" alt="Yamhill County, OR">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

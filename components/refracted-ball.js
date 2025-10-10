@@ -35,8 +35,8 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(w, h);
 renderer.setClearColor(0x000000, 0);
 
-// Wait for DOM to be ready
-document.addEventListener('DOMContentLoaded', function() {
+// Check if DOM is already loaded or wait for it
+function initContainer() {
     const container = document.getElementById("refracted-ball-container");
     if (container) {
         container.appendChild(renderer.domElement);
@@ -46,7 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error('Refracted ball container not found');
     }
-});
+}
+
+// Run immediately if DOM is ready, otherwise wait
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContainer);
+} else {
+    initContainer();
+}
 
 // const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -119,10 +126,10 @@ const fragment = /* GLSL */ `
 const loader = new THREE.TextureLoader();
 let currentPattern = 1;
 const patterns = [
-  "assets/backgrounds/pattern1.png",
-  "assets/backgrounds/pattern2.png", 
-  "assets/backgrounds/pattern3.png",
-  "assets/backgrounds/pattern4.png"
+  "./assets/backgrounds/pattern1.png",
+  "./assets/backgrounds/pattern2.png", 
+  "./assets/backgrounds/pattern3.png",
+  "./assets/backgrounds/pattern4.png"
 ];
 
 console.log('Loading texture:', patterns[currentPattern - 1]);

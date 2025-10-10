@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sondra Hathaway Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components/books-component.css">
+    <link rel="stylesheet" href="components/education-books-isolated.css">
+    <link rel="stylesheet" href="components/blog-slider-resume.css">
+    <link rel="stylesheet" href="components/text-drawing.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    
+
+    <!-- Floating Background Circles -->
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!-- Text Scramble Container -->
+    <div class="text-scramble-container">
+        <div id="scramble-text" class="scramble-text"></div>
+    </div>
+
+    <!-- 3 Column Container -->
+    <div class="three-column-container">
+        <div class="column-1">
+            <h3>CONTACT</h3>
+            <div class="contact-info">
+                <p data-print="name">Sondra Hathaway</p>
+                <p data-print="contact-website">sondrahathaway.com</p>
+                <p data-print="contact-phone">+01 602 380 7231</p>
+                <p data-print="contact-email">sondra@sondrahathaway.com</p>
+                <p data-print="contact-address">Princeton, TX 75407</p>
+            </div>
+        </div>
+        <div class="column-2">
+            <div id="refracted-ball-container" style="width: 300px; height: 300px; border-radius: 8px; overflow: hidden; background: transparent;"></div>
+            <div class="pattern-controls" style="display: flex; gap: 5px; margin-top: 10px;">
+                <button onclick="switchPattern(1)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: var(--salmon); cursor: pointer;"></button>
+                <button onclick="switchPattern(2)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: transparent; cursor: pointer;"></button>
+                <button onclick="switchPattern(3)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: transparent; cursor: pointer;"></button>
+                <button onclick="switchPattern(4)" class="pattern-btn" style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--salmon); background-color: transparent; cursor: pointer;"></button>
+            </div>
+        </div>
+        <div class="column-3">
+            <h3>ABOUT</h3>
+            <div class="about-content">
+                <p data-print="profile-text">I pride myself on seeing around corners, and I don't take myself too seriously. I enjoy starting from scratch as much as I love collaborating with a team to make something that exists even better. You can usually find me respectfully challenging the status quo, or working on coding new things I dream up.</p>
+                <p data-print="title" style="display:none;">Change Management and Organizational Development Professional</p>
+                <button class="print-resume-btn" onclick="window.open('Sondra-Hathaway-Resume.pdf', '_blank')" style="position: relative; z-index: 9999; pointer-events: auto;">View Printable Resume</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education and Certifications Section -->
+    <div class="education-testing-area">
+        <h3 class="section-title" style="color: #ffffff; margin-bottom: 20px;">EDUCATION AND CERTIFICATIONS</h3>
+        <div id="books-component-container-top" class="education-books-isolated" style="width: 100%; height: 400px; position: relative; overflow: hidden;">
+            <!-- Theme toggle -->
+            <div class="theme-toggle education-theme-toggle" id="theme-toggle-top"></div>
+
+            <!-- SVG Background -->
+            <svg style="position: absolute; width: 100%; height: 100%; z-index: 0;" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="dottedGridTop" width="30" height="30" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1" fill="rgba(0,0,0,0.15)" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#dottedGridTop)" />
+            </svg>
+
+            <!-- Shelf container -->
+            <div class="shelf-container">
+                <div class="book-shadow">
+                    <div class="book-shadow__item"></div>
+                    <div class="book-shadow__item side"></div>
+                    <div class="book-shadow__item"></div>
+                    <div class="book-shadow__item"></div>
+                    <div class="book-shadow__item"></div>
+                    <div class="book-shadow__item"></div>
+                    <div class="book-shadow__item"></div>
+                </div>
+
+                <div class="shelf"></div>
+
+                <div class="books-wrapper">
+                    <!-- University Books -->
+                    <div class="books__item">
+                        <div class="books__container">
+                            <div class="books__cover">
+                                <div class="books__back-cover"></div>
+                                <div class="books__inside">
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                </div>
+                                <div class="books__image">
+                                    <img src="./assets/logos/asu1.png" alt="Arizona State University">
+                                    <div class="books__effect"></div>
+                                    <div class="books__light"></div>
+                                </div>
+                                <div class="books__hitbox" data-book-index="top-edu-0" data-book-title="Arizona State University"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="side-book" data-book-index="top-edu-side" data-book-title="Education">
+                        <div class="side-book__title">Education</div>
+                        <div class="side-book__decoration"></div>
+                        <div class="side-book__decoration"></div>
+                    </div>
+
+                    <div class="books__item">
+                        <div class="books__container">
+                            <div class="books__cover">
+                                <div class="books__back-cover"></div>
+                                <div class="books__inside">
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                </div>
+                                <div class="books__image">
+                                    <img src="./assets/logos/asu2.png" alt="Arizona State University">
+                                    <div class="books__effect"></div>
+                                    <div class="books__light"></div>
+                                </div>
+                                <div class="books__hitbox" data-book-index="top-edu-1" data-book-title="Arizona State University"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="books__item" id="default-open-book-top">
+                        <div class="books__container">
+                            <div class="books__cover">
+                                <div class="books__back-cover"></div>
+                                <div class="books__inside">
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                </div>
+                                <div class="books__image">
+                                    <img src="./assets/logos/uop.png" alt="University of Phoenix">
+                                    <div class="books__effect"></div>
+                                    <div class="books__light"></div>
+                                </div>
+                                <div class="books__hitbox" data-book-index="top-edu-2" data-book-title="University of Phoenix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certification Books -->
+                    <div class="books__item">
+                        <div class="books__container">
+                            <div class="books__cover">
+                                <div class="books__back-cover"></div>
+                                <div class="books__inside">
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                </div>
+                                <div class="books__image">
+                                    <img src="./assets/logos/prosci-logo.svg" alt="Prosci Certification">
+                                    <div class="books__effect"></div>
+                                    <div class="books__light"></div>
+                                </div>
+                                <div class="books__hitbox" data-book-index="top-edu-3" data-book-title="Prosci Certification"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="books__item">
+                        <div class="books__container">
+                            <div class="books__cover">
+                                <div class="books__back-cover"></div>
+                                <div class="books__inside">
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                </div>
+                                <div class="books__image">
+                                    <img src="./assets/logos/ica2.png" alt="ICA Certification">
+                                    <div class="books__effect"></div>
+                                    <div class="books__light"></div>
+                                </div>
+                                <div class="books__hitbox" data-book-index="top-edu-4" data-book-title="ICA Certification"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="books__item">
+                        <div class="books__container">
+                            <div class="books__cover">
+                                <div class="books__back-cover"></div>
+                                <div class="books__inside">
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                </div>
+                                <div class="books__image">
+                                    <img src="./assets/logos/asq logo.png" alt="ASQ Certification">
+                                    <div class="books__effect"></div>
+                                    <div class="books__light"></div>
+                                </div>
+                                <div class="books__hitbox" data-book-index="top-edu-5" data-book-title="ASQ Certification"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lean Six Sigma Book -->
+                    <div class="books__item">
+                        <div class="books__container">
+                            <div class="books__cover">
+                                <div class="books__back-cover"></div>
+                                <div class="books__inside">
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                </div>
+                                <div class="books__image">
+                                    <img src="./assets/logos/peak.png" alt="Lean Six Sigma Certification">
+                                    <div class="books__effect"></div>
+                                    <div class="books__light"></div>
+                                </div>
+                                <div class="books__hitbox" data-book-index="top-edu-6" data-book-title="Lean Six Sigma Certification"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ICA Book Copy -->
+                    <div class="books__item">
+                        <div class="books__container">
+                            <div class="books__cover">
+                                <div class="books__back-cover"></div>
+                                <div class="books__inside">
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                    <div class="books__page"></div>
+                                </div>
+                                <div class="books__image">
+                                    <img src="./assets/logos/wildcard.png" alt="Wildcard">
+                                    <div class="books__effect"></div>
+                                    <div class="books__light"></div>
+                                </div>
+                                <div class="books__hitbox" data-book-index="top-edu-7" data-book-title="Data Analysis and Input Management"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-descriptions">
+                    <!-- Default Description -->
+                    <div class="book-description default-description" data-book-index="default">
+                        <h3>Formal education provides a part of my knowledge base, which you can learn more about by clicking a book cover. Direct experience and others' input and feedback are just as important to me as degrees and certifications.</h3>
+                        <div class="author"></div>
+                        <div class="lines-animation">
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <!-- University Descriptions -->
+                    <div class="book-description" data-book-index="top-edu-0">
+                        <h3>Bachelor of Science in Psychology</h3>
+                        <div class="author">Arizona State University</div>
+                        <div class="lines-animation">
+                            <p>Studying Psychology gave me insight into human behavior and how psychological principles apply to everyday life. It also honed my ability to empathize and approach problems from multiple angles, enriching both my personal and professional interactions.</p>
+                        </div>
+                    </div>
+
+                    <div class="book-description" data-book-index="top-edu-side">
+                        <h3>Minor in Philosophy</h3>
+                        <div class="author">Arizona State University</div>
+                        <div class="lines-animation">
+                            <p>I accidentally earned a minor in this subject because I had voluntarily taken so many Philosophy classes from sheer interest. Philosophy taught me to think more deeply about my beliefs and decisions, sharpening my critical thinking, analytical skills, and broadening my perspective.</p>
+                        </div>
+                    </div>
+
+                    <div class="book-description" data-book-index="top-edu-1">
+                        <h3>Bachelor of Arts Sociology</h3>
+                        <div class="author">Arizona State University</div>
+                        <div class="lines-animation">
+                            <p>The process of earning this degree expanded my awareness of how societal forces shape behavior. I studied how culture, race, class, and gender influence social dynamics and deepened my understanding of how policies and communities impact individuals' lives.</p>
+                        </div>
+                    </div>
+
+                    <div class="book-description" data-book-index="top-edu-2">
+                        <h3>Master of Business Administration</h3>
+                        <div class="author">University of Phoenix</div>
+                        <div class="lines-animation">
+                            <p>Beyond technical knowledge, I gained valuable leadership skills and the ability to make strategic decisions while earning my MBA. Interacting with diverse peers and professors broadened my perspective, helping me tackle complex problems from a business-focused lens.</p>
+                        </div>
+                    </div>
+
+                    <!-- Certification Descriptions -->
+                    <div class="book-description" data-book-index="top-edu-3">
+                        <h3>Change Management Practitioner</h3>
+                        <div class="author">Prosci</div>
+                        <div class="lines-animation">
+                            <p>Prosci certification equipped me with a structured approach to managing change in organizations. I learned how to guide people through transitions, ensuring smoother, more effective change processes. This methodology provides a building block for leading change initiatives with confidence.</p>
+                        </div>
+                    </div>
+
+                    <div class="book-description" data-book-index="top-edu-4">
+                        <h3>Strategic Planning Facilitator</h3>
+                        <div class="author">Institute of Cultural Affairs</div>
+                        <div class="lines-animation">
+                            <p>The ICA Technology of Participation Strategic Planning Facilitator certification taught me how to guide groups through structured decision-making processes. It empowered me to facilitate inclusive conversations, ensuring all voices are heard. This training has been instrumental in helping me build consensus in groups.</p>
+                        </div>
+                    </div>
+
+                    <div class="book-description" data-book-index="top-edu-5">
+                        <h3>Manager of Quality and Organizational Excellence</h3>
+                        <div class="author">American Society for Quality</div>
+                        <div class="lines-animation">
+                            <p>The ASQ certification gave me tools to drive continuous improvement in organizations. I gained expertise in quality management, data analysis, and fostering a culture of excellence. This credential has helped me lead initiatives that optimize processes and maintain high standards of quality.</p>
+                        </div>
+                    </div>
+
+                    <div class="book-description" data-book-index="top-edu-6">
+                        <h3>Lean Six Sigma</h3>
+                        <div class="author">Peak Academy</div>
+                        <div class="lines-animation">
+                            <p>Lean Six Sigma taught me multiple ways to identify waste, reduce variation, and optimize processes using data-driven approaches. This training has been instrumental in leading organizational transformations and implementing continuous improvement initiatives that deliver measurable results.</p>
+                        </div>
+                    </div>
+
+                    <div class="book-description" data-book-index="top-edu-7">
+                        <h3>Input and Feedback</h3>
+                        <div class="author">"When the student is ready, the teacher appears."</div>
+                        <div class="lines-animation">
+                            <p>Learning from others' input and feedback has been crucial to my growth. Embracing constructive criticism has helped me refine my skills, whether in leadership, communication, or problem-solving. I see feedback as a gift, an opportunity for improvement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Skills Section -->
+    <div class="technical-skills-container" data-print="technical-skills-section">
+        <h3 class="section-title">TECHNICAL SKILLS</h3>
+        <div class="skill-tags" data-print="technical-skills">
+            <span class="skill-tag">Adobe Captivate</span>
+            <span class="skill-tag">Adobe Illustrator</span>
+            <span class="skill-tag">Adobe InDesign</span>
+            <span class="skill-tag">Adobe Photoshop</span>
+            <span class="skill-tag">Adobe Premiere</span>
+            <span class="skill-tag">Articulate</span>
+            <span class="skill-tag">Camtasia</span>
+            <span class="skill-tag">Mac OS</span>
+            <span class="skill-tag">Windows OS</span>
+            <span class="skill-tag">Microsoft Office</span>
+            <span class="skill-tag">Microsoft Project</span>
+            <span class="skill-tag">Microsoft Visio</span>
+            <span class="skill-tag">SharePoint Administrator</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">VBA</span>
+            <span class="skill-tag">Supabase</span>
+            <span class="skill-tag">SQL</span>
+        </div>
+    </div>
+
+
+    <!-- Professional Experience Section -->
+    <div class="one-column-experience">
+        <div class="experience-container">
+            <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
+            
+            <!-- CIC (Civic Innovation Consultants) -->
+            <div class="experience-item" data-print="job-1">
+                <div class="experience-header">
+                    <h4 class="job-title" data-print="job-1-title">CIC</h4>
+                    <div class="company-info">
+                        <span class="job-dates" data-print="job-1-dates">Mar 2025-Present</span>
+                    </div>
+                </div>
+                <div class="job-summary" data-print="job-1-summary">
+                    Deliver services and develop tools to support company strategic development initiatives.
+                </div>
+                <div class="job-accomplishments">
+                    <h6>Key Accomplishments:</h6>
+                    <ul data-print="job-1-accomplishments">
+                        <li>Designed and deployed 2 full-stack web apps to support project and change management (OCM Quest and CreatorPath)</li>
+                        <li>Designed online dashboards and metrics to track progress toward strategic goals (NBD Tracker, Proposal Generator)</li>
+                        <li>Conducted new business development, including scoping, budgeting, proposal writing, and sales presentations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Transform Local Gov -->
+            <div class="experience-item" data-print="job-2">
+                <div class="experience-header">
+                    <h4 class="job-title" data-print="job-2-title">Transform Local Gov</h4>
+                    <div class="company-info">
+                        <span class="job-dates" data-print="job-2-dates">Nov 2023-Present</span>
+                    </div>
+                </div>
+                <div class="job-summary" data-print="job-2-summary">
+                    Lead organizational development initiatives that improve employee engagement and reduce employee attrition.
+                </div>
+                <div class="job-accomplishments">
+                    <h6>Key Accomplishments:</h6>
+                    <ul data-print="job-2-accomplishments">
+                        <li>Analyzed and conveyed employee and customer insights through quantitative and qualitative data analysis (more than 3,000 employee surveys and more than 500 customer interviews</li>
+                        <li>Developed and implemented rewards and recognition initiatives to improve employee engagement</li>
+                        <li>Developed and delivered dozens of comprehensive training programs to hundreds of employees and leaders</li>
+                        <li>Implemented values-based employee applicant interviewing process and design new values-based performance management system</li>
+                        <li>Developed organizational customer service initiative and delivered custom in-person and online training</li>
+                        <li>Led teams to develop and integrate new value and competency-based performance management system with matching software application</li>
+                        <li>Led change management efforts during and after organizational strategic planning and digital transformations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Berry Dunn -->
+            <div class="experience-item" data-print="job-3">
+                <div class="experience-header">
+                    <h4 class="job-title" data-print="job-3-title">Berry Dunn</h4>
+                    <div class="company-info">
+                        <span class="job-dates" data-print="job-3-dates">Aug 2020-Oct 2023</span>
+                    </div>
+                </div>
+                <div class="job-summary" data-print="job-3-summary">
+                    Led organizational development initiatives totaling over $2.3M revenue, including multi-year digital and culture transformations.
+                </div>
+                <div class="job-accomplishments">
+                    <h6>Key Tasks and Accomplishments:</h6>
+                    <ul data-print="job-3-accomplishments">
+                        <li>Designed and executed large-scale organizational change strategies, by anticipating challenges, defining scope, and executing detailed project plans</li>
+                        <li>Conducted more than 200 change impact and stakeholder analyses, sponsor coaching sessions, and change readiness assessments across 12 industries</li>
+                        <li>Coached and developed leaders and project team members on effective change management methodologies including ADKAR, Bridges, and Kotter's theory</li>
+                        <li>Developed custom analytics dashboards using Tableau, Smartsheet, Sharepoint, MS Excel, and Power BI to help clients track change adoption, readiness assessments, and engagement metrics</li>
+                        <li>Established regular feedback loops with clients to refine OCM strategies</li>
+                        <li>Supervised, trained, and mentored peer consultants delivering organizational development and change management services</li>
+                        <li>Engaged client stakeholders through more than 100 1:1, small and large group discussions</li>
+                        <li>Developed success metrics, evaluated, and reported on change effort effectiveness for multiple, simultaneous organizational transformation projects</li>
+                        <li>Conducted new business development, including scoping, budgeting, proposal writing, and sales presentations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Garland Texas -->
+            <div class="experience-item" data-print="job-4">
+                <div class="experience-header">
+                    <h4 class="job-title" data-print="job-4-title">GARLAND</h4>
+                    <div class="company-info">
+                        <span class="job-dates" data-print="job-4-dates">Dec 2017-Aug 2018</span>
+                    </div>
+                </div>
+                <div class="job-summary" data-print="job-4-summary">
+                    Managed engagement, learning, and development initiatives for over 2,000 employees.
+                </div>
+                <div class="job-accomplishments">
+                    <h6>Key Tasks and Accomplishments:</h6>
+                    <ul data-print="job-4-accomplishments">
+                        <li>Managed team to engage and develop for over 2,000 employees across 15 departments and more than 25 divisions</li>
+                        <li>Created more than 20 engaging online learning courses and tests for employees using Articulate software</li>
+                        <li>Implemented agile and Lean methodology (including sprint planning, iterative design, waste identification and elimination, and continuous feedback loops), reducing process cycle time by 35% across more than 30 processes</li>
+                        <li>Deployed employee engagement survey annually; analyzed and communicated results to more than 200 leaders and executives</li>
+                        <li>Collaborated closely with communications team to ensure awareness, desire, knowledge, and ability for internal and public stakeholders throughout major changes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TXU Energy -->
+            <div class="experience-item" data-print="job-5">
+                <div class="experience-header">
+                    <h4 class="job-title" data-print="job-5-title">TXU</h4>
+                    <div class="company-info">
+                        <span class="job-dates" data-print="job-5-dates">Apr 2015-Oct 2016</span>
+                    </div>
+                </div>
+                <div class="job-summary" data-print="job-5-summary">
+                    Developed organizational change readiness in preparation for $9.45 billion company acquisition.
+                </div>
+                <div class="job-accomplishments">
+                    <h6>Key Accomplishments:</h6>
+                    <ul data-print="job-5-accomplishments">
+                        <li>Designed executive communication and change measurement strategies to earn trust and reduce change resistance</li>
+                        <li>Collaborated to manage organizational change during $9.45 billion bankruptcy and acquisition, ensuring seamless integration and cultural alignment for more than 3,500 employees across multiple business units</li>
+                        <li>Delivered company-wide 9-Box succession planning</li>
+                        <li>Developed proprietary career planning process resulting in 17% improved ratio of Internal Promotions to External Hires</li>
+                        <li>Built and delivered more than 15 custom training solutions</li>
+                        <li>Provided executive coaching to company leaders including C-suite and VP-level executives</li>
+                        <li>Developed and delivered custom in-house leadership development program for Information Technology Department, training more than 20 IT leaders</li>
+                        <li>Designed and created more than 40 quick-reference guides and job aids to support leaders in talent management, performance management, and career development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Text Drawing Container - At Bottom of Page -->
+    <div id="text-drawing-container-2" class="text-drawing-container">
+        <div class="text-drawing-info">
+            <p>Click and drag in this container to learn a few last things about Sondra. Double-click to clear the canvas.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/CustomEase.min.js'></script>
+    <script src='https://unpkg.com/split-type@0.3.4/umd/index.min.js'></script>
+    <script src="./components/books-component.js"></script>
+    <script src="./components/education-books-component.js"></script>
+    <script src="./components/blog-slider-resume.js"></script>
+    <script src="./components/text-drawing.js"></script>
+    <script src="./components/text-scramble.js"></script>
+    <!-- Original refracted ball -->
+    <script src="./libs/three.min.js"></script>
+    <script src="./components/refracted-ball.js"></script>
+    <script src="https://unpkg.com/pizzip@3.1.3/dist/pizzip.min.js"></script>
+    <script src="https://unpkg.com/docxtemplater@3.39.1/build/docxtemplater.js"></script>
+
+    <script>
+        // Simple test to ensure JavaScript is working
+        console.log('Clean resume loaded successfully');
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Update icon
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Helper functions for extracting resume content
+        function extractContactInfo() {
+            const name = document.querySelector('[data-print="name"]')?.textContent || 'Sondra Hathaway';
+            const website = document.querySelector('[data-print="contact-website"]')?.textContent || '';
+            const phone = document.querySelector('[data-print="contact-phone"]')?.textContent || '';
+            const email = document.querySelector('[data-print="contact-email"]')?.textContent || '';
+            const address = document.querySelector('[data-print="contact-address"]')?.textContent || '';
+            
+            return `${name}
+${website}
+${phone}
+${email}
+${address}`;
+        }
+
+        function extractAboutInfo() {
+            const aboutText = document.querySelector('[data-print="profile-text"]')?.textContent || '';
+            return aboutText;
+        }
+
+        function extractEducationInfo() {
+            const educationElements = document.querySelectorAll('.education-testing-area .book-description');
+            let educationText = '';
+            
+            educationElements.forEach(element => {
+                const title = element.querySelector('h3')?.textContent || '';
+                const author = element.querySelector('.author')?.textContent || '';
+                const description = element.querySelector('p')?.textContent || '';
+                
+                if (title && title.length > 10) { // Filter out default description
+                    educationText += `${title}\n`;
+                    if (author) educationText += `${author}\n`;
+                    if (description) educationText += `${description}\n\n`;
+                }
+            });
+            
+            return educationText || 'Education information not found.';
+        }
+
+        function extractTechnicalSkillsInfo() {
+            const skillTags = document.querySelectorAll('.skill-tag');
+            let skillsText = '';
+            
+            skillTags.forEach(tag => {
+                const skill = tag.textContent.trim();
+                if (skill) {
+                    skillsText += `${skill}, `;
+                }
+            });
+            
+            return skillsText.slice(0, -2) || 'Technical skills not found.';
+        }
+
+        function extractProfessionalExperienceInfo() {
+            const experienceItems = document.querySelectorAll('.experience-item');
+            let experienceText = '';
+            
+            experienceItems.forEach(item => {
+                const jobTitle = item.querySelector('.job-title')?.textContent || '';
+                const companyName = item.querySelector('.company-name')?.textContent || '';
+                const jobDates = item.querySelector('.job-dates')?.textContent || '';
+                const jobSummary = item.querySelector('.job-summary')?.textContent || '';
+                const accomplishments = item.querySelectorAll('.job-accomplishments li');
+                
+                if (jobTitle) {
+                    experienceText += `${jobTitle}\n`;
+                    experienceText += `${companyName}\n`;
+                    experienceText += `${jobDates}\n\n`;
+                    
+                    if (jobSummary) {
+                        experienceText += `${jobSummary}\n\n`;
+                    }
+                    
+                    if (accomplishments.length > 0) {
+                        experienceText += `Key Accomplishments:\n`;
+                        accomplishments.forEach(accomplishment => {
+                            const text = accomplishment.textContent.trim();
+                            if (text) {
+                                experienceText += `• ${text}\n`;
+                            }
+                        });
+                        experienceText += '\n';
+                    }
+                }
+            });
+            
+            return experienceText || 'Professional experience not found.';
+        }
+
+        // Printable Resume Function - Make it globally accessible
+        window.openPrintableResume = function() {
+            console.log('Button clicked! openPrintableResume function called');
+            try {
+                console.log('Starting openPrintableResume function...');
+                // Extract content from the page
+                const contactSection = extractContactInfo();
+                console.log('Contact section extracted:', contactSection);
+                const aboutSection = extractAboutInfo();
+                console.log('About section extracted:', aboutSection);
+                const educationSection = extractEducationInfo();
+                console.log('Education section extracted:', educationSection);
+                const technicalSkillsSection = extractTechnicalSkillsInfo();
+                console.log('Technical skills section extracted:', technicalSkillsSection);
+                const professionalExperienceSection = extractProfessionalExperienceInfo();
+                console.log('Professional experience section extracted:', professionalExperienceSection);
+
+            // Combine all sections
+            const resumeContent = `
+SONDRA HATHAWAY RESUME
+
+${contactSection}
+
+ABOUT
+${aboutSection}
+
+EDUCATION AND CERTIFICATIONS
+${educationSection}
+
+TECHNICAL SKILLS
+${technicalSkillsSection}
+
+PROFESSIONAL EXPERIENCE
+${professionalExperienceSection}
+            `;
+
+            // Create new window with printable content
+            const printWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
+            
+            if (!printWindow || printWindow.closed || typeof printWindow.closed == 'undefined') {
+                // Popup was blocked - offer alternative download method
+                console.error('Popup blocked by browser - offering download alternative');
+                const downloadConfirm = confirm('Popup blocked! Would you like to download the resume as a text file instead?');
+                if (downloadConfirm) {
+                    // Create downloadable text file
+                    const blob = new Blob([resumeContent], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'Sondra_Hathaway_Resume.txt';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    console.log('Resume downloaded as text file');
+                }
+                return;
+            }
+            
+            printWindow.document.write(`
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sondra Hathaway - Printable Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #000;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        @media print {
+            body { margin: 20px; }
+            h1 { page-break-after: avoid; }
+            h2 { page-break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <pre>${resumeContent}</pre>
+    <script>
+        window.onload = function() {
+            window.print();
+        }
+    <\/script>
+</body>
+</html>
+            `);
+            printWindow.document.close();
+            console.log('Printable resume window opened successfully!');
+            } catch (error) {
+                console.error('Error in openPrintableResume:', error);
+                alert('Error creating printable resume: ' + error.message);
+            }
+        };
+    </script>
+
+</body>
+</html>

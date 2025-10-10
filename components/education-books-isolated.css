@@ -244,6 +244,11 @@
 }
 
 /* ASQ book - Navy background for better logo visibility */
+#books-component-container-top [data-book-index="top-edu-5"] .books__image {
+  background-color: #1B2951 !important;
+  background: #1B2951 !important;
+}
+
 #books-component-container-top [data-book-index="top-edu-5"] .books__image img {
   background-color: #1B2951 !important;
   background: #1B2951 !important;
