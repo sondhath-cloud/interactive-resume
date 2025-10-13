@@ -3068,6 +3068,10 @@
     margin: 0;
 }
 
+.testimonials-section .section-title::after {
+    display: none;
+}
+
 .testimonials-controls {
     display: flex;
     gap: 0.5rem;

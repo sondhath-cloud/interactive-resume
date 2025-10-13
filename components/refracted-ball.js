@@ -163,16 +163,16 @@ const colorSchemes = {
     cardBg: 'rgba(255, 255, 255, 0.95)',
     borderColor: 'rgba(255, 107, 157, 0.3)',
     shadowColor: 'rgba(255, 107, 157, 0.2)',
-    // Testimonial colors
-    testimonialColor1: 'linear-gradient(135deg, #ff6b9d, #ff8eb4)',
-    testimonialColor2: 'linear-gradient(135deg, #20c997, #1a9d7a)',
-    testimonialColor3: 'linear-gradient(135deg, #4A90E2, #357abd)',
-    testimonialColor4: 'linear-gradient(135deg, #F4C430, #e6b800)',
-    testimonialColor5: 'linear-gradient(135deg, #ff6b9d, #ff8eb4)',
-    testimonialColor6: 'linear-gradient(135deg, #20c997, #1a9d7a)',
-    testimonialColor7: 'linear-gradient(135deg, #4A90E2, #357abd)',
-    testimonialColor8: 'linear-gradient(135deg, #F4C430, #e6b800)',
-    testimonialColor9: 'linear-gradient(135deg, #ff6b9d, #ff8eb4)'
+    // Testimonial colors - Updated vibrant pattern one colors
+    testimonialColor1: 'linear-gradient(135deg, #ff6b9d, #ff4757)',
+    testimonialColor2: 'linear-gradient(135deg, #4A90E2, #5dade2)',
+    testimonialColor3: 'linear-gradient(135deg, #20c997, #17a2b8)',
+    testimonialColor4: 'linear-gradient(135deg, #F4C430, #ffa726)',
+    testimonialColor5: 'linear-gradient(135deg, #a06bd4, #9c27b0)',
+    testimonialColor6: 'linear-gradient(135deg, #ff8eb4, #e91e63)',
+    testimonialColor7: 'linear-gradient(135deg, #26c6da, #00acc1)',
+    testimonialColor8: 'linear-gradient(135deg, #ffb74d, #ff9800)',
+    testimonialColor9: 'linear-gradient(135deg, #9575cd, #7e57c2)'
   },
   2: {
     // Pattern 2: Black and White Waves with Dark Red Accent
