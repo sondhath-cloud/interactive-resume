@@ -162,7 +162,17 @@ const colorSchemes = {
     headerBg: 'rgba(255, 107, 157, 0.1)',
     cardBg: 'rgba(255, 255, 255, 0.95)',
     borderColor: 'rgba(255, 107, 157, 0.3)',
-    shadowColor: 'rgba(255, 107, 157, 0.2)'
+    shadowColor: 'rgba(255, 107, 157, 0.2)',
+    // Testimonial colors
+    testimonialColor1: 'linear-gradient(135deg, #ff6b9d, #ff8eb4)',
+    testimonialColor2: 'linear-gradient(135deg, #20c997, #1a9d7a)',
+    testimonialColor3: 'linear-gradient(135deg, #4A90E2, #357abd)',
+    testimonialColor4: 'linear-gradient(135deg, #F4C430, #e6b800)',
+    testimonialColor5: 'linear-gradient(135deg, #ff6b9d, #ff8eb4)',
+    testimonialColor6: 'linear-gradient(135deg, #20c997, #1a9d7a)',
+    testimonialColor7: 'linear-gradient(135deg, #4A90E2, #357abd)',
+    testimonialColor8: 'linear-gradient(135deg, #F4C430, #e6b800)',
+    testimonialColor9: 'linear-gradient(135deg, #ff6b9d, #ff8eb4)'
   },
   2: {
     // Pattern 2: Black and White Waves with Dark Red Accent
@@ -192,7 +202,17 @@ const colorSchemes = {
     headerBg: 'rgba(139, 0, 0, 0.1)',
     cardBg: 'rgba(255, 255, 255, 0.95)',
     borderColor: 'rgba(139, 0, 0, 0.3)',
-    shadowColor: 'rgba(139, 0, 0, 0.2)'
+    shadowColor: 'rgba(139, 0, 0, 0.2)',
+    // Testimonial colors
+    testimonialColor1: 'linear-gradient(135deg, #8B0000, #a01010)',
+    testimonialColor2: 'linear-gradient(135deg, #4a4a4a, #6c757d)',
+    testimonialColor3: 'linear-gradient(135deg, #1a1a1a, #343a40)',
+    testimonialColor4: 'linear-gradient(135deg, #8B0000, #a01010)',
+    testimonialColor5: 'linear-gradient(135deg, #4a4a4a, #6c757d)',
+    testimonialColor6: 'linear-gradient(135deg, #1a1a1a, #343a40)',
+    testimonialColor7: 'linear-gradient(135deg, #8B0000, #a01010)',
+    testimonialColor8: 'linear-gradient(135deg, #4a4a4a, #6c757d)',
+    testimonialColor9: 'linear-gradient(135deg, #1a1a1a, #343a40)'
   },
   3: {
     // Pattern 3: Retro Geometric (Teal, Orange, Cream)
@@ -222,7 +242,17 @@ const colorSchemes = {
     headerBg: 'rgba(217, 105, 65, 0.1)',
     cardBg: 'rgba(255, 255, 255, 0.95)',
     borderColor: 'rgba(217, 105, 65, 0.3)',
-    shadowColor: 'rgba(217, 105, 65, 0.2)'
+    shadowColor: 'rgba(217, 105, 65, 0.2)',
+    // Testimonial colors
+    testimonialColor1: 'linear-gradient(135deg, #d96941, #e58a5f)',
+    testimonialColor2: 'linear-gradient(135deg, #4a9d9c, #6fa89f)',
+    testimonialColor3: 'linear-gradient(135deg, #2c5757, #3a6b6b)',
+    testimonialColor4: 'linear-gradient(135deg, #d96941, #e58a5f)',
+    testimonialColor5: 'linear-gradient(135deg, #4a9d9c, #6fa89f)',
+    testimonialColor6: 'linear-gradient(135deg, #2c5757, #3a6b6b)',
+    testimonialColor7: 'linear-gradient(135deg, #d96941, #e58a5f)',
+    testimonialColor8: 'linear-gradient(135deg, #4a9d9c, #6fa89f)',
+    testimonialColor9: 'linear-gradient(135deg, #2c5757, #3a6b6b)'
   },
   4: {
     // Pattern 4: Retro Waves (Navy, Rust, Gold, Cream)
@@ -252,7 +282,17 @@ const colorSchemes = {
     headerBg: 'rgba(200, 90, 63, 0.1)',
     cardBg: 'rgba(255, 255, 255, 0.95)',
     borderColor: 'rgba(200, 90, 63, 0.3)',
-    shadowColor: 'rgba(200, 90, 63, 0.2)'
+    shadowColor: 'rgba(200, 90, 63, 0.2)',
+    // Testimonial colors
+    testimonialColor1: 'linear-gradient(135deg, #c85a3f, #d67a5f)',
+    testimonialColor2: 'linear-gradient(135deg, #8a6f5a, #6b5746)',
+    testimonialColor3: 'linear-gradient(135deg, #2c4a5a, #3a5e70)',
+    testimonialColor4: 'linear-gradient(135deg, #c85a3f, #d67a5f)',
+    testimonialColor5: 'linear-gradient(135deg, #8a6f5a, #6b5746)',
+    testimonialColor6: 'linear-gradient(135deg, #2c4a5a, #3a5e70)',
+    testimonialColor7: 'linear-gradient(135deg, #c85a3f, #d67a5f)',
+    testimonialColor8: 'linear-gradient(135deg, #8a6f5a, #6b5746)',
+    testimonialColor9: 'linear-gradient(135deg, #2c4a5a, #3a5e70)'
   }
 };
 
@@ -408,6 +448,17 @@ function applyColorScheme(scheme) {
   root.style.setProperty('--card-bg', scheme.cardBg);
   root.style.setProperty('--border-color', scheme.borderColor);
   root.style.setProperty('--shadow-color', scheme.shadowColor);
+  
+  // Apply testimonial colors
+  root.style.setProperty('--testimonial-color-1', scheme.testimonialColor1);
+  root.style.setProperty('--testimonial-color-2', scheme.testimonialColor2);
+  root.style.setProperty('--testimonial-color-3', scheme.testimonialColor3);
+  root.style.setProperty('--testimonial-color-4', scheme.testimonialColor4);
+  root.style.setProperty('--testimonial-color-5', scheme.testimonialColor5);
+  root.style.setProperty('--testimonial-color-6', scheme.testimonialColor6);
+  root.style.setProperty('--testimonial-color-7', scheme.testimonialColor7);
+  root.style.setProperty('--testimonial-color-8', scheme.testimonialColor8);
+  root.style.setProperty('--testimonial-color-9', scheme.testimonialColor9);
   
   // Color scheme applied
 }
