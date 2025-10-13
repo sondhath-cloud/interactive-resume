@@ -18,17 +18,17 @@ class TextDrawing {
     }
     
     init() {
-        console.log('Initializing text drawing component...');
+        // Initializing text drawing component
         
         this.canvas = document.createElement('canvas');
         this.canvas.className = 'text-drawing-canvas';
         this.canvas.id = 'text-drawing-canvas';
         
         this.container.appendChild(this.canvas);
-        console.log('Canvas added to container');
+        // Canvas added to container
         
         this.context = this.canvas.getContext('2d');
-        console.log('Canvas context obtained');
+        // Canvas context obtained
         
         this.resizeCanvas();
         
@@ -36,11 +36,11 @@ class TextDrawing {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
         this.addEventListeners();
-        console.log('Event listeners added');
+        // Event listeners added
         
         window.addEventListener('resize', () => this.resizeCanvas());
         
-        console.log('Text drawing component initialized successfully');
+        // Text drawing component initialized successfully
     }
     
     resizeCanvas() {
@@ -50,7 +50,7 @@ class TextDrawing {
         this.canvas.width = rect.width;
         this.canvas.height = rect.height;
         
-        console.log('Canvas resized to:', this.canvas.width, 'x', this.canvas.height);
+        // Canvas resized
         
         // Make canvas transparent to show glassmorphic background
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -98,13 +98,13 @@ class TextDrawing {
     }
     
     handleMouseDown(event) {
-        console.log('Mouse down event triggered');
+        // Mouse down event triggered
         const rect = this.canvas.getBoundingClientRect();
         this.mouse.down = true;
         this.position.x = event.clientX - rect.left;
         this.position.y = event.clientY - rect.top;
         
-        console.log('Mouse position:', this.position.x, this.position.y);
+        // Mouse position set
         
         const info = document.querySelector('.text-drawing-info');
         if (info) {
@@ -187,11 +187,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initialize second text drawing container (at bottom of page)
         const textDrawingContainer2 = document.getElementById('text-drawing-container-2');
         if (textDrawingContainer2) {
-            console.log('Text drawing container 2 found, initializing...');
-            console.log('Container 2 dimensions:', textDrawingContainer2.offsetWidth, 'x', textDrawingContainer2.offsetHeight);
+            // Text drawing container 2 found, initializing
             window.textDrawing2 = new TextDrawing('text-drawing-container-2');
-        } else {
-            console.log('Text drawing container 2 not found');
         }
     }, 100);
 });

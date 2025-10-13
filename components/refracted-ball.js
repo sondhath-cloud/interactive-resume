@@ -6,17 +6,17 @@
 // Using local Three.js files to avoid CORS issues
 // THREE will be loaded via script tag in HTML
 
-console.log('Refracted ball script loading...');
+// Refracted ball script loading
 
 // Wait for THREE.js to be available
 function initRefractedBall() {
     if (typeof THREE === 'undefined') {
-        console.log('THREE.js not loaded yet, waiting...');
+        // THREE.js not loaded yet, waiting...
         setTimeout(initRefractedBall, 100);
         return;
     }
     
-    console.log('THREE.js loaded, initializing refracted ball...');
+    // THREE.js loaded, initializing refracted ball
 
 let w = 300; // Fixed width for profile section (matches container - 100% larger)
 let h = 300; // Fixed height for profile section (matches container - 100% larger)
@@ -40,7 +40,7 @@ function initContainer() {
     const container = document.getElementById("refracted-ball-container");
     if (container) {
         container.appendChild(renderer.domElement);
-        console.log('Refracted ball initialized successfully');
+        // Refracted ball initialized successfully
         // Start the animation loop
         render();
     } else {
@@ -132,11 +132,135 @@ const patterns = [
   "./assets/backgrounds/pattern4.png"
 ];
 
-console.log('Loading texture:', patterns[currentPattern - 1]);
+// Color schemes for each pattern
+const colorSchemes = {
+  1: {
+    // Pattern 1: Colorful Ink/Smoke
+    bgColor: '#ffffff',
+    textColor: '#333333',
+    textSecondary: '#555555',
+    circleGradientStart: '#ff6b9d',
+    circleGradientMid: '#a06bd4',
+    circleGradientEnd: '#4A90E2',
+    salmon: '#ff6b9d',
+    salmonLight: '#ff8eb4',
+    salmonDark: '#e5548a',
+    white: '#ffffff',
+    lightGray: '#f5f5f5',
+    mediumGray: '#e9ecef',
+    darkGray: '#495057',
+    darkerGray: '#343a40',
+    threeColumnBg: 'transparent',
+    experienceBg: 'rgba(255, 107, 157, 0.05)',
+    experienceBgEnd: 'rgba(255, 107, 157, 0.02)',
+    // Additional elements
+    primaryAccent: '#ff6b9d',
+    secondaryAccent: '#4A90E2',
+    tertiaryAccent: '#F4C430',
+    teal: '#20c997',
+    tealDark: '#1a9d7a',
+    headerBg: 'rgba(255, 107, 157, 0.1)',
+    cardBg: 'rgba(255, 255, 255, 0.95)',
+    borderColor: 'rgba(255, 107, 157, 0.3)',
+    shadowColor: 'rgba(255, 107, 157, 0.2)'
+  },
+  2: {
+    // Pattern 2: Black and White Waves with Dark Red Accent
+    bgColor: '#ffffff',
+    textColor: '#000000',
+    textSecondary: '#2c3e50',
+    circleGradientStart: '#1a1a1a',
+    circleGradientMid: '#4a4a4a',
+    circleGradientEnd: '#6c757d',
+    salmon: '#8B0000',
+    salmonLight: '#a01010',
+    salmonDark: '#6b0000',
+    white: '#ffffff',
+    lightGray: '#f0f0f0',
+    mediumGray: '#d9d9d9',
+    darkGray: '#2c3e50',
+    darkerGray: '#1a1a1a',
+    threeColumnBg: 'transparent',
+    experienceBg: 'rgba(139, 0, 0, 0.05)',
+    experienceBgEnd: 'rgba(139, 0, 0, 0.02)',
+    // Additional elements
+    primaryAccent: '#8B0000',
+    secondaryAccent: '#4a4a4a',
+    tertiaryAccent: '#6c757d',
+    teal: '#dc3545',
+    tealDark: '#c82333',
+    headerBg: 'rgba(139, 0, 0, 0.1)',
+    cardBg: 'rgba(255, 255, 255, 0.95)',
+    borderColor: 'rgba(139, 0, 0, 0.3)',
+    shadowColor: 'rgba(139, 0, 0, 0.2)'
+  },
+  3: {
+    // Pattern 3: Retro Geometric (Teal, Orange, Cream)
+    bgColor: '#ffffff',
+    textColor: '#2c5757',
+    textSecondary: '#3a6b6b',
+    circleGradientStart: '#4a9d9c',
+    circleGradientMid: '#6fa89f',
+    circleGradientEnd: '#d96941',
+    salmon: '#d96941',
+    salmonLight: '#e58a5f',
+    salmonDark: '#c24f2a',
+    white: '#ffffff',
+    lightGray: '#f0e8d5',
+    mediumGray: '#e5dbc4',
+    darkGray: '#3a6b6b',
+    darkerGray: '#2c5757',
+    threeColumnBg: 'transparent',
+    experienceBg: 'rgba(217, 105, 65, 0.05)',
+    experienceBgEnd: 'rgba(217, 105, 65, 0.02)',
+    // Additional elements
+    primaryAccent: '#d96941',
+    secondaryAccent: '#4a9d9c',
+    tertiaryAccent: '#6fa89f',
+    teal: '#4a9d9c',
+    tealDark: '#3a7a79',
+    headerBg: 'rgba(217, 105, 65, 0.1)',
+    cardBg: 'rgba(255, 255, 255, 0.95)',
+    borderColor: 'rgba(217, 105, 65, 0.3)',
+    shadowColor: 'rgba(217, 105, 65, 0.2)'
+  },
+  4: {
+    // Pattern 4: Retro Waves (Navy, Rust, Gold, Cream)
+    bgColor: '#ffffff',
+    textColor: '#2c4a5a',
+    textSecondary: '#3a5e70',
+    circleGradientStart: '#c85a3f',
+    circleGradientMid: '#8a6f5a',
+    circleGradientEnd: '#2c4a5a',
+    salmon: '#c85a3f',
+    salmonLight: '#d67a5f',
+    salmonDark: '#a8442a',
+    white: '#ffffff',
+    lightGray: '#f0e8d5',
+    mediumGray: '#e5dbc4',
+    darkGray: '#3a5e70',
+    darkerGray: '#2c4a5a',
+    threeColumnBg: 'transparent',
+    experienceBg: 'rgba(200, 90, 63, 0.05)',
+    experienceBgEnd: 'rgba(200, 90, 63, 0.02)',
+    // Additional elements
+    primaryAccent: '#c85a3f',
+    secondaryAccent: '#8a6f5a',
+    tertiaryAccent: '#2c4a5a',
+    teal: '#8a6f5a',
+    tealDark: '#6b5746',
+    headerBg: 'rgba(200, 90, 63, 0.1)',
+    cardBg: 'rgba(255, 255, 255, 0.95)',
+    borderColor: 'rgba(200, 90, 63, 0.3)',
+    shadowColor: 'rgba(200, 90, 63, 0.2)'
+  }
+};
+
+// Loading texture
 let texture = loader.load(
   patterns[currentPattern - 1],
   function(texture) {
-    console.log('Texture loaded successfully:', patterns[currentPattern - 1]);
+    // Texture loaded successfully
   },
   undefined,
   function(error) {
@@ -251,18 +375,58 @@ function resize() {
 
 window.addEventListener("resize", resize);
 
+// Function to apply color scheme to the page
+function applyColorScheme(scheme) {
+  const root = document.documentElement;
+  
+  // Apply all color scheme variables
+  root.style.setProperty('--bg-color', scheme.bgColor);
+  root.style.setProperty('--text-color', scheme.textColor);
+  root.style.setProperty('--text-secondary', scheme.textSecondary);
+  root.style.setProperty('--circle-gradient-start', scheme.circleGradientStart);
+  root.style.setProperty('--circle-gradient-mid', scheme.circleGradientMid);
+  root.style.setProperty('--circle-gradient-end', scheme.circleGradientEnd);
+  root.style.setProperty('--salmon', scheme.salmon);
+  root.style.setProperty('--salmon-light', scheme.salmonLight);
+  root.style.setProperty('--salmon-dark', scheme.salmonDark);
+  root.style.setProperty('--white', scheme.white);
+  root.style.setProperty('--light-gray', scheme.lightGray);
+  root.style.setProperty('--medium-gray', scheme.mediumGray);
+  root.style.setProperty('--dark-gray', scheme.darkGray);
+  root.style.setProperty('--darker-gray', scheme.darkerGray);
+  root.style.setProperty('--three-column-bg', scheme.threeColumnBg);
+  root.style.setProperty('--experience-bg', scheme.experienceBg);
+  root.style.setProperty('--experience-bg-end', scheme.experienceBgEnd);
+  
+  // Apply additional color variables for more variety
+  root.style.setProperty('--primary-accent', scheme.primaryAccent);
+  root.style.setProperty('--secondary-accent', scheme.secondaryAccent);
+  root.style.setProperty('--tertiary-accent', scheme.tertiaryAccent);
+  root.style.setProperty('--teal', scheme.teal);
+  root.style.setProperty('--teal-dark', scheme.tealDark);
+  root.style.setProperty('--header-bg', scheme.headerBg);
+  root.style.setProperty('--card-bg', scheme.cardBg);
+  root.style.setProperty('--border-color', scheme.borderColor);
+  root.style.setProperty('--shadow-color', scheme.shadowColor);
+  
+  // Color scheme applied
+}
+
 // Pattern switching function - expose globally
 window.switchPattern = function(patternNumber) {
-  console.log('switchPattern called with:', patternNumber);
+  // switchPattern called
   if (patternNumber >= 1 && patternNumber <= 4) {
     currentPattern = patternNumber;
     
+    // Apply color scheme for this pattern
+    const scheme = colorSchemes[patternNumber];
+    applyColorScheme(scheme);
+    
     // Load new texture
-    console.log('Loading pattern:', patterns[currentPattern - 1]);
     texture = loader.load(
       patterns[currentPattern - 1],
       function(loadedTexture) {
-        console.log('Pattern loaded successfully:', patterns[currentPattern - 1]);
+        // Pattern loaded successfully
         loadedTexture.wrapS = loadedTexture.wrapT = THREE.MirroredRepeatWrapping;
         
         // Update material uniforms
@@ -275,14 +439,27 @@ window.switchPattern = function(patternNumber) {
       }
     );
     
-    // Update button styles
+    // Update button styles with new accent color
     document.querySelectorAll('.pattern-btn').forEach((btn, index) => {
       if (index + 1 === patternNumber) {
-        btn.style.backgroundColor = 'var(--salmon)';
+        btn.style.backgroundColor = scheme.salmon;
       } else {
         btn.style.backgroundColor = 'transparent';
       }
     });
+    
+    // Save the selected pattern to localStorage
+    localStorage.setItem('selectedPattern', patternNumber);
+  }
+}
+
+// Load saved pattern preference on page load
+const savedPattern = localStorage.getItem('selectedPattern');
+if (savedPattern) {
+  const patternNum = parseInt(savedPattern);
+  if (patternNum >= 1 && patternNum <= 4) {
+    // Apply the saved color scheme immediately
+    applyColorScheme(colorSchemes[patternNum]);
   }
 }
 

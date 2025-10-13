@@ -2,24 +2,21 @@
 // This script handles only the education section books component to prevent interference with other instances
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Education books component script loaded');
+    // Education books component script loaded
     
     // Target both education books components
     const educationContainer = document.getElementById('books-component-container-education');
     const topEducationContainer = document.getElementById('books-component-container-top');
     
-    console.log('Education container:', educationContainer);
-    console.log('Top education container:', topEducationContainer);
-    
     // Initialize education section if it exists
     if (educationContainer) {
-        console.log('Initializing education section');
+        // Initializing education section
         initEducationSection(educationContainer, 'edu-', 'default-open-book-education');
     }
     
     // Initialize top education section if it exists
     if (topEducationContainer) {
-        console.log('Initializing top education section');
+        // Initializing top education section
         initEducationSection(topEducationContainer, 'top-edu-', 'default-open-book-top');
     }
 });
