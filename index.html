@@ -13,11 +13,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Dark Mode Toggle -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-    </button>
-    
     
 
     <!-- Floating Background Circles -->
@@ -57,11 +52,6 @@
         <style>
             /* Isolated styles for Sondra component to prevent conflicts */
             .sondra-component-section {
-                --primary-teal: #27918F;
-                --sage-green: #90A998;
-                --forest-green: #549389;
-                --accent-red: #ED2A09;
-                --charcoal: #49514C;
                 --spacing-sm: 1rem;
                 --spacing-md: 1.5rem;
                 --spacing-lg: 2rem;
@@ -73,7 +63,7 @@
                 font-family: "Helvetica Neue", Calibri, Corbel, Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
                 font-weight: 300;
                 line-height: 1.6;
-                color: #333;
+                color: var(--text-color);
             }
 
             .sondra-component-section .section-content {
@@ -86,7 +76,7 @@
                 font-weight: 600;
                 margin-bottom: var(--spacing-lg);
                 text-align: center;
-                color: var(--charcoal);
+                color: var(--darker-gray);
             }
 
             .sondra-component-section .team-grid {
@@ -97,7 +87,7 @@
             }
 
             .sondra-component-section .team-member {
-                background: white;
+                background: var(--white);
                 padding: var(--spacing-lg);
                 border-radius: 8px;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -116,7 +106,7 @@
                 height: 150px;
                 border-radius: 50%;
                 object-fit: cover;
-                border: 4px solid var(--primary-teal);
+                border: 4px solid var(--salmon);
             }
 
             .sondra-component-section .member-info {
@@ -126,14 +116,14 @@
             }
 
             .sondra-component-section .member-info h3 {
-                color: var(--charcoal);
+                color: var(--darker-gray);
                 margin-bottom: var(--spacing-sm);
                 font-size: 1.3rem;
                 text-align: left;
             }
 
             .sondra-component-section .member-bio {
-                color: #666;
+                color: var(--dark-gray);
                 line-height: 1.6;
                 margin-bottom: var(--spacing-md);
                 font-size: 0.95rem;
@@ -151,7 +141,7 @@
             }
 
             .sondra-component-section .expertise-tag {
-                background: var(--sage-green);
+                background: var(--salmon);
                 color: white;
                 padding: 0.25rem 0.75rem;
                 border-radius: 20px;
@@ -252,14 +242,14 @@
                     </div>
                     <div class="member-info">
                         <h3>Sondra Hathaway</h3>
-                        <p class="member-bio">With over 20 years of experience in organizational development, Sondra leads organizations through change to successfully transform. Sondra holds degrees in business administration, psychology, and sociology. She is a certified a Manager of Quality and Organizational Excellence and Prosci Change Practitioner. Sondra has many specialty fields including strategic planning and employee engagement. She has produced several apps, designs computer-based training (CBT), and created TransformLocalGov's transformation quiz and change management software "ResultsMode."</p>
+                        <p class="member-bio">With over 20 years of experience in organizational development, Sondra leads organizations through change to successfully transform. Sondra holds degrees in business administration, psychology, and sociology. She is a certified a Manager of Quality and Organizational Excellence and Prosci Change Practitioner. Sondra has many specialty fields including strategic planning and employee engagement. She has produced several apps, designs computer-based training (CBT), and created TransformLocalGov's transformation quiz and strategic planning software "StrategySync."</p>
 
                         <div class="member-expertise">
-                            <span class="expertise-tag">Outcomes and Accountability</span>
-                            <span class="expertise-tag">Capability Building</span>
-                            <span class="expertise-tag">People Experience (PX)</span>
-                            <span class="expertise-tag">Culture by Design</span>
-                            <span class="expertise-tag">Strategy and Execution</span>
+                            <span class="expertise-tag" data-tooltip="I make sure we actually achieve what we set out to do, and I hold people responsible for results. I create clear expectations and follow through on commitments.">Outcomes and Accountability</span>
+                            <span class="expertise-tag" data-tooltip="I help people and teams develop the skills they need to succeed. I build the foundation so everyone can do their best work and grow in their roles.">Capability Building</span>
+                            <span class="expertise-tag" data-tooltip="I design how people experience their work day to day. I'm like a user experience designer, but for the workplace. I make sure employees feel valued and supported.">People Experience (PX)</span>
+                            <span class="expertise-tag" data-tooltip="I intentionally create the kind of workplace culture you want instead of letting it happen by accident. I design the values, behaviors, and environment that make teams thrive.">Culture by Design</span>
+                            <span class="expertise-tag" data-tooltip="I turn big ideas into reality. I create smart plans and then actually make them happen, not just talk about what could be done.">Strategy and Execution</span>
                         </div>
                     </div>
                 </div>
@@ -268,14 +258,14 @@
     </div>
 
     <!-- 3 Column Container -->
-    <div class="three-column-container" style="background: #f8f9fa; padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1200px;">
+    <div class="three-column-container" style="background: var(--bg-color); padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1200px;">
         <div class="column-1">
             <h3>CONTACT</h3>
             <div class="contact-info">
                 <p data-print="name">Sondra Hathaway</p>
-                <p data-print="contact-website">sondrahathaway.com</p>
+                <p data-print="contact-website"><a href="https://sondrahathaway.com" target="_blank" style="color: inherit; text-decoration: none;">sondrahathaway.com</a></p>
                 <p data-print="contact-phone">+01 602 380 7231</p>
-                <p data-print="contact-email">hello@sondrahathaway.com</p>
+                <p data-print="contact-email"><a href="mailto:hello@sondrahathaway.com" style="color: inherit; text-decoration: none;">hello@sondrahathaway.com</a></p>
                 <p data-print="contact-address">Princeton, TX 75407</p>
             </div>
         </div>
@@ -291,21 +281,18 @@
         <div class="column-3">
             <h3>ABOUT</h3>
             <div class="about-content">
-                <p data-print="profile-text">Keep it light, keep it moving. I love diving into a brand-new project and building from the ground up, but I get just as much satisfaction from joining a team to refine and elevate an existing idea. My natural mode is to ask "what if?" respectfully challenge assumptions and bring solutions.</p>
+                <p data-print="profile-text">I don't have to do it all, but I have to do something. My natural mode is to ask "what if," respectfully challenge assumptions, and do my best to bring solutions.</p>
                 <p data-print="title" style="display:none;">Change Management and Organizational Development Professional</p>
-                <button class="print-resume-btn" onclick="window.open('Sondra-Hathaway-Resume.pdf', '_blank')" style="position: relative; z-index: 9999; pointer-events: auto;">View Printable Resume</button>
+                <button class="print-resume-btn" onclick="window.open('Sondra-Hathaway-Resume.pdf', '_blank')" style="display: none; position: relative; z-index: 9999; pointer-events: auto;">View Printable Resume</button>
             </div>
         </div>
     </div>
 
 
     <!-- Education and Certifications Section -->
-    <div class="education-testing-area" style="background: #f8f9fa; padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1200px;">
-        <h3 class="section-title" style="color: #ffffff; margin-bottom: 20px;">EDUCATION AND CERTIFICATIONS</h3>
+    <div class="education-testing-area" style="background: var(--bg-color); padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1200px;">
+        <h3 class="section-title" style="color: var(--white); margin-bottom: 20px;">EDUCATION AND CERTIFICATIONS</h3>
         <div id="books-component-container-top" class="education-books-isolated" style="width: 100%; height: 400px; position: relative; overflow: hidden;">
-            <!-- Theme toggle -->
-            <div class="theme-toggle education-theme-toggle" id="theme-toggle-top"></div>
-
             <!-- SVG Background -->
             <svg style="position: absolute; width: 100%; height: 100%; z-index: 0;" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -582,162 +569,52 @@
         </div>
     </div>
 
-    <!-- Technical Skills Section -->
-    <div class="technical-skills-container" data-print="technical-skills-section" style="background: #f8f9fa; padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1200px;">
-        <h3 class="section-title">TECHNICAL SKILLS</h3>
-        <div class="skill-tags" data-print="technical-skills">
-            <span class="skill-tag">Adobe Captivate</span>
-            <span class="skill-tag">Adobe Illustrator</span>
-            <span class="skill-tag">Adobe InDesign</span>
-            <span class="skill-tag">Adobe Photoshop</span>
-            <span class="skill-tag">Adobe Premiere</span>
-            <span class="skill-tag">Articulate</span>
-            <span class="skill-tag">Camtasia</span>
-            <span class="skill-tag">Mac OS</span>
-            <span class="skill-tag">Windows OS</span>
-            <span class="skill-tag">Microsoft Office</span>
-            <span class="skill-tag">Microsoft Project</span>
-            <span class="skill-tag">Microsoft Visio</span>
-            <span class="skill-tag">SharePoint Administrator</span>
-            <span class="skill-tag">Power BI</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">PHP</span>
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">VBA</span>
-            <span class="skill-tag">Supabase</span>
-            <span class="skill-tag">SQL</span>
-        </div>
-    </div>
-
-
     <!-- Professional Experience Section -->
     <div class="one-column-experience">
         <div class="experience-container">
             <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
             
-            <!-- CIC (Civic Innovation Consultants) -->
-            <div class="experience-item" data-print="job-1">
-                <div class="experience-header">
-                    <h4 class="job-title" data-print="job-1-title">CIC</h4>
-                    <div class="company-info">
-                        <span class="job-dates" data-print="job-1-dates">Mar 2025-Present</span>
-                    </div>
-                </div>
-                <div class="job-summary" data-print="job-1-summary">
-                    Deliver services and develop tools to support strategic company development.
-                </div>
+            <!-- Combined Experience -->
+            <div class="experience-item">
                 <div class="job-accomplishments">
                     <h6>Key Accomplishments:</h6>
-                    <ul data-print="job-1-accomplishments">
-                        <li>Manage engagements.</li> 
-                        <li>Facilitate strategic planning sessions.</li>
-                        <li>Designed and deployed 2 full-stack web apps to support project and change management.</li>
-                        <li>Designed online dashboards and metric trackers to visualize progress toward strategic goals.</li>
-                        <li>Conduct new business development, including scoping, budgeting, proposal writing, and sales presentations</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Transform Local Gov -->
-            <div class="experience-item" data-print="job-2">
-                <div class="experience-header">
-                    <h4 class="job-title" data-print="job-2-title">Transform Local Gov</h4>
-                    <div class="company-info">
-                        <span class="job-dates" data-print="job-2-dates">Nov 2023-Present</span>
-                    </div>
-                </div>
-                <div class="job-summary" data-print="job-2-summary">
-                    Lead organizational development initiatives that improve employee engagement and reduce employee attrition.
-                </div>
-                <div class="job-accomplishments">
-                    <h6>Key Accomplishments:</h6>
-                    <ul data-print="job-2-accomplishments">
-                        <li>Analyzed and conveyed employee and customer insights through quantitative and qualitative data analysis (more than 3,000 employee surveys and more than 500 customer interviews</li>
-                        <li>Developed and implemented rewards and recognition initiatives to improve employee engagement</li>
-                        <li>Developed and delivered dozens of comprehensive training programs to hundreds of employees and leaders</li>
-                        <li>Implemented values-based employee applicant interviewing process and design new values-based performance management system</li>
-                        <li>Developed organizational customer service initiative and delivered custom in-person and online training</li>
-                        <li>Led teams to develop and integrate new value and competency-based performance management system with matching software application</li>
-                        <li>Led change management efforts during and after organizational strategic planning and digital transformations</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Berry Dunn -->
-            <div class="experience-item" data-print="job-3">
-                <div class="experience-header">
-                    <h4 class="job-title" data-print="job-3-title">Berry Dunn</h4>
-                    <div class="company-info">
-                        <span class="job-dates" data-print="job-3-dates">Aug 2020-Oct 2023</span>
-                    </div>
-                </div>
-                <div class="job-summary" data-print="job-3-summary">
-                    Led organizational development initiatives totaling over $2.3M revenue, including multi-year digital and culture transformations.
-                </div>
-                <div class="job-accomplishments">
-                    <h6>Key Tasks and Accomplishments:</h6>
-                    <ul data-print="job-3-accomplishments">
-                        <li>Designed and executed large-scale organizational change strategies, by anticipating challenges, defining scope, and executing detailed project plans</li>
-                        <li>Conducted more than 200 change impact and stakeholder analyses, sponsor coaching sessions, and change readiness assessments across 12 industries</li>
-                        <li>Coached and developed leaders and project team members on effective change management methodologies including ADKAR, Bridges, and Kotter's theory</li>
-                        <li>Developed custom analytics dashboards using Tableau, Smartsheet, Sharepoint, MS Excel, and Power BI to help clients track change adoption, readiness assessments, and engagement metrics</li>
-                        <li>Established regular feedback loops with clients to refine OCM strategies</li>
-                        <li>Supervised, trained, and mentored peer consultants delivering organizational development and change management services</li>
-                        <li>Engaged client stakeholders through more than 100 1:1, small and large group discussions</li>
-                        <li>Developed success metrics, evaluated, and reported on change effort effectiveness for multiple, simultaneous organizational transformation projects</li>
-                        <li>Conducted new business development, including scoping, budgeting, proposal writing, and sales presentations</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Garland Texas -->
-            <div class="experience-item" data-print="job-4">
-                <div class="experience-header">
-                    <h4 class="job-title" data-print="job-4-title">GARLAND</h4>
-                    <div class="company-info">
-                        <span class="job-dates" data-print="job-4-dates">Dec 2017-Aug 2018</span>
-                    </div>
-                </div>
-                <div class="job-summary" data-print="job-4-summary">
-                    Managed engagement, learning, and development initiatives for over 2,000 employees.
-                </div>
-                <div class="job-accomplishments">
-                    <h6>Key Tasks and Accomplishments:</h6>
-                    <ul data-print="job-4-accomplishments">
-                        <li>Managed team to engage and develop for over 2,000 employees across 15 departments and more than 25 divisions</li>
-                        <li>Created more than 20 engaging online learning courses and tests for employees using Articulate software</li>
-                        <li>Implemented agile and Lean methodology (including sprint planning, iterative design, waste identification and elimination, and continuous feedback loops), reducing process cycle time by 35% across more than 30 processes</li>
-                        <li>Deployed employee engagement survey annually; analyzed and communicated results to more than 200 leaders and executives</li>
-                        <li>Collaborated closely with communications team to ensure awareness, desire, knowledge, and ability for internal and public stakeholders throughout major changes</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- TXU Energy -->
-            <div class="experience-item" data-print="job-5">
-                <div class="experience-header">
-                    <h4 class="job-title" data-print="job-5-title">TXU</h4>
-                    <div class="company-info">
-                        <span class="job-dates" data-print="job-5-dates">Apr 2015-Oct 2016</span>
-                    </div>
-                </div>
-                <div class="job-summary" data-print="job-5-summary">
-                    Developed organizational change readiness in preparation for $9.45 billion company acquisition.
-                </div>
-                <div class="job-accomplishments">
-                    <h6>Key Accomplishments:</h6>
-                    <ul data-print="job-5-accomplishments">
-                        <li>Designed executive communication and change measurement strategies to earn trust and reduce change resistance</li>
-                        <li>Collaborated to manage organizational change during $9.45 billion bankruptcy and acquisition, ensuring seamless integration and cultural alignment for more than 3,500 employees across multiple business units</li>
-                        <li>Delivered company-wide 9-Box succession planning</li>
-                        <li>Developed proprietary career planning process resulting in 17% improved ratio of Internal Promotions to External Hires</li>
-                        <li>Built and delivered more than 15 custom training solutions</li>
-                        <li>Provided executive coaching to company leaders including C-suite and VP-level executives</li>
-                        <li>Developed and delivered custom in-house leadership development program for Information Technology Department, training more than 20 IT leaders</li>
-                        <li>Designed and created more than 40 quick-reference guides and job aids to support leaders in talent management, performance management, and career development</li>
+                    <ul>
+                        <li>Designed and deployed 2 full-stack web apps to support project and change management (OCM Quest and Creator-Path).</li>
+                        <li>Designed online dashboards and metrics to track progress toward strategic goals (NBD Tracker, Proposal Generator).</li>
+                        <li>Built and scaled project teams for enterprise and strategic customers.</li>
+                        <li>Built customer facing processes and best practices for successful integrations and adoption of software solutions.</li>
+                        <li>Managed complex customer relationships, including delivering executive business reviews to C-level contacts.</li>
+                        <li>Conducted new business development, including scoping, budgeting, proposal writing, and sales presentations.</li>
+                        <li>Analyzed and conveyed employee and customer insights through quantitative and qualitative data analysis (more than 3,000 surveys and more than 500 customer interviews).</li>
+                        <li>Designed and delivered communication, training, and engagement strategies that aligned with initiative goals and audience needs.</li>
+                        <li>Implemented values-based employee applicant interviewing process and designed new values-based performance management system.</li>
+                        <li>Developed organizational customer service initiative and delivered custom in-person and online training.</li>
+                        <li>Led teams to develop and integrate new value and competency-based performance management system with matching software application.</li>
+                        <li>Conducted impact assessments, stakeholder analyses, and readiness evaluations to inform tailored change interventions.</li>
+                        <li>Partnered with business leaders, HR, communications, and project teams to embed change management into project lifecycles.</li>
+                        <li>Developed and executed communications plans, FAQs, change roadmaps, and stakeholder maps.</li>
+                        <li>Monitored and reported on change readiness, adoption metrics, and risks; recommended adjustments as needed to increase success.</li>
+                        <li>Facilitated change-related workshops, focus groups, and training sessions.</li>
+                        <li>Built change capability across organizations through coaching and knowledge sharing.</li>
+                        <li>Designed and executed large-scale organizational change strategies, anticipating challenges, defining scope, and executing detailed project plans.</li>
+                        <li>Conducted more than 50 change impact and stakeholder analyses, sponsor coaching sessions, and change readiness assessments across 12 industries.</li>
+                        <li>Coached and developed leaders and project team members on effective change management methodologies including ADKAR, Bridges, and Kotter's theory.</li>
+                        <li>Developed custom analytics dashboards using Tableau, Smartsheet, Sharepoint, MS Excel, and Power BI to help clients track change adoption, readiness assessments, and engagement metrics.</li>
+                        <li>Supervised, trained, and mentored peer consultants delivering organizational development and change management services.</li>
+                        <li>Engaged client-side business leaders, HR, communications, and project teams through more than 100 1:1, small and large group discussions to embed change management into project lifecycles.</li>
+                        <li>Developed success metrics, evaluated, and reported on change effort effectiveness for multiple, simultaneous organizational transformation projects.</li>
+                        <li>Developed and maintained FAQs throughout major digital transformation initiatives.</li>
+                        <li>Managed teams to engage and develop for over 2,000 employees across 15 departments and more than 25 divisions.</li>
+                        <li>Created more than 20 engaging online learning courses and tests for employees using Articulate software.</li>
+                        <li>Implemented agile and Lean methodology (including sprint planning, iterative design, waste identification and elimination, and continuous feedback loops), reducing process cycle time by 35% across HR processes.</li>
+                        <li>Deployed employee engagement survey; analyzed and communicated results to more than 200 leaders and executives.</li>
+                        <li>Collaborated closely with communications teams to ensure awareness, desire, knowledge, and ability for internal and public stakeholders throughout major changes.</li>
+                        <li>Collaborated to manage organizational change during $9.45 billion bankruptcy and acquisition, ensuring seamless integration and cultural alignment for more than 3,500 employees across multiple business units.</li>
+                        <li>Delivered company-wide 9-Box succession planning.</li>
+                        <li>Developed proprietary career planning process resulting in 17% improved ratio of Internal Promotions to External Hires.</li>
+                        <li>Built and delivered more than 15 custom training solutions.</li>
+                        <li>Developed and delivered custom in-house leadership development program for Information Technology Department, training more than 20 IT leaders.</li>
+                        <li>Designed and created more than 40 quick-reference guides and job aids to support leaders in talent management, performance management, and career development.</li>
                     </ul>
                 </div>
             </div>
@@ -770,35 +647,6 @@
     <script>
         // Simple test to ensure JavaScript is working
         // Resume loaded successfully
-
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const icon = themeToggle.querySelector('i');
-
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-
-        // Toggle theme
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            // Update icon
-            if (body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'light');
-            }
-        });
 
         // Helper functions for extracting resume content
         function extractContactInfo() {
@@ -854,153 +702,28 @@ ${address}`;
         }
 
         function extractProfessionalExperienceInfo() {
-            const experienceItems = document.querySelectorAll('.experience-item');
+            const experienceItem = document.querySelector('.experience-item');
             let experienceText = '';
             
-            experienceItems.forEach(item => {
-                const jobTitle = item.querySelector('.job-title')?.textContent || '';
-                const companyName = item.querySelector('.company-name')?.textContent || '';
-                const jobDates = item.querySelector('.job-dates')?.textContent || '';
-                const jobSummary = item.querySelector('.job-summary')?.textContent || '';
-                const accomplishments = item.querySelectorAll('.job-accomplishments li');
+            if (experienceItem) {
+                const accomplishments = experienceItem.querySelectorAll('.job-accomplishments li');
                 
-                if (jobTitle) {
-                    experienceText += `${jobTitle}\n`;
-                    experienceText += `${companyName}\n`;
-                    experienceText += `${jobDates}\n\n`;
-                    
-                    if (jobSummary) {
-                        experienceText += `${jobSummary}\n\n`;
-                    }
-                    
-                    if (accomplishments.length > 0) {
-                        experienceText += `Key Accomplishments:\n`;
-                        accomplishments.forEach(accomplishment => {
-                            const text = accomplishment.textContent.trim();
-                            if (text) {
-                                experienceText += `• ${text}\n`;
-                            }
-                        });
-                        experienceText += '\n';
-                    }
+                if (accomplishments.length > 0) {
+                    experienceText += `Key Accomplishments:\n`;
+                    accomplishments.forEach(accomplishment => {
+                        const text = accomplishment.textContent.trim();
+                        if (text) {
+                            experienceText += `• ${text}\n`;
+                        }
+                    });
                 }
-            });
+            }
             
             return experienceText || 'Professional experience not found.';
         }
 
-        // Printable Resume Function - Make it globally accessible
-        window.openPrintableResume = function() {
-            // Button clicked! openPrintableResume function called
-            try {
-                // Starting openPrintableResume function...
-                // Extract content from the page
-                const contactSection = extractContactInfo();
-                const aboutSection = extractAboutInfo();
-                const educationSection = extractEducationInfo();
-                const technicalSkillsSection = extractTechnicalSkillsInfo();
-                const professionalExperienceSection = extractProfessionalExperienceInfo();
-
-            // Combine all sections
-            const resumeContent = `
-SONDRA HATHAWAY RESUME
-
-${contactSection}
-
-ABOUT
-${aboutSection}
-
-EDUCATION AND CERTIFICATIONS
-${educationSection}
-
-TECHNICAL SKILLS
-${technicalSkillsSection}
-
-PROFESSIONAL EXPERIENCE
-${professionalExperienceSection}
-            `;
-
-            // Create new window with printable content
-            const printWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
-            
-            if (!printWindow || printWindow.closed || typeof printWindow.closed == 'undefined') {
-                // Popup was blocked - offer alternative download method
-                console.error('Popup blocked by browser - offering download alternative');
-                const downloadConfirm = confirm('Popup blocked! Would you like to download the resume as a text file instead?');
-                if (downloadConfirm) {
-                    // Create downloadable text file
-                    const blob = new Blob([resumeContent], { type: 'text/plain' });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'Sondra_Hathaway_Resume.txt';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                    // Resume downloaded as text file
-                }
-                return;
-            }
-            
-            printWindow.document.write(`
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Sondra Hathaway - Printable Resume</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 40px;
-            color: #000;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-        h2 {
-            color: #333;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        h3 {
-            color: #555;
-            margin-top: 20px;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-        @media print {
-            body { margin: 20px; }
-            h1 { page-break-after: avoid; }
-            h2 { page-break-after: avoid; }
-        }
-    </style>
-</head>
-<body>
-    <pre>${resumeContent}</pre>
-    <script>
-        window.onload = function() {
-            window.print();
-        }
-    <\/script>
-</body>
-</html>
-            `);
-            printWindow.document.close();
-            // Printable resume window opened successfully!
-            } catch (error) {
-                console.error('Error in openPrintableResume:', error);
-                alert('Error creating printable resume: ' + error.message);
-            }
-        };
+        // Printable Resume Function - Disabled (PDF is used instead)
+        // This function is not currently used as the button opens the PDF directly
     </script>
 
     <!-- Full Width Client Logos Section -->
@@ -1029,7 +752,7 @@ ${professionalExperienceSection}
                 text-align: center;
                 font-size: clamp(1.5rem, 3vw, 2rem);
                 font-weight: 600;
-                color: #49514C;
+                color: var(--darker-gray);
                 margin-bottom: 40px;
                 font-family: "Helvetica Neue", Calibri, Corbel, Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
             }
