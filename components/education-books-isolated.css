@@ -67,7 +67,7 @@
 #books-component-container-top .shelf-container {
   position: relative;
   width: 100%;
-  height: 350px; /* Reduced height for testing area */
+  height: 466px; /* Increased by 33% (350 * 1.33) */
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -78,10 +78,10 @@
 #books-component-container-top .shelf {
   display: block;
   position: absolute;
-  bottom: 210px; /* Moved up by 50px from 160px */
+  bottom: 279px; /* Increased by 33% (210 * 1.33) */
   width: 100%;
-  max-width: 880px;
-  height: 15px;
+  max-width: 1170px; /* Increased by 33% (880 * 1.33) */
+  height: 20px; /* Increased by 33% (15 * 1.33) */
   background: var(--shelf-bg);
   border-radius: 1px;
   z-index: 20;
@@ -120,13 +120,13 @@
 /* Education books wrapper */
 #books-component-container-top .books-wrapper {
   position: absolute;
-  bottom: 227px; /* Moved up by 50px from 177px */
+  bottom: 302px; /* Increased by 33% (227 * 1.33) */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 1rem; /* Reduced gap for 6 books */
+  gap: 1.33rem; /* Increased by 33% (1 * 1.33) */
   z-index: 10;
   /* Below the shelf */
 }
@@ -135,12 +135,12 @@
 #books-component-container-top .books__item {
   text-align: center;
   cursor: default;
-  height: 116px; /* Increased by 20% from 97px */
+  height: 154px; /* Increased by 33% (116 * 1.33) */
 }
 
 #books-component-container-top .books__container {
   position: relative;
-  width: 88px; /* Increased by 20% from 73px */
+  width: 117px; /* Increased by 33% (88 * 1.33) */
   margin: 0 auto;
   height: 100%;
 }
@@ -453,8 +453,8 @@
 
 /* Education side view book styles */
 #books-component-container-top .side-book {
-  height: 116px; /* Increased by 20% from 97px */
-  width: 18px; /* Increased by 20% from 15px */
+  height: 154px; /* Increased by 33% (116 * 1.33) */
+  width: 24px; /* Increased by 33% (18 * 1.33) */
   /* Thin width for side view */
   position: relative;
   cursor: pointer;
@@ -520,7 +520,7 @@
 }
 
 #books-component-container-top .book-shadow__item {
-  width: 90px; /* Reduced width for testing area */
+  width: 120px; /* Increased by 33% (90 * 1.33) */
   height: 1px; /* Reduced height to minimize shadow */
   background: radial-gradient(
     ellipse at center,
@@ -533,7 +533,7 @@
 }
 
 #books-component-container-top .book-shadow__item.side {
-  width: 20px; /* Reduced width for testing area */
+  width: 27px; /* Increased by 33% (20 * 1.33) */
 }
 
 /* Education book descriptions */

@@ -9,11 +9,17 @@
     <link rel="stylesheet" href="components/education-books-isolated.css">
     <link rel="stylesheet" href="components/blog-slider-resume.css">
     <link rel="stylesheet" href="components/text-drawing.css">
+    <link rel="stylesheet" href="components/competency-matrix.css">
+    <link rel="stylesheet" href="components/testimonials-original-carousel.css">
     <link rel='stylesheet' href='libs/cdn/swiper.min.css'>
     <link href="libs/cdn/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
     
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Sondra Hathaway Resume</h1>
+    </div>
 
     <!-- Floating Background Circles -->
     <ul class="circles">
@@ -67,7 +73,7 @@
             }
 
             .sondra-component-section .section-content {
-                max-width: 1200px;
+                max-width: 1400px;
                 margin: 0 auto;
             }
 
@@ -115,18 +121,11 @@
                 overflow-wrap: break-word;
             }
 
-            .sondra-component-section .member-info h3 {
-                color: var(--darker-gray);
-                margin-bottom: var(--spacing-sm);
-                font-size: 1.3rem;
-                text-align: left;
-            }
-
             .sondra-component-section .member-bio {
                 color: var(--dark-gray);
                 line-height: 1.6;
                 margin-bottom: var(--spacing-md);
-                font-size: 0.95rem;
+                font-size: 1.25rem;
                 text-align: left;
                 word-wrap: break-word;
                 overflow-wrap: break-word;
@@ -143,9 +142,9 @@
             .sondra-component-section .expertise-tag {
                 background: var(--salmon);
                 color: white;
-                padding: 0.25rem 0.75rem;
+                padding: 0.35rem 1rem;
                 border-radius: 20px;
-                font-size: 0.8rem;
+                font-size: 1.05rem;
                 font-weight: 500;
             }
 
@@ -227,9 +226,13 @@
                     height: 120px;
                 }
 
-                .sondra-component-section .member-info h3,
                 .sondra-component-section .member-bio {
                     text-align: center;
+                    font-size: 1.1rem;
+                }
+
+                .sondra-component-section .expertise-tag {
+                    font-size: 0.95rem;
                 }
             }
         </style>
@@ -241,7 +244,6 @@
                         <img src="assets/images/Headshot 1.png" alt="Sondra Hathaway">
                     </div>
                     <div class="member-info">
-                        <h3>Sondra Hathaway</h3>
                         <p class="member-bio">With over 20 years of experience in organizational development, Sondra leads organizations through change to successfully transform. Sondra holds degrees in business administration, psychology, and sociology. She is a certified a Manager of Quality and Organizational Excellence and Prosci Change Practitioner. Sondra has many specialty fields including strategic planning and employee engagement. She has produced several apps, designs computer-based training (CBT), and created TransformLocalGov's transformation quiz and strategic planning software "StrategySync."</p>
 
                         <div class="member-expertise">
@@ -258,7 +260,7 @@
     </div>
 
     <!-- 3 Column Container -->
-    <div class="three-column-container" style="background: var(--bg-color); padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1200px;">
+    <div class="three-column-container" style="background: var(--bg-color); padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1400px;">
         <div class="column-1">
             <h3>CONTACT</h3>
             <div class="contact-info">
@@ -288,11 +290,98 @@
         </div>
     </div>
 
+    <!-- Competency Matrix Section -->
+    <div id="competency-matrix-container"></div>
+
+    <!-- 3D Card Carousel Section (Testimonials) -->
+    <div class="carousel-3d-section">
+        <div class="competency-header">
+            <h2>Testimonials</h2>
+        </div>
+
+        <div class="carousel-3d-container">
+            <button class="carousel-3d-nav-arrow left">‹</button>
+            <div class="carousel-3d-track">
+                <div class="carousel-3d-card" data-index="0">
+                    <img src="yamhill.jpeg" alt="Michael Barnhart - Yamhill County, Oregon">
+                    <div class="carousel-3d-overlay">
+                        <p class="carousel-3d-text">"Outstanding. Very professional yet personable. Very articulate when training and thorough in her approach. She came on board when we terminated our relationship with a change manager who was not working out. The change was a great decision because Sondra did such a wonderful job and was a pleasure to work with."</p>
+                        <div class="carousel-3d-attribution">
+                            <div class="carousel-3d-author">Michael Barnhart</div>
+                            <div class="carousel-3d-company">Yamhill County, Oregon</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-3d-card" data-index="1">
+                    <img src="louisville.jpeg" alt="Carol Miller - Louisville, KY">
+                    <div class="carousel-3d-overlay">
+                        <p class="carousel-3d-text">"Sondra was onsite a fair amount and I appreciated being able to talk to her in person about the project. I felt like she always had the team's back and supported us in any way we needed. She is very positive and gives encouraging feedback."</p>
+                        <div class="carousel-3d-attribution">
+                            <div class="carousel-3d-author">Carol Miller</div>
+                            <div class="carousel-3d-company">Louisville, KY</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-3d-card" data-index="2">
+                    <img src="louisville2.jpeg" alt="David Holland - Louisville-Jefferson County Metro Government">
+                    <div class="carousel-3d-overlay">
+                        <p class="carousel-3d-text">"I tend to act on the assumption that, after a couple of initial attempts, those who do not support a large project like this can be left behind. It's their choice. Sondra was always trying to get everyone together up and down the organization. Her attitude was to never give up on anyone or leave anyone behind. That was a welcome mindset to have on the team."</p>
+                        <div class="carousel-3d-attribution">
+                            <div class="carousel-3d-author">David Holland</div>
+                            <div class="carousel-3d-company">Louisville-Jefferson County Metro Government</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-3d-card" data-index="3">
+                    <img src="louisville3.jpeg" alt="Kristina - Louisville Metro Government">
+                    <div class="carousel-3d-overlay">
+                        <p class="carousel-3d-text">"Amazing! Very insightful and informative. Willing to go beyond the surface and dig deep to find the true reasons for resistance to change. Great brainstorming conversations, very collaborative. Felt like she was one of our teammates. Good. She did a great job working on a complex project that changed a lot."</p>
+                        <div class="carousel-3d-attribution">
+                            <div class="carousel-3d-author">Kristina</div>
+                            <div class="carousel-3d-company">Louisville Metro Government</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-3d-card" data-index="4">
+                    <img src="louisville4.jpeg" alt="David Holland - Louisville Metro Government">
+                    <div class="carousel-3d-overlay">
+                        <p class="carousel-3d-text">"Sondra was excellent to work with, always focused on project goals and their impact on front-line workers. Every aspect of her performance, from scheduling to communication to strategic planning was tremendous."</p>
+                        <div class="carousel-3d-attribution">
+                            <div class="carousel-3d-author">David Holland</div>
+                            <div class="carousel-3d-company">Louisville Metro Government</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-3d-card" data-index="5">
+                    <img src="amarillo.jpeg" alt="Kristen Wolbach - City of Amarillo">
+                    <div class="carousel-3d-overlay">
+                        <p class="carousel-3d-text">"Amazing. Sondra was timely, professional, and always willing to guide us through the process and principals of change management. Not only did it improve project outcomes, but positively impacted organizational culture within our team."</p>
+                        <div class="carousel-3d-attribution">
+                            <div class="carousel-3d-author">Kristen Wolbach</div>
+                            <div class="carousel-3d-company">City of Amarillo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-3d-nav-arrow right">›</button>
+        </div>
+
+        <div class="carousel-3d-dots">
+            <div class="carousel-3d-dot active" data-index="0"></div>
+            <div class="carousel-3d-dot" data-index="1"></div>
+            <div class="carousel-3d-dot" data-index="2"></div>
+            <div class="carousel-3d-dot" data-index="3"></div>
+            <div class="carousel-3d-dot" data-index="4"></div>
+            <div class="carousel-3d-dot" data-index="5"></div>
+        </div>
+    </div>
 
     <!-- Education and Certifications Section -->
-    <div class="education-testing-area" style="background: var(--bg-color); padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1200px;">
-        <h3 class="section-title" style="color: var(--white); margin-bottom: 20px;">EDUCATION AND CERTIFICATIONS</h3>
-        <div id="books-component-container-top" class="education-books-isolated" style="width: 100%; height: 400px; position: relative; overflow: hidden;">
+    <div class="education-testing-area" style="background: var(--bg-color); padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1400px;">
+        <div class="competency-header">
+            <h2>Education and Certifications</h2>
+        </div>
+        <div id="books-component-container-top" class="education-books-isolated" style="width: 100%; height: 532px; position: relative; overflow: hidden;">
             <!-- SVG Background -->
             <svg style="position: absolute; width: 100%; height: 100%; z-index: 0;" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -460,25 +549,6 @@
                         </div>
                     </div>
 
-                    <!-- ICA Book Copy -->
-                    <div class="books__item">
-                        <div class="books__container">
-                            <div class="books__cover">
-                                <div class="books__back-cover"></div>
-                                <div class="books__inside">
-                                    <div class="books__page"></div>
-                                    <div class="books__page"></div>
-                                    <div class="books__page"></div>
-                                </div>
-                                <div class="books__image">
-                                    <img src="./assets/education-and-certs/wildcard.png" alt="Wildcard">
-                                    <div class="books__effect"></div>
-                                    <div class="books__light"></div>
-                                </div>
-                                <div class="books__hitbox" data-book-index="top-edu-7" data-book-title="Data Analysis and Input Management"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="book-descriptions">
@@ -557,13 +627,6 @@
                         </div>
                     </div>
 
-                    <div class="book-description" data-book-index="top-edu-7">
-                        <h3>Input and Feedback</h3>
-                        <div class="author">"When the student is ready, the teacher appears."</div>
-                        <div class="lines-animation">
-                            <p>Learning from others' input and feedback has been crucial to my growth. Embracing constructive criticism has helped me refine my skills, whether in leadership, communication, or problem-solving. I see feedback as a gift, an opportunity for improvement.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -572,13 +635,14 @@
     <!-- Professional Experience Section -->
     <div class="interactive-experience-section">
         <div class="experience-wrapper">
-            <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
-            <p class="section-subtitle">Explore my key accomplishments by area of expertise</p>
+            <div class="competency-header">
+                <h2>Key Accomplishments</h2>
+            </div>
             
             <!-- Stats Overview -->
             <div class="stats-overview">
                 <div class="stat-card">
-                    <div class="stat-number">2</div>
+                    <div class="stat-number">3</div>
                     <div class="stat-label">Full-Stack Apps</div>
                 </div>
                 <div class="stat-card">
@@ -590,7 +654,7 @@
                     <div class="stat-label">Surveys Analyzed</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">2,000+</div>
+                    <div class="stat-number">3,500+</div>
                     <div class="stat-label">Employees Engaged</div>
                 </div>
                 <div class="stat-card">
@@ -605,7 +669,7 @@
                 <div class="categories-sidebar">
                     <div class="category-item active" data-category="software">
                         <div class="category-content">
-                            <h4>Software and Apps</h4>
+                            <h4>Analytics and Software</h4>
                         </div>
                     </div>
                     
@@ -618,12 +682,6 @@
                     <div class="category-item" data-category="leadership">
                         <div class="category-content">
                             <h4>Leadership</h4>
-                        </div>
-                    </div>
-                    
-                    <div class="category-item" data-category="analytics">
-                        <div class="category-content">
-                            <h4>Analytics and Metrics</h4>
                         </div>
                     </div>
                     
@@ -658,18 +716,11 @@
                 <div class="accomplishment-card" data-category="software">
                     <div class="card-content">
                         <h4>Full-Stack Web Applications</h4>
-                        <p>Designed and deployed 2 full-stack web apps to support project and change management (OCM Quest and Creator-Path).</p>
+                        <p>Designed and deployed 3 full-stack web apps to support project and change management (OCM Quest, Creator-Path, and StrategySync).</p>
                     </div>
                 </div>
 
-                <div class="accomplishment-card" data-category="software analytics">
-                    <div class="card-content">
-                        <h4>Online Dashboards and Tracking</h4>
-                        <p>Designed online dashboards and metrics to track progress toward strategic goals (NBD Tracker, Proposal Generator).</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="software">
+                <div class="accomplishment-card" data-category="strategy">
                     <div class="card-content">
                         <h4>Performance Management System</h4>
                         <p>Led teams to develop and integrate new value and competency-based performance management system with matching software application.</p>
@@ -679,29 +730,8 @@
                 <!-- Leadership -->
                 <div class="accomplishment-card" data-category="leadership">
                     <div class="card-content">
-                        <h4>Team Building and Scaling</h4>
-                        <p>Built and scaled project teams for enterprise and strategic customers.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="leadership">
-                    <div class="card-content">
-                        <h4>Executive Relationship Management</h4>
-                        <p>Managed complex customer relationships, including delivering executive business reviews to C-level contacts.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="leadership">
-                    <div class="card-content">
-                        <h4>Consultant Mentorship</h4>
-                        <p>Supervised, trained, and mentored peer consultants delivering organizational development and change management services.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="leadership">
-                    <div class="card-content">
                         <h4>Large-Scale Team Management</h4>
-                        <p>Managed teams to engage and develop for over 2,000 employees across 15 departments and more than 25 divisions.</p>
+                        <p>Engaged and developed over 3,500+ employees across 15 departments and more than 25 divisions.</p>
                     </div>
                 </div>
 
@@ -715,29 +745,8 @@
 
                 <div class="accomplishment-card" data-category="change">
                     <div class="card-content">
-                        <h4>Change Strategy Execution</h4>
-                        <p>Designed and executed large-scale organizational change strategies, anticipating challenges, defining scope, and executing detailed project plans.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="change">
-                    <div class="card-content">
-                        <h4>Change Roadmaps and Planning</h4>
-                        <p>Developed and executed communications plans, FAQs, change roadmaps, and stakeholder maps.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="change">
-                    <div class="card-content">
                         <h4>Stakeholder Engagement</h4>
                         <p>Engaged client-side business leaders, HR, communications, and project teams through more than 100 1:1, small and large group discussions to embed change management into project lifecycles.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="change leadership">
-                    <div class="card-content">
-                        <h4>Change Methodology Coaching</h4>
-                        <p>Coached and developed leaders and project team members on effective change management methodologies including ADKAR, Bridges, and Kotter's theory.</p>
                     </div>
                 </div>
 
@@ -748,53 +757,17 @@
                     </div>
                 </div>
 
-                <div class="accomplishment-card" data-category="change">
-                    <div class="card-content">
-                        <h4>Workshops and Facilitation</h4>
-                        <p>Facilitated change-related workshops, focus groups, and training sessions.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="change">
-                    <div class="card-content">
-                        <h4>Change Capability Building</h4>
-                        <p>Built change capability across organizations through coaching and knowledge sharing.</p>
-                    </div>
-                </div>
-
-                <!-- Analytics and Metrics -->
-                <div class="accomplishment-card" data-category="analytics">
+                <div class="accomplishment-card" data-category="software">
                     <div class="card-content">
                         <h4>Data Analysis and Insights</h4>
                         <p>Analyzed and conveyed employee and customer insights through quantitative and qualitative data analysis (more than 3,000 surveys and more than 500 customer interviews).</p>
                     </div>
                 </div>
 
-                <div class="accomplishment-card" data-category="analytics">
+                <div class="accomplishment-card" data-category="software">
                     <div class="card-content">
                         <h4>Custom Analytics Dashboards</h4>
                         <p>Developed custom analytics dashboards using Tableau, Smartsheet, SharePoint, MS Excel, and Power BI to help clients track change adoption, readiness assessments, and engagement metrics.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="analytics">
-                    <div class="card-content">
-                        <h4>Success Metrics and Reporting</h4>
-                        <p>Developed success metrics, evaluated, and reported on change effort effectiveness for multiple, simultaneous organizational transformation projects.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="analytics">
-                    <div class="card-content">
-                        <h4>Employee Engagement Survey</h4>
-                        <p>Deployed employee engagement survey; analyzed and communicated results to more than 200 leaders and executives.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="analytics change">
-                    <div class="card-content">
-                        <h4>Change Readiness Monitoring</h4>
-                        <p>Monitored and reported on change readiness, adoption metrics, and risks; recommended adjustments as needed to increase success.</p>
                     </div>
                 </div>
 
@@ -803,13 +776,6 @@
                     <div class="card-content">
                         <h4>Online Learning Development</h4>
                         <p>Created more than 20 engaging online learning courses and tests for employees using Articulate software.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="training">
-                    <div class="card-content">
-                        <h4>Custom Training Solutions</h4>
-                        <p>Built and delivered more than 15 custom training solutions.</p>
                     </div>
                 </div>
 
@@ -827,46 +793,11 @@
                     </div>
                 </div>
 
-                <div class="accomplishment-card" data-category="training">
-                    <div class="card-content">
-                        <h4>Customer Service Training</h4>
-                        <p>Developed organizational customer service initiative and delivered custom in-person and online training.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="training change">
-                    <div class="card-content">
-                        <h4>Communication and Engagement Strategies</h4>
-                        <p>Designed and delivered communication, training, and engagement strategies that aligned with initiative goals and audience needs.</p>
-                    </div>
-                </div>
-
                 <!-- Strategy and Planning -->
                 <div class="accomplishment-card" data-category="strategy">
                     <div class="card-content">
-                        <h4>New Business Development</h4>
-                        <p>Conducted new business development, including scoping, budgeting, proposal writing, and sales presentations.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="strategy">
-                    <div class="card-content">
-                        <h4>Integration Best Practices</h4>
-                        <p>Built customer facing processes and best practices for successful integrations and adoption of software solutions.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="strategy change">
-                    <div class="card-content">
-                        <h4>Change Management Integration</h4>
-                        <p>Partnered with business leaders, HR, communications, and project teams to embed change management into project lifecycles.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="strategy">
-                    <div class="card-content">
-                        <h4>Digital Transformation FAQs</h4>
-                        <p>Developed and maintained FAQs throughout major digital transformation initiatives.</p>
+                        <h4>Strategic Plan Development</h4>
+                        <p>Facilitated development of 23 organizational and departmental strategic plans incorporating input from over 4,000 individuals.</p>
                     </div>
                 </div>
 
@@ -874,13 +805,6 @@
                     <div class="card-content">
                         <h4>Succession Planning</h4>
                         <p>Delivered company-wide 9-Box succession planning.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="strategy">
-                    <div class="card-content">
-                        <h4>Career Planning Innovation</h4>
-                        <p>Developed proprietary career planning process resulting in 17% improved ratio of Internal Promotions to External Hires.</p>
                     </div>
                 </div>
 
@@ -899,123 +823,10 @@
                     </div>
                 </div>
 
-                <div class="accomplishment-card" data-category="change process">
-                    <div class="card-content">
-                        <h4>Readiness and Impact Assessments</h4>
-                        <p>Conducted impact assessments, stakeholder analyses, and readiness evaluations to inform tailored change interventions.</p>
-                    </div>
-                </div>
-
-                <div class="accomplishment-card" data-category="change process">
-                    <div class="card-content">
-                        <h4>Stakeholder Communications</h4>
-                        <p>Collaborated closely with communications teams to ensure awareness, desire, knowledge, and ability for internal and public stakeholders throughout major changes.</p>
-                    </div>
-                </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Testimonials Slider Section -->
-    <div class="testimonials-section">
-        <div class="testimonials-head">
-            <h3 class="section-title" style="text-align: center; margin-bottom: 20px;">TESTIMONIALS</h3>
-            <div class="testimonials-controls">
-                <button id="prev-testimonial" class="testimonial-nav-btn" aria-label="Previous">‹</button>
-                <button id="next-testimonial" class="testimonial-nav-btn" aria-label="Next">›</button>
-            </div>
-        </div>
-
-        <div class="testimonials-slider">
-            <div class="testimonials-track" id="testimonials-track">
-
-                <article class="testimonial-card" active>
-                    <div class="testimonial-content">
-                        <div>
-                            <h4 class="testimonial-title">Communications</h4>
-                            <p class="testimonial-text">"Outstanding. Very professional yet personable. Very articulate when training and thorough in her approach. She came on board when we terminated our relationship with a change manager who was not working out. The change was a great decision because Sondra did such a wonderful job and was a pleasure to work with."</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div>
-                            <h4 class="testimonial-title">Finance</h4>
-                            <p class="testimonial-text">"Sondra was onsite a fair amount and I appreciated being able to talk to her in person about the project. I felt like she always had the team's back and supported us in any way we needed. She is very positive and gives encouraging feedback."</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div>
-                            <h4 class="testimonial-title">Human Resources</h4>
-                            <p class="testimonial-text">"I tend to act on the assumption that, after a couple of initial attempts, those who do not support a large project like this can be left behind. Sondra was always trying to get everyone together up and down the organization. Her attitude was to never give up on anyone or leave anyone behind. That was a welcome mindset to have on the team."</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div>
-                            <h4 class="testimonial-title">Information Technology</h4>
-                            <p class="testimonial-text">"Their strategic planning approach made our software integration seamless. System adoption rates went from 60% to 95% in just 6 months."</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div>
-                            <h4 class="testimonial-title">Public Works</h4>
-                            <p class="testimonial-text">"Amazing! Very insightful and informative. Willing to go beyond the surface and dig deep to find the true reasons for resistance to change. Great brainstorming conversations, very collaborative. Felt like she was one of our teammates."</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div>
-                            <h4 class="testimonial-title">Police and Fire</h4>
-                            <p class="testimonial-text">"Sondra was excellent to work with, always focused on project goals and their impact on front-line workers. Every aspect of her performance, from scheduling to communication to strategic planning was tremendous."</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div>
-                            <h4 class="testimonial-title">Parks and Recreation</h4>
-                            <p class="testimonial-text">"It was wonderful! Sondra is an excellent communicator and leader. She was very organized and an excellent project manager. She coordinated the training, facilitated meetings to work through pain points, spearheaded the FAQs and job aid development, and put together communications for the enterprise in preparation for the transition."</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div>
-                            <h4 class="testimonial-title">Administration</h4>
-                            <p class="testimonial-text">"Amazing. Sondra was timely, professional, and always willing to guide us through the process and principles of change management. Not only did it improve project outcomes, but positively impacted organizational culture within our team."</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div>
-                            <h4 class="testimonial-title">City Council</h4>
-                            <p class="testimonial-text">"Sondra and I worked together for about two years, during that time she provided me with the tools and resources I needed to support my growth. She was instrumental in establishing internal and external Organizational Change Management services. Most importantly, she's authentic, professional and really cares about her team and the clients she serves."</p>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-
-        <div class="testimonial-dots" id="testimonial-dots"></div>
     </div>
 
     <!-- Text Drawing Container - At Bottom of Page -->
@@ -1036,7 +847,9 @@
     <script src="./components/text-drawing.js"></script>
     <script src="./components/text-scramble.js"></script>
     <script src="./components/experience-filter.js"></script>
-    <script src="./components/testimonials-slider.js"></script>
+    <script src="./components/competency-matrix.js"></script>
+    <script src="./components/testimonials-original-carousel.js"></script>
+    <script src="./components/carousel-3d.js"></script>
     <!-- Original refracted ball -->
     <script src="./libs/three.min.js"></script>
     <script src="./components/refracted-ball.js"></script>

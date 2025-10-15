@@ -501,6 +501,116 @@
             gap: 5px;
         }
 
+        /* Cover Letter Generator Styles */
+        .cover-letter-section {
+            background: var(--experience-bg);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid var(--medium-gray);
+        }
+
+        .cover-letter-section .input-group {
+            margin-bottom: 20px;
+        }
+
+        .cover-letter-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .cover-letter-section input,
+        .cover-letter-section select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 8px;
+            font-size: 14px;
+            background: var(--white);
+            color: var(--text-color);
+            transition: border-color 0.3s ease;
+        }
+
+        .cover-letter-section input:focus,
+        .cover-letter-section select:focus {
+            outline: none;
+            border-color: var(--salmon);
+        }
+
+        .cover-letter-result {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--medium-gray);
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .cover-letter-result h3 {
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-size: 18px;
+            border-bottom: 2px solid var(--salmon);
+            padding-bottom: 10px;
+        }
+
+        .cover-letter-content {
+            line-height: 1.8;
+            color: var(--text-color);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .cover-letter-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .cover-letter-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .copy-letter-btn {
+            background: var(--salmon);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-letter-btn:hover {
+            background: var(--salmon-dark);
+        }
+
+        .regenerate-letter-btn {
+            background: var(--medium-gray);
+            color: var(--text-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .regenerate-letter-btn:hover {
+            background: var(--dark-gray);
+            color: var(--white);
+        }
+
         .add-to-experience-section {
             margin-top: 15px;
             padding-top: 15px;
@@ -667,6 +777,270 @@
             transform: none;
             box-shadow: none;
         }
+
+        /* Card Carousel Styles */
+        .carousel-section {
+            background: var(--experience-bg);
+            padding: 60px 20px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border: 1px solid var(--medium-gray);
+            position: relative;
+            min-height: 700px;
+        }
+
+        .carousel-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            text-align: center;
+            margin-bottom: 60px;
+            font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+            color: var(--salmon);
+        }
+
+        .carousel-container-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            height: 450px;
+            position: relative;
+            perspective: 1000px;
+            margin: 0 auto 40px;
+        }
+
+        .carousel-track-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .carousel-card {
+            position: absolute;
+            width: 280px;
+            height: 380px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+        }
+
+        .carousel-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .carousel-card.center {
+            z-index: 10;
+            transform: scale(1.1) translateZ(0);
+        }
+
+        .carousel-card.center img {
+            filter: none;
+        }
+
+        .carousel-card.left-2 {
+            z-index: 1;
+            transform: translateX(-400px) scale(0.8) translateZ(-300px);
+            opacity: 0.7;
+        }
+
+        .carousel-card.left-2 img {
+            filter: grayscale(100%);
+        }
+
+        .carousel-card.left-1 {
+            z-index: 5;
+            transform: translateX(-200px) scale(0.9) translateZ(-100px);
+            opacity: 0.9;
+        }
+
+        .carousel-card.left-1 img {
+            filter: grayscale(100%);
+        }
+
+        .carousel-card.right-1 {
+            z-index: 5;
+            transform: translateX(200px) scale(0.9) translateZ(-100px);
+            opacity: 0.9;
+        }
+
+        .carousel-card.right-1 img {
+            filter: grayscale(100%);
+        }
+
+        .carousel-card.right-2 {
+            z-index: 1;
+            transform: translateX(400px) scale(0.8) translateZ(-300px);
+            opacity: 0.7;
+        }
+
+        .carousel-card.right-2 img {
+            filter: grayscale(100%);
+        }
+
+        .carousel-card.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .carousel-member-info {
+            text-align: center;
+            margin-top: 40px;
+            transition: all 0.5s ease-out;
+        }
+
+        .carousel-member-name {
+            color: var(--salmon);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .carousel-member-name::before,
+        .carousel-member-name::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            width: 100px;
+            height: 2px;
+            background: var(--salmon);
+        }
+
+        .carousel-member-name::before {
+            left: -120px;
+        }
+
+        .carousel-member-name::after {
+            right: -120px;
+        }
+
+        .carousel-member-role {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 10px 0;
+            margin-top: -15px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 69, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--salmon);
+            transform: scale(1.2);
+        }
+
+        .carousel-nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 69, 0, 0.6);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            border: none;
+            outline: none;
+            padding-bottom: 4px;
+        }
+
+        .carousel-nav-arrow:hover {
+            background: var(--salmon-dark);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav-arrow.left {
+            left: 20px;
+            padding-right: 3px;
+        }
+
+        .carousel-nav-arrow.right {
+            right: 20px;
+            padding-left: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-title {
+                font-size: 2rem;
+            }
+
+            .carousel-card {
+                width: 200px;
+                height: 280px;
+            }
+
+            .carousel-card.left-2 {
+                transform: translateX(-250px) scale(0.8) translateZ(-300px);
+            }
+
+            .carousel-card.left-1 {
+                transform: translateX(-120px) scale(0.9) translateZ(-100px);
+            }
+
+            .carousel-card.right-1 {
+                transform: translateX(120px) scale(0.9) translateZ(-100px);
+            }
+
+            .carousel-card.right-2 {
+                transform: translateX(250px) scale(0.8) translateZ(-300px);
+            }
+
+            .carousel-member-name {
+                font-size: 2rem;
+            }
+
+            .carousel-member-role {
+                font-size: 1.2rem;
+            }
+
+            .carousel-member-name::before,
+            .carousel-member-name::after {
+                width: 50px;
+            }
+
+            .carousel-member-name::before {
+                left: -70px;
+            }
+
+            .carousel-member-name::after {
+                right: -70px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -698,6 +1072,34 @@
         </div>
 
         <div id="parsed-requirements-container"></div>
+
+        <!-- Cover Letter Generator Section -->
+        <div class="section-title">Cover Letter Generator</div>
+        <div class="cover-letter-section">
+            <div class="input-group">
+                <label for="company-name-input">Company Name:</label>
+                <input type="text" id="company-name-input" placeholder="Enter company name (e.g., Microsoft, Google, etc.)">
+            </div>
+            <div class="input-group">
+                <label for="job-title-input">Job Title:</label>
+                <input type="text" id="job-title-input" placeholder="Enter job title (e.g., Senior Project Manager)">
+            </div>
+            <div class="input-group">
+                <label for="cover-letter-tone">Tone:</label>
+                <select id="cover-letter-tone">
+                    <option value="professional">Professional</option>
+                    <option value="enthusiastic">Enthusiastic</option>
+                    <option value="confident">Confident</option>
+                    <option value="conversational">Conversational</option>
+                </select>
+            </div>
+            <button class="add-btn" onclick="generateCoverLetter()">
+                <i class="fas fa-file-alt"></i>
+                Generate Cover Letter
+            </button>
+        </div>
+
+        <div id="cover-letter-container"></div>
 
         <div class="section-title">Professional Experience</div>
         <div id="experience-container" class="grid-container"></div>
@@ -747,6 +1149,51 @@
                 </button>
             </div>
         </div>
+
+        <!-- 3D Card Carousel Section -->
+        <div class="section-title">Project Portfolio Carousel</div>
+        <div class="carousel-section">
+            <h2 class="carousel-title">FEATURED PROJECTS</h2>
+
+            <div class="carousel-container-wrapper">
+                <button class="carousel-nav-arrow left">‹</button>
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-card" data-index="0">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60" alt="Project 1">
+                    </div>
+                    <div class="carousel-card" data-index="1">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop&q=60" alt="Project 2">
+                    </div>
+                    <div class="carousel-card" data-index="2">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&auto=format&fit=crop&q=60" alt="Project 3">
+                    </div>
+                    <div class="carousel-card" data-index="3">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&auto=format&fit=crop&q=60" alt="Project 4">
+                    </div>
+                    <div class="carousel-card" data-index="4">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&auto=format&fit=crop&q=60" alt="Project 5">
+                    </div>
+                    <div class="carousel-card" data-index="5">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=60" alt="Project 6">
+                    </div>
+                </div>
+                <button class="carousel-nav-arrow right">›</button>
+            </div>
+
+            <div class="carousel-member-info">
+                <h2 class="carousel-member-name">Project Name 1</h2>
+                <p class="carousel-member-role">Category</p>
+            </div>
+
+            <div class="carousel-dots">
+                <div class="carousel-dot active" data-index="0"></div>
+                <div class="carousel-dot" data-index="1"></div>
+                <div class="carousel-dot" data-index="2"></div>
+                <div class="carousel-dot" data-index="3"></div>
+                <div class="carousel-dot" data-index="4"></div>
+                <div class="carousel-dot" data-index="5"></div>
+            </div>
+        </div>
     </div>
 
     <div id="toast" class="toast">
@@ -756,9 +1203,21 @@
     <script>
         const experienceData = [
             {
+                employer: "BerryDunn",
+                dates: "Aug 2020 - Oct 2023",
+                title: "Senior Change Management Consultant",
+                description: "Led organizational development initiatives totaling over $1M annual revenue, including multi-year digital and culture transformations.\nDesigned and executed large-scale organizational change strategies by anticipating challenges, defining scope, and executing detailed project plans.\nConducted more than 50 change impact and stakeholder analyses, sponsor coaching sessions, and change readiness assessments across 12 industries.\nCoached and developed leaders and project team members on effective change management methodologies including ADKAR, Bridges, and Kotter's theory.\nBuilt and scaled project teams for enterprise and strategic customers.\nBuilt customer facing processes and best practices for successful integrations and adoption of software solutions.\nManaged complex customer relationships, including delivering executive business reviews to C-level contacts.\nDeveloped custom analytics dashboards using Tableau, Smartsheet, SharePoint, MS Excel, and Power BI to help clients track change adoption, readiness assessments, and engagement metrics.\nSupervised, trained, and mentored peer consultants delivering organizational development and change management services.\nEngaged client-side business leaders, HR, communications, and project teams through more than 100 1:1, small and large group discussions to embed change management into project lifecycles.\nDeveloped success metrics, evaluated, and reported on change effort effectiveness for multiple, simultaneous organizational transformation projects.\nConducted new business development, including scoping, budgeting, proposal writing, and sales presentations.\nDesigned and delivered communication, training, and engagement strategies that aligned with initiative goals and audience needs.\nDeveloped and executed communications plans, change roadmaps, and stakeholder maps.\nMonitored and reported on change readiness, adoption metrics, and risks; recommended adjustments as needed to increase success.\nFacilitated change-related workshops, focus groups, and training sessions.\nDeveloped and maintained FAQs throughout major digital transformation initiatives."
+            },
+            {
+                employer: "TransformLocalGov",
+                dates: "Nov 2016 - Jul 2020",
+                title: "Change Manager",
+                description: "Led change management initiatives during large-scale software implementations for local government organizations.\nDesigned and executed change strategies for enterprise software rollouts, ensuring smooth adoption and minimal disruption to operations.\nConducted comprehensive change impact assessments and stakeholder analyses for software implementation projects.\nDeveloped and delivered training programs and communication strategies to support software adoption across multiple departments.\nFacilitated change readiness assessments and developed mitigation strategies for identified risks during software transitions.\nCreated detailed change management plans including communication roadmaps, training schedules, and go-live support strategies.\nManaged stakeholder relationships and provided ongoing support during software implementation phases.\nDeveloped user adoption strategies and post-implementation support programs to ensure successful software utilization.\nConducted end-user training sessions and created comprehensive documentation for new software systems.\nMonitored change adoption metrics and provided regular progress reports to project leadership.\nCollaborated with technical teams to ensure change management activities aligned with software implementation timelines.\nDeveloped and maintained FAQs and support materials for software transitions.\nFacilitated workshops and focus groups to gather user feedback and address concerns during software implementations.\nImplemented feedback mechanisms to continuously improve change management processes for software rollouts.\nBuilt change capability within client organizations to support future software implementations and organizational changes."
+            },
+            {
                 employer: "Sondra Hathaway",
-                dates: "Nov 2016 - Present",
-                title: "Senior Organizational Developer & Change Management Consultant",
+                dates: "Nov 2023 - Present",
+                title: "Organizational Development Strategist",
                 description: "Led organizational development initiatives that improve employee engagement and reduce employee attrition, totaling over $1M annual revenue including multi-year digital and culture transformations.\nDesigned and deployed 2 full-stack web apps to support project and change management (OCM Quest and CreatorPath).\nDesigned online dashboards and metrics to track progress toward strategic goals (NBD Tracker, Proposal Generator).\nDesigned and executed large-scale organizational change strategies by anticipating challenges, defining scope, and executing detailed project plans.\nConducted more than 50 change impact and stakeholder analyses, sponsor coaching sessions, and change readiness assessments across 12 industries.\nCoached and developed leaders and project team members on effective change management methodologies including ADKAR, Bridges, and Kotter's theory.\nBuilt and scaled project teams for enterprise and strategic customers.\nBuilt customer facing processes and best practices for successful integrations and adoption of software solutions.\nManaged complex customer relationships, including delivering executive business reviews to C-level contacts.\nDeveloped custom analytics dashboards using Tableau, Smartsheet, SharePoint, MS Excel, and Power BI to help clients track change adoption, readiness assessments, and engagement metrics.\nSupervised, trained, and mentored peer consultants delivering organizational development and change management services.\nEngaged client-side business leaders, HR, communications, and project teams through more than 100 1:1, small and large group discussions to embed change management into project lifecycles.\nConducted new business development, including scoping, budgeting, proposal writing, and sales presentations.\nAnalyzed and conveyed employee and customer insights through quantitative and qualitative data analysis (more than 3,000 surveys and more than 500 customer interviews).\nManaged team to engage and develop for over 2,000 employees across 15 departments and more than 25 divisions.\nCreated more than 20 engaging online learning courses and tests for employees using Articulate software.\nImplemented agile and Lean methodology (including sprint planning, iterative design, waste identification and elimination, and continuous feedback loops), reducing process cycle time by 35% across HR processes.\nDeployed employee engagement survey; analyzed and communicated results to more than 200 leaders and executives.\nDesigned and delivered communication, training, and engagement strategies that aligned with initiative goals and audience needs.\nDeveloped and executed communications plans, FAQs, change roadmaps, and stakeholder maps.\nConducted impact assessments, stakeholder analyses, and readiness evaluations to inform tailored change interventions.\nPartnered with business leaders, HR, communications, and project teams to embed change management into project lifecycles.\nMonitored and reported on change readiness, adoption metrics, and risks; recommended adjustments as needed to increase success.\nFacilitated change-related workshops, focus groups, and training sessions.\nBuilt change capability across organizations through coaching and knowledge sharing.\nDeveloped and maintained FAQs throughout major digital transformation initiatives.\nImplemented values-based employee applicant interviewing process and designed new values-based performance management system.\nDeveloped organizational customer service initiative and delivered custom in-person and online training.\nLed teams to develop and integrate new value and competency-based performance management system with matching software application."
             },
             {
@@ -871,6 +1330,460 @@
             setTimeout(() => {
                 toast.classList.remove('show');
             }, 2000);
+        }
+
+        // Cover Letter Generator Functions
+        function generateCoverLetter() {
+            const companyName = document.getElementById('company-name-input').value.trim();
+            const jobTitle = document.getElementById('job-title-input').value.trim();
+            const tone = document.getElementById('cover-letter-tone').value;
+            const jobDescription = document.getElementById('job-description-input').value.trim();
+            
+            if (!companyName || !jobTitle) {
+                showToast('Please enter both company name and job title.');
+                return;
+            }
+            
+            if (!jobDescription) {
+                showToast('Please paste a job description first.');
+                return;
+            }
+            
+            // Parse job requirements to understand what they're looking for
+            const requirements = parseJobDescriptionFormat(jobDescription);
+            if (requirements.length === 0) {
+                showToast('Could not parse job requirements. Please try a different format.');
+                return;
+            }
+            
+            // Generate the cover letter
+            const coverLetter = createCoverLetter(companyName, jobTitle, requirements, tone);
+            displayCoverLetter(coverLetter);
+            
+            showToast('Cover letter generated successfully!');
+        }
+
+        function createCoverLetter(companyName, jobTitle, requirements, tone) {
+            // Analyze requirements to identify key themes
+            const keyThemes = analyzeJobRequirements(requirements);
+            
+            // Match requirements with experience
+            const matchedExperience = matchExperienceToRequirements(requirements);
+            
+            // Generate paragraphs based on tone
+            const paragraphs = generateParagraphs(companyName, jobTitle, keyThemes, matchedExperience, tone);
+            
+            return {
+                companyName,
+                jobTitle,
+                paragraphs,
+                keyThemes,
+                matchedExperience
+            };
+        }
+
+        function analyzeJobRequirements(requirements) {
+            const themes = {
+                projectManagement: [],
+                changeManagement: [],
+                leadership: [],
+                technical: [],
+                communication: [],
+                analytical: [],
+                strategic: []
+            };
+            
+            requirements.forEach(req => {
+                const lowerReq = req.toLowerCase();
+                
+                if (lowerReq.includes('project') || lowerReq.includes('planning') || lowerReq.includes('timeline')) {
+                    themes.projectManagement.push(req);
+                }
+                if (lowerReq.includes('change') || lowerReq.includes('transformation') || lowerReq.includes('adoption')) {
+                    themes.changeManagement.push(req);
+                }
+                if (lowerReq.includes('lead') || lowerReq.includes('manage') || lowerReq.includes('supervise') || lowerReq.includes('team')) {
+                    themes.leadership.push(req);
+                }
+                if (lowerReq.includes('software') || lowerReq.includes('technology') || lowerReq.includes('system') || lowerReq.includes('digital')) {
+                    themes.technical.push(req);
+                }
+                if (lowerReq.includes('communicat') || lowerReq.includes('present') || lowerReq.includes('stakeholder')) {
+                    themes.communication.push(req);
+                }
+                if (lowerReq.includes('analyz') || lowerReq.includes('data') || lowerReq.includes('metric') || lowerReq.includes('report')) {
+                    themes.analytical.push(req);
+                }
+                if (lowerReq.includes('strategic') || lowerReq.includes('vision') || lowerReq.includes('initiative') || lowerReq.includes('goal')) {
+                    themes.strategic.push(req);
+                }
+            });
+            
+            return themes;
+        }
+
+        function matchExperienceToRequirements(requirements) {
+            const matches = [];
+            
+            requirements.forEach(req => {
+                const lowerReq = req.toLowerCase();
+                let bestMatch = null;
+                let bestScore = 0;
+                
+                experienceData.forEach(exp => {
+                    const expText = (exp.title + ' ' + exp.description).toLowerCase();
+                    let score = 0;
+                    
+                    // Check for keyword matches
+                    const keywords = extractKeywords(lowerReq);
+                    keywords.forEach(keyword => {
+                        if (expText.includes(keyword)) {
+                            score += keyword.length; // Longer keywords get higher scores
+                        }
+                    });
+                    
+                    if (score > bestScore) {
+                        bestScore = score;
+                        bestMatch = exp;
+                    }
+                });
+                
+                if (bestMatch && bestScore > 0) {
+                    matches.push({
+                        requirement: req,
+                        experience: bestMatch,
+                        score: bestScore
+                    });
+                }
+            });
+            
+            return matches.sort((a, b) => b.score - a.score);
+        }
+
+        function extractKeywords(text) {
+            // Extract meaningful keywords from job requirements
+            const words = text.split(/\s+/)
+                .filter(word => word.length > 3)
+                .filter(word => !['with', 'that', 'this', 'will', 'must', 'should', 'have', 'been', 'from', 'they', 'their', 'them'].includes(word.toLowerCase()));
+            
+            return words;
+        }
+
+        function generateParagraphs(companyName, jobTitle, themes, matchedExperience, tone) {
+            const toneStyles = {
+                professional: {
+                    opening: `I am writing to express my strong interest in the ${jobTitle} position at ${companyName}.`,
+                    enthusiasm: 'I am particularly drawn to',
+                    confidence: 'I am confident that my proven track record in',
+                    closing: 'I would welcome the opportunity to discuss how my extensive experience in organizational development and change management can contribute to your team\'s continued success.'
+                },
+                enthusiastic: {
+                    opening: `I am thrilled to apply for the ${jobTitle} position at ${companyName}!`,
+                    enthusiasm: 'I am passionate about',
+                    confidence: 'I am excited to bring my expertise in',
+                    closing: 'I am eager to discuss how my innovative approach to organizational transformation can drive exceptional results for your team.'
+                },
+                confident: {
+                    opening: `I am confident that I am the ideal candidate for the ${jobTitle} position at ${companyName}.`,
+                    enthusiasm: 'I excel at',
+                    confidence: 'I have demonstrated exceptional success in',
+                    closing: 'I am ready to make an immediate and measurable impact on your organization\'s strategic objectives.'
+                },
+                conversational: {
+                    opening: `I'd love to join your team as a ${jobTitle} at ${companyName}.`,
+                    enthusiasm: 'I really enjoy',
+                    confidence: 'I know I can bring significant value through my experience in',
+                    closing: 'I\'d welcome the chance to chat about how I can help your team achieve even greater success.'
+                }
+            };
+            
+            const style = toneStyles[tone];
+            
+            // Extract specific achievements and metrics from experience
+            const specificAchievements = extractSpecificAchievements(matchedExperience);
+            const keyMetrics = extractKeyMetrics(matchedExperience);
+            
+            // Paragraph 1: Opening with specific value proposition
+            let paragraph1 = style.opening + ' ';
+            
+            // Add specific experience summary
+            if (matchedExperience.length > 0) {
+                const topExperience = matchedExperience[0].experience;
+                const experienceSummary = getDetailedExperienceSummary(topExperience, themes);
+                paragraph1 += experienceSummary + ' ';
+            }
+            
+            // Add key metrics if available
+            if (keyMetrics.length > 0) {
+                paragraph1 += `My track record includes ${keyMetrics.slice(0, 2).join(' and ')}. `;
+            }
+            
+            paragraph1 += style.enthusiasm + ' ' + getDetailedEnthusiasmPhrase(themes, companyName) + '.';
+            
+            // Paragraph 2: Detailed achievements and specific examples
+            let paragraph2 = '';
+            if (specificAchievements.length > 0) {
+                paragraph2 = `In my most recent role as Senior Change Management Consultant at BerryDunn, I `;
+                paragraph2 += specificAchievements[0] + '. ';
+                
+                if (specificAchievements.length > 1) {
+                    paragraph2 += `Additionally, I have ` + specificAchievements[1] + '. ';
+                }
+                
+                if (specificAchievements.length > 2) {
+                    paragraph2 += `My expertise also includes ` + specificAchievements[2] + '. ';
+                }
+            }
+            
+            // Add specific technology and methodology experience
+            const techExperience = getTechnologyExperience(themes);
+            if (techExperience) {
+                paragraph2 += techExperience + ' ';
+            }
+            
+            paragraph2 += style.confidence + ' ' + getDetailedConfidencePhrase(themes, jobTitle) + '.';
+            
+            // Paragraph 3: Industry impact and strategic value
+            let paragraph3 = '';
+            paragraph3 += `My experience spans 12 industries and includes `;
+            
+            if (keyMetrics.length > 2) {
+                paragraph3 += keyMetrics[2] + ', ';
+            }
+            
+            paragraph3 += `demonstrating my ability to adapt and deliver results across diverse organizational contexts. `;
+            
+            // Add specific value proposition based on themes
+            const valueProposition = getValueProposition(themes, companyName);
+            paragraph3 += valueProposition + ' ';
+            
+            paragraph3 += style.closing;
+            
+            // Paragraph 4: Closing with specific next steps
+            let paragraph4 = '';
+            paragraph4 += `I am particularly excited about the opportunity to `;
+            paragraph4 += getSpecificOpportunity(themes, jobTitle) + ' ';
+            paragraph4 += `at ${companyName}. `;
+            paragraph4 += `I would welcome the opportunity to discuss how my comprehensive experience in organizational development, change management, and strategic project leadership can contribute to your team's success. `;
+            paragraph4 += `Thank you for considering my application.`;
+            
+            return [paragraph1, paragraph2, paragraph3, paragraph4];
+        }
+
+        function extractSpecificAchievements(matchedExperience) {
+            const achievements = [
+                'led organizational development initiatives totaling over $1M annual revenue, including multi-year digital and culture transformations',
+                'designed and executed large-scale organizational change strategies by anticipating challenges, defining scope, and executing detailed project plans',
+                'conducted more than 50 change impact and stakeholder analyses, sponsor coaching sessions, and change readiness assessments across 12 industries',
+                'coached and developed leaders and project team members on effective change management methodologies including ADKAR, Bridges, and Kotter\'s theory',
+                'built and scaled project teams for enterprise and strategic customers, establishing customer-facing processes and best practices for successful integrations',
+                'developed custom analytics dashboards using Tableau, Smartsheet, SharePoint, MS Excel, and Power BI to help clients track change adoption and engagement metrics',
+                'supervised, trained, and mentored peer consultants delivering organizational development and change management services',
+                'engaged client-side business leaders, HR, communications, and project teams through more than 100 1:1, small and large group discussions',
+                'conducted new business development, including scoping, budgeting, proposal writing, and sales presentations',
+                'analyzed and conveyed employee and customer insights through quantitative and qualitative data analysis (more than 3,000 surveys and more than 500 customer interviews)',
+                'managed team to engage and develop for over 2,000 employees across 15 departments and more than 25 divisions',
+                'created more than 20 engaging online learning courses and tests for employees using Articulate software',
+                'implemented agile and Lean methodology, reducing process cycle time by 35% across HR processes',
+                'deployed employee engagement survey and analyzed and communicated results to more than 200 leaders and executives',
+                'designed and delivered communication, training, and engagement strategies that aligned with initiative goals and audience needs',
+                'developed and executed communications plans, FAQs, change roadmaps, and stakeholder maps',
+                'conducted impact assessments, stakeholder analyses, and readiness evaluations to inform tailored change interventions',
+                'partnered with business leaders, HR, communications, and project teams to embed change management into project lifecycles',
+                'monitored and reported on change readiness, adoption metrics, and risks; recommended adjustments as needed to increase success',
+                'facilitated change-related workshops, focus groups, and training sessions',
+                'built change capability across organizations through coaching and knowledge sharing',
+                'developed and maintained FAQs throughout major digital transformation initiatives',
+                'implemented values-based employee applicant interviewing process and designed new values-based performance management system',
+                'developed organizational customer service initiative and delivered custom in-person and online training',
+                'led teams to develop and integrate new value and competency-based performance management system with matching software application'
+            ];
+            
+            return achievements.slice(0, 3);
+        }
+
+        function extractKeyMetrics(matchedExperience) {
+            const metrics = [
+                'over $1M in annual revenue generated through organizational development initiatives',
+                'more than 50 change impact and stakeholder analyses conducted',
+                'coaching and development of leaders across 12 industries',
+                'over 100 stakeholder engagement sessions with business leaders, HR, and project teams',
+                'more than 3,000 surveys and 500 customer interviews analyzed',
+                'engagement and development of over 2,000 employees across 15 departments',
+                'more than 20 online learning courses created using Articulate software',
+                '35% reduction in process cycle time through agile and Lean methodology implementation',
+                'results communicated to more than 200 leaders and executives',
+                'successful management of complex customer relationships including C-level executive business reviews'
+            ];
+            
+            return metrics.slice(0, 3);
+        }
+
+        function getDetailedExperienceSummary(experience, themes) {
+            const summaries = [
+                'With over 7 years of experience in organizational development and change management, I have successfully led initiatives that improve employee engagement and reduce attrition',
+                'My expertise spans organizational development, change management, and strategic project leadership, with a proven track record of delivering measurable results',
+                'I bring extensive experience in leading organizational transformations, managing complex stakeholder relationships, and implementing data-driven change strategies',
+                'My background combines deep expertise in change management methodologies with hands-on experience in project leadership and organizational development'
+            ];
+            
+            return summaries[Math.floor(Math.random() * summaries.length)];
+        }
+
+        function getDetailedEnthusiasmPhrase(themes, companyName) {
+            const phrases = [
+                `the opportunity to drive meaningful organizational transformation at ${companyName}`,
+                `leveraging my expertise in change management to help ${companyName} achieve its strategic objectives`,
+                `applying my proven methodologies to enhance organizational effectiveness at ${companyName}`,
+                `contributing to ${companyName}'s continued success through innovative change management strategies`,
+                `bringing my comprehensive experience in organizational development to ${companyName}'s team`,
+                `helping ${companyName} navigate complex organizational challenges with proven solutions`
+            ];
+            
+            return phrases[Math.floor(Math.random() * phrases.length)];
+        }
+
+        function getTechnologyExperience(themes) {
+            const techExperience = [];
+            
+            if (themes.technical.length > 0) {
+                techExperience.push('I have extensive experience with project management software including Asana, Trello, MS Project, and custom-built solutions');
+            }
+            
+            if (themes.analytical.length > 0) {
+                techExperience.push('My analytical expertise includes Tableau, Smartsheet, SharePoint, MS Excel, and Power BI for creating custom dashboards and metrics');
+            }
+            
+            if (themes.communication.length > 0) {
+                techExperience.push('I have developed comprehensive communication strategies using various platforms and methodologies to ensure effective stakeholder engagement');
+            }
+            
+            return techExperience.length > 0 ? techExperience.join('. ') + '. ' : '';
+        }
+
+        function getDetailedConfidencePhrase(themes, jobTitle) {
+            const phrases = [
+                `delivering exceptional results in ${jobTitle} roles through strategic change management and organizational development`,
+                `bringing innovative solutions to complex organizational challenges in ${jobTitle} positions`,
+                `leading successful transformations that drive measurable business outcomes in ${jobTitle} capacities`,
+                `implementing data-driven approaches that enhance organizational effectiveness in ${jobTitle} roles`,
+                `building high-performing teams and stakeholder relationships that deliver strategic value in ${jobTitle} positions`,
+                `creating sustainable change and process improvements that support long-term organizational success in ${jobTitle} roles`
+            ];
+            
+            return phrases[Math.floor(Math.random() * phrases.length)];
+        }
+
+        function getValueProposition(themes, companyName) {
+            const propositions = [
+                `This combination of strategic thinking, hands-on execution, and proven results makes me uniquely positioned to contribute to ${companyName}'s continued growth and success`,
+                `My ability to bridge the gap between strategic vision and practical implementation will be valuable in helping ${companyName} achieve its organizational objectives`,
+                `The depth and breadth of my experience across multiple industries and organizational contexts positions me to bring fresh perspectives and proven solutions to ${companyName}`,
+                `My track record of delivering measurable results while building strong stakeholder relationships aligns perfectly with ${companyName}'s commitment to excellence and innovation`
+            ];
+            
+            return propositions[Math.floor(Math.random() * propositions.length)];
+        }
+
+        function getSpecificOpportunity(themes, jobTitle) {
+            const opportunities = [
+                `apply my comprehensive change management expertise to drive organizational transformation in the ${jobTitle} role`,
+                `leverage my proven track record in organizational development to enhance team effectiveness and strategic outcomes`,
+                `utilize my extensive experience in stakeholder management and project leadership to deliver exceptional results`,
+                `bring my innovative approach to change management and organizational development to create lasting impact`,
+                `apply my data-driven methodologies and strategic thinking to solve complex organizational challenges`,
+                `contribute my expertise in building high-performing teams and implementing sustainable change initiatives`
+            ];
+            
+            return opportunities[Math.floor(Math.random() * opportunities.length)];
+        }
+
+        function getSpecificAchievement(experience) {
+            const achievements = [
+                'delivered measurable results that improved employee engagement and reduced attrition',
+                'successfully managed complex customer relationships and executive business reviews',
+                'developed and implemented innovative solutions that streamlined processes',
+                'built strong stakeholder relationships and facilitated effective communication',
+                'created comprehensive training programs and change management strategies',
+                'led cross-functional teams to achieve strategic objectives',
+                'implemented data-driven approaches that enhanced decision-making',
+                'designed and deployed custom applications to support project management'
+            ];
+            
+            return achievements[Math.floor(Math.random() * achievements.length)];
+        }
+
+        function getEnthusiasmPhrase(themes) {
+            const phrases = [
+                'tackling complex organizational challenges',
+                'driving meaningful change and transformation',
+                'building strong relationships with stakeholders',
+                'delivering innovative solutions',
+                'leading high-impact projects',
+                'developing and mentoring teams',
+                'analyzing data to drive strategic decisions',
+                'creating sustainable organizational improvements'
+            ];
+            
+            return phrases[Math.floor(Math.random() * phrases.length)];
+        }
+
+        function getConfidencePhrase(themes) {
+            const phrases = [
+                'bringing innovative solutions to complex challenges',
+                'leading successful organizational transformations',
+                'building high-performing teams and stakeholder relationships',
+                'delivering measurable results and strategic value',
+                'implementing data-driven approaches to problem-solving',
+                'creating sustainable change and process improvements',
+                'managing complex projects and stakeholder expectations',
+                'developing comprehensive strategies that drive success'
+            ];
+            
+            return phrases[Math.floor(Math.random() * phrases.length)];
+        }
+
+        function displayCoverLetter(coverLetter) {
+            const container = document.getElementById('cover-letter-container');
+            
+            container.innerHTML = `
+                <div class="cover-letter-result">
+                    <h3>Generated Cover Letter for ${coverLetter.companyName}</h3>
+                    <div class="cover-letter-content">
+                        <p><strong>Dear Hiring Manager,</strong></p>
+                        ${coverLetter.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join('')}
+                        <p><strong>Sincerely,<br>Sondra Hathaway</strong></p>
+                    </div>
+                    <div class="cover-letter-actions">
+                        <button class="copy-letter-btn" onclick="copyCoverLetter()">
+                            <i class="fas fa-copy"></i>
+                            Copy Letter
+                        </button>
+                        <button class="regenerate-letter-btn" onclick="generateCoverLetter()">
+                            <i class="fas fa-redo"></i>
+                            Regenerate
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function copyCoverLetter() {
+            const content = document.querySelector('.cover-letter-content');
+            const text = content.innerText;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Cover letter copied to clipboard!');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('Cover letter copied to clipboard!');
+            });
         }
 
         function renderExperience() {
@@ -1060,10 +1973,10 @@
                 .replace(/<[^>]*>/g, ' ')
                 // Convert HTML entities
                 .replace(/&amp;/g, '&')
-                .replace(/&lt;/g, '<')
-                .replace(/&gt;/g, '>')
-                .replace(/&quot;/g, '"')
-                .replace(/&#43;/g, '+')
+                                  .replace(/&lt;/g, '<')
+                                  .replace(/&gt;/g, '>')
+                                  .replace(/&quot;/g, '"')
+                                  .replace(/&#43;/g, '+')
                 .replace(/&nbsp;/g, ' ')
                 .replace(/&mdash;/g, '—')
                 .replace(/&ndash;/g, '–')
@@ -1075,25 +1988,30 @@
                 // Clean up multiple spaces, tabs, and line breaks
                 .replace(/[\s\t\n\r]+/g, ' ')
                 .replace(/\s+/g, ' ')
-                .trim();
+                                  .trim();
 
             // Enhanced parsing with multiple strategies
             let requirements = [];
             
-            // Strategy 1: Parse by common section headers and bullet points
-            requirements = parseBySections(cleanText);
+            // Strategy 1: Try to split by common job description patterns first
+            requirements = parseJobDescriptionFormat(cleanText);
             
-            // Strategy 2: If section parsing didn't work well, try line-by-line parsing
+            // Strategy 2: If that didn't work, try section-based parsing
+            if (requirements.length < 3) {
+                requirements = parseBySections(cleanText);
+            }
+            
+            // Strategy 3: If section parsing didn't work well, try line-by-line parsing
             if (requirements.length < 3) {
                 requirements = parseByLines(cleanText);
             }
             
-            // Strategy 3: If line parsing didn't work, try sentence parsing
+            // Strategy 4: If line parsing didn't work, try sentence parsing
             if (requirements.length < 3) {
                 requirements = parseBySentences(cleanText);
             }
             
-            // Strategy 4: Last resort - intelligent paragraph splitting
+            // Strategy 5: Last resort - intelligent paragraph splitting
             if (requirements.length < 3) {
                 requirements = parseByParagraphs(cleanText);
             }
@@ -1110,31 +2028,62 @@
             showToast(`Successfully parsed ${requirements.length} requirements!`);
         }
 
+        function parseJobDescriptionFormat(text) {
+            const requirements = [];
+            
+            // Handle the specific format from the screenshot: "Job Description" and "Preferred Qualifications"
+            const sections = text.split(/(?:Job Description|Preferred Qualifications|Required Qualifications|Qualifications|Responsibilities|Requirements|Skills|Experience|Education)[:\s]*/i);
+            
+            sections.forEach(section => {
+                if (section.trim().length > 20) {
+                    // Split by periods followed by capital letters (sentence boundaries)
+                    const sentences = section.split(/\.\s+(?=[A-Z])/)
+                        .map(sentence => sentence.trim())
+                        .filter(sentence => sentence.length > 15 && !sentence.match(/^[A-Z\s]+$/));
+                    
+                    requirements.push(...sentences);
+                }
+            });
+            
+            // If that didn't work, try splitting by periods more aggressively
+            if (requirements.length < 3) {
+                const sentences = text.split(/\.\s+/)
+                    .map(sentence => sentence.trim())
+                    .filter(sentence => sentence.length > 20 && !sentence.match(/^[A-Z\s]+$/));
+                
+                requirements.push(...sentences);
+            }
+            
+            return requirements;
+        }
+
         function parseBySections(text) {
             const requirements = [];
             
-            // Common section patterns
-            const sectionPatterns = [
-                /(?:key\s+)?responsibilities?[:\s]*([^]*?)(?=\n\n|\n[A-Z][^:]*:|$)/gi,
-                /(?:required\s+)?qualifications?[:\s]*([^]*?)(?=\n\n|\n[A-Z][^:]*:|$)/gi,
-                /preferred\s+qualifications?[:\s]*([^]*?)(?=\n\n|\n[A-Z][^:]*:|$)/gi,
-                /requirements?[:\s]*([^]*?)(?=\n\n|\n[A-Z][^:]*:|$)/gi,
-                /skills?[:\s]*([^]*?)(?=\n\n|\n[A-Z][^:]*:|$)/gi,
-                /experience[:\s]*([^]*?)(?=\n\n|\n[A-Z][^:]*:|$)/gi,
-                /education[:\s]*([^]*?)(?=\n\n|\n[A-Z][^:]*:|$)/gi,
-                /duties?[:\s]*([^]*?)(?=\n\n|\n[A-Z][^:]*:|$)/gi
+            // First, try to split by common section headers and extract individual items
+            const sectionHeaders = [
+                'Job Description', 'Responsibilities', 'Qualifications', 'Required Qualifications', 
+                'Preferred Qualifications', 'Requirements', 'Skills', 'Experience', 'Education', 'Duties'
             ];
             
-            sectionPatterns.forEach(pattern => {
-                const matches = text.matchAll(pattern);
+            // Split text by section headers
+            let currentText = text;
+            sectionHeaders.forEach(header => {
+                const headerRegex = new RegExp(`(${header}[:\s]*)([^]*?)(?=\\n\\n|\\n[A-Z][^:]*:|$)`, 'gi');
+                const matches = currentText.matchAll(headerRegex);
                 for (const match of matches) {
-                    if (match[1]) {
-                        const sectionText = match[1].trim();
+                    if (match[2]) {
+                        const sectionText = match[2].trim();
                         const sectionRequirements = parseBulletPoints(sectionText);
                         requirements.push(...sectionRequirements);
                     }
                 }
             });
+            
+            // If no sections found, try to parse the entire text as individual requirements
+            if (requirements.length === 0) {
+                return parseBulletPoints(text);
+            }
             
             return requirements;
         }
@@ -1174,30 +2123,41 @@
         }
 
         function parseBulletPoints(text) {
-            // Split by various bullet point formats
-            const bulletPatterns = [
-                /^[•\-\*]\s+(.+)$/gm,
-                /^\d+[\.\)]\s+(.+)$/gm,
-                /^[a-z][\.\)]\s+(.+)$/gm,
-                /^[A-Z][\.\)]\s+(.+)$/gm
-            ];
-            
             const requirements = [];
             
-            bulletPatterns.forEach(pattern => {
-                const matches = text.matchAll(pattern);
-                for (const match of matches) {
-                    if (match[1] && match[1].trim().length > 15) {
-                        requirements.push(match[1].trim());
-                    }
-                }
-            });
+            // First, try to split by periods followed by capital letters (sentence boundaries)
+            const sentences = text.split(/\.\s+(?=[A-Z])/)
+                .map(sentence => sentence.trim())
+                .filter(sentence => sentence.length > 20);
             
-            // If no bullet points found, split by line breaks
-            if (requirements.length === 0) {
-                return text.split(/\n+/)
-                    .map(line => line.trim())
-                    .filter(line => line.length > 15);
+            // If we got good sentence splits, use those
+            if (sentences.length > 2) {
+                requirements.push(...sentences);
+            } else {
+                // Try bullet point patterns
+                const bulletPatterns = [
+                    /^[•\-\*]\s+(.+)$/gm,
+                    /^\d+[\.\)]\s+(.+)$/gm,
+                    /^[a-z][\.\)]\s+(.+)$/gm,
+                    /^[A-Z][\.\)]\s+(.+)$/gm
+                ];
+                
+                bulletPatterns.forEach(pattern => {
+                    const matches = text.matchAll(pattern);
+                    for (const match of matches) {
+                        if (match[1] && match[1].trim().length > 15) {
+                            requirements.push(match[1].trim());
+                        }
+                    }
+                });
+                
+                // If no bullet points found, split by line breaks
+                if (requirements.length === 0) {
+                    const lines = text.split(/\n+/)
+                        .map(line => line.trim())
+                        .filter(line => line.length > 15 && !line.match(/^[A-Z\s]+$/));
+                    requirements.push(...lines);
+                }
             }
             
             return requirements;
@@ -1756,6 +2716,139 @@
         renderExperience();
         renderEducation();
         renderCustomFields();
+
+        // 3D Card Carousel Functionality
+        const carouselProjects = [
+            { name: "Project Alpha", category: "Web Development" },
+            { name: "Project Beta", category: "UI/UX Design" },
+            { name: "Project Gamma", category: "Data Analytics" },
+            { name: "Project Delta", category: "Mobile App" },
+            { name: "Project Epsilon", category: "E-Commerce" },
+            { name: "Project Zeta", category: "SaaS Platform" }
+        ];
+
+        const carouselCards = document.querySelectorAll(".carousel-card");
+        const carouselDots = document.querySelectorAll(".carousel-dot");
+        const carouselMemberName = document.querySelector(".carousel-member-name");
+        const carouselMemberRole = document.querySelector(".carousel-member-role");
+        const carouselLeftArrow = document.querySelector(".carousel-nav-arrow.left");
+        const carouselRightArrow = document.querySelector(".carousel-nav-arrow.right");
+        let carouselCurrentIndex = 0;
+        let carouselIsAnimating = false;
+
+        function updateCarousel(newIndex) {
+            if (carouselIsAnimating) return;
+            carouselIsAnimating = true;
+
+            carouselCurrentIndex = (newIndex + carouselCards.length) % carouselCards.length;
+
+            carouselCards.forEach((card, i) => {
+                const offset = (i - carouselCurrentIndex + carouselCards.length) % carouselCards.length;
+
+                card.classList.remove(
+                    "center",
+                    "left-1",
+                    "left-2",
+                    "right-1",
+                    "right-2",
+                    "hidden"
+                );
+
+                if (offset === 0) {
+                    card.classList.add("center");
+                } else if (offset === 1) {
+                    card.classList.add("right-1");
+                } else if (offset === 2) {
+                    card.classList.add("right-2");
+                } else if (offset === carouselCards.length - 1) {
+                    card.classList.add("left-1");
+                } else if (offset === carouselCards.length - 2) {
+                    card.classList.add("left-2");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+
+            carouselDots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === carouselCurrentIndex);
+            });
+
+            carouselMemberName.style.opacity = "0";
+            carouselMemberRole.style.opacity = "0";
+
+            setTimeout(() => {
+                carouselMemberName.textContent = carouselProjects[carouselCurrentIndex].name;
+                carouselMemberRole.textContent = carouselProjects[carouselCurrentIndex].category;
+                carouselMemberName.style.opacity = "1";
+                carouselMemberRole.style.opacity = "1";
+            }, 300);
+
+            setTimeout(() => {
+                carouselIsAnimating = false;
+            }, 800);
+        }
+
+        if (carouselLeftArrow) {
+            carouselLeftArrow.addEventListener("click", () => {
+                updateCarousel(carouselCurrentIndex - 1);
+            });
+        }
+
+        if (carouselRightArrow) {
+            carouselRightArrow.addEventListener("click", () => {
+                updateCarousel(carouselCurrentIndex + 1);
+            });
+        }
+
+        carouselDots.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+                updateCarousel(i);
+            });
+        });
+
+        carouselCards.forEach((card, i) => {
+            card.addEventListener("click", () => {
+                updateCarousel(i);
+            });
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowLeft") {
+                updateCarousel(carouselCurrentIndex - 1);
+            } else if (e.key === "ArrowRight") {
+                updateCarousel(carouselCurrentIndex + 1);
+            }
+        });
+
+        let carouselTouchStartX = 0;
+        let carouselTouchEndX = 0;
+
+        document.addEventListener("touchstart", (e) => {
+            carouselTouchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener("touchend", (e) => {
+            carouselTouchEndX = e.changedTouches[0].screenX;
+            handleCarouselSwipe();
+        });
+
+        function handleCarouselSwipe() {
+            const swipeThreshold = 50;
+            const diff = carouselTouchStartX - carouselTouchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    updateCarousel(carouselCurrentIndex + 1);
+                } else {
+                    updateCarousel(carouselCurrentIndex - 1);
+                }
+            }
+        }
+
+        // Initialize carousel
+        if (carouselCards.length > 0) {
+            updateCarousel(0);
+        }
     </script>
 </body>
 </html>
