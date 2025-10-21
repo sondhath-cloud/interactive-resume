@@ -4,8 +4,14 @@ const carousel3dCards = document.querySelectorAll(".carousel-3d-card");
 const carousel3dDots = document.querySelectorAll(".carousel-3d-dot");
 const carousel3dLeftArrow = document.querySelector(".carousel-3d-nav-arrow.left");
 const carousel3dRightArrow = document.querySelector(".carousel-3d-nav-arrow.right");
+const carousel3dTrack = document.querySelector(".carousel-3d-track");
 let carousel3dCurrentIndex = 0;
 let carousel3dIsAnimating = false;
+
+// Touch/swipe support
+let startX = 0;
+let startY = 0;
+let isTouchDevice = 'ontouchstart' in window;
 
 function updateCarousel3d(newIndex) {
     if (carousel3dIsAnimating) return;

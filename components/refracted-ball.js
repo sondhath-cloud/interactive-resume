@@ -1,14 +1,3 @@
-// 作者：古柳 / 微信：xiaoaizhj 备注「可视化加群」欢迎进群交流
-// 文章：「Three.js Shader 实现酷炫折射小球效果（上）- 牛衣古柳 - 20250429」
-// 链接：https://mp.weixin.qq.com/s/wHW9mY5PxdxvTbr1SLhYww
-// 链接：https://juejin.cn/post/7498555234072739840
-
-// Using local Three.js files to avoid CORS issues
-// THREE will be loaded via script tag in HTML
-
-// Refracted ball script loading
-
-// Wait for THREE.js to be available
 function initRefractedBall() {
     if (typeof THREE === 'undefined') {
         // THREE.js not loaded yet, waiting...
@@ -27,13 +16,40 @@ const camera = new THREE.PerspectiveCamera(75, w / h, 0.01, 1000);
 camera.position.set(0, 0, 2);
 camera.lookAt(new THREE.Vector3());
 
+// Mobile performance optimization
+const isMobile = window.innerWidth <= 768;
+const isLowEndDevice = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
+const pixelRatio = isMobile ? Math.min(window.devicePixelRatio, 1.5) : window.devicePixelRatio;
+
+// Reduce quality on mobile/low-end devices
+const antialias = !isMobile && !isLowEndDevice;
+const powerPreference = isMobile ? "low-power" : "high-performance";
+
 const renderer = new THREE.WebGLRenderer({
-  antialias: true,
-  alpha: true
+  antialias: antialias,
+  alpha: true,
+  powerPreference: powerPreference
 });
-renderer.setPixelRatio(window.devicePixelRatio);
+
+renderer.setPixelRatio(pixelRatio);
 renderer.setSize(w, h);
 renderer.setClearColor(0x000000, 0);
+
+// Mobile-specific optimizations
+if (isMobile) {
+    renderer.shadowMap.enabled = false;
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    
+    // Reduce animation frame rate on mobile for better performance
+    let frameCount = 0;
+    const originalRender = renderer.render;
+    renderer.render = function(scene, camera) {
+        frameCount++;
+        if (frameCount % 2 === 0) { // Render every other frame on mobile
+            originalRender.call(this, scene, camera);
+        }
+    };
+}
 
 // Check if DOM is already loaded or wait for it
 function initContainer() {
@@ -135,164 +151,165 @@ const patterns = [
 // Color schemes for each pattern
 const colorSchemes = {
   1: {
-    // Pattern 1: Colorful Ink/Smoke
+    // Pattern 1: ULTRA-VIBRANT Pink/Purple/Blue
     bgColor: '#ffffff',
-    textColor: '#333333',
-    textSecondary: '#555555',
-    circleGradientStart: '#ff6b9d',
-    circleGradientMid: '#a06bd4',
-    circleGradientEnd: '#4A90E2',
-    salmon: '#ff6b9d',
-    salmonLight: '#ff8eb4',
-    salmonDark: '#e5548a',
+    textColor: '#1a1a1a',
+    textSecondary: '#2c2c2c',
+    circleGradientStart: '#ff0080',
+    circleGradientMid: '#8b00ff',
+    circleGradientEnd: '#0066ff',
+    salmon: '#ff0080',
+    salmonLight: '#ff3399',
+    salmonDark: '#cc0066',
     white: '#ffffff',
-    lightGray: '#f5f5f5',
-    mediumGray: '#e9ecef',
-    darkGray: '#495057',
-    darkerGray: '#343a40',
-    threeColumnBg: 'transparent',
-    experienceBg: 'rgba(255, 107, 157, 0.05)',
-    experienceBgEnd: 'rgba(255, 107, 157, 0.02)',
-    // Additional elements
-    primaryAccent: '#ff6b9d',
-    secondaryAccent: '#4A90E2',
-    tertiaryAccent: '#F4C430',
-    teal: '#20c997',
-    tealDark: '#1a9d7a',
-    headerBg: 'rgba(255, 107, 157, 0.1)',
-    cardBg: 'rgba(255, 255, 255, 0.95)',
-    borderColor: 'rgba(255, 107, 157, 0.3)',
-    shadowColor: 'rgba(255, 107, 157, 0.2)',
-    // Testimonial colors - Updated vibrant pattern one colors
-    testimonialColor1: 'linear-gradient(135deg, #ff6b9d, #ff4757)',
-    testimonialColor2: 'linear-gradient(135deg, #4A90E2, #5dade2)',
-    testimonialColor3: 'linear-gradient(135deg, #20c997, #17a2b8)',
-    testimonialColor4: 'linear-gradient(135deg, #F4C430, #ffa726)',
-    testimonialColor5: 'linear-gradient(135deg, #a06bd4, #9c27b0)',
-    testimonialColor6: 'linear-gradient(135deg, #ff8eb4, #e91e63)',
-    testimonialColor7: 'linear-gradient(135deg, #26c6da, #00acc1)',
-    testimonialColor8: 'linear-gradient(135deg, #ffb74d, #ff9800)',
-    testimonialColor9: 'linear-gradient(135deg, #9575cd, #7e57c2)'
+    lightGray: '#f8f8f8',
+    mediumGray: '#e0e0e0',
+    darkGray: '#2c2c2c',
+    darkerGray: '#1a1a1a',
+    threeColumnBg: 'rgba(255, 0, 128, 0.15)',
+    experienceBg: 'rgba(255, 0, 128, 0.2)',
+    experienceBgEnd: 'rgba(255, 0, 128, 0.1)',
+    
+    // Additional elements - MAXIMUM VIBRANCY
+    primaryAccent: '#ff0080',
+    secondaryAccent: '#0066ff',
+    tertiaryAccent: '#ffcc00',
+    teal: '#00ffcc',
+    tealDark: '#00cc99',
+    headerBg: 'rgba(255, 0, 128, 0.25)',
+    cardBg: 'rgba(255, 255, 255, 0.98)',
+    borderColor: 'rgba(255, 0, 128, 0.6)',
+    shadowColor: 'rgba(255, 0, 128, 0.4)',
+    // Testimonial colors - ULTRA VIBRANT
+    testimonialColor1: 'linear-gradient(135deg, #ff0080, #ff3399)',
+    testimonialColor2: 'linear-gradient(135deg, #0066ff, #3399ff)',
+    testimonialColor3: 'linear-gradient(135deg, #00ffcc, #33ffcc)',
+    testimonialColor4: 'linear-gradient(135deg, #ffcc00, #ffdd33)',
+    testimonialColor5: 'linear-gradient(135deg, #8b00ff, #aa33ff)',
+    testimonialColor6: 'linear-gradient(135deg, #ff3399, #ff66aa)',
+    testimonialColor7: 'linear-gradient(135deg, #00ffcc, #33ffcc)',
+    testimonialColor8: 'linear-gradient(135deg, #ffcc00, #ffdd33)',
+    testimonialColor9: 'linear-gradient(135deg, #8b00ff, #aa33ff)'
   },
   2: {
-    // Pattern 2: Black and White Waves with Dark Red Accent
+    // Pattern 2: ULTRA-VIBRANT Electric Red/Orange
     bgColor: '#ffffff',
     textColor: '#000000',
-    textSecondary: '#2c3e50',
-    circleGradientStart: '#1a1a1a',
-    circleGradientMid: '#4a4a4a',
-    circleGradientEnd: '#6c757d',
-    salmon: '#8B0000',
-    salmonLight: '#a01010',
-    salmonDark: '#6b0000',
+    textSecondary: '#1a1a1a',
+    circleGradientStart: '#ff0000',
+    circleGradientMid: '#ff6600',
+    circleGradientEnd: '#ffaa00',
+    salmon: '#ff0000',
+    salmonLight: '#ff3333',
+    salmonDark: '#cc0000',
     white: '#ffffff',
-    lightGray: '#f0f0f0',
-    mediumGray: '#d9d9d9',
-    darkGray: '#2c3e50',
-    darkerGray: '#1a1a1a',
-    threeColumnBg: 'transparent',
-    experienceBg: 'rgba(139, 0, 0, 0.05)',
-    experienceBgEnd: 'rgba(139, 0, 0, 0.02)',
-    // Additional elements
-    primaryAccent: '#8B0000',
-    secondaryAccent: '#4a4a4a',
-    tertiaryAccent: '#6c757d',
-    teal: '#dc3545',
-    tealDark: '#c82333',
-    headerBg: 'rgba(139, 0, 0, 0.1)',
-    cardBg: 'rgba(255, 255, 255, 0.95)',
-    borderColor: 'rgba(139, 0, 0, 0.3)',
-    shadowColor: 'rgba(139, 0, 0, 0.2)',
-    // Testimonial colors
-    testimonialColor1: 'linear-gradient(135deg, #8B0000, #a01010)',
-    testimonialColor2: 'linear-gradient(135deg, #4a4a4a, #6c757d)',
-    testimonialColor3: 'linear-gradient(135deg, #1a1a1a, #343a40)',
-    testimonialColor4: 'linear-gradient(135deg, #8B0000, #a01010)',
-    testimonialColor5: 'linear-gradient(135deg, #4a4a4a, #6c757d)',
-    testimonialColor6: 'linear-gradient(135deg, #1a1a1a, #343a40)',
-    testimonialColor7: 'linear-gradient(135deg, #8B0000, #a01010)',
-    testimonialColor8: 'linear-gradient(135deg, #4a4a4a, #6c757d)',
-    testimonialColor9: 'linear-gradient(135deg, #1a1a1a, #343a40)'
+    lightGray: '#f8f8f8',
+    mediumGray: '#e0e0e0',
+    darkGray: '#1a1a1a',
+    darkerGray: '#000000',
+    threeColumnBg: 'rgba(255, 0, 0, 0.15)',
+    experienceBg: 'rgba(255, 0, 0, 0.2)',
+    experienceBgEnd: 'rgba(255, 0, 0, 0.1)',
+    // Additional elements - ELECTRIC VIBRANCY
+    primaryAccent: '#ff0000',
+    secondaryAccent: '#ff6600',
+    tertiaryAccent: '#ffaa00',
+    teal: '#00ff88',
+    tealDark: '#00cc66',
+    headerBg: 'rgba(255, 0, 0, 0.25)',
+    cardBg: 'rgba(255, 255, 255, 0.98)',
+    borderColor: 'rgba(255, 0, 0, 0.6)',
+    shadowColor: 'rgba(255, 0, 0, 0.4)',
+    // Testimonial colors - ELECTRIC VIBRANT
+    testimonialColor1: 'linear-gradient(135deg, #ff0000, #ff3333)',
+    testimonialColor2: 'linear-gradient(135deg, #ff6600, #ff8833)',
+    testimonialColor3: 'linear-gradient(135deg, #ffaa00, #ffbb33)',
+    testimonialColor4: 'linear-gradient(135deg, #00ff88, #33ff99)',
+    testimonialColor5: 'linear-gradient(135deg, #ff0000, #ff3333)',
+    testimonialColor6: 'linear-gradient(135deg, #ff6600, #ff8833)',
+    testimonialColor7: 'linear-gradient(135deg, #ffaa00, #ffbb33)',
+    testimonialColor8: 'linear-gradient(135deg, #00ff88, #33ff99)',
+    testimonialColor9: 'linear-gradient(135deg, #ff0000, #ff3333)'
   },
   3: {
-    // Pattern 3: Retro Geometric (Teal, Orange, Cream)
+    // Pattern 3: ULTRA-VIBRANT Neon Teal/Orange
     bgColor: '#ffffff',
-    textColor: '#2c5757',
-    textSecondary: '#3a6b6b',
-    circleGradientStart: '#4a9d9c',
-    circleGradientMid: '#6fa89f',
-    circleGradientEnd: '#d96941',
-    salmon: '#d96941',
-    salmonLight: '#e58a5f',
-    salmonDark: '#c24f2a',
+    textColor: '#1a1a1a',
+    textSecondary: '#2c2c2c',
+    circleGradientStart: '#00ffcc',
+    circleGradientMid: '#ff6600',
+    circleGradientEnd: '#ffcc00',
+    salmon: '#ff6600',
+    salmonLight: '#ff8833',
+    salmonDark: '#cc5500',
     white: '#ffffff',
-    lightGray: '#f0e8d5',
-    mediumGray: '#e5dbc4',
-    darkGray: '#3a6b6b',
-    darkerGray: '#2c5757',
-    threeColumnBg: 'transparent',
-    experienceBg: 'rgba(217, 105, 65, 0.05)',
-    experienceBgEnd: 'rgba(217, 105, 65, 0.02)',
-    // Additional elements
-    primaryAccent: '#d96941',
-    secondaryAccent: '#4a9d9c',
-    tertiaryAccent: '#6fa89f',
-    teal: '#4a9d9c',
-    tealDark: '#3a7a79',
-    headerBg: 'rgba(217, 105, 65, 0.1)',
-    cardBg: 'rgba(255, 255, 255, 0.95)',
-    borderColor: 'rgba(217, 105, 65, 0.3)',
-    shadowColor: 'rgba(217, 105, 65, 0.2)',
-    // Testimonial colors
-    testimonialColor1: 'linear-gradient(135deg, #d96941, #e58a5f)',
-    testimonialColor2: 'linear-gradient(135deg, #4a9d9c, #6fa89f)',
-    testimonialColor3: 'linear-gradient(135deg, #2c5757, #3a6b6b)',
-    testimonialColor4: 'linear-gradient(135deg, #d96941, #e58a5f)',
-    testimonialColor5: 'linear-gradient(135deg, #4a9d9c, #6fa89f)',
-    testimonialColor6: 'linear-gradient(135deg, #2c5757, #3a6b6b)',
-    testimonialColor7: 'linear-gradient(135deg, #d96941, #e58a5f)',
-    testimonialColor8: 'linear-gradient(135deg, #4a9d9c, #6fa89f)',
-    testimonialColor9: 'linear-gradient(135deg, #2c5757, #3a6b6b)'
+    lightGray: '#f8f8f8',
+    mediumGray: '#e0e0e0',
+    darkGray: '#2c2c2c',
+    darkerGray: '#1a1a1a',
+    threeColumnBg: 'rgba(0, 255, 204, 0.15)',
+    experienceBg: 'rgba(0, 255, 204, 0.2)',
+    experienceBgEnd: 'rgba(0, 255, 204, 0.1)',
+    // Additional elements - NEON VIBRANCY
+    primaryAccent: '#00ffcc',
+    secondaryAccent: '#ff6600',
+    tertiaryAccent: '#ffcc00',
+    teal: '#00ffcc',
+    tealDark: '#00cc99',
+    headerBg: 'rgba(0, 255, 204, 0.25)',
+    cardBg: 'rgba(255, 255, 255, 0.98)',
+    borderColor: 'rgba(0, 255, 204, 0.6)',
+    shadowColor: 'rgba(0, 255, 204, 0.4)',
+    // Testimonial colors - NEON VIBRANT
+    testimonialColor1: 'linear-gradient(135deg, #00ffcc, #33ffcc)',
+    testimonialColor2: 'linear-gradient(135deg, #ff6600, #ff8833)',
+    testimonialColor3: 'linear-gradient(135deg, #ffcc00, #ffdd33)',
+    testimonialColor4: 'linear-gradient(135deg, #00ffcc, #33ffcc)',
+    testimonialColor5: 'linear-gradient(135deg, #ff6600, #ff8833)',
+    testimonialColor6: 'linear-gradient(135deg, #ffcc00, #ffdd33)',
+    testimonialColor7: 'linear-gradient(135deg, #00ffcc, #33ffcc)',
+    testimonialColor8: 'linear-gradient(135deg, #ff6600, #ff8833)',
+    testimonialColor9: 'linear-gradient(135deg, #ffcc00, #ffdd33)'
   },
   4: {
-    // Pattern 4: Retro Waves (Navy, Rust, Gold, Cream)
+    // Pattern 4: ULTRA-VIBRANT Purple/Gold
     bgColor: '#ffffff',
-    textColor: '#2c4a5a',
-    textSecondary: '#3a5e70',
-    circleGradientStart: '#c85a3f',
-    circleGradientMid: '#8a6f5a',
-    circleGradientEnd: '#2c4a5a',
-    salmon: '#c85a3f',
-    salmonLight: '#d67a5f',
-    salmonDark: '#a8442a',
+    textColor: '#1a1a1a',
+    textSecondary: '#2c2c2c',
+    circleGradientStart: '#8b00ff',
+    circleGradientMid: '#ffcc00',
+    circleGradientEnd: '#ff6600',
+    salmon: '#8b00ff',
+    salmonLight: '#aa33ff',
+    salmonDark: '#6b00cc',
     white: '#ffffff',
-    lightGray: '#f0e8d5',
-    mediumGray: '#e5dbc4',
-    darkGray: '#3a5e70',
-    darkerGray: '#2c4a5a',
-    threeColumnBg: 'transparent',
-    experienceBg: 'rgba(200, 90, 63, 0.05)',
-    experienceBgEnd: 'rgba(200, 90, 63, 0.02)',
-    // Additional elements
-    primaryAccent: '#c85a3f',
-    secondaryAccent: '#8a6f5a',
-    tertiaryAccent: '#2c4a5a',
-    teal: '#8a6f5a',
-    tealDark: '#6b5746',
-    headerBg: 'rgba(200, 90, 63, 0.1)',
-    cardBg: 'rgba(255, 255, 255, 0.95)',
-    borderColor: 'rgba(200, 90, 63, 0.3)',
-    shadowColor: 'rgba(200, 90, 63, 0.2)',
-    // Testimonial colors
-    testimonialColor1: 'linear-gradient(135deg, #c85a3f, #d67a5f)',
-    testimonialColor2: 'linear-gradient(135deg, #8a6f5a, #6b5746)',
-    testimonialColor3: 'linear-gradient(135deg, #2c4a5a, #3a5e70)',
-    testimonialColor4: 'linear-gradient(135deg, #c85a3f, #d67a5f)',
-    testimonialColor5: 'linear-gradient(135deg, #8a6f5a, #6b5746)',
-    testimonialColor6: 'linear-gradient(135deg, #2c4a5a, #3a5e70)',
-    testimonialColor7: 'linear-gradient(135deg, #c85a3f, #d67a5f)',
-    testimonialColor8: 'linear-gradient(135deg, #8a6f5a, #6b5746)',
-    testimonialColor9: 'linear-gradient(135deg, #2c4a5a, #3a5e70)'
+    lightGray: '#f8f8f8',
+    mediumGray: '#e0e0e0',
+    darkGray: '#2c2c2c',
+    darkerGray: '#1a1a1a',
+    threeColumnBg: 'rgba(139, 0, 255, 0.15)',
+    experienceBg: 'rgba(139, 0, 255, 0.2)',
+    experienceBgEnd: 'rgba(139, 0, 255, 0.1)',
+    // Additional elements - ROYAL VIBRANCY
+    primaryAccent: '#8b00ff',
+    secondaryAccent: '#ffcc00',
+    tertiaryAccent: '#ff6600',
+    teal: '#00ff88',
+    tealDark: '#00cc66',
+    headerBg: 'rgba(139, 0, 255, 0.25)',
+    cardBg: 'rgba(255, 255, 255, 0.98)',
+    borderColor: 'rgba(139, 0, 255, 0.6)',
+    shadowColor: 'rgba(139, 0, 255, 0.4)',
+    // Testimonial colors - ROYAL VIBRANT
+    testimonialColor1: 'linear-gradient(135deg, #8b00ff, #aa33ff)',
+    testimonialColor2: 'linear-gradient(135deg, #ffcc00, #ffdd33)',
+    testimonialColor3: 'linear-gradient(135deg, #ff6600, #ff8833)',
+    testimonialColor4: 'linear-gradient(135deg, #00ff88, #33ff99)',
+    testimonialColor5: 'linear-gradient(135deg, #8b00ff, #aa33ff)',
+    testimonialColor6: 'linear-gradient(135deg, #ffcc00, #ffdd33)',
+    testimonialColor7: 'linear-gradient(135deg, #ff6600, #ff8833)',
+    testimonialColor8: 'linear-gradient(135deg, #00ff88, #33ff99)',
+    testimonialColor9: 'linear-gradient(135deg, #8b00ff, #aa33ff)'
   }
 };
 
